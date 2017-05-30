@@ -26,7 +26,7 @@ import dev.empkiosk.page.KioskVoice;
  */
 public class CartPanel extends JPanel {
 
-	private final JPanel TOP_PANEL = new JPanel();
+	private static final CartTopPanel TOP_PANEL = new CartTopPanel();
 
 	private Border border = BorderFactory.createTitledBorder(LangCheck.isKorean() ? "선택메뉴" : "Select Menu");
 	public static JScrollPane scroll = new JScrollPane();
@@ -41,25 +41,30 @@ public class CartPanel extends JPanel {
 	public CartPanel() {
 		// 초기화
 		this.setLayout(null);
-		TOP_PANEL.setLayout(new GridLayout(0, 3));
+		
+		initTopPanel();
+		
 		BOTTOM_PANEL.setLayout(new GridLayout(0, 4));
-
-		// 사이즈
-		TOP_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 4 / 2);
 		BOTTOM_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 4);
-		J_LIST.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 2 + OrderPage.BOTTOM_HEIGHT / 4 / 2);
-		scroll.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 2 + OrderPage.BOTTOM_HEIGHT / 4 / 2);
-
-		// 위치
-		TOP_PANEL.setLocation(0, 0);
+		BOTTOM_PANEL.setOpaque(true);
 		BOTTOM_PANEL.setLocation(0, OrderPage.BOTTOM_HEIGHT * 3 / 4);
+		BOTTOM_PANEL.setBackground(Color.WHITE);
+		
+		
+		J_LIST.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 2 + OrderPage.BOTTOM_HEIGHT / 4 / 2);
 		J_LIST.setLocation(0, OrderPage.BOTTOM_HEIGHT / 4 - OrderPage.BOTTOM_HEIGHT / 4 / 2);
+		J_LIST.setListData(SELECTED_MENU);
+		
+		
+		
+		scroll.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 2 + OrderPage.BOTTOM_HEIGHT / 4 / 2);
 		scroll.setLocation(0, OrderPage.BOTTOM_HEIGHT / 4 - OrderPage.BOTTOM_HEIGHT / 4 / 2);
+		scroll.setViewportView(J_LIST);
+		scroll.setBorder(border); // 경계 설정
+		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); // 가로바정책
 
 		// 컬러
-		TOP_PANEL.setOpaque(true);
-		TOP_PANEL.setBackground(Color.BLACK);
-
+		
 		// 하위컴포넌트
 		JLabel menuLabel = new JLabel(LangCheck.isKorean() ? "메뉴" : "MENU", JLabel.CENTER);
 		JLabel amountLabel = new JLabel(LangCheck.isKorean() ? "수량" : "QUANTITY", JLabel.CENTER);
@@ -76,25 +81,13 @@ public class CartPanel extends JPanel {
 		cancleButton.setBackground(Color.GRAY);
 		paymentButton.setBackground(Color.ORANGE);
 
-		// 기타 설정
-		scroll.setViewportView(J_LIST);
-		scroll.setBorder(border); // 경계 설정
-		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); // 가로바정책
-		J_LIST.setListData(SELECTED_MENU);
-
-		// 패널 추가
-		TOP_PANEL.add(menuLabel);
-		TOP_PANEL.add(amountLabel);
-		TOP_PANEL.add(priceLabel);
-
+	
 		BOTTOM_PANEL.add(cartTotal);
 		BOTTOM_PANEL.add(cartTotalData);
 		BOTTOM_PANEL.add(cancleButton);
 		BOTTOM_PANEL.add(paymentButton);
 
-		BOTTOM_PANEL.setOpaque(true);
-		BOTTOM_PANEL.setLocation(0, OrderPage.BOTTOM_HEIGHT * 3 / 4);
-		BOTTOM_PANEL.setBackground(Color.WHITE);
+		
 
 		this.add(TOP_PANEL);
 		this.add(BOTTOM_PANEL);
@@ -118,6 +111,11 @@ public class CartPanel extends JPanel {
 				}
 			}
 		});
+	}
+
+	private void initTopPanel() {
+		TOP_PANEL.setSize(KioskPage.PAGE_WIDTH, KioskPage.PAGE_HEIGHT / 40);
+		TOP_PANEL.setLocation(0, 0);
 	}
 
 	public static void initCart() {

@@ -20,11 +20,13 @@ import dev.empkiosk.page.payment.place.PaymentPlacePage;
  */
 public class OrderPage extends KioskPage {
 	// 상단 높이
-	public static int TOP_HEIGHT = KioskPage.PAGE_HEIGHT * 2 / 10;
+	public static int TOP_HEIGHT = KioskPage.PAGE_HEIGHT / 5;
 	// 중간 높이
-	public static int CENTER_HEIGHT = KioskPage.PAGE_HEIGHT * 6 / 10;
+	public static int CENTER_HEIGHT = KioskPage.PAGE_HEIGHT * 3 / 5;
 	// 하단 높이
-	public static int BOTTOM_HEIGHT = KioskPage.PAGE_HEIGHT * 2 / 10;
+	public static int BOTTOM_HEIGHT = KioskPage.PAGE_HEIGHT / 5;
+	
+	
 
 	private final JLabel TOP_IMG = new JLabel(ImageEdit.getResizeIcon("image/banner_top.jpg", KioskPage.PAGE_WIDTH, TOP_HEIGHT));
 	

@@ -22,11 +22,11 @@ import sun.audio.AudioStream;
  * 해당 메뉴버튼을 담당하는 클래스이다.
  */
 public class MenuButton extends JButton {
-	
-	private static int BUTTON_WIDTH = KioskPage.PAGE_WIDTH / 5;
-	private static int BUTTON_HEIGHT = KioskPage.PAGE_HEIGHT / 10;
+	private static final int BUTTON_WIDTH = KioskPage.PAGE_WIDTH / 5;
+	private static final int BUTTON_HEIGHT = KioskPage.PAGE_HEIGHT / 10;
 	
 	private static final File SOUND_FILE = new File("sound/beep.wav");
+	private static final String PRICE_FONT_TAG_COLOR = "red";
 	
 	private final MenuType MENU_TYPE;
 	private final String IMG_PATH;
@@ -47,7 +47,7 @@ public class MenuButton extends JButton {
 	
 	private String createTitle() {
 		return new StringBuilder().append("<html><center>").append(MENU_NAME).append("<br>")
-		.append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append("<font color='red'>").append(PRICE).append("</font><br>")
+		.append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append("<font color='").append(PRICE_FONT_TAG_COLOR).append("'>").append(PRICE).append("</font><br>")
 		.append(K_CAL).append("KCal").append("</center></html>").toString();
 	}
 	
@@ -71,9 +71,7 @@ public class MenuButton extends JButton {
 				 * 주문데이터 입력
 				 * 화면갱신 & 스크롤 최하단
 				 */
-				
 				playSound();
-				
 
 				SelectedMenu.addOrder(PRICE, 1, K_CAL);
 				CartPanel.SELECTED_MENU.add(MenuButton.this.toString());
@@ -95,15 +93,14 @@ public class MenuButton extends JButton {
 			AudioPlayer.player.start(AS);
 		} catch (IOException ex) {
 			ex.printStackTrace();
-		} 
-		
+		}
 	}
 	
 	@Override
 	public String toString() {
-		final String REMOVE_TAG_NAME = MENU_NAME.replaceAll("<html><center>", "").replaceAll("<br>", " ").replaceAll("</center></html>", "");
+		final String REMOVE_TAG_OF_MENU_NAME = MENU_NAME.replaceAll("<html><center>", "").replaceAll("<br>", " ").replaceAll("</center></html>", "");
 		
-		return new StringBuilder().append(REMOVE_TAG_NAME).append(" || ").
+		return new StringBuilder().append(REMOVE_TAG_OF_MENU_NAME).append(" || ").
 				append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append(PRICE).append(" || ")
 				.append(K_CAL).append("KCal").toString();
 	}
