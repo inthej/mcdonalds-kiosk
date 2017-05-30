@@ -17,7 +17,7 @@ import dev.empkiosk.page.KioskVoice;
 import dev.empkiosk.page.LangCheck;
 import dev.empkiosk.page.confirm.ConfirmPage;
 import dev.empkiosk.page.order.CartPanel;
-import dev.empkiosk.page.order.SelectedMenu;
+import dev.empkiosk.page.order.SelectedMenuList;
 import dev.empkiosk.page.thank.ThankPage;
 
 /**

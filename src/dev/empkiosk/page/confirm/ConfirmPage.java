@@ -3,18 +3,16 @@ package dev.empkiosk.page.confirm;
 import java.awt.Color;
 import java.awt.Component;
 
-import javax.swing.JScrollPane;
-
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.KioskGuidePanel;
 import dev.empkiosk.page.KioskPage;
-import dev.empkiosk.page.LangCheck;
 import dev.empkiosk.page.KioskVoice;
+import dev.empkiosk.page.LangCheck;
 import dev.empkiosk.page.eatplace.EatPlace;
 import dev.empkiosk.page.order.CartPanel;
 import dev.empkiosk.page.order.OrderPage;
 import dev.empkiosk.page.order.OrderPlace;
-import dev.empkiosk.page.order.SelectedMenu;
+import dev.empkiosk.page.order.SelectedMenuList;
 import dev.empkiosk.page.payment.card.PaymentCardPage;
 import dev.empkiosk.page.payment.place.PayPlace;
 import dev.empkiosk.page.thank.ThankPage;
@@ -84,7 +82,7 @@ public class ConfirmPage extends KioskPage {
 			if (OrderPlace.getInstance().getPayPlace() == PayPlace.COUNTER.toString()) {
 				MainFrame.attachPanel(new ThankPage());
 				CartPanel.SELECTED_MENU.clear();
-				SelectedMenu.init();
+				SelectedMenuList.getInstance().empty();
 
 			} else if (OrderPlace.getInstance().getPayPlace() == PayPlace.KIOSK.toString()) {
 				MainFrame.attachPanel(new PaymentCardPage());

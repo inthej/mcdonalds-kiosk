@@ -72,16 +72,14 @@ public class MenuButton extends JButton {
 				 * 화면갱신 & 스크롤 최하단
 				 */
 				playSound();
+				SelectedMenuList.getInstance().add(new OrderData(MenuButton.this.toString(), PRICE, K_CAL));
 
-				SelectedMenu.addOrder(PRICE, 1, K_CAL);
-				CartPanel.SELECTED_MENU.add(MenuButton.this.toString());
 				CartPanel.J_LIST.setListData(CartPanel.SELECTED_MENU);
 
 				// JScrollPane의 바를 최 하단으로맞춤
 				CartPanel.scroll.getVerticalScrollBar().setValue(CartPanel.scroll.getVerticalScrollBar().getMaximum());
 				
-				CartPanel.cartTotalData.setText("<html>" + SelectedMenu.orderQuantity + "<br>" + SelectedMenu.orderAmount
-						+ "<br>" + SelectedMenu.totalKCal + "</html>");
+				CartConfirmPanel.resetDataLabel();
 			}
 		});
 	}
@@ -96,13 +94,10 @@ public class MenuButton extends JButton {
 		}
 	}
 	
+	
 	@Override
 	public String toString() {
-		final String REMOVE_TAG_OF_MENU_NAME = MENU_NAME.replaceAll("<html><center>", "").replaceAll("<br>", " ").replaceAll("</center></html>", "");
-		
-		return new StringBuilder().append(REMOVE_TAG_OF_MENU_NAME).append(" || ").
-				append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append(PRICE).append(" || ")
-				.append(K_CAL).append("KCal").toString();
+		return MENU_NAME.replaceAll("<html><center>", "").replaceAll("<br>", " ").replaceAll("</center></html>", "");
 	}
 	
 	private static final long serialVersionUID = 1806232326009833938L;

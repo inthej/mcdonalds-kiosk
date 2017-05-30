@@ -14,7 +14,7 @@ import dev.empkiosk.page.KioskVoice;
 import dev.empkiosk.page.LangCheck;
 import dev.empkiosk.page.order.CartPanel;
 import dev.empkiosk.page.order.OrderPlace;
-import dev.empkiosk.page.order.SelectedMenu;
+import dev.empkiosk.page.order.SelectedMenuList;
 import dev.empkiosk.page.payment.place.PayPlace;
 import dev.empkiosk.page.welcome.WelcomePage;
 
@@ -58,8 +58,8 @@ public class ThankPage extends KioskPage {
 
 	private void initOrderData() {
 		OrderPlace.getInstance().init();
-		SelectedMenu.init();
-		CartPanel.initCart();
+		SelectedMenuList.getInstance().empty();
+		CartPanel.emptyCart();
 	}
 
 	private void setListener() {

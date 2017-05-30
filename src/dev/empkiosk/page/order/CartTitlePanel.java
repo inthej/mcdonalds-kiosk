@@ -7,23 +7,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import dev.empkiosk.page.KioskPage;
+import dev.empkiosk.page.LangCheck;
 
-class CartTopPanel extends JPanel {
-	private static final JLabel MENU_LABEL = new JLabel("메뉴", JLabel.CENTER);
-	private static final JLabel QUANTITY_LABEL = new JLabel("수량", JLabel.CENTER);
-	private static final JLabel PRICE_LABEL = new JLabel("가격", JLabel.CENTER);
+class CartTitlePanel extends JPanel {
+	private static final JLabel MENU_LABEL = new JLabel(LangCheck.isKorean() ? "메뉴" : "MENU", JLabel.CENTER);
+	private static final JLabel QUANTITY_LABEL = new JLabel(LangCheck.isKorean() ? "수량" : "QUANTITY", JLabel.CENTER);
+	private static final JLabel PRICE_LABEL = new JLabel(LangCheck.isKorean() ? "가격" : "PRICE", JLabel.CENTER);
 	
 	private static final Color BACKGROUND_COLOR = Color.BLACK;
 	private static final Color FONT_COLOR = Color.WHITE;
 	
-	CartTopPanel() {
+	CartTitlePanel() {
 		initCartTopPanel();
 		initLabels();
 	}
 	
 	void initCartTopPanel() {
 		this.setLayout(new GridLayout(0, 3));
-		this.setOpaque(true);
 		this.setBackground(BACKGROUND_COLOR);
 	}
 	
