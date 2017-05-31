@@ -22,7 +22,7 @@ public class MenuButton extends JButton {
     private static final  String PRICE_FONT_COLOR = "red";
 
     private final String IMG_PATH;
-    private final OrderData ORDER_DATA;
+    private OrderData ORDER_DATA;
 
     private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKioskAudioPlayer("sound/beep.wav");
 
