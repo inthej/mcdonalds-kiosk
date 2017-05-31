@@ -37,7 +37,7 @@ public class KioskAudioPlayer {
      * 해당메서드를 다른쪽에서 사용할 수 있도록 공개하여서
      * 필요하면 실행가능한 KioskAudioPlayer를 얻을수 있다.
      */
-    public static KioskAudioPlayer createKisokAudioPlayer(@NotNull String audioPath) {
+    public static KioskAudioPlayer createKioskAudioPlayer(@NotNull String audioPath) {
         if (audioFilePool.get(audioPath) == null) {
             createNewAudioFile(audioPath);
         }
