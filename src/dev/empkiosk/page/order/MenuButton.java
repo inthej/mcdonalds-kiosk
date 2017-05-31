@@ -38,6 +38,10 @@ public class MenuButton extends JButton {
     private static final File SOUND_FILE = new File("sound/beep.wav");
     static final String PRICE_FONT_TAG_COLOR = "red";
 
+    /**
+     * 분석
+     * 메뉴버튼은 실행가능한 KioskAudioPlayer를 가지고 있다
+     */
     private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKisokAudioPlayer("sound/beep.wav");
 
     /* 잠시 final 지움... */
@@ -56,21 +60,24 @@ public class MenuButton extends JButton {
      *
      * @see dev.empkiosk.page.order.MenuButton#MenuButton(String, OrderData)
      */
-    @Deprecated
-    MenuButton(MenuType menuType, String imgPath, String menuName, int price, int kCal) {
-        this.MENU_TYPE = menuType;
-        this.IMG_PATH = imgPath;
-        this.MENU_NAME = menuName;
-        this.PRICE = price;
-        this.K_CAL = kCal;
-
-        initMenuButton(createTitle());
-        setListener();
-    }
+//    @Deprecated
+//    MenuButton(MenuType menuType, String imgPath, String menuName, int price, int kCal) {
+//        this.MENU_TYPE = menuType;
+//        this.IMG_PATH = imgPath;
+//        this.MENU_NAME = menuName;
+//        this.PRICE = price;
+//        this.K_CAL = kCal;
+//
+//        initMenuButton(createTitle());
+//        setListener();
+//    }
 
     MenuButton(String imgPath, OrderData orderData) {
         this.IMG_PATH = imgPath;
         this.orderData = orderData;
+
+        initMenuButton();
+        setListener();
     }
 
     /**
@@ -83,8 +90,12 @@ public class MenuButton extends JButton {
      */
     @Deprecated
     private String createTitle() {
-        return new StringBuilder().append("<html><center>").append(MENU_NAME).append("<br>")
-                .append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append("<font color='").append(PRICE_FONT_TAG_COLOR).append("'>").append(PRICE).append("</font><br>")
+        return new StringBuilder()
+                .append("<html><center>")
+                .append(MENU_NAME).append("<br>")
+                .append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append("<font color='")
+                .append(PRICE_FONT_TAG_COLOR).append("'>")
+                .append(PRICE).append("</font><br>")
                 .append(K_CAL).append("KCal").append("</center></html>").toString();
     }
 
@@ -105,6 +116,18 @@ public class MenuButton extends JButton {
         this.setBorderPainted(false);
     }
 
+    private void initMenuButton() {
+        this.setIcon(ImageEdit.getResizeIcon(IMG_PATH, BUTTON_WIDTH, BUTTON_HEIGHT));
+        //this.setText(getDefinedTitle());
+        this.setText(orderData.toMenuButtonText(PRICE_FONT_TAG_COLOR));
+        this.setHorizontalTextPosition(SwingConstants.CENTER);
+        this.setVerticalTextPosition(SwingConstants.BOTTOM);
+
+        this.setBackground(Color.WHITE);
+        this.setBorderPainted(false);
+    }
+
+
     /**
      * createTitle보다는 이게 낫지만,
      * 이거보다는 아래의 메서드를 쓰는걸 추천.
@@ -121,23 +144,13 @@ public class MenuButton extends JButton {
                 .append(K_CAL).append("KCal").append("</center></html>").toString();
     }
 
-    private void initMenuButton() {
-        this.setIcon(ImageEdit.getResizeIcon(IMG_PATH, BUTTON_WIDTH, BUTTON_HEIGHT));
-        //this.setText(getDefinedTitle());
-        this.setText(orderData.toMenuButtonText(PRICE_FONT_TAG_COLOR));
-        this.setHorizontalTextPosition(SwingConstants.CENTER);
-        this.setVerticalTextPosition(SwingConstants.BOTTOM);
-
-        this.setBackground(Color.WHITE);
-        this.setBorderPainted(false);
-    }
 
     private void setListener() {
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /*
-				 * TODO
+                 * TODO
 				 * 사운드
 				 * 주문데이터 입력
 				 * 화면갱신 & 스크롤 최하단
@@ -146,7 +159,7 @@ public class MenuButton extends JButton {
                 playSound();
 				/* 음원에 관련된건 음원관련 객체에게 맡긴다. */
 //				clickBGMPlayer.play();
-                SelectedMenuList.getInstance().add(new OrderData(MenuButton.this.toString(), PRICE, K_CAL));
+                SelectedMenuList.getInstance().add(new OrderData(removeTagOfMenuName(), PRICE, K_CAL));
 
                 CartPanel.J_LIST.setListData(CartPanel.SELECTED_MENU);
 
@@ -173,19 +186,14 @@ public class MenuButton extends JButton {
     }
 
     /**
-     * 아래의 메서드를 보고 toString 메서드를 고치고, Deprecated 지우기.
+     * 영문버전일때는 메뉴이름이 여러줄로 나오기때문에
+     * 하위의 태그를 제거해주어야 한다.
      *
-     * @see dev.empkiosk.page.order.MenuButton#print()
+     * 매서드의 사용용도는 메뉴를 선택하였을때 사용데이터를 장바구니 스크롤데이터 박스에 메뉴명을 입력하는 용도의 메서드이다.
      */
-    @Deprecated
-    @Override
-    public String toString() {
-        return MENU_NAME.replaceAll("<html><center>", "").replaceAll("<br>", " ").replaceAll("</center></html>", "");
+    private String removeTagOfMenuName() {
+        return MENU_NAME.replaceAll("<html><center>", "")
+                .replaceAll("<br>", " ")
+                .replaceAll("</center></html>", "");
     }
-
-    private String print() {
-        return orderData.toString();
-    }
-
-    private static final long serialVersionUID = 1806232326009833938L;
 }
