@@ -2,46 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcdc7dbd-ebcc-4162-a8b5-7fdd7334f9d6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dev/empkiosk/main/Test.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/.gitignore" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/main/Client.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/main/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/main/Display.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/main/Display.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/main/MainFrame.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/main/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/BackButton.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/BackButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/ImageEdit.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/ImageEdit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/ImageTextButton.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/ImageTextButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/ImageTextPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/ImageTextPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskGuidePanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskGuidePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskVoice.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskVoice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/LangCheck.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/LangCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/Language.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/Language.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/TitleLabel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/TitleLabel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmButton.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderData.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderTotalDataPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderTotalDataPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlace.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlacePage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlacePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartConfirmPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartConfirmPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartScrollPane.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartScrollPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartTitlePanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartTitlePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuButton.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTab.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTablePanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTablePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuType.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPlace.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPlace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/SelectedMenuList.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/SelectedMenuList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/card/PaymentCardPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/card/PaymentCardPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/card/PaymentCardPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/card/PaymentCardPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/place/PayPlace.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/place/PayPlace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/place/PaymentPlacePage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/place/PaymentPlacePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/thank/ThankPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/thank/ThankPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/welcome/WelcomePage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/welcome/WelcomePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/util/KioskAudioPlayer.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/util/KioskAudioPlayer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,117 +29,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KioskGuidePanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/KioskGuidePanel.java">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/main/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KioskPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/KioskPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="66" column="17" lean-forward="false" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KioskVoice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/KioskVoice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LangCheck.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/LangCheck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Language.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/Language.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TitleLabel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/TitleLabel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="52" column="23" lean-forward="false" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KioskAudioPlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/util/KioskAudioPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675">
-              <caret line="115" column="47" lean-forward="false" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+            <state relative-caret-position="144">
+              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
               <folding>
-                <element signature="e#6029#6030#0" expanded="true" />
-                <element signature="e#6072#6073#0" expanded="true" />
+                <element signature="e#177#178#0" expanded="true" />
+                <element signature="e#215#216#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderData.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java">
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/main/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="e#344#345#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#398#399#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#447#448#0" expanded="true" />
-                <element signature="e#475#476#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageTextPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/ImageTextPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -189,7 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dev/empkiosk/main/Client.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/main/Display.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/main/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmButton.java" />
@@ -227,6 +114,7 @@
         <option value="$PROJECT_DIR$/src/dev/empkiosk/util/KioskAudioPlayer.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuButton.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java" />
+        <option value="$PROJECT_DIR$/src/dev/empkiosk/main/Client.java" />
       </list>
     </option>
   </component>
@@ -550,7 +438,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Client">
+    <configuration default="false" name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dev.empkiosk.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="dev.empkiosk.main.Client" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="McDonaldKiosk" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -938,6 +846,14 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Client" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Client" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -950,12 +866,20 @@
       <option name="presentableId" value="Default" />
       <updated>1496213496224</updated>
       <workItem from="1496213498800" duration="1874000" />
-      <workItem from="1496218287500" duration="5158000" />
+      <workItem from="1496218287500" duration="5629000" />
     </task>
+    <task id="LOCAL-00001" summary="Commit test">
+      <created>1496227386869</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1496227386869</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7032000" />
+    <option name="totallyTimeSpent" value="7503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -968,22 +892,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1004,6 +930,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1090,14 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/main/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1326,7 +1248,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/ImageTextPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
+        <state relative-caret-position="450">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding />
         </state>
@@ -1364,14 +1286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/KioskVoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/KioskPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="954">
@@ -1401,8 +1315,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="14" selection-end-column="5" />
           <folding>
             <element signature="e#344#345#0" expanded="true" />
             <element signature="e#376#377#0" expanded="true" />
@@ -1411,6 +1325,33 @@
             <element signature="e#447#448#0" expanded="true" />
             <element signature="e#475#476#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/KioskVoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/main/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/main/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
