@@ -23,6 +23,7 @@ import sun.audio.AudioStream;
  * 해당 메뉴버튼을 담당하는 클래스이다.
  */
 public class MenuButton extends JButton {
+
     private static final int BUTTON_WIDTH = KioskPage.PAGE_WIDTH / 5;
     private static final int BUTTON_HEIGHT = KioskPage.PAGE_HEIGHT / 10;
 
@@ -42,7 +43,8 @@ public class MenuButton extends JButton {
      * 분석
      * 메뉴버튼은 실행가능한 KioskAudioPlayer를 가지고 있다
      */
-    private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKisokAudioPlayer("sound/beep.wav");
+    private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer
+            .createKisokAudioPlayer("sound/beep.wav");
 
     /* 잠시 final 지움... */
     private MenuType MENU_TYPE;
@@ -83,9 +85,8 @@ public class MenuButton extends JButton {
     /**
      * create는 물체를 만들때 많이씀(이름이 안좋음). 코드는 가로로 길면 가독성이 안좋음.(특징을 세로로 배치)
      *
-     * @see dev.empkiosk.page.order.MenuButton#getDefinedTitle()
-     * <p>
-     * 하지만, 해당 데이터는 이미 OrderData가 담당하고 있는 데이터이므로, 포멧은 OrderData가 담당해야한다.
+     * @see dev.empkiosk.page.order.MenuButton#getDefinedTitle() <p> 하지만, 해당 데이터는 이미 OrderData가 담당하고
+     * 있는 데이터이므로, 포멧은 OrderData가 담당해야한다.
      * @see dev.empkiosk.page.order.OrderData;
      */
     @Deprecated
@@ -157,14 +158,15 @@ public class MenuButton extends JButton {
 				 */
 
                 playSound();
-				/* 음원에 관련된건 음원관련 객체에게 맡긴다. */
+        /* 음원에 관련된건 음원관련 객체에게 맡긴다. */
 //				clickBGMPlayer.play();
                 SelectedMenuList.getInstance().add(new OrderData(removeTagOfMenuName(), PRICE, K_CAL));
 
                 CartPanel.J_LIST.setListData(CartPanel.SELECTED_MENU);
 
                 // JScrollPane의 바를 최 하단으로맞춤
-                CartPanel.scroll.getVerticalScrollBar().setValue(CartPanel.scroll.getVerticalScrollBar().getMaximum());
+                CartPanel.scroll.getVerticalScrollBar()
+                        .setValue(CartPanel.scroll.getVerticalScrollBar().getMaximum());
 
                 CartConfirmPanel.resetDataLabel();
             }
@@ -188,8 +190,8 @@ public class MenuButton extends JButton {
     /**
      * 영문버전일때는 메뉴이름이 여러줄로 나오기때문에
      * 하위의 태그를 제거해주어야 한다.
-     *
-     * 매서드의 사용용도는 메뉴를 선택하였을때 사용데이터를 장바구니 스크롤데이터 박스에 메뉴명을 입력하는 용도의 메서드이다.
+     * <p>
+     * 사용용도는 메뉴를 선택하였을때 사용데이터를 장바구니 스크롤데이터 박스에 메뉴명을 입력하는 용도의 메서드이다.
      */
     private String removeTagOfMenuName() {
         return MENU_NAME.replaceAll("<html><center>", "")
