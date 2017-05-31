@@ -5,8 +5,8 @@ package dev.empkiosk.main;
  * Class Role : 프로그램 실행을 담당한다.
  */
 public class Client {
-	public static void main(String[] args) {
-		MainFrame.showScreen();
-	}
+
+    public static void main(String[] args) {
+        MainFrame.showScreen();
+    }
 }
-	
