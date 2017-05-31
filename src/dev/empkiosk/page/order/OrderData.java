@@ -31,4 +31,13 @@ public class OrderData {
 				append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append(PRICE).append(" || ")
 				.append(K_CAL).append("KCal").toString();
 	}
+	
+	public String toMenuButtonText(String priceTextColor){
+		return new StringBuilder().append("<html><center>")
+				.append(MENU_NAME).append("<br>")
+				.append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append("<font color='")
+				.append(priceTextColor).append("'>")
+				.append(PRICE).append("</font><br>")
+				.append(K_CAL).append("KCal").append("</center></html>").toString();
+	}
 }
