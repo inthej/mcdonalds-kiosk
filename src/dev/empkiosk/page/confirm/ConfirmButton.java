@@ -5,6 +5,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 
+/**
+ * Created by kimjaehyeon
+ * Class Role : ConfirmPage에서 사용되는
+ * 버튼의 rollover 효과를 담당한다.
+ */
 class ConfirmButton extends JButton {
 
     ConfirmButton(String text) {

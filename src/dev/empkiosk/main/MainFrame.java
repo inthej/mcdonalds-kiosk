@@ -24,6 +24,7 @@ public final class MainFrame extends JFrame {
 
     private MainFrame() {
         super(TITLE);
+
         initMainFrame();
     }
 
@@ -56,6 +57,4 @@ public final class MainFrame extends JFrame {
     static void showScreen() {
         UNIQUE_INSTANCE.setVisible(true);
     }
-
-    private static final long serialVersionUID = -3282146341363140785L;
 }

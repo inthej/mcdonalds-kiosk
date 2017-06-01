@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 
 /**
  * Create by kimjaehyeon on 2017. 5. 19
- * Class Role : 이미지관련된 편집을 담당한다.
+ * Class Role : 이미지 편집을 담당한다.
  * <p>
  * 기능-
  * 1. 이미지아이콘을 리사이징 한다.

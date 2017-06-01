@@ -65,6 +65,12 @@ public class CartPanel extends JPanel {
         cartStatus();
     }
 
+    public static void clearOrderData() {
+        ORDER_DATA_LIST.clear();
+        ORDER_SCROLL_PANEL.setJListOrderList();
+        ORDER_CONFIRM_PANEL.refleshData();
+    }
+
     private static void cartStatus() {
         ORDER_SCROLL_PANEL.setJListOrderList();
         ORDER_SCROLL_PANEL.scrollDown();

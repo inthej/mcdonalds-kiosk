@@ -4,7 +4,7 @@ import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.ImageEdit;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.page.LangCheck;
+import dev.empkiosk.language.LangCheck;
 import dev.empkiosk.page.confirm.ConfirmPage;
 import dev.empkiosk.page.thank.ThankPage;
 
@@ -24,12 +24,12 @@ public class PaymentCardPage extends KioskPage {
     private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
     public PaymentCardPage() {
-        initPaymentCardPage();
+        initPage();
         initPaymentCardPanel();
         setListener();
     }
 
-    private void initPaymentCardPage() {
+    private void initPage() {
         this.setBackgroundImg("image/bg_green.png");
         this.showBackgroundImg(true);
         this.showBackButton(true);

@@ -12,10 +12,18 @@ import javax.swing.JPanel;
 
 /**
  * Create by kimjaehyeon on 2017. 5. 16
- * Class Role : MainFrame 에서 사용되는 패널
- * 1. 배경화면 표시여부를 제공한다.
- * 2. 배경화면 이미지파일 경로 설정을 제공한다.
- * 3. 백버튼 표시여부가 가능하다.
+ * Class Role : MainFrame 에서 사용되는 Page 패널이다.
+ *
+ * 특징 :
+ * 1. 인스턴스를 생성할 수 없는 abstract class 이다.
+ * 2. Layout 을 가지고 있지 않다.(null)
+ * 3. 백 버튼을 가지고 있다.
+ * 4. 배경화면을 가지고 있으며 Background 이미지를 지정할 경우에만 표시가 가능하다.
+ *
+ * 기능 :
+ * 1. 배경화면 이미지파일 경로 설정을 제공한다.
+ * 2. 배경화면 표시 기능을 제공한다.
+ * 3. 백버튼 표시 기능을 제공한다.
  */
 public abstract class KioskPage extends JPanel {
 
@@ -29,10 +37,10 @@ public abstract class KioskPage extends JPanel {
     private String backgroundImg;
 
     public KioskPage() {
-        initPage();
+        initKioskPage();
     }
 
-    private void initPage() {
+    private void initKioskPage() {
         this.setLayout(null);
         this.setSize(PAGE_WIDTH, PAGE_HEIGHT);
         this.setLocation(0, 0);
@@ -45,10 +53,8 @@ public abstract class KioskPage extends JPanel {
 
     /* 배경이미지 표시 여부 */
     protected void showBackgroundImg(boolean bool) {
-        if (bool != isBackgroundImg) {
-            if (bool && backgroundImg != null) {
-                isBackgroundImg = bool;
-            }
+        if (bool && backgroundImg != null) {
+            isBackgroundImg = bool;
         }
     }
 
@@ -72,6 +78,4 @@ public abstract class KioskPage extends JPanel {
             }
         }
     }
-
-    private static final long serialVersionUID = 1597979454780430547L;
 }

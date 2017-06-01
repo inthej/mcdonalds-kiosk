@@ -2,13 +2,11 @@ package dev.empkiosk.page.order;
 
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.page.LangCheck;
+import dev.empkiosk.language.LangCheck;
 import dev.empkiosk.page.confirm.ConfirmPage;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -82,8 +80,7 @@ class OrderConfirmPanel extends JPanel {
 
     private void setListener() {
         CANCLE_BUTTON.addActionListener((e) -> {
-            ORDER_DATA_LIST.clear();
-            refleshData();
+            CartPanel.clearOrderData();
         });
 
         PAYMENT_BUTTON.addActionListener((e) -> {

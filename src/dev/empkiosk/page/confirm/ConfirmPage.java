@@ -1,10 +1,13 @@
 package dev.empkiosk.page.confirm;
 
+import java.awt.Color;
+import java.awt.Component;
+
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.KioskGuidePanel;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.page.LangCheck;
+import dev.empkiosk.language.LangCheck;
 import dev.empkiosk.page.eatplace.EatPlace;
 import dev.empkiosk.page.order.OrderDataList;
 import dev.empkiosk.page.order.OrderPage;
@@ -12,9 +15,6 @@ import dev.empkiosk.page.order.OrderPlace;
 import dev.empkiosk.page.payment.card.PaymentCardPage;
 import dev.empkiosk.page.payment.place.PayPlace;
 import dev.empkiosk.page.thank.ThankPage;
-
-import java.awt.Color;
-import java.awt.Component;
 
 /**
  * Create by kimjaehyeon on 2017. 5. 25
@@ -42,20 +42,21 @@ public class ConfirmPage extends KioskPage {
 
     public ConfirmPage(OrderDataList orderDataList) {
         this.orderDataList = orderDataList;
-        initConfirmPage();
+
+        initPage();
         initOrderTotalListPanel();
         initYesNoSelectPanel();
         setListener();
     }
 
     public ConfirmPage() {
-        initConfirmPage();
+        initPage();
         initOrderTotalListPanel();
         initYesNoSelectPanel();
         setListener();
     }
 
-    private void initConfirmPage() {
+    private void initPage() {
         this.setBackgroundImg("image/bg_green.png");
         this.showBackgroundImg(true);
         this.showBackButton(false);

@@ -5,7 +5,7 @@ import dev.empkiosk.page.ImageTextButton;
 import dev.empkiosk.page.KioskGuidePanel;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.page.LangCheck;
+import dev.empkiosk.language.LangCheck;
 import dev.empkiosk.page.eatplace.EatPlacePage;
 import dev.empkiosk.page.order.OrderPage;
 import dev.empkiosk.page.order.OrderPlace;
@@ -30,12 +30,12 @@ public class PaymentPlacePage extends KioskPage {
     private final ImageTextButton CARD_BUTTON = new ImageTextButton();
 
     public PaymentPlacePage() {
-        initPaymentPlacePage();
+        initPage();
         initPaymentSelectPanel();
         setListeners();
     }
 
-    private void initPaymentPlacePage() {
+    private void initPage() {
         this.setBackgroundImg("image/bg_green.png");
         this.showBackgroundImg(true);
         this.showBackButton(true);

@@ -1,11 +1,13 @@
 package dev.empkiosk.page;
 
+import dev.empkiosk.language.LangCheck;
+
 import java.awt.Color;
 import javax.swing.JButton;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 16..
- * Class Role : 페이지에서 사용되는 백버튼의 디자인 및 상태를 설정한다.
+ * Class Role : KioskPage에서 사용되는 백버튼의 디자인 및 상태를 설정한다.
  */
 public class BackButton extends JButton {
 
@@ -26,6 +28,4 @@ public class BackButton extends JButton {
                 KioskPage.PAGE_HEIGHT - (KioskPage.PAGE_HEIGHT - this.getHeight()));
         this.setBackground(BACKGROUND_COLOR);
     }
-
-    private static final long serialVersionUID = 2535159124076942969L;
 }

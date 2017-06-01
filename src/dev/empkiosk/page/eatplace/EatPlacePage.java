@@ -5,8 +5,8 @@ import dev.empkiosk.page.ImageTextButton;
 import dev.empkiosk.page.KioskGuidePanel;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.page.LangCheck;
-import dev.empkiosk.page.Language;
+import dev.empkiosk.language.LangCheck;
+import dev.empkiosk.language.Language;
 import dev.empkiosk.page.order.OrderPlace;
 import dev.empkiosk.page.payment.place.PaymentPlacePage;
 import dev.empkiosk.page.welcome.WelcomePage;
@@ -106,6 +106,4 @@ public class EatPlacePage extends KioskPage {
             MainFrame.attachPanel(new EatPlacePage());
         });
     }
-
-    private static final long serialVersionUID = 8863747896450914982L;
 }

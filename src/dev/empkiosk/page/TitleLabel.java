@@ -53,6 +53,4 @@ public class TitleLabel extends JLabel {
                 BorderFactory.createEmptyBorder(PADDING_TOP, PADDING_LEFT, PADDING_BOTTOM, PADDING_RIGHT));
         this.setForeground(TEXT_COLOR);
     }
-
-    private static final long serialVersionUID = 7133079429149467742L;
 }

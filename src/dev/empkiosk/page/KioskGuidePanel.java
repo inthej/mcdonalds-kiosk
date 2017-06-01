@@ -8,9 +8,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * Class Role : 프로그램에서 공통적으로 사용되고 있는 가이드 패널이다.
- * 가이드패널은 BorderLayout형식을 가지고 있으며
- * 상단 타이틀(TitleLabel)바, 중간 그리드레이아웃 형식의 아이템 패널로 구성되어 있다.
+ * Class Role : KioskPage에서 공통적으로 사용되고 있는 가이드 패널이다.
+ *
+ * 특징 :
+ * 1. BorderLayout 형태를 가지고 있다.
+ * 2. 상단 타이틀 라벨과 중간의 GridLayout 형태의 아이템 패널로 구성된 형태와
+ *  상단 타이틀 라벨이 없는 2가지의 사용형태가 존재한다.
+ * 3. 생성자에서 아이템 패널의 GridLayout의 행과 열을 지정 한다.
+ *
+ * 기능 :
+ * 1. 아이탬 패널에 아이탬을 추가할수 있는 기능을 제공한다.
+ * 2. 상단 타이틀 라벨의 텍스트 색상을 지정 할 수 있는 기능을 제공한다.
  */
 public class KioskGuidePanel {
 
