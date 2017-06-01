@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -15,47 +14,47 @@ import javax.swing.JPanel;
  */
 public class KioskGuidePanel {
 
-    private static final Color BACKGROUND_COLOR = Color.BLACK;
+  private static final Color BACKGROUND_COLOR = Color.BLACK;
 
-    private final JPanel GUIDE_PANEL = new JPanel();
-    private final JPanel ITEM_PANEL = new JPanel();
+  private final JPanel GUIDE_PANEL = new JPanel();
+  private final JPanel ITEM_PANEL = new JPanel();
 
-    public KioskGuidePanel(final int itemRow, final int itemCol) {
-        this(null, itemRow, itemCol);
+  public KioskGuidePanel(final int itemRow, final int itemCol) {
+    this(null, itemRow, itemCol);
+  }
+
+  public KioskGuidePanel(String title, final int itemRow, final int itemCol) {
+    initGuidePanel(title);
+    initItemPanel(itemRow, itemCol);
+  }
+
+  private void initGuidePanel(String title) {
+    GUIDE_PANEL.setLayout(new BorderLayout());
+    GUIDE_PANEL.setBackground(BACKGROUND_COLOR);
+    if (title != null) {
+      GUIDE_PANEL.add(new TitleLabel(title, JLabel.CENTER), BorderLayout.NORTH);
     }
 
-    public KioskGuidePanel(String title, final int itemRow, final int itemCol) {
-        initGuidePanel(title);
-        initItemPanel(itemRow, itemCol);
-    }
+    GUIDE_PANEL.add(ITEM_PANEL, BorderLayout.CENTER);
+  }
 
-    private void initGuidePanel(String title) {
-        GUIDE_PANEL.setLayout(new BorderLayout());
-        GUIDE_PANEL.setBackground(BACKGROUND_COLOR);
-        if (title != null) {
-            GUIDE_PANEL.add(new TitleLabel(title, JLabel.CENTER), BorderLayout.NORTH);
-        }
+  private void initItemPanel(final int row, final int col) {
+    ITEM_PANEL.setLayout(new GridLayout(row, col));
+  }
 
-        GUIDE_PANEL.add(ITEM_PANEL, BorderLayout.CENTER);
+  public void addItem(Component... comps) {
+    for (Component comp : comps) {
+      ITEM_PANEL.add(comp);
     }
+  }
 
-    private void initItemPanel(final int row, final int col) {
-        ITEM_PANEL.setLayout(new GridLayout(row, col));
+  public void setTitleColor(Color color) {
+    if (GUIDE_PANEL.getComponentCount() == 2) {
+      GUIDE_PANEL.getComponent(0).setForeground(color);
     }
+  }
 
-    public void addItem(Component... comps) {
-        for (Component comp : comps) {
-            ITEM_PANEL.add(comp);
-        }
-    }
-
-    public void setTitleColor(Color color) {
-        if (GUIDE_PANEL.getComponentCount() == 2) {
-            GUIDE_PANEL.getComponent(0).setForeground(color);
-        }
-    }
-
-    public Component getPanel() {
-        return GUIDE_PANEL;
-    }
+  public Component getPanel() {
+    return GUIDE_PANEL;
+  }
 }

@@ -6,7 +6,7 @@ package dev.empkiosk.main;
  */
 public class Client {
 
-    public static void main(String[] args) {
-        MainFrame.showScreen();
-    }
+  public static void main(String[] args) {
+    MainFrame.showScreen();
+  }
 }

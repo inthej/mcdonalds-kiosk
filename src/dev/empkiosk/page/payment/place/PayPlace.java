@@ -1,10 +1,10 @@
 package dev.empkiosk.page.payment.place;
 
 public enum PayPlace {
-    COUNTER, KIOSK;
+  COUNTER, KIOSK;
 
-    @Override
-    public String toString() {
-        return this.name();
-    }
+  @Override
+  public String toString() {
+    return this.name();
+  }
 }
