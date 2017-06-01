@@ -9,7 +9,9 @@ import javax.swing.JPanel;
  */
 public class CartPanel extends JPanel {
 
+  /* 주문 장바구니 리스트 */
   private static final OrderDataList ORDER_DATA_LIST = new OrderDataList();
+
   private static final OrderTitlePanel ORDER_TITLE_PANEL = new OrderTitlePanel();
   private static final OrderScrollPanel ORDER_SCROLL_PANEL = new OrderScrollPanel(ORDER_DATA_LIST);
   private static final OrderConfirmPanel ORDER_CONFIRM_PANEL = new OrderConfirmPanel(
@@ -24,8 +26,6 @@ public class CartPanel extends JPanel {
     initOrderScrollPanel();
 
     initOrderConfirmPanel();
-
-//        setListener();
   }
 
   private void initOrderTitlePanel() {
@@ -49,38 +49,24 @@ public class CartPanel extends JPanel {
     this.add(ORDER_CONFIRM_PANEL);
   }
 
-//    // 여기서 해야하는지?
-//    private void setListener() {
-//        ORDER_CONFIRM_PANEL.getCancleButton().addActionListener((args) -> {
-//            emptyOrderData();
-//            ORDER_SCROLL_PANEL.scrollDown();
-//            ORDER_CONFIRM_PANEL.refleshData();
-//        });
-//
-//        ORDER_CONFIRM_PANEL.getPaymentButton().addActionListener((args) -> {
-//            if (ORDER_DATA_LIST.getOrderQuantity() == 0) {
-//                KioskVoice.playSound(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
-//            } else {
-//                MainFrame.attachPanel(new ConfirmPage());
-//            }
-//        });
-//    }
-
-  OrderScrollPanel getOrderScrollPanel() {
-    return ORDER_SCROLL_PANEL;
-  }
-
-  OrderConfirmPanel getOrderConfirmPanel() {
-    return ORDER_CONFIRM_PANEL;
-  }
-
   // 주문 넣기
-  void addOrderData(OrderData orderData) {
+  static void addOrder(OrderData orderData) {
+    // 데이터추가
     ORDER_DATA_LIST.add(orderData);
+
+    cartStatus();
   }
 
   // 주문 비우기
-  public void emptyOrderData() {
+  static void emptyOrder() {
     ORDER_DATA_LIST.clear();
+
+    cartStatus();
+  }
+
+  private static void cartStatus() {
+    ORDER_SCROLL_PANEL.setJListOrderList();
+    ORDER_SCROLL_PANEL.scrollDown();
+    ORDER_CONFIRM_PANEL.refleshData();
   }
 }

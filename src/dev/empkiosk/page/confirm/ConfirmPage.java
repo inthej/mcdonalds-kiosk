@@ -6,6 +6,7 @@ import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
 import dev.empkiosk.page.LangCheck;
 import dev.empkiosk.page.eatplace.EatPlace;
+import dev.empkiosk.page.order.OrderDataList;
 import dev.empkiosk.page.order.OrderPage;
 import dev.empkiosk.page.order.OrderPlace;
 import dev.empkiosk.page.payment.card.PaymentCardPage;
@@ -27,14 +28,24 @@ public class ConfirmPage extends KioskPage {
   // 가운데 패널
   private final KioskGuidePanel ORDER_CONFIRM_GUIDE_PANEL = new KioskGuidePanel(
       LangCheck.isKorean() ? "주문을 확인해주세요" : "IS THIS ORDER CORRECT?", 0, 1);
-  private final OrderData[] array = {new OrderData("ddd", 2, 2), new OrderData("ass", 1, 1)};
+  //  private final OrderData[] array = {new OrderData("ddd", 2, 2), new OrderData("ass", 1, 1)};
+
+  private OrderDataList orderDataList =new OrderDataList();
   private final OrderTotalDataPanel ORDER_TOTAL_LIST_PANEL = new OrderTotalDataPanel(
-      EatPlace.EAT_IN, array);
+      EatPlace.EAT_IN, orderDataList);
 
   // 하단 패널
   private final KioskGuidePanel YES_NO_SELECT_PANEL = new KioskGuidePanel(0, 2);
   private final ConfirmButton NO_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "취소" : "NO");
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
+
+  public ConfirmPage(OrderDataList orderDataList) {
+    this.orderDataList = orderDataList;
+    initConfirmPage();
+    initOrderTotalListPanel();
+    initYesNoSelectPanel();
+    setListener();
+  }
 
   public ConfirmPage() {
     initConfirmPage();

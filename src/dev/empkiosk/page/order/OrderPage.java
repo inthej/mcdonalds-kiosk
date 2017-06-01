@@ -68,7 +68,7 @@ public class OrderPage extends KioskPage {
       public void actionPerformed(ActionEvent e) {
         MainFrame.attachPanel(new PaymentPlacePage());
         new OrderDataList().clear();
-        cartPanel.emptyOrderData();
+        cartPanel.emptyOrder();
       }
     });
   }

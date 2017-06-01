@@ -6,6 +6,8 @@ import dev.empkiosk.page.LangCheck;
 import dev.empkiosk.page.confirm.ConfirmPage;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,15 +31,18 @@ class OrderConfirmPanel extends JPanel {
   OrderConfirmPanel(OrderDataList orderDataList) {
     this.ORDER_DATA_LIST = orderDataList;
 
-    this.setLayout(new GridLayout(0, 4));
-    this.setBackground(BACKGROUND_COLOR);
-
+    initOrderConfirmPanel();
     initOrderTextLabel();
     initOrderDataLabel();
     initCancleButton();
     initPaymentButton();
 
     setListener();
+  }
+
+  private void initOrderConfirmPanel() {
+    this.setLayout(new GridLayout(0, 4));
+    this.setBackground(BACKGROUND_COLOR);
   }
 
 
@@ -75,16 +80,16 @@ class OrderConfirmPanel extends JPanel {
   }
 
   private void setListener() {
-    CANCLE_BUTTON.addActionListener((args) -> {
+    CANCLE_BUTTON.addActionListener((e)-> {
       ORDER_DATA_LIST.clear();
       refleshData();
     });
 
-    PAYMENT_BUTTON.addActionListener((args) -> {
+    PAYMENT_BUTTON.addActionListener((e) -> {
       if (ORDER_DATA_LIST.getOrderQuantity() == 0) {
         KioskVoice.playSound(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
       } else {
-        MainFrame.attachPanel(new ConfirmPage());
+        MainFrame.attachPanel(new ConfirmPage(ORDER_DATA_LIST));
       }
     });
   }

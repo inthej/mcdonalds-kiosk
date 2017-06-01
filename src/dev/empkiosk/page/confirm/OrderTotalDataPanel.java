@@ -1,6 +1,8 @@
 package dev.empkiosk.page.confirm;
 
 import dev.empkiosk.page.eatplace.EatPlace;
+import dev.empkiosk.page.order.OrderData;
+import dev.empkiosk.page.order.OrderDataList;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
@@ -11,11 +13,11 @@ import javax.swing.JScrollPane;
 class OrderTotalDataPanel extends JPanel {
 
   private final EatPlace eatPlace;
-  private final OrderData[] orderDataArray;
+  private final OrderDataList ORDER_DATA_LIST;
 
-  OrderTotalDataPanel(EatPlace eatPlace, OrderData[] orderDataArray) {
+  OrderTotalDataPanel(EatPlace eatPlace, OrderDataList orderDataList) {
     this.eatPlace = eatPlace;
-    this.orderDataArray = orderDataArray;
+    this.ORDER_DATA_LIST = orderDataList;
 
     initPanel();
   }
@@ -23,7 +25,7 @@ class OrderTotalDataPanel extends JPanel {
   // 패널 초기화
   private void initPanel() {
     this.setLayout(new BorderLayout());
-    this.add(new JScrollPane(new JList<OrderData>(orderDataArray)), BorderLayout.CENTER);
+    this.add(new JScrollPane(new JList<OrderData>(ORDER_DATA_LIST.getVector())), BorderLayout.CENTER);
     this.add(createTotalListPanel(), BorderLayout.SOUTH);
   }
 
@@ -32,29 +34,11 @@ class OrderTotalDataPanel extends JPanel {
     JPanel totalListPanel = new JPanel();
     totalListPanel.setLayout(new GridLayout(0, 4));
     totalListPanel.add(new JLabel("나의주문 : " + eatPlace.toString(), JLabel.CENTER));
-    totalListPanel.add(new JLabel("주문수량 : " + orderDataArray.length, JLabel.CENTER));
-    totalListPanel.add(new JLabel("주문금액 : " + getTotalAmount(), JLabel.CENTER));
-    totalListPanel.add(new JLabel("총 칼로리 : " + getTotalKCal(), JLabel.CENTER));
+    totalListPanel.add(new JLabel("주문수량 : " + ORDER_DATA_LIST.getOrderQuantity(), JLabel.CENTER));
+    totalListPanel.add(new JLabel("주문금액 : " + ORDER_DATA_LIST.getOrderAmount(), JLabel.CENTER));
+    totalListPanel.add(new JLabel("총 칼로리 : " + ORDER_DATA_LIST.getOrderKCal(), JLabel.CENTER));
 
     return totalListPanel;
-  }
-
-  private int getTotalAmount() {
-    int totalAmount = 0;
-    for (OrderData data : orderDataArray) {
-      totalAmount += data.PRICE;
-    }
-
-    return totalAmount;
-  }
-
-  private int getTotalKCal() {
-    int totalKCal = 0;
-    for (OrderData data : orderDataArray) {
-      totalKCal += data.K_CAL;
-    }
-
-    return totalKCal;
   }
 
   private static final long serialVersionUID = -8252111445137027819L;

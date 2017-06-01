@@ -17,16 +17,12 @@ public class MenuButton extends JButton {
     private static final int BUTTON_WIDTH = KioskPage.PAGE_WIDTH / 5;
     private static final int BUTTON_HEIGHT = KioskPage.PAGE_HEIGHT / 10;
 
-    private static final CartPanel CART_PANEL = new CartPanel();
-
     private static final String PRICE_FONT_COLOR = "red";
 
     private final String IMG_PATH;
     private final OrderData ORDER_DATA;
-    private final OrderDataList ORDER_DATA_LIST = new OrderDataList();
 
     private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKioskAudioPlayer("sound/beep.wav");
-
 
     MenuButton(String imgPath, OrderData ORDER_DATA) {
         this.IMG_PATH = imgPath;
@@ -48,23 +44,11 @@ public class MenuButton extends JButton {
 
     private void setListener() {
         this.addActionListener((e) -> {
-            /*
-             * TODO
-             * 사운드
-             * 주문데이터 입력
-             * 화면갱신 & 스크롤 최하단
-             */
-
             /* 음원에 관련된건 음원관련 객체에게 맡긴다. */
             clickBGMPlayer.play();
 
-            // 주문데이터를 장바구니에 넣는다.
-            ORDER_DATA_LIST.add(ORDER_DATA);
-//            CART_PANEL.addOrderData(ORDER_DATA);
-//
-//            // 스크롤바를 최하단 & 데이터라벨 갱신.
-//            CART_PANEL.getOrderScrollPanel().scrollDown();
-//            CART_PANEL.getOrderConfirmPanel().refleshData();
+            // 주문데이터를 넣는다.
+            CartPanel.addOrder(ORDER_DATA);
         });
     }
 }

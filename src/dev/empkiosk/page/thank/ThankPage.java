@@ -61,7 +61,7 @@ public class ThankPage extends KioskPage {
   private void initOrderData() {
     OrderPlace.getInstance().init();
     ORDER_DATA_LIST.clear();
-    cartPanel.emptyOrderData();
+//    cartPanel.emptyOrder();
   }
 
   private void setListener() {
