@@ -1,10 +1,10 @@
 package dev.empkiosk.page;
 
 public enum Language {
-  KOREAN, ENGLISH;
+    KOREAN, ENGLISH;
 
-  @Override
-  public String toString() {
-    return this.name();
-  }
+    @Override
+    public String toString() {
+        return this.name();
+    }
 }

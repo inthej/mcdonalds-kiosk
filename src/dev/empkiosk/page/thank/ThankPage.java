@@ -10,6 +10,7 @@ import dev.empkiosk.page.order.OrderDataList;
 import dev.empkiosk.page.order.OrderPlace;
 import dev.empkiosk.page.payment.place.PayPlace;
 import dev.empkiosk.page.welcome.WelcomePage;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
@@ -22,56 +23,56 @@ import javax.swing.ImageIcon;
  */
 public class ThankPage extends KioskPage {
 
-  CartPanel cartPanel = new CartPanel();
-  final OrderDataList ORDER_DATA_LIST = new OrderDataList();
+    CartPanel cartPanel = new CartPanel();
+    final OrderDataList ORDER_DATA_LIST = new OrderDataList();
 
-  private final ImageTextPanel THANK_IMG_TEXT_PANEL = new ImageTextPanel(
-      new ImageIcon("image/bg_info3.jpg"),
-      LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
+    private final ImageTextPanel THANK_IMG_TEXT_PANEL = new ImageTextPanel(
+            new ImageIcon("image/bg_info3.jpg"),
+            LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
-  public ThankPage() {
-    initPage();
-    initThankImgTextPanel();
-    initOrderData();
-    setListener();
-  }
-
-  private void initPage() {
-    this.showBackgroundImg(false);
-    this.showBackButton(false);
-
-    String orderPlace = OrderPlace.getInstance().getPayPlace();
-    if (orderPlace == PayPlace.COUNTER.toString()) {
-      KioskVoice.playSound(LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
-    } else if (orderPlace == PayPlace.KIOSK.toString()) {
-      KioskVoice.playSound(LangCheck.isKorean() ? "sound/thank.wav" : "sound/thank_eng.wav");
+    public ThankPage() {
+        initPage();
+        initThankImgTextPanel();
+        initOrderData();
+        setListener();
     }
-  }
 
-  private void initThankImgTextPanel() {
-    THANK_IMG_TEXT_PANEL.setTextBackground(Color.BLUE);
+    private void initPage() {
+        this.showBackgroundImg(false);
+        this.showBackButton(false);
 
-    Component thankImgTextPanel = THANK_IMG_TEXT_PANEL.getPanel();
-    thankImgTextPanel.setSize(KioskPage.PAGE_WIDTH, KioskPage.PAGE_HEIGHT);
-    thankImgTextPanel.setLocation(0, 0);
+        String orderPlace = OrderPlace.getInstance().getPayPlace();
+        if (orderPlace == PayPlace.COUNTER.toString()) {
+            KioskVoice.playSound(LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
+        } else if (orderPlace == PayPlace.KIOSK.toString()) {
+            KioskVoice.playSound(LangCheck.isKorean() ? "sound/thank.wav" : "sound/thank_eng.wav");
+        }
+    }
 
-    this.add(thankImgTextPanel);
-  }
+    private void initThankImgTextPanel() {
+        THANK_IMG_TEXT_PANEL.setTextBackground(Color.BLUE);
 
-  private void initOrderData() {
-    OrderPlace.getInstance().init();
-    ORDER_DATA_LIST.clear();
+        Component thankImgTextPanel = THANK_IMG_TEXT_PANEL.getPanel();
+        thankImgTextPanel.setSize(KioskPage.PAGE_WIDTH, KioskPage.PAGE_HEIGHT);
+        thankImgTextPanel.setLocation(0, 0);
+
+        this.add(thankImgTextPanel);
+    }
+
+    private void initOrderData() {
+        OrderPlace.getInstance().init();
+        ORDER_DATA_LIST.clear();
 //    cartPanel.emptyOrder();
-  }
+    }
 
-  private void setListener() {
-    this.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        MainFrame.attachPanel(new WelcomePage());
-      }
-    });
-  }
+    private void setListener() {
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                MainFrame.attachPanel(new WelcomePage());
+            }
+        });
+    }
 
-  private static final long serialVersionUID = 1859203669102728390L;
+    private static final long serialVersionUID = 1859203669102728390L;
 }

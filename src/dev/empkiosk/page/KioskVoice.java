@@ -7,25 +7,25 @@ import javax.sound.sampled.Clip;
 
 public final class KioskVoice {
 
-  private static Clip clip = null;
+    private static Clip clip = null;
 
-  private KioskVoice() {
-  }
-
-  // 소리재생
-  public synchronized static void playSound(String path) {
-    if (clip != null) {
-      clip.stop(); // 소리중지
+    private KioskVoice() {
     }
 
-    try {
-      AudioInputStream ais = AudioSystem.getAudioInputStream(new File(path));
-      clip = AudioSystem.getClip();
-      clip.open(ais);
-      clip.start();
+    // 소리재생
+    public synchronized static void playSound(String path) {
+        if (clip != null) {
+            clip.stop(); // 소리중지
+        }
 
-    } catch (Exception e) {
-      e.printStackTrace();
+        try {
+            AudioInputStream ais = AudioSystem.getAudioInputStream(new File(path));
+            clip = AudioSystem.getClip();
+            clip.open(ais);
+            clip.start();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
