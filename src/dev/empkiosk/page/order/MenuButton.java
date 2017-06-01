@@ -25,6 +25,8 @@ public class MenuButton extends JButton {
     private final OrderData ORDER_DATA;
 
     private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKioskAudioPlayer("sound/beep.wav");
+    private final OrderDataList ORDER_DATA_LIST = new OrderDataList();
+    private final CartPanel CART_PANEL = new CartPanel();
 
     MenuButton(String imgPath, OrderData ORDER_DATA) {
         this.IMG_PATH = imgPath;
@@ -39,6 +41,7 @@ public class MenuButton extends JButton {
         this.setText(ORDER_DATA.toMenuButtonText(PRICE_FONT_COLOR));
         this.setHorizontalTextPosition(SwingConstants.CENTER);
         this.setVerticalTextPosition(SwingConstants.BOTTOM);
+
         this.setBackground(Color.WHITE);
         this.setBorderPainted(false);
     }
@@ -55,14 +58,12 @@ public class MenuButton extends JButton {
             /* 음원에 관련된건 음원관련 객체에게 맡긴다. */
             clickBGMPlayer.play();
 
-            SelectedMenuList.getInstance().add(ORDER_DATA);
+            // 주문데이터를 장바구니에 넣는다.
+            CART_PANEL.addOrderData(ORDER_DATA);
 
-            CartPanel.J_LIST.setListData(CartPanel.SELECTED_MENU);
-
-            // JScrollPane의 바를 최 하단으로맞춤
-            CartPanel.scroll.getVerticalScrollBar().setValue(CartPanel.scroll.getVerticalScrollBar().getMaximum());
-
-            CartConfirmPanel.resetDataLabel();
+            // 스크롤바를 최하단 & 데이터라벨 갱신.
+            CART_PANEL.getOrderScrollPanel().scrollDown();
+            CART_PANEL.getOrderConfirmPanel().refleshDataLabel();
         });
     }
 }

@@ -20,11 +20,8 @@ import dev.empkiosk.page.payment.place.PaymentPlacePage;
  */
 public class OrderPage extends KioskPage {
 
-    // 상단 높이
     public static int TOP_HEIGHT = KioskPage.PAGE_HEIGHT / 5;
-    // 중간 높이
     public static int CENTER_HEIGHT = KioskPage.PAGE_HEIGHT * 3 / 5;
-    // 하단 높이
     public static int BOTTOM_HEIGHT = KioskPage.PAGE_HEIGHT / 5;
 
     private final JLabel TOP_IMG = new JLabel(
@@ -72,8 +69,8 @@ public class OrderPage extends KioskPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MainFrame.attachPanel(new PaymentPlacePage());
-                SelectedMenuList.getInstance().empty();
-                CartPanel.emptyCart();
+                new OrderDataList().clear();
+                cartPanel.emptyOrderData();
             }
         });
     }

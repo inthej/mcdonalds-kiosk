@@ -12,7 +12,7 @@ import dev.empkiosk.page.eatplace.EatPlace;
 import dev.empkiosk.page.order.CartPanel;
 import dev.empkiosk.page.order.OrderPage;
 import dev.empkiosk.page.order.OrderPlace;
-import dev.empkiosk.page.order.SelectedMenuList;
+import dev.empkiosk.page.order.OrderDataList;
 import dev.empkiosk.page.payment.card.PaymentCardPage;
 import dev.empkiosk.page.payment.place.PayPlace;
 import dev.empkiosk.page.thank.ThankPage;
@@ -86,8 +86,8 @@ public class ConfirmPage extends KioskPage {
         this.YES_BUTTON.addActionListener((args) -> {
             if (OrderPlace.getInstance().getPayPlace() == PayPlace.COUNTER.toString()) {
                 MainFrame.attachPanel(new ThankPage());
-                CartPanel.SELECTED_MENU.clear();
-                SelectedMenuList.getInstance().empty();
+//                CartPanel.SELECTED_MENU.clear();
+//                OrderDataList.getInstance().empty();
 
             } else if (OrderPlace.getInstance().getPayPlace() == PayPlace.KIOSK.toString()) {
                 MainFrame.attachPanel(new PaymentCardPage());

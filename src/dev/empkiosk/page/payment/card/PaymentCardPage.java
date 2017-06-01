@@ -1,23 +1,15 @@
 package dev.empkiosk.page.payment.card;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.ImageEdit;
-import dev.empkiosk.page.ImageTextButton;
-import dev.empkiosk.page.KioskGuidePanel;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
 import dev.empkiosk.page.LangCheck;
 import dev.empkiosk.page.confirm.ConfirmPage;
-import dev.empkiosk.page.order.CartPanel;
-import dev.empkiosk.page.order.SelectedMenuList;
 import dev.empkiosk.page.thank.ThankPage;
 
 /**

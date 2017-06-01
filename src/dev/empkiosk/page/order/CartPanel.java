@@ -2,11 +2,8 @@ package dev.empkiosk.page.order;
 
 import java.util.Vector;
 
-import javax.swing.BorderFactory;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.border.Border;
 
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.KioskPage;
@@ -20,66 +17,58 @@ import dev.empkiosk.page.confirm.ConfirmPage;
  */
 public class CartPanel extends JPanel {
 
-    private static final CartTitlePanel CART_TITLE_PANEL = new CartTitlePanel();
-    private static final CartScrollPane SELECTED_MENU_SCROLL = new CartScrollPane();
-    private static final CartConfirmPanel CART_DATA_CONFIRM_PANEL = new CartConfirmPanel();
-
     // 선택 메뉴 리스트
-    private final Vector<String> SELECTED_MENU_LIST = new Vector<>();
+    private final OrderDataList ORDER_DATA_LIST = new OrderDataList();
 
-    public static JScrollPane scroll = new JScrollPane();
-    private Border border = BorderFactory
-            .createTitledBorder(LangCheck.isKorean() ? "선택메뉴" : "Select Menu");
-    public static final JList<String> J_LIST = new JList<>();
-    public static final Vector<String> SELECTED_MENU = new Vector<>();
+    private final OrderTitlePanel ORDER_TITLE_PANEL = new OrderTitlePanel();
+    private final OrderScrollPanel ORDER_SCROLL_PANEL = new OrderScrollPanel(ORDER_DATA_LIST);
+    private final OrderConfirmPanel ORDER_CONFIRM_PANEL = new OrderConfirmPanel(ORDER_DATA_LIST);
+
 
     public CartPanel() {
         // 초기화
         this.setLayout(null);
 
-        initTopPanel();
+        initOrderTitlePanel();
 
-        initBottomPanel();
+        initOrderScrollPanel();
+
+        initOrderConfirmPanel();
 
         setListener();
-
-        J_LIST.setSize(KioskPage.PAGE_WIDTH,
-                OrderPage.BOTTOM_HEIGHT / 2 + OrderPage.BOTTOM_HEIGHT / 4 / 2);
-        J_LIST.setLocation(0, OrderPage.BOTTOM_HEIGHT / 4 - OrderPage.BOTTOM_HEIGHT / 4 / 2);
-        J_LIST.setListData(SELECTED_MENU);
-
-        scroll.setSize(KioskPage.PAGE_WIDTH,
-                OrderPage.BOTTOM_HEIGHT / 2 + OrderPage.BOTTOM_HEIGHT / 4 / 2);
-        scroll.setLocation(0, OrderPage.BOTTOM_HEIGHT / 4 - OrderPage.BOTTOM_HEIGHT / 4 / 2);
-        scroll.setViewportView(J_LIST);
-        scroll.setBorder(border); // 경계 설정
-        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); // 가로바정책
-
-        this.add(scroll);
     }
 
-    private void initTopPanel() {
-        CART_TITLE_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 8);
-        CART_TITLE_PANEL.setLocation(0, 0);
+    private void initOrderTitlePanel() {
+        ORDER_TITLE_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 8);
+        ORDER_TITLE_PANEL.setLocation(0, 0);
 
-        this.add(CART_TITLE_PANEL);
+        this.add(ORDER_TITLE_PANEL);
     }
 
-    private void initBottomPanel() {
-        CART_DATA_CONFIRM_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 4);
-        CART_DATA_CONFIRM_PANEL.setLocation(0, OrderPage.BOTTOM_HEIGHT * 3 / 4);
+    private void initOrderScrollPanel() {
+        ORDER_SCROLL_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT * 5 / 8);
+        ORDER_SCROLL_PANEL.setLocation(0, OrderPage.BOTTOM_HEIGHT / 8);
 
-        this.add(CART_DATA_CONFIRM_PANEL);
+        this.add(ORDER_SCROLL_PANEL);
     }
 
+    private void initOrderConfirmPanel() {
+        ORDER_CONFIRM_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 4);
+        ORDER_CONFIRM_PANEL.setLocation(0, OrderPage.BOTTOM_HEIGHT * 3 / 4);
+
+        this.add(ORDER_CONFIRM_PANEL);
+    }
+
+    // 여기서 해야하는지?
     private void setListener() {
-        CART_DATA_CONFIRM_PANEL.getCancleButton().addActionListener((args) -> {
-            SelectedMenuList.getInstance().empty();
-            emptyCart();
+        ORDER_CONFIRM_PANEL.getCancleButton().addActionListener((args) -> {
+            emptyOrderData();
+            ORDER_SCROLL_PANEL.scrollDown();
+            ORDER_CONFIRM_PANEL.refleshDataLabel();
         });
 
-        CART_DATA_CONFIRM_PANEL.getPaymentButton().addActionListener((args) -> {
-            if (CartPanel.SELECTED_MENU.size() == 0) {
+        ORDER_CONFIRM_PANEL.getPaymentButton().addActionListener((args) -> {
+            if (ORDER_DATA_LIST.getOrderQuantity() == 0) {
                 KioskVoice.playSound(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
             } else {
                 MainFrame.attachPanel(new ConfirmPage());
@@ -87,17 +76,21 @@ public class CartPanel extends JPanel {
         });
     }
 
-    // 메뉴넣기
-    public void addMenu(String menu) {
-        SELECTED_MENU_LIST.add(menu);
+    OrderScrollPanel getOrderScrollPanel() {
+        return ORDER_SCROLL_PANEL;
     }
 
-    // 카드비우기
-    public static void emptyCart() {
-        SELECTED_MENU.clear();
-        J_LIST.setListData(SELECTED_MENU);
-        CART_DATA_CONFIRM_PANEL.resetDataLabel();
+    OrderConfirmPanel getOrderConfirmPanel() {
+        return ORDER_CONFIRM_PANEL;
     }
 
-    private static final long serialVersionUID = -6024864297025960463L;
+    // 주문 넣기
+    void addOrderData(OrderData orderData) {
+        ORDER_DATA_LIST.add(orderData);
+    }
+
+    // 주문 비우기
+    public void emptyOrderData() {
+        ORDER_DATA_LIST.clear();
+    }
 }

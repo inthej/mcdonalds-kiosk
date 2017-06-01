@@ -2,6 +2,7 @@ package dev.empkiosk.page.order;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -12,7 +13,7 @@ import dev.empkiosk.page.LangCheck;
 /**
  * 장바구니 패널의 선택메뉴정보 확인 패널
  */
-class CartConfirmPanel extends JPanel {
+class OrderConfirmPanel extends JPanel {
 
     private static final JLabel ORDER_TEXT_LABEL = new JLabel();
     private static final JLabel ORDER_DATA_LABEL = new JLabel();
@@ -23,9 +24,11 @@ class CartConfirmPanel extends JPanel {
     private static final Color CANCLE_BTN_COLOR = Color.GRAY;
     private static final Color PAYMENT_BTN_COLR = Color.ORANGE;
 
-    private static final SelectedMenuList SELECTED_MENU_LIST = SelectedMenuList.getInstance();
+    private final OrderDataList ORDER_DATA_LIST;
 
-    CartConfirmPanel() {
+    OrderConfirmPanel(OrderDataList orderDataList) {
+        this.ORDER_DATA_LIST = orderDataList;
+
         this.setLayout(new GridLayout(0, 4));
         this.setBackground(BACKGROUND_COLOR);
 
@@ -33,10 +36,14 @@ class CartConfirmPanel extends JPanel {
         initOrderDataLabel();
         initCancleButton();
         initPaymentButton();
+
+        setListener();
     }
 
+
     private void initOrderTextLabel() {
-        ORDER_TEXT_LABEL.setText(LangCheck.isKorean() ? "<html>주문수량<br>주문금액<br>총 칼로리</html>"
+        ORDER_TEXT_LABEL.setText(LangCheck.isKorean()
+                ? "<html>주문수량<br>주문금액<br>총 칼로리</html>"
                 : "<html>Order quantity<br>Order amount<br>Total calories</html>");
         ORDER_TEXT_LABEL.setHorizontalAlignment(JLabel.CENTER);
 
@@ -44,9 +51,10 @@ class CartConfirmPanel extends JPanel {
     }
 
     private void initOrderDataLabel() {
-        ORDER_DATA_LABEL.setText("<html>" + SELECTED_MENU_LIST.getTotalQuantity() + "<br>" +
-                SELECTED_MENU_LIST.getTotalAmount() + "<br>" +
-                SELECTED_MENU_LIST.getTotalKCal() + "</html>");
+        ORDER_DATA_LABEL.setText("<html>" +
+                ORDER_DATA_LIST.getOrderQuantity() + "<br>" +
+                ORDER_DATA_LIST.getOrderAmount() + "<br>" +
+                ORDER_DATA_LIST.getOrderKCal() + "</html>");
         ORDER_DATA_LABEL.setHorizontalAlignment(JLabel.CENTER);
 
         this.add(ORDER_DATA_LABEL);
@@ -66,6 +74,10 @@ class CartConfirmPanel extends JPanel {
         this.add(PAYMENT_BUTTON);
     }
 
+    private void setListener() {
+
+    }
+
     JButton getCancleButton() {
         return CANCLE_BUTTON;
     }
@@ -75,11 +87,10 @@ class CartConfirmPanel extends JPanel {
     }
 
     // 데이터라벨 리셋
-    static void resetDataLabel() {
-        ORDER_DATA_LABEL.setText("<html>" + SELECTED_MENU_LIST.getTotalQuantity() + "<br>" +
-                SELECTED_MENU_LIST.getTotalAmount() + "<br>" +
-                SELECTED_MENU_LIST.getTotalKCal() + "</html>");
+    void refleshDataLabel() {
+        ORDER_DATA_LABEL.setText("<html>" +
+                ORDER_DATA_LIST.getOrderQuantity() + "<br>" +
+                ORDER_DATA_LIST.getOrderAmount() + "<br>" +
+                ORDER_DATA_LIST.getOrderKCal() + "</html>");
     }
-
-    private static final long serialVersionUID = 7272078423558523221L;
 }

@@ -14,7 +14,7 @@ import dev.empkiosk.page.KioskVoice;
 import dev.empkiosk.page.LangCheck;
 import dev.empkiosk.page.order.CartPanel;
 import dev.empkiosk.page.order.OrderPlace;
-import dev.empkiosk.page.order.SelectedMenuList;
+import dev.empkiosk.page.order.OrderDataList;
 import dev.empkiosk.page.payment.place.PayPlace;
 import dev.empkiosk.page.welcome.WelcomePage;
 
@@ -23,6 +23,8 @@ import dev.empkiosk.page.welcome.WelcomePage;
  * Class Role : 주문 완료 안내 페이지
  */
 public class ThankPage extends KioskPage {
+    CartPanel cartPanel =  new CartPanel();
+    final OrderDataList ORDER_DATA_LIST = new OrderDataList();
 
     private final ImageTextPanel THANK_IMG_TEXT_PANEL = new ImageTextPanel(
             new ImageIcon("image/bg_info3.jpg"),
@@ -59,8 +61,8 @@ public class ThankPage extends KioskPage {
 
     private void initOrderData() {
         OrderPlace.getInstance().init();
-        SelectedMenuList.getInstance().empty();
-        CartPanel.emptyCart();
+        ORDER_DATA_LIST.clear();
+        cartPanel.emptyOrderData();
     }
 
     private void setListener() {

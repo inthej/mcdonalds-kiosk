@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.LangCheck;
 
-class CartTitlePanel extends JPanel {
+class OrderTitlePanel extends JPanel {
 
     private static final JLabel MENU_LABEL = new JLabel(LangCheck.isKorean() ? "메뉴" : "MENU",
             JLabel.CENTER);
@@ -21,7 +21,7 @@ class CartTitlePanel extends JPanel {
     private static final Color BACKGROUND_COLOR = Color.BLACK;
     private static final Color FONT_COLOR = Color.WHITE;
 
-    CartTitlePanel() {
+    OrderTitlePanel() {
         initCartTopPanel();
         initLabels();
     }
