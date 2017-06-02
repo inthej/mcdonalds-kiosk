@@ -39,7 +39,7 @@ public class OrderDataList {
 	public int getOrderKCal() {
 		int totalKCal = 0;
 		for (OrderData order : SELECTED_MENU_LIST) {
-			totalKCal += order.getPrice();
+			totalKCal += order.getKCal();
 		}
 
 		return totalKCal;
