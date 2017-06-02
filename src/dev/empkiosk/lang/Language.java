@@ -1,4 +1,4 @@
-package dev.empkiosk.language;
+package dev.empkiosk.lang;
 
 public enum Language {
 	KOREAN, ENGLISH;

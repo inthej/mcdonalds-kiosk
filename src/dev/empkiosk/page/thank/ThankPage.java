@@ -1,10 +1,10 @@
 package dev.empkiosk.page.thank;
 
+import dev.empkiosk.lang.LangCheck;
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.ImageTextPanel;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.language.LangCheck;
 import dev.empkiosk.page.order.CartPanel;
 import dev.empkiosk.page.order.OrderPlace;
 import dev.empkiosk.page.payment.place.PayPlace;

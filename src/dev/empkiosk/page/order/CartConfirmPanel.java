@@ -1,8 +1,8 @@
 package dev.empkiosk.page.order;
 
+import dev.empkiosk.lang.LangCheck;
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.language.LangCheck;
 import dev.empkiosk.page.confirm.ConfirmPage;
 
 import java.awt.Color;

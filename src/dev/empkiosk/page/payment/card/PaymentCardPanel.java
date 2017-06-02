@@ -1,9 +1,9 @@
 package dev.empkiosk.page.payment.card;
 
+import dev.empkiosk.lang.LangCheck;
 import dev.empkiosk.page.ImageEdit;
 import dev.empkiosk.page.ImageTextButton;
 import dev.empkiosk.page.KioskPage;
-import dev.empkiosk.language.LangCheck;
 import dev.empkiosk.page.TitleLabel;
 
 import java.awt.BorderLayout;

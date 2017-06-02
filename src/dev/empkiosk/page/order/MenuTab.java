@@ -1,10 +1,10 @@
 package dev.empkiosk.page.order;
 
-import dev.empkiosk.language.LangCheck;
-
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+
+import dev.empkiosk.lang.LangCheck;
 
 /**
  * Created by kimjaehyeon 

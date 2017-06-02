@@ -1,12 +1,12 @@
 package dev.empkiosk.page.eatplace;
 
+import dev.empkiosk.lang.LangCheck;
+import dev.empkiosk.lang.Language;
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.ImageTextButton;
 import dev.empkiosk.page.KioskGuidePanel;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.language.LangCheck;
-import dev.empkiosk.language.Language;
 import dev.empkiosk.page.order.OrderPlace;
 import dev.empkiosk.page.payment.place.PaymentPlacePage;
 import dev.empkiosk.page.welcome.WelcomePage;

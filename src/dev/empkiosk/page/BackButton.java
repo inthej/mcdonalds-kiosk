@@ -1,9 +1,9 @@
 package dev.empkiosk.page;
 
-import dev.empkiosk.language.LangCheck;
-
 import java.awt.Color;
 import javax.swing.JButton;
+
+import dev.empkiosk.lang.LangCheck;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 16.. 

@@ -1,11 +1,11 @@
 package dev.empkiosk.page.order;
 
-import dev.empkiosk.language.LangCheck;
-
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import dev.empkiosk.lang.LangCheck;
 
 class CartTitlePanel extends JPanel {
 

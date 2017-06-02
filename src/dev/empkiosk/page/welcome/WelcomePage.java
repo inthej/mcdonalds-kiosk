@@ -1,10 +1,10 @@
 package dev.empkiosk.page.welcome;
 
+import dev.empkiosk.lang.LangCheck;
 import dev.empkiosk.main.MainFrame;
 import dev.empkiosk.page.ImageTextPanel;
 import dev.empkiosk.page.KioskPage;
 import dev.empkiosk.page.KioskVoice;
-import dev.empkiosk.language.LangCheck;
 import dev.empkiosk.page.eatplace.EatPlacePage;
 
 import javax.swing.*;

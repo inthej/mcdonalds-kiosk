@@ -1,7 +1,7 @@
 package dev.empkiosk.page.order;
 
+import dev.empkiosk.lang.LangCheck;
 import dev.empkiosk.page.KioskPage;
-import dev.empkiosk.language.LangCheck;
 
 import javax.swing.BorderFactory;
 import javax.swing.JList;

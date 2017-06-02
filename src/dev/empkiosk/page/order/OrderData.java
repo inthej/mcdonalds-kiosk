@@ -1,6 +1,6 @@
 package dev.empkiosk.page.order;
 
-import dev.empkiosk.language.LangCheck;
+import dev.empkiosk.lang.LangCheck;
 
 public class OrderData {
 
