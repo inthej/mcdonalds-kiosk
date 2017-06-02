@@ -29,7 +29,7 @@ public class ConfirmPage extends KioskPage {
     // 가운데 패널
     private final KioskGuidePanel ORDER_CONFIRM_GUIDE_PANEL = new KioskGuidePanel(
             LangCheck.isKorean() ? "주문을 확인해주세요" : "IS THIS ORDER CORRECT?", 0, 1);
-    //  private final OrderData[] array = {new OrderData("ddd", 2, 2), new OrderData("ass", 1, 1)};
+	// private final OrderData[] array = {new OrderData("ddd", 2, 2), new OrderData("ass", 1, 1)};
 
     private OrderDataList orderDataList = new OrderDataList();
     private final OrderTotalDataPanel ORDER_TOTAL_LIST_PANEL = new OrderTotalDataPanel(
@@ -96,8 +96,6 @@ public class ConfirmPage extends KioskPage {
         this.YES_BUTTON.addActionListener((args) -> {
             if (OrderPlace.getInstance().getPayPlace() == PayPlace.COUNTER.toString()) {
                 MainFrame.attachPanel(new ThankPage());
-//                CartPanel.SELECTED_MENU.clear();
-//                OrderDataList.getInstance().empty();
 
             } else if (OrderPlace.getInstance().getPayPlace() == PayPlace.KIOSK.toString()) {
                 MainFrame.attachPanel(new PaymentCardPage());

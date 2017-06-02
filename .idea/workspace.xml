@@ -2,43 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcdc7dbd-ebcc-4162-a8b5-7fdd7334f9d6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/LangCheck.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/Language.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuButton$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/LangCheck.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/Language.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/main/Client.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/main/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/main/Display.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/main/Display.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderPage$1.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderConfirmPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartConfirmPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderScrollPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartScrollPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderTitlePanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartTitlePanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/main/MainFrame.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/main/MainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/BackButton.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/BackButton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/ImageEdit.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/ImageEdit.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/ImageTextButton.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/ImageTextButton.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/ImageTextPanel.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/ImageTextPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/KioskGuidePanel.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/KioskGuidePanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/KioskPage.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/KioskPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/KioskVoice.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/KioskVoice.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/TitleLabel.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/TitleLabel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/confirm/ConfirmButton$1.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/confirm/ConfirmButton$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/confirm/ConfirmButton.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/confirm/ConfirmButton.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/confirm/ConfirmPage.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/confirm/ConfirmPage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/confirm/OrderTotalDataPanel.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/confirm/OrderTotalDataPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/eatplace/EatPlace.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/eatplace/EatPlace.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/eatplace/EatPlacePage.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/eatplace/EatPlacePage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/CartPanel.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/CartPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuButton.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuButton.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuTab.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuTab.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuTablePanel.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuTablePanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuType.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/MenuType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderData.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderPage$1.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderPage$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderPage.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderPlace.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/order/OrderPlace.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/card/PaymentCardPage$1.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/card/PaymentCardPage$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/card/PaymentCardPage.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/card/PaymentCardPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/card/PaymentCardPanel.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/card/PaymentCardPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PayPlace.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PayPlace.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PaymentPlacePage$1.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PaymentPlacePage$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PaymentPlacePage$2.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PaymentPlacePage$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PaymentPlacePage$3.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PaymentPlacePage$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PaymentPlacePage.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/payment/place/PaymentPlacePage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/thank/ThankPage$1.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/thank/ThankPage$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/thank/ThankPage.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/thank/ThankPage.class" />
@@ -46,6 +34,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/page/welcome/WelcomePage.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/page/welcome/WelcomePage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dev/empkiosk/util/KioskAudioPlayer.class" afterPath="$PROJECT_DIR$/bin/dev/empkiosk/util/KioskAudioPlayer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/language/LangCheck.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/language/LangCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/language/Language.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/language/Language.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/main/Client.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/main/Client.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/main/Display.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/main/Display.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/main/MainFrame.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/main/MainFrame.java" />
@@ -55,22 +45,29 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/ImageTextPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/ImageTextPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskGuidePanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskGuidePanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskVoice.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/KioskVoice.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/TitleLabel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/TitleLabel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmButton.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderTotalDataPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderTotalDataPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlace.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlace.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlacePage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlacePage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/CartPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuButton.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTab.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderConfirmPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderConfirmPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTablePanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTablePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuType.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderDataList.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderDataList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderScrollPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderScrollPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderTitlePanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderTitlePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPlace.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPlace.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/card/PaymentCardPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/card/PaymentCardPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/card/PaymentCardPanel.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/card/PaymentCardPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/place/PayPlace.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/place/PayPlace.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/place/PaymentPlacePage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/payment/place/PaymentPlacePage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/thank/ThankPage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/thank/ThankPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/page/welcome/WelcomePage.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/page/welcome/WelcomePage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/empkiosk/util/KioskAudioPlayer.java" afterPath="$PROJECT_DIR$/src/dev/empkiosk/util/KioskAudioPlayer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,7 +97,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
+              <folding>
+                <marker date="1496374609000" expanded="true" signature="28:75" ph="/**...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,9 +107,12 @@
       <file leaf-file-name="CartPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/CartPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="70" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="1053">
+              <caret line="66" column="10" lean-forward="false" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1496375073000" expanded="true" signature="99:128" ph="/**...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,47 +122,53 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="532">
               <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+              <folding>
+                <marker date="1496375137000" expanded="true" signature="237:265" ph="/**...*/" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TitleLabel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/TitleLabel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="55" column="70" lean-forward="false" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderConfirmPanel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderConfirmPanel.java">
+      <file leaf-file-name="OrderDataList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderDataList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
-              <caret line="81" column="48" lean-forward="false" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
+            <state relative-caret-position="245">
+              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+              <folding>
+                <marker date="1496375220000" expanded="true" signature="60:89" ph="/**...*/" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1026">
+              <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuTab.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTab.java">
+      <file leaf-file-name="OrderPlace.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPlace.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11040">
-              <caret line="67" column="15" lean-forward="false" selection-start-line="67" selection-start-column="15" selection-end-line="67" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuTablePanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTablePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="532">
+              <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+              <folding>
+                <marker date="1496375298000" expanded="true" signature="789:790" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,31 +176,8 @@
       <file leaf-file-name="OrderTotalDataPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderTotalDataPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EatPlace.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlace.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-              <folding>
-                <element signature="e#126#127#0" expanded="true" />
-                <element signature="e#160#161#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EatPlacePage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/eatplace/EatPlacePage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="16" />
+            <state relative-caret-position="380">
+              <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -237,7 +222,6 @@
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTablePanel.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuType.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java" />
-        <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPlace.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderScrollPanel.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderTitlePanel.java" />
@@ -267,6 +251,7 @@
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/KioskPage.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/confirm/ConfirmButton.java" />
         <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderConfirmPanel.java" />
+        <option value="$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java" />
       </list>
     </option>
   </component>
@@ -295,6 +280,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -321,11 +308,273 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="welcome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="payment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="place" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="payment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="card" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="order" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eatplace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="confirm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="McDonaldKiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="empkiosk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="language" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,6 +585,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -801,7 +1051,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48725000" />
+    <option name="totallyTimeSpent" value="49760000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -814,7 +1064,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -825,20 +1074,21 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -890,16 +1140,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuTab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="69" column="30" lean-forward="true" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/BackButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -936,7 +1176,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1072#1073#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -985,14 +1228,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderData.java" />
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1001,21 +1237,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPlace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderScrollPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,27 +1271,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderDataList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="245">
+          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
           <folding>
-            <element signature="e#285#286#0" expanded="false" />
-            <element signature="e#324#325#0" expanded="false" />
-            <element signature="e#364#365#0" expanded="false" />
-            <element signature="e#400#401#0" expanded="false" />
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#487#488#0" expanded="false" />
+            <marker date="1496375220000" expanded="true" signature="60:89" ph="/**...*/" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/main/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/main/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/BackButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1086,10 +1300,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding>
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2226#2227#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,12 +1308,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-13">
           <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#797#798#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#1655#1656#0" expanded="true" />
-            <element signature="e#1727#1728#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,12 +1316,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#1397#1398#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1123,9 +1324,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,22 +1338,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/TitleLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/util/KioskAudioPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
           <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-          <folding>
-            <element signature="e#2213#2214#0" expanded="true" />
-            <element signature="e#2270#2271#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1170,14 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1237,12 +1417,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding>
-            <element signature="e#198#199#0" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,19 +1425,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#742#743#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/confirm/OrderTotalDataPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        <state relative-caret-position="380">
+          <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -1272,8 +1442,7 @@
         <state relative-caret-position="114">
           <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
           <folding>
-            <element signature="e#126#127#0" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
+            <element signature="e#142#143#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1282,14 +1451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="44" column="16" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1322,15 +1483,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/CartPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="70" selection-end-column="42" />
-          <folding />
+          <folding>
+            <marker date="1496374609000" expanded="true" signature="28:75" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1338,6 +1493,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1368">
           <caret line="81" column="48" lean-forward="false" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/TitleLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="55" column="70" lean-forward="false" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/MenuButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding>
+            <marker date="1496375137000" expanded="true" signature="237:265" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/CartPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1053">
+          <caret line="66" column="10" lean-forward="false" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1496375073000" expanded="true" signature="99:128" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPlace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding>
+            <marker date="1496375298000" expanded="true" signature="789:790" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage 2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/empkiosk/page/order/OrderPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
           <folding />
         </state>
       </provider>
