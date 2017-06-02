@@ -66,6 +66,15 @@ public class MenuTab extends JTabbedPane {
 		DESSERT_TAB.setBackground(Color.WHITE);
 		DESSERT_TAB.add(dessertTable);
 		this.add(DESSERT_TAB);
+		
+		this.setTitleAt(0, LangCheck.isKorean() ? "버거" : "Burgers & Sandwiches");
+		this.setTitleAt(1, LangCheck.isKorean() ? "스낵과 사이드" : "Snacks & Sides");
+		this.setTitleAt(2, LangCheck.isKorean() ? "세트메뉴" : "Extra Value Meals");
+		this.setTitleAt(3, LangCheck.isKorean() ? "맥카페" : "McCafé®");
+		this.setTitleAt(4, LangCheck.isKorean() ? "맥런치™" : "McLunch™");
+		this.setTitleAt(5, LangCheck.isKorean() ? "음료" : "Beverages");
+		this.setTitleAt(6, LangCheck.isKorean() ? "맥모닝" : "McMorning");
+		this.setTitleAt(7, LangCheck.isKorean() ? "디저트" : "Desserts");
 
 		resisterBurger();
 		resisterSnack();
@@ -78,16 +87,7 @@ public class MenuTab extends JTabbedPane {
 	}
 
 	private void initMenuTab() {
-		this.setTabPlacement(JTabbedPane.TOP); // 상단위치
-
-		this.setTitleAt(0, LangCheck.isKorean() ? "버거" : "Burgers & Sandwiches");
-		this.setTitleAt(1, LangCheck.isKorean() ? "스낵과 사이드" : "Snacks & Sides");
-		this.setTitleAt(2, LangCheck.isKorean() ? "세트메뉴" : "Extra Value Meals");
-		this.setTitleAt(3, LangCheck.isKorean() ? "맥카페" : "McCafé®");
-		this.setTitleAt(4, LangCheck.isKorean() ? "맥런치™" : "McLunch™");
-		this.setTitleAt(5, LangCheck.isKorean() ? "음료" : "Beverages");
-		this.setTitleAt(6, LangCheck.isKorean() ? "맥모닝" : "McMorning");
-		this.setTitleAt(7, LangCheck.isKorean() ? "디저트" : "Desserts");
+		this.setTabPlacement(JTabbedPane.TOP); // 상단위치	
 	}
 
 	private void resisterBurger() {
