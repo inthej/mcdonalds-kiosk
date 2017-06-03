@@ -1,8 +1,8 @@
-package dev.mcdonaldkiosk.page.support;
+package dev.mcdonaldkiosk.page;
 
 import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.support.BackButton;
+import dev.mcdonaldkiosk.page.BackButton;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

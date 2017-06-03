@@ -1,7 +1,7 @@
 package dev.mcdonaldkiosk.page.order;
 
 import dev.mcdonaldkiosk.edit.ImageEdit;
-import dev.mcdonaldkiosk.page.support.KioskPage;
+import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 import java.awt.Color;

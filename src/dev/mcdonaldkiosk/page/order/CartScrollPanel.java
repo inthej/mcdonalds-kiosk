@@ -1,7 +1,7 @@
 package dev.mcdonaldkiosk.page.order;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.support.KioskPage;
+import dev.mcdonaldkiosk.page.KioskPage;
 
 import javax.swing.BorderFactory;
 import javax.swing.JList;

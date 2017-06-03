@@ -2,9 +2,9 @@ package dev.mcdonaldkiosk.page.welcome;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.support.ImageTextPanel;
-import dev.mcdonaldkiosk.page.support.KioskPage;
 import dev.mcdonaldkiosk.util.KioskVoice;
+import dev.mcdonaldkiosk.page.ImageTextPanel;
+import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
 
 import javax.swing.*;

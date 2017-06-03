@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.support;
+package dev.mcdonaldkiosk.page;
 
 import java.awt.Color;
 import java.awt.Image;

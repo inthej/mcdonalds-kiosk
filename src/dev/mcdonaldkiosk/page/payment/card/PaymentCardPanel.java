@@ -1,10 +1,10 @@
 package dev.mcdonaldkiosk.page.payment.card;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.ImageTextButton;
+import dev.mcdonaldkiosk.page.KioskPage;
+import dev.mcdonaldkiosk.page.TitleLabel;
 import dev.mcdonaldkiosk.edit.ImageEdit;
-import dev.mcdonaldkiosk.page.support.ImageTextButton;
-import dev.mcdonaldkiosk.page.support.KioskPage;
-import dev.mcdonaldkiosk.page.support.TitleLabel;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

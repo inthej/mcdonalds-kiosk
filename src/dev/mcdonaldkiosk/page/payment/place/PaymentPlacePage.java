@@ -2,10 +2,10 @@ package dev.mcdonaldkiosk.page.payment.place;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.support.ImageTextButton;
-import dev.mcdonaldkiosk.page.support.KioskGuidePanel;
-import dev.mcdonaldkiosk.page.support.KioskPage;
 import dev.mcdonaldkiosk.util.KioskVoice;
+import dev.mcdonaldkiosk.page.ImageTextButton;
+import dev.mcdonaldkiosk.page.KioskGuidePanel;
+import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
 import dev.mcdonaldkiosk.page.order.OrderPage;
 import dev.mcdonaldkiosk.page.order.OrderPlace;

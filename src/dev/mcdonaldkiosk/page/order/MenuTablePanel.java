@@ -1,11 +1,11 @@
 package dev.mcdonaldkiosk.page.order;
 
-import dev.mcdonaldkiosk.page.support.KioskPage;
-
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+
+import dev.mcdonaldkiosk.page.KioskPage;
 
 /**
  * Created by kimjaehyeon 

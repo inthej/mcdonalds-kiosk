@@ -1,6 +1,6 @@
 package dev.mcdonaldkiosk.main;
 
-import dev.mcdonaldkiosk.page.support.KioskPage;
+import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.welcome.WelcomePage;
 
 import javax.swing.JFrame;
