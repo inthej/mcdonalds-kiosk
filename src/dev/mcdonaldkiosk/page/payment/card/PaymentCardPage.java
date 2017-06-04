@@ -31,8 +31,7 @@ public class PaymentCardPage extends KioskPage {
 
 	private void initPage() {
 		this.setBackgroundImg("image/bg_green.png");
-		this.showBackgroundImg(true);
-		this.showBackButton(true);
+		this.showBackButton();
 
 		KioskVoice.playSound(LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav");
 	}

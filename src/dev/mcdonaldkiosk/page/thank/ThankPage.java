@@ -37,8 +37,7 @@ public class ThankPage extends KioskPage {
 	}
 
 	private void initPage() {
-		this.showBackgroundImg(false);
-		this.showBackButton(false);
+		this.showBackButton();
 
 		String orderPlace = OrderPlace.getInstance().getPayPlace();
 		if (orderPlace == PayPlace.COUNTER.toString()) {

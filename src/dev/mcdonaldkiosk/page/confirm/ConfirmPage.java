@@ -58,8 +58,7 @@ public class ConfirmPage extends KioskPage {
 
     private void initPage() {
         this.setBackgroundImg("image/bg_green.png");
-        this.showBackgroundImg(true);
-        this.showBackButton(false);
+        this.showBackButton();
 
         KioskVoice.playSound(LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav");
     }

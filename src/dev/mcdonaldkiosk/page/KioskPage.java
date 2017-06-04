@@ -33,7 +33,6 @@ public abstract class KioskPage extends JPanel {
 
 	protected final BackButton BACK_BUTTON = new BackButton();
 
-	private boolean isBackgroundImg;
 	private String backgroundImg;
 
 	public KioskPage() {
@@ -48,27 +47,27 @@ public abstract class KioskPage extends JPanel {
 
 	// 배경이미지 설정
 	protected void setBackgroundImg(String filePath) {
-		backgroundImg = filePath;
-	}
-
-	/* 배경이미지 표시 여부 */
-	protected void showBackgroundImg(boolean bool) {
-		if (bool && backgroundImg != null) {
-			isBackgroundImg = bool;
+		if (filePath != null) {
+			backgroundImg = filePath;
 		}
 	}
-
+	
 	/* 백버튼 표시 여부 */
-	protected void showBackButton(boolean bool) {
-		if (bool && backgroundImg != null) {
+	protected void showBackButton() {
+		if (isBackgroundImg()) {
 			this.add(BACK_BUTTON);
 		}
+	}
+	
+	/* 배경이미지 등록 여부 */
+	private boolean isBackgroundImg() {
+		return backgroundImg != null;
 	}
 
 	/* 배경이미지 설정 */
 	@Override
 	protected void paintComponent(Graphics g) {
-		if (isBackgroundImg) {
+		if (isBackgroundImg()) {
 			try {
 				BufferedImage bufferImg = ImageIO.read(new File(backgroundImg));
 				super.paintComponent(g);

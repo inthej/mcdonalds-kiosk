@@ -32,10 +32,8 @@ public class WelcomePage extends KioskPage {
 	}
 
 	private void initPage() {
-		// 배경화면 표시여부.
-		this.showBackgroundImg(false);
 		// 백버튼 표시여부.
-		this.showBackButton(false);
+		this.showBackButton();
 		// 소리재생.
 		KioskVoice.playSound(LangCheck.isKorean() ? "sound/welcome.wav" : "sound/welcome_eng.wav");
 	}

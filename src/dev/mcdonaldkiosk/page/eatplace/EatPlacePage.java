@@ -48,8 +48,7 @@ public class EatPlacePage extends KioskPage {
 
 	private void initPage() {
 		this.setBackgroundImg("image/bg_green.png");
-		this.showBackgroundImg(true);
-		this.showBackButton(true);
+		this.showBackButton();
 
 		KioskVoice.playSound(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav");
 	}
