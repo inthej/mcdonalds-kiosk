@@ -41,17 +41,16 @@ public class ImageTextPanel extends JPanel {
 	private void initImageLabel(ImageIcon imgIcon) {
 		IMAGE_LABEL.setSize(IMAGE_WIDTH, IMAGE_HEIGHT);
 		IMAGE_LABEL.setLocation(0, 0);
-		setResizeImg(imgIcon);
+		IMAGE_LABEL.setIcon(getResizedImg(imgIcon));
 
 		this.add(IMAGE_LABEL);
 	}
 
-	private void setResizeImg(ImageIcon imgIcon) {
-		Image resizedImg = imgIcon.getImage().getScaledInstance(IMAGE_WIDTH, IMAGE_HEIGHT, Image.SCALE_SMOOTH);
-		ImageIcon resizedImgIcon = new ImageIcon(resizedImg);
-
-		IMAGE_LABEL.setIcon(resizedImgIcon);
-	}
+	private ImageIcon getResizedImg(ImageIcon imgIcon){
+ 		Image resizedImg = imgIcon.getImage().getScaledInstance(IMAGE_WIDTH, IMAGE_HEIGHT, Image.SCALE_SMOOTH);
+ 		ImageIcon resizedImgIcon = new ImageIcon(resizedImg);
+ 		return resizedImgIcon;
+ 	}
 
 	private void initTextLabel(String text) {
 		TEXT_LABEL.setText(text);
