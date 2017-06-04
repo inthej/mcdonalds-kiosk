@@ -8,6 +8,9 @@ import javax.swing.JPanel;
  * Created by kimjaehyeon 
  * Class Role : 식사장소 데이터 및 식사장소/언어 선택 화면을 담당한다.
  */
+
+/* 이름이 않좋습니다. 클래스 역할에 맞게 알맞은 이름을 지으세요. */
+@Deprecated
 public class CartPanel extends JPanel {
 
 	/* 주문 장바구니 리스트 */

@@ -8,6 +8,10 @@ import javax.swing.JLabel;
 /**
  * Class Role : 키오스크 가이드 패널에 사용되는 상단 타이틀 라벨
  */
+
+/*KioskGuidePanel 전용으로 쓸꺼면 public 안됨, 패키지 캡슐화필요
+ * 공용으로 쓸꺼면 이름 다시 짓기 */
+@Deprecated
 public class TitleLabel extends JLabel {
 
 	private static final float FONT_SIZE = 20.0f; // float 글짜 크기, int 글짜디자인

@@ -4,7 +4,8 @@ import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-
+@Deprecated
+/* 소리 재생 클래스도 2개 있습니다... 하나로 뭉치세요. */
 public final class KioskVoice {
 
 	private static Clip clip = null;

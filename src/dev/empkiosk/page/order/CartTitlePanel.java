@@ -7,6 +7,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/* 이름이 않좋습니다. 클래스 역할에 맞게 알맞은 이름을 지으세요. */
+@Deprecated
 class CartTitlePanel extends JPanel {
 
 	private static final JLabel MENU_LABEL = new JLabel(LangCheck.isKorean() ? "메뉴" : "MENU", JLabel.CENTER);
