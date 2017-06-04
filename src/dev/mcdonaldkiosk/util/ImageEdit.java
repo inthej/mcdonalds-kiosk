@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.edit;
+package dev.mcdonaldkiosk.util;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;

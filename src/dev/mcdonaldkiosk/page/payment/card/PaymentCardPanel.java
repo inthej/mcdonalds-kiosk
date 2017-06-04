@@ -4,7 +4,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.TitleLabel;
-import dev.mcdonaldkiosk.edit.ImageEdit;
+import dev.mcdonaldkiosk.util.ImageEdit;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
