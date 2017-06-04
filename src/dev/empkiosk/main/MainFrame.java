@@ -22,6 +22,8 @@ public final class MainFrame extends JFrame {
 	private static final MainFrame UNIQUE_INSTANCE = new MainFrame();
 	private static final String TITLE = "ORDER HERE!";
 
+	/* setTitle은 한쪽에서만 해주세요. */
+	@Deprecated
 	private MainFrame() {
 		super(TITLE);
 

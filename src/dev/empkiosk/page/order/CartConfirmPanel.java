@@ -51,13 +51,23 @@ class CartConfirmPanel extends JPanel {
 
 		this.add(ORDER_TEXT_LABEL);
 	}
-
+	
+	@Deprecated 
+	/* refreshData 메서드의 text 셋팅과 initOrderDataLabel의 텍스트 셋팅이 겹쳐요.
+	 * 항상 그냥 복사 붙이기 하지 말고(복사 붙이기 할때 항상 생각), 메서드화 해서 관리하세요. 그래야 수정할때 편해요. 
+	 */
 	private void initOrderDataLabel() {
-		ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_LIST.getOrderQuantity() + "<br>"
-				+ ORDER_DATA_LIST.getOrderAmount() + "<br>" + ORDER_DATA_LIST.getOrderKCal() + "</html>");
+//		ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_LIST.getOrderQuantity() + "<br>"
+//				+ ORDER_DATA_LIST.getOrderAmount() + "<br>" + ORDER_DATA_LIST.getOrderKCal() + "</html>");
+		ORDER_DATA_LABEL.setText(createOrderDataText());
 		ORDER_DATA_LABEL.setHorizontalAlignment(JLabel.CENTER);
 
 		this.add(ORDER_DATA_LABEL);
+	}
+	
+	private String createOrderDataText(){
+		return "<html>" + ORDER_DATA_LIST.getOrderQuantity() + "<br>"
+				+ ORDER_DATA_LIST.getOrderAmount() + "<br>" + ORDER_DATA_LIST.getOrderKCal() + "</html>";
 	}
 
 	private void initCancleButton() {
@@ -88,10 +98,13 @@ class CartConfirmPanel extends JPanel {
 		});
 	}
 
+	/* initOrderDataLabel 메서드 읽어보세요. */
+	@Deprecated
 	// 데이터라벨 리셋
 	void refleshData() {
-		ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_LIST.getOrderQuantity() + "<br>"
-				+ ORDER_DATA_LIST.getOrderAmount() + "<br>" + ORDER_DATA_LIST.getOrderKCal() + "</html>");
+//		ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_LIST.getOrderQuantity() + "<br>"
+//		+ ORDER_DATA_LIST.getOrderAmount() + "<br>" + ORDER_DATA_LIST.getOrderKCal() + "</html>");
+		ORDER_DATA_LABEL.setText(createOrderDataText());
 	}
 	
 	private static final long serialVersionUID = -8047327814420758593L;

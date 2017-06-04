@@ -27,9 +27,15 @@ import javax.swing.JPanel;
  */
 public abstract class KioskPage extends JPanel {
 
+	@Deprecated
+	/* Pulbic 이어야 합니까? Page의 size 공개는 한쪽에서만 해주세요. 이곳저곳에 page width 정보가 널렸습니다. 다 정리하세요. */
 	public static final int PAGE_WIDTH = MainFrame.FRAME_WIDTH - MainFrame.FRAME_WIDTH / 200;
+	@Deprecated
+	/* Pulbic 이어야 합니까? Page의 size 공개는 한쪽에서만 해주세요. 이곳저곳에 page width 정보가 널렸습니다. 다 정리하세요. */
 	public static final int PAGE_HEIGHT = MainFrame.FRAME_HEIGHT - (Display.SCREEN_HEIGHT - Display.WINDOWS_HEIGHT);
-
+	
+	@Deprecated
+	/* BACK_BUTTON을 자식에게 공개할 이유가 없습니다. 자식에게 할일을 많이 주지 마세요. 웬만하면 부모 클래스에서 해결하세요. */
 	protected final BackButton BACK_BUTTON = new BackButton();
 
 	private boolean isBackgroundImg;
@@ -45,11 +51,21 @@ public abstract class KioskPage extends JPanel {
 		this.setLocation(0, 0);
 	}
 
+	 
 	// 배경이미지 설정
+	/* 보통 setBackgroundImg 를 하면 isBackgroundImg는 true가 되어야 합니다.
+	 * setText 할때도
+	 * showText(true)까지 안씁니다. setText만쓰지. */
+	@Deprecated
 	protected void setBackgroundImg(String filePath) {
 		backgroundImg = filePath;
 	}
 
+	/* backgroundImg != null <-- 이렇게 강제화 하는건 좋지 않습니다. 배경을 껏다 켰다 하고 싶을때 쓰는게
+	 * show~
+	 * hide~
+	 * 패턴의 메서드에요. */
+	@Deprecated
 	/* 배경이미지 표시 여부 */
 	protected void showBackgroundImg(boolean bool) {
 		if (bool && backgroundImg != null) {

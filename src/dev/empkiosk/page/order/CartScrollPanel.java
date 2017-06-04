@@ -10,6 +10,9 @@ import javax.swing.JScrollPane;
 /**
  * 장바구니 패널의 선택메뉴 리스트 스크롤
  */
+
+/* 이름이 않좋습니다. 클래스 역할에 맞게 알맞은 이름을 지으세요. */
+@Deprecated
 class CartScrollPanel extends JScrollPane {
 
 	public static final JList<OrderData> J_LIST = new JList<>();
