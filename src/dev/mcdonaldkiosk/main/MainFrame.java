@@ -23,8 +23,6 @@ public final class MainFrame extends JFrame {
 	private static final String TITLE = "ORDER HERE!";
 
 	private MainFrame() {
-		super(TITLE);
-
 		initMainFrame();
 	}
 
