@@ -17,7 +17,7 @@ public final class MainFrame extends JFrame {
 
 	/* 프레임 사이즈 */
 	public static final int FRAME_WIDTH = Display.WINDOWS_WIDTH / 2;
-	/* 프레임의 세로 크기는 Windows상태바의 높이를 제외하였다. */
+	/* 프레임의 세로 크기는 Windows상태바의 높이를 제외하여 규정하였다. */
 	public static final int FRAME_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
 	
 	/* 싱글톤 */
@@ -51,9 +51,6 @@ public final class MainFrame extends JFrame {
 		// 갱신
 		MAIN_FRAME.revalidate();
 		MAIN_FRAME.repaint();
-		System.out.println(MAIN_FRAME.getSize());
-		System.out.println(MAIN_FRAME.getInsets());
-		System.out.println(MAIN_FRAME.getContentPane().getSize());
 	}
 
 	// 화면을 보여준다.
