@@ -17,9 +17,9 @@ import javax.swing.JScrollPane;
  */
 public class OrderPage extends KioskPage {
 
-	private int TOP_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT / 5;
-	private int CENTER_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 3 / 5;
-	private int BOTTOM_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT / 5;
+	private int TOP_HEIGHT = MainFrame.FRAME_HEIGHT / 5;
+	private int CENTER_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 5;
+	private int BOTTOM_HEIGHT = MainFrame.FRAME_HEIGHT / 5;
 
 	private final JLabel ImageLabel = new JLabel(
 			ImageEdit.getResizeIcon("image/banner_top.jpg", MainFrame.FRAME_WIDTH, TOP_HEIGHT));
@@ -50,7 +50,7 @@ public class OrderPage extends KioskPage {
 	}
 
 	private void initMenuTab() {
-		MENU_TAB.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENT_HEIGHT);
+		MENU_TAB.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
 		MENU_TAB.setLocation(0, ImageLabel.getHeight());
 	}
 

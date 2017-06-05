@@ -19,7 +19,7 @@ import dev.mcdonaldkiosk.util.KioskVoice;
 public class PaymentCardPage extends KioskPage {
 
 	private final int MID_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-	private final int MID_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 3 / 5;
+	private final int MID_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 5;
 
 	private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
@@ -38,7 +38,7 @@ public class PaymentCardPage extends KioskPage {
 
 	private void initPaymentCardPanel() {
 		PAYMENT_CARD_PANEL.setSize(MID_PANEL_WIDTH, MID_PANEL_HEIGHT);
-		PAYMENT_CARD_PANEL.setLocation((MainFrame.FRAME_WIDTH - MID_PANEL_WIDTH) / 2, MainFrame.FRAME_CONTENT_HEIGHT / 4);
+		PAYMENT_CARD_PANEL.setLocation((MainFrame.FRAME_WIDTH - MID_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT / 4);
 
 		this.add(PAYMENT_CARD_PANEL);
 	}
@@ -63,7 +63,7 @@ public class PaymentCardPage extends KioskPage {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				PAYMENT_CARD_PANEL.getImageLabel().setIcon(ImageEdit.getResizeIcon("image/loding.jpg",
-						MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_CONTENT_HEIGHT * 2 / 5));
+						MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT * 2 / 5));
 			}
 
 			@Override

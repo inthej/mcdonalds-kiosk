@@ -17,9 +17,9 @@ public class CartPanel extends JPanel {
 	private static final CartScrollPanel CART_SCROLL_PANEL = new CartScrollPanel(ORDER_DATA_LIST);
 	private static final CartConfirmPanel CART_ORDER_CONFIRM_PANEL = new CartConfirmPanel(ORDER_DATA_LIST);
 	
-	private final int CART_TITLE_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT / 40;
-	private final int CART_SCROLL_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 5 / 40;
-	private final int CART_ORDER_CONFIRM_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 2 / 40;
+	private final int CART_TITLE_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT / 40;
+	private final int CART_SCROLL_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 5 / 40;
+	private final int CART_ORDER_CONFIRM_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 40;
 
 	public CartPanel() {
 		// 초기화

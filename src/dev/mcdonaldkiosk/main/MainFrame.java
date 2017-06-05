@@ -17,11 +17,11 @@ public final class MainFrame extends JFrame {
 
 	/* 프레임 사이즈 */
 	public static final int FRAME_WIDTH = Display.WINDOWS_WIDTH / 2;
-	public static final int FRAME_HEIGHT = Display.WINDOWS_HEIGHT;
-	public static final int FRAME_CONTENT_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
+	/* 프레임의 세로 크기는 Windows상태바의 높이를 제외하였다. */
+	public static final int FRAME_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
 	
 	/* 싱글톤 */
-	private static final MainFrame UNIQUE_INSTANCE = new MainFrame();
+	private static final MainFrame MAIN_FRAME = new MainFrame();
 	private static final String TITLE = "ORDER HERE!";
 
 	private MainFrame() {
@@ -32,7 +32,7 @@ public final class MainFrame extends JFrame {
 	private void initMainFrame() {
 		this.setLayout(null);
 		this.setTitle(TITLE);
-		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+		this.setSize(FRAME_WIDTH, FRAME_HEIGHT + Display.WINDOWS_BAR_HEIGHT);
 		this.setResizable(false);
 		this.setLocation((Display.WINDOWS_WIDTH - FRAME_WIDTH) / 2, 0);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,19 +43,22 @@ public final class MainFrame extends JFrame {
 	// 입력된 KioskPage를 프레임에 붙인다.
 	public static void attachPanel(KioskPage page) {
 		// 컨테이너 삭제
-		UNIQUE_INSTANCE.getContentPane().removeAll();
+		MAIN_FRAME.getContentPane().removeAll();
 
 		// 패널 추가
-		UNIQUE_INSTANCE.getContentPane().add(page);
+		MAIN_FRAME.getContentPane().add(page);
 
 		// 갱신
-		UNIQUE_INSTANCE.revalidate();
-		UNIQUE_INSTANCE.repaint();
+		MAIN_FRAME.revalidate();
+		MAIN_FRAME.repaint();
+		System.out.println(MAIN_FRAME.getSize());
+		System.out.println(MAIN_FRAME.getInsets());
+		System.out.println(MAIN_FRAME.getContentPane().getSize());
 	}
 
 	// 화면을 보여준다.
 	static void showScreen() {
-		UNIQUE_INSTANCE.setVisible(true);
+		MAIN_FRAME.setVisible(true);
 	}
 	
 	private static final long serialVersionUID = -3282146341363140785L;

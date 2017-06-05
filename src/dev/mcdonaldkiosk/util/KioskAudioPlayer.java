@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
 
+import javax.sound.sampled.Clip;
+
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 
@@ -26,6 +28,7 @@ public class KioskAudioPlayer {
 	private static final HashMap<String, File> audioFilePool = new HashMap<>();
 	private final File audioFile;
 	private AudioStream audioStream;
+	
 
 	// 오디오파일 필수
 	private KioskAudioPlayer(File audioFile) {

@@ -22,7 +22,7 @@ import javax.swing.ImageIcon;
 public class EatPlacePage extends KioskPage {
 
 	private final int MIDDLE_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-	private final int MIDDLE_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 2 / 5;
+	private final int MIDDLE_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 5;
 
 	private final KioskGuidePanel PLACE_SELECT_GUIDE_PANEL = new KioskGuidePanel(
 			LangCheck.isKorean() ? "식사하실 장소를 선택해 주세요" : "PLEASE SELECT A PLACE TO EAT", 0, 2);
@@ -58,7 +58,7 @@ public class EatPlacePage extends KioskPage {
 
 		Component placeSelectGuideComp = PLACE_SELECT_GUIDE_PANEL.getPanel();
 		placeSelectGuideComp.setSize(MIDDLE_PANEL_WIDTH, MIDDLE_PANEL_HEIGHT);
-		placeSelectGuideComp.setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_CONTENT_HEIGHT / 4);
+		placeSelectGuideComp.setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT / 4);
 
 		this.add(placeSelectGuideComp);
 	}
@@ -70,7 +70,7 @@ public class EatPlacePage extends KioskPage {
 
 		Component languageSelectComp = LANGUAGE_SELECT_GUIDE_PANEL.getPanel();
 		languageSelectComp.setSize(MIDDLE_PANEL_WIDTH, MIDDLE_PANEL_HEIGHT / 3);
-		languageSelectComp.setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_CONTENT_HEIGHT * 3 / 4);
+		languageSelectComp.setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT * 3 / 4);
 
 		this.add(languageSelectComp);
 	}

@@ -17,7 +17,7 @@ class MenuTablePanel extends JPanel {
 	private final ArrayList<MenuButton> MENU_BUTTON_LIST = new ArrayList<>();
 
 	public final int TABLE_WIDTH = MainFrame.FRAME_WIDTH;
-	public final int TABLE_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT;
+	public final int TABLE_HEIGHT = MainFrame.FRAME_HEIGHT;
 
 	MenuTablePanel(int menuRows, int menuCols) {
 		// 초기화

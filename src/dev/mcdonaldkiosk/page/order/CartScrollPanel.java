@@ -32,8 +32,8 @@ class CartScrollPanel extends JScrollPane {
 
 	private void initJList() {
 		J_LIST.setListData(ORDER_DATA_LIST.getVector());
-		J_LIST.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENT_HEIGHT / 10 + MainFrame.FRAME_CONTENT_HEIGHT / 40);
-		J_LIST.setLocation(0, MainFrame.FRAME_CONTENT_HEIGHT / 40);
+		J_LIST.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT / 10 + MainFrame.FRAME_HEIGHT / 40);
+		J_LIST.setLocation(0, MainFrame.FRAME_HEIGHT / 40);
 	}
 
 	void setJListOrderList() {

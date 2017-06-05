@@ -32,7 +32,7 @@ public class MenuButton extends JButton {
 	}
 
 	private void initMenuButton() {
-		this.setIcon(ImageEdit.getResizeIcon(IMG_PATH, MainFrame.FRAME_WIDTH / 5, MainFrame.FRAME_CONTENT_HEIGHT / 10));
+		this.setIcon(ImageEdit.getResizeIcon(IMG_PATH, MainFrame.FRAME_WIDTH / 5, MainFrame.FRAME_HEIGHT / 10));
 		this.setText(ORDER_DATA.toMenuButtonText(PRICE_FONT_COLOR));
 		this.setHorizontalTextPosition(SwingConstants.CENTER);
 		this.setVerticalTextPosition(SwingConstants.BOTTOM);

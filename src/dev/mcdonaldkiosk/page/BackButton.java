@@ -15,7 +15,7 @@ public class BackButton extends JButton {
 
 	/* 버튼 사이즈 */
 	private final int BUTTON_WIDTH = MainFrame.FRAME_WIDTH / 5;
-	private final int BUTTON_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT / 20;
+	private final int BUTTON_HEIGHT = MainFrame.FRAME_HEIGHT / 20;
 
 	private final Color BACKGROUND_COLOR = Color.LIGHT_GRAY;
 
@@ -27,7 +27,7 @@ public class BackButton extends JButton {
 		this.setText(LangCheck.isKorean() ? "뒤로" : "BACK");
 		this.setSize(BUTTON_WIDTH, BUTTON_HEIGHT);
 		this.setLocation(MainFrame.FRAME_WIDTH - BUTTON_WIDTH,
-				MainFrame.FRAME_CONTENT_HEIGHT- (MainFrame.FRAME_CONTENT_HEIGHT - BUTTON_HEIGHT));
+				MainFrame.FRAME_HEIGHT- (MainFrame.FRAME_HEIGHT - BUTTON_HEIGHT));
 		this.setBackground(BACKGROUND_COLOR);
 	}
 

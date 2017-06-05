@@ -20,7 +20,7 @@ class PaymentCardPanel extends JPanel {
 	private final ImageTextButton IMAGE_TEXT_BUTTON = new ImageTextButton();
 
 	private static final int BUTTON_IMG_SIZE_WIDTH = MainFrame.FRAME_WIDTH * 4 / 25;
-	private static final int BUTTON_IMG_SIZE_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 3 / 25;
+	private static final int BUTTON_IMG_SIZE_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 25;
 
 	PaymentCardPanel() {
 		initPayProgressPanel();
@@ -43,7 +43,7 @@ class PaymentCardPanel extends JPanel {
 
 	private void initImageLabel() {
 		IMAGE_LABEL
-				.setIcon(ImageEdit.getResizeIcon("image/insert_card.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_CONTENT_HEIGHT * 2 / 5));
+				.setIcon(ImageEdit.getResizeIcon("image/insert_card.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT * 2 / 5));
 		IMAGE_LABEL.setHorizontalAlignment(JLabel.CENTER);
 		IMAGE_LABEL.setOpaque(true);
 		IMAGE_LABEL.setBackground(Color.WHITE);
