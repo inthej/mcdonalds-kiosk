@@ -28,9 +28,6 @@ import javax.swing.JPanel;
  */
 public abstract class KioskPage extends JPanel {
 
-	public static final int PAGE_WIDTH = MainFrame.FRAME_WIDTH - MainFrame.FRAME_WIDTH / 200;
-	public static final int PAGE_HEIGHT = MainFrame.FRAME_HEIGHT - (Display.SCREEN_HEIGHT - Display.WINDOWS_HEIGHT);
-
 	protected final BackButton BACK_BUTTON = new BackButton();
 
 	private String backgroundImg;
@@ -41,7 +38,7 @@ public abstract class KioskPage extends JPanel {
 
 	private void initKioskPage() {
 		this.setLayout(null);
-		this.setSize(PAGE_WIDTH, PAGE_HEIGHT);
+		this.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENT_HEIGHT);
 		this.setLocation(0, 0);
 	}
 
@@ -71,7 +68,7 @@ public abstract class KioskPage extends JPanel {
 			try {
 				BufferedImage bufferImg = ImageIO.read(new File(backgroundImg));
 				super.paintComponent(g);
-				g.drawImage(bufferImg, 0, 0, PAGE_WIDTH, PAGE_HEIGHT, null);
+				g.drawImage(bufferImg, 0, 0, MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENT_HEIGHT, null);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

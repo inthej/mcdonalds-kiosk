@@ -22,7 +22,7 @@ import javax.swing.JPanel;
  */
 public class KioskGuidePanel {
 
-	private static final Color BACKGROUND_COLOR = Color.BLACK;
+	private final Color BACKGROUND_COLOR = Color.BLACK;
 
 	private final JPanel GUIDE_PANEL = new JPanel();
 	private final JPanel ITEM_PANEL = new JPanel();

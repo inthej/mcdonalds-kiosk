@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page.order;
 
+import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
@@ -15,10 +16,7 @@ import javax.swing.SwingConstants;
  */
 public class MenuButton extends JButton {
 
-	private static final int BUTTON_WIDTH = KioskPage.PAGE_WIDTH / 5;
-	private static final int BUTTON_HEIGHT = KioskPage.PAGE_HEIGHT / 10;
-
-	private static final String PRICE_FONT_COLOR = "red";
+	private final String PRICE_FONT_COLOR = "red";
 
 	private final String IMG_PATH;
 	private final OrderData ORDER_DATA;
@@ -34,7 +32,7 @@ public class MenuButton extends JButton {
 	}
 
 	private void initMenuButton() {
-		this.setIcon(ImageEdit.getResizeIcon(IMG_PATH, BUTTON_WIDTH, BUTTON_HEIGHT));
+		this.setIcon(ImageEdit.getResizeIcon(IMG_PATH, MainFrame.FRAME_WIDTH / 5, MainFrame.FRAME_CONTENT_HEIGHT / 10));
 		this.setText(ORDER_DATA.toMenuButtonText(PRICE_FONT_COLOR));
 		this.setHorizontalTextPosition(SwingConstants.CENTER);
 		this.setVerticalTextPosition(SwingConstants.BOTTOM);

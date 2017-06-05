@@ -16,14 +16,14 @@ import javax.swing.JPanel;
  */
 class CartConfirmPanel extends JPanel {
 
-	private static final JLabel ORDER_TEXT_LABEL = new JLabel();
-	private static final JLabel ORDER_DATA_LABEL = new JLabel();
-	private static final JButton CANCLE_BUTTON = new JButton();
-	private static final JButton PAYMENT_BUTTON = new JButton();
+	private final JLabel ORDER_TEXT_LABEL = new JLabel();
+	private final JLabel ORDER_DATA_LABEL = new JLabel();
+	private final JButton CANCLE_BUTTON = new JButton();
+	private final JButton PAYMENT_BUTTON = new JButton();
 
-	private static final Color BACKGROUND_COLOR = Color.WHITE;
-	private static final Color CANCLE_BTN_COLOR = Color.GRAY;
-	private static final Color PAYMENT_BTN_COLR = Color.ORANGE;
+	private final Color BACKGROUND_COLOR = Color.WHITE;
+	private final Color CANCLE_BTN_COLOR = Color.GRAY;
+	private final Color PAYMENT_BTN_COLR = Color.ORANGE;
 
 	private final OrderDataList ORDER_DATA_LIST;
 

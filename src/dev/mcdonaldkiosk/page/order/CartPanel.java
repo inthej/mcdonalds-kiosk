@@ -2,7 +2,7 @@ package dev.mcdonaldkiosk.page.order;
 
 import javax.swing.JPanel;
 
-import dev.mcdonaldkiosk.page.KioskPage;
+import dev.mcdonaldkiosk.main.MainFrame;
 
 /**
  * Created by kimjaehyeon 
@@ -13,9 +13,13 @@ public class CartPanel extends JPanel {
 	/* 주문 장바구니 리스트 */
 	private static final OrderDataList ORDER_DATA_LIST = new OrderDataList();
 
-	private static final CartTitlePanel CART_TITLE_PANEL = new CartTitlePanel();
+	private final CartTitlePanel CART_TITLE_PANEL = new CartTitlePanel();
 	private static final CartScrollPanel CART_SCROLL_PANEL = new CartScrollPanel(ORDER_DATA_LIST);
 	private static final CartConfirmPanel CART_ORDER_CONFIRM_PANEL = new CartConfirmPanel(ORDER_DATA_LIST);
+	
+	private final int CART_TITLE_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT / 40;
+	private final int CART_SCROLL_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 5 / 40;
+	private final int CART_ORDER_CONFIRM_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 2 / 40;
 
 	public CartPanel() {
 		// 초기화
@@ -29,22 +33,22 @@ public class CartPanel extends JPanel {
 	}
 
 	private void initCartTitlePanel() {
-		CART_TITLE_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 8);
+		CART_TITLE_PANEL.setSize(MainFrame.FRAME_WIDTH, CART_TITLE_PANEL_HEIGHT);
 		CART_TITLE_PANEL.setLocation(0, 0);
 
 		this.add(CART_TITLE_PANEL);
 	}
 
 	private void initCartScrollPanel() {
-		CART_SCROLL_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT * 5 / 8);
-		CART_SCROLL_PANEL.setLocation(0, OrderPage.BOTTOM_HEIGHT / 8);
+		CART_SCROLL_PANEL.setSize(MainFrame.FRAME_WIDTH, CART_SCROLL_PANEL_HEIGHT);
+		CART_SCROLL_PANEL.setLocation(0, CART_TITLE_PANEL_HEIGHT);
 
 		this.add(CART_SCROLL_PANEL);
 	}
 
 	private void initCartOrderConfirmPanel() {
-		CART_ORDER_CONFIRM_PANEL.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 4);
-		CART_ORDER_CONFIRM_PANEL.setLocation(0, OrderPage.BOTTOM_HEIGHT * 3 / 4);
+		CART_ORDER_CONFIRM_PANEL.setSize(MainFrame.FRAME_WIDTH, CART_ORDER_CONFIRM_PANEL_HEIGHT);
+		CART_ORDER_CONFIRM_PANEL.setLocation(0, CART_TITLE_PANEL_HEIGHT + CART_SCROLL_PANEL_HEIGHT);
 
 		this.add(CART_ORDER_CONFIRM_PANEL);
 	}

@@ -1,28 +1,26 @@
 package dev.mcdonaldkiosk.page.payment.card;
 
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.ImageTextButton;
-import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.TitleLabel;
-import dev.mcdonaldkiosk.util.ImageEdit;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.ImageTextButton;
+import dev.mcdonaldkiosk.page.TitleLabel;
+import dev.mcdonaldkiosk.util.ImageEdit;
+
 class PaymentCardPanel extends JPanel {
 	
-	private static final TitleLabel TITLE_LABEL = new TitleLabel();
-	private static final JLabel IMAGE_LABEL = new JLabel();
-	private static final ImageTextButton IMAGE_TEXT_BUTTON = new ImageTextButton();
+	private final TitleLabel TITLE_LABEL = new TitleLabel();
+	private final JLabel IMAGE_LABEL = new JLabel();
+	private final ImageTextButton IMAGE_TEXT_BUTTON = new ImageTextButton();
 
-	static final int LABEL_IMG_SIZE_WIDTH = KioskPage.PAGE_WIDTH * 3 / 5;
-	static final int LABEL_IMG_SIZE_HEIGHT = KioskPage.PAGE_HEIGHT * 2 / 5;
-
-	private static final int BUTTON_IMG_SIZE_WIDTH = KioskPage.PAGE_WIDTH * 4 / 25;
-	private static final int BUTTON_IMG_SIZE_HEIGHT = KioskPage.PAGE_HEIGHT * 3 / 25;
+	private static final int BUTTON_IMG_SIZE_WIDTH = MainFrame.FRAME_WIDTH * 4 / 25;
+	private static final int BUTTON_IMG_SIZE_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 3 / 25;
 
 	PaymentCardPanel() {
 		initPayProgressPanel();
@@ -45,7 +43,7 @@ class PaymentCardPanel extends JPanel {
 
 	private void initImageLabel() {
 		IMAGE_LABEL
-				.setIcon(ImageEdit.getResizeIcon("image/insert_card.jpg", LABEL_IMG_SIZE_WIDTH, LABEL_IMG_SIZE_HEIGHT));
+				.setIcon(ImageEdit.getResizeIcon("image/insert_card.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_CONTENT_HEIGHT * 2 / 5));
 		IMAGE_LABEL.setHorizontalAlignment(JLabel.CENTER);
 		IMAGE_LABEL.setOpaque(true);
 		IMAGE_LABEL.setBackground(Color.WHITE);

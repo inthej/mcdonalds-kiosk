@@ -10,13 +10,13 @@ import javax.swing.JLabel;
  */
 public class TitleLabel extends JLabel {
 
-	private static final float FONT_SIZE = 20.0f; // float 글짜 크기, int 글짜디자인
-	private static final Color TEXT_COLOR = Color.WHITE;
+	private final float FONT_SIZE = 20.0f; // float 글짜 크기, int 글짜디자인
+	private final Color TEXT_COLOR = Color.WHITE;
 
-	private static final int PADDING_TOP = 10;
-	private static final int PADDING_LEFT = 0; // 사용안하지만 바꿀 여지가 있기때문에 맴버로 선언.
-	private static final int PADDING_RIGHT = 0;
-	private static final int PADDING_BOTTOM = 10;
+	private final int PADDING_TOP = 10;
+	private final int PADDING_LEFT = 0; // 사용안하지만 바꿀 여지가 있기때문에 맴버로 선언.
+	private final int PADDING_RIGHT = 0;
+	private final int PADDING_BOTTOM = 10;
 
 	public TitleLabel() {
 		initTitleLabel();

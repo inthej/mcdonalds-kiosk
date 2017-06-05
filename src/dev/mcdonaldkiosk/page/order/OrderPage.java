@@ -17,12 +17,12 @@ import javax.swing.JScrollPane;
  */
 public class OrderPage extends KioskPage {
 
-	static int TOP_HEIGHT = KioskPage.PAGE_HEIGHT / 5;
-	static int CENTER_HEIGHT = KioskPage.PAGE_HEIGHT * 3 / 5;
-	static int BOTTOM_HEIGHT = KioskPage.PAGE_HEIGHT / 5;
+	private int TOP_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT / 5;
+	private int CENTER_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 3 / 5;
+	private int BOTTOM_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT / 5;
 
 	private final JLabel ImageLabel = new JLabel(
-			ImageEdit.getResizeIcon("image/banner_top.jpg", KioskPage.PAGE_WIDTH, TOP_HEIGHT));
+			ImageEdit.getResizeIcon("image/banner_top.jpg", MainFrame.FRAME_WIDTH, TOP_HEIGHT));
 	private final MenuTab MENU_TAB = new MenuTab();
 	private final JScrollPane SCROLL = new JScrollPane();
 	private final CartPanel CART_PANEL = new CartPanel();
@@ -44,18 +44,18 @@ public class OrderPage extends KioskPage {
 	}
 
 	private void initImageLabel() {
-		ImageLabel.setSize(KioskPage.PAGE_WIDTH, TOP_HEIGHT);
+		ImageLabel.setSize(MainFrame.FRAME_WIDTH, TOP_HEIGHT);
 		ImageLabel.setLocation(0, 0);
 		this.add(ImageLabel);
 	}
 
 	private void initMenuTab() {
-		MENU_TAB.setSize(KioskPage.PAGE_WIDTH, KioskPage.PAGE_HEIGHT);
+		MENU_TAB.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENT_HEIGHT);
 		MENU_TAB.setLocation(0, ImageLabel.getHeight());
 	}
 
 	private void initScroll() {
-		SCROLL.setSize(KioskPage.PAGE_WIDTH, CENTER_HEIGHT);
+		SCROLL.setSize(MainFrame.FRAME_WIDTH, CENTER_HEIGHT);
 		SCROLL.setLocation(0, ImageLabel.getHeight());
 		SCROLL.getVerticalScrollBar().setUnitIncrement(18); // 스크롤 속도
 		SCROLL.setViewportView(MENU_TAB);
@@ -64,7 +64,7 @@ public class OrderPage extends KioskPage {
 	}
 
 	private void initCartPanel() {
-		CART_PANEL.setSize(KioskPage.PAGE_WIDTH, BOTTOM_HEIGHT);
+		CART_PANEL.setSize(MainFrame.FRAME_WIDTH, BOTTOM_HEIGHT);
 		CART_PANEL.setLocation(0, TOP_HEIGHT + CENTER_HEIGHT);
 		CART_PANEL.setOpaque(true);
 		this.add(CART_PANEL);

@@ -16,8 +16,10 @@ import javax.swing.JFrame;
 public final class MainFrame extends JFrame {
 
 	/* 프레임 사이즈 */
-	public static final int FRAME_WIDTH = Display.SCREEN_WIDTH / 2;
+	public static final int FRAME_WIDTH = Display.WINDOWS_WIDTH / 2;
 	public static final int FRAME_HEIGHT = Display.WINDOWS_HEIGHT;
+	public static final int FRAME_CONTENT_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
+	
 	/* 싱글톤 */
 	private static final MainFrame UNIQUE_INSTANCE = new MainFrame();
 	private static final String TITLE = "ORDER HERE!";
@@ -32,7 +34,7 @@ public final class MainFrame extends JFrame {
 		this.setTitle(TITLE);
 		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		this.setResizable(false);
-		this.setLocation((Display.SCREEN_WIDTH - FRAME_WIDTH) / 2, 0);
+		this.setLocation((Display.WINDOWS_WIDTH - FRAME_WIDTH) / 2, 0);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		this.add(new WelcomePage());

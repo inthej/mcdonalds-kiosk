@@ -7,6 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import dev.mcdonaldkiosk.main.MainFrame;
+
 /**
  * Class Role : 이미지와 텍스트로 구성된 패널이다. 
  * 중앙의 이미지 라벨과 하단의 텍스트 라벨의 구성을 가지고 있다.
@@ -21,13 +23,13 @@ import javax.swing.JPanel;
  */
 public class ImageTextPanel extends JPanel {
 
-	private static final int IMAGE_WIDTH = KioskPage.PAGE_WIDTH;
-	private static final int IMAGE_HEIGHT = KioskPage.PAGE_HEIGHT * 9 / 10;
+	private final int IMAGE_WIDTH = MainFrame.FRAME_WIDTH;
+	private final int IMAGE_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 9 / 10;
 
 	private final JLabel IMAGE_LABEL = new JLabel();
 	private final JLabel TEXT_LABEL = new JLabel();
 
-	private static final float TEXT_SIZE = 20.0f;
+	private final float TEXT_SIZE = 20.0f;
 	private final Color TEXT_COLOR = Color.WHITE;
 	private Color TEXT_BACKGROUND_COLOR = new Color(00, 94, 00);
 
@@ -57,7 +59,7 @@ public class ImageTextPanel extends JPanel {
 		TEXT_LABEL.setHorizontalAlignment(JLabel.CENTER);
 		TEXT_LABEL.setFont(TEXT_LABEL.getFont().deriveFont(TEXT_SIZE));
 
-		TEXT_LABEL.setSize(KioskPage.PAGE_WIDTH, KioskPage.PAGE_HEIGHT - IMAGE_HEIGHT);
+		TEXT_LABEL.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENT_HEIGHT - IMAGE_HEIGHT);
 		TEXT_LABEL.setLocation(0, IMAGE_HEIGHT);
 
 		TEXT_LABEL.setBackground(TEXT_BACKGROUND_COLOR);

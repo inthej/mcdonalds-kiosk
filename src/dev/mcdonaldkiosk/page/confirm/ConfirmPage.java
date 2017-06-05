@@ -23,8 +23,8 @@ import dev.mcdonaldkiosk.page.thank.ThankPage;
 public class ConfirmPage extends KioskPage {
 
     /* 중간패널 사이즈 */
-    private final int MIDDLE_PANEL_WIDTH = KioskPage.PAGE_WIDTH * 4 / 5;
-    private final int MIDDLE_PANEL_HEIGHT = KioskPage.PAGE_HEIGHT * 2 / 5;
+    private final int MIDDLE_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
+    private final int MIDDLE_PANEL_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT * 2 / 5;
 
     // 가운데 패널
     private final KioskGuidePanel ORDER_CONFIRM_GUIDE_PANEL = new KioskGuidePanel(
@@ -70,7 +70,7 @@ public class ConfirmPage extends KioskPage {
         Component orderConfirmGuideComp = ORDER_CONFIRM_GUIDE_PANEL.getPanel();
         orderConfirmGuideComp.setSize(MIDDLE_PANEL_WIDTH, MIDDLE_PANEL_HEIGHT);
         orderConfirmGuideComp
-                .setLocation((KioskPage.PAGE_WIDTH - MIDDLE_PANEL_WIDTH) / 2, KioskPage.PAGE_HEIGHT / 4);
+                .setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_CONTENT_HEIGHT / 4);
 
         this.add(ORDER_CONFIRM_GUIDE_PANEL.getPanel());
     }
@@ -82,7 +82,7 @@ public class ConfirmPage extends KioskPage {
         Component yesNoSelectComp = YES_NO_SELECT_PANEL.getPanel();
         yesNoSelectComp.setSize(PANEL_WIDTH, MIDDLE_PANEL_HEIGHT / 5);
         yesNoSelectComp
-                .setLocation((KioskPage.PAGE_WIDTH - PANEL_WIDTH) / 2, KioskPage.PAGE_HEIGHT * 3 / 4);
+                .setLocation((MainFrame.FRAME_WIDTH - PANEL_WIDTH) / 2, MainFrame.FRAME_CONTENT_HEIGHT * 3 / 4);
 
         this.add(yesNoSelectComp);
     }

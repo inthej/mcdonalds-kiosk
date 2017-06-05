@@ -13,22 +13,22 @@ import java.awt.Toolkit;
 public final class Display {
 
 	// 스크린 사이즈
-	public static final int SCREEN_WIDTH;
-	public static final int SCREEN_HEIGHT;
+	static final int SCREEN_HEIGHT;
 
 	// 윈도우 사이즈
-	public static final int WINDOWS_WIDTH;
-	public static final int WINDOWS_HEIGHT;
+	static final int WINDOWS_WIDTH;
+	static final int WINDOWS_HEIGHT;
+	static final int WINDOWS_BAR_HEIGHT;
 
 	static {
-		final Dimension DIMEN = Toolkit.getDefaultToolkit().getScreenSize();
-		SCREEN_WIDTH = (int) DIMEN.getWidth();
-		SCREEN_HEIGHT = (int) DIMEN.getHeight();
+		Dimension dimen = Toolkit.getDefaultToolkit().getScreenSize();
+		SCREEN_HEIGHT = (int) dimen.getHeight();
 
-		final GraphicsEnvironment GE = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		final Rectangle REC = GE.getMaximumWindowBounds();
-		WINDOWS_WIDTH = (int) REC.getWidth();
-		WINDOWS_HEIGHT = (int) REC.getHeight();
+		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		Rectangle rec = ge.getMaximumWindowBounds();
+		WINDOWS_WIDTH = (int) rec.getWidth();
+		WINDOWS_HEIGHT = (int) rec.getHeight();
+		WINDOWS_BAR_HEIGHT = SCREEN_HEIGHT - WINDOWS_HEIGHT;
 	}
 
 	private Display() {

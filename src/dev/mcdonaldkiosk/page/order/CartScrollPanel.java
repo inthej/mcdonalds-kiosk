@@ -1,11 +1,11 @@
 package dev.mcdonaldkiosk.page.order;
 
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.KioskPage;
-
 import javax.swing.BorderFactory;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.main.MainFrame;
 
 /**
  * 장바구니 패널의 선택메뉴 리스트 스크롤
@@ -32,8 +32,8 @@ class CartScrollPanel extends JScrollPane {
 
 	private void initJList() {
 		J_LIST.setListData(ORDER_DATA_LIST.getVector());
-		J_LIST.setSize(KioskPage.PAGE_WIDTH, OrderPage.BOTTOM_HEIGHT / 2 + OrderPage.BOTTOM_HEIGHT / 4 / 2);
-		J_LIST.setLocation(0, OrderPage.BOTTOM_HEIGHT / 4 - OrderPage.BOTTOM_HEIGHT / 4 / 2);
+		J_LIST.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENT_HEIGHT / 10 + MainFrame.FRAME_CONTENT_HEIGHT / 40);
+		J_LIST.setLocation(0, MainFrame.FRAME_CONTENT_HEIGHT / 40);
 	}
 
 	void setJListOrderList() {

@@ -1,19 +1,20 @@
 package dev.mcdonaldkiosk.page.thank;
 
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.ImageIcon;
+
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.KioskVoice;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.order.CartPanel;
 import dev.mcdonaldkiosk.page.order.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;
 import dev.mcdonaldkiosk.page.welcome.WelcomePage;
-
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.ImageIcon;
+import dev.mcdonaldkiosk.util.KioskVoice;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 19 
@@ -50,7 +51,7 @@ public class ThankPage extends KioskPage {
 	}
 
 	private void initImgTextPanel() {
-		IMG_TEXT_PANEL.setSize(KioskPage.PAGE_WIDTH, KioskPage.PAGE_HEIGHT);
+		IMG_TEXT_PANEL.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENT_HEIGHT);
 		IMG_TEXT_PANEL.setLocation(0, 0);
 		IMG_TEXT_PANEL.setTextBackground(Color.BLUE);
 

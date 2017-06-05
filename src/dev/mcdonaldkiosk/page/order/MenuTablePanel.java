@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
+import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 
 /**
@@ -15,8 +16,8 @@ class MenuTablePanel extends JPanel {
 
 	private final ArrayList<MenuButton> MENU_BUTTON_LIST = new ArrayList<>();
 
-	public static final int TABLE_WIDTH = KioskPage.PAGE_WIDTH;
-	public static final int TABLE_HEIGHT = KioskPage.PAGE_HEIGHT;
+	public final int TABLE_WIDTH = MainFrame.FRAME_WIDTH;
+	public final int TABLE_HEIGHT = MainFrame.FRAME_CONTENT_HEIGHT;
 
 	MenuTablePanel(int menuRows, int menuCols) {
 		// 초기화
