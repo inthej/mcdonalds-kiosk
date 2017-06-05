@@ -1,15 +1,16 @@
 package dev.mcdonaldkiosk.util;
 
-import com.sun.istack.internal.NotNull;
-
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.HashMap;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+import com.sun.istack.internal.NotNull;
 
 /**
  * @author mommoo
@@ -21,13 +22,19 @@ import sun.audio.AudioStream;
  *         사용자는 단순히 플레이어 재생, 플레이어 정지를 이용하면 된다.
  * @version 1.0v
  * @since 2017. 05. 31.
+ * 
+ * @author kimjaehyeon
+ * <p>
+ * 소리가 이미 재생중일 경우 기존 소리는 중지되록 업데이트 되었다.
+ * @since 2017. 6. 6
  */
 
 public class KioskAudioPlayer {
 
 	private static final HashMap<String, File> audioFilePool = new HashMap<>();
+	private static Clip clip;
 	private final File audioFile;
-	private AudioStream audioStream;
+	private AudioInputStream audioInputStream;
 	
 
 	// 오디오파일 필수
@@ -60,13 +67,12 @@ public class KioskAudioPlayer {
 
 	/**
 	 * 분석 
-	 * KioskAudioPlay 자신이 가지고있는 파일객체를 통해서 AudioStream을 생성한다.
+	 * KioskAudioPlay 자신이 가지고있는 파일객체를 통해서 AudioInputStream을 생성한다.
 	 */
 	private void createAudioStream() {
 		try {
-			FileInputStream fileInputStream = new FileInputStream(this.audioFile);
-			this.audioStream = new AudioStream(fileInputStream);
-		} catch (Exception e) {
+			audioInputStream = AudioSystem.getAudioInputStream(audioFile);
+		} catch (UnsupportedAudioFileException | IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -77,14 +83,37 @@ public class KioskAudioPlayer {
 	 */
 	public void play() {
 		createAudioStream();
-		AudioPlayer.player.start(this.audioStream);
+		
+		// 재생중인지 확인.
+		if (isPlaying()) clip = null;
+		
+		// 재생
+		try {
+			clip = AudioSystem.getClip();
+			clip.open(audioInputStream);
+			clip.start();
+		} catch (LineUnavailableException | IOException e) {
+			e.printStackTrace();
+		}
+	
+		// 초기화.
+		initClip();
+	}
+	
+	// 소리재 재생중인지 확인한다.
+	private boolean isPlaying() {
+		return clip != null;
+	}
+	
+	// Clip 초기화.
+	private void initClip() {
+		clip = null;
 	}
 
 	/**
-	 * 분석 오디오를 중지한다. 
-	 * TODO (jaehyeon) : 중지 로직 구현
+	 * 분석 오디오를 중지한다.
 	 */
 	public void stop() {
-		AudioPlayer.player.stop(this.audioStream);
+		clip.stop();
 	}
 }
