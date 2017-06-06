@@ -9,8 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
-import dev.mcdonaldkiosk.page.order.OrderData;
-import dev.mcdonaldkiosk.page.order.OrderDataList;
+import dev.mcdonaldkiosk.page.menu.Menu;
+import dev.mcdonaldkiosk.page.menu.OrderDataList;
 
 class OrderTotalDataPanel extends JPanel {
 
@@ -27,7 +27,7 @@ class OrderTotalDataPanel extends JPanel {
 	// 패널 초기화
 	private void initPanel() {
 		this.setLayout(new BorderLayout());
-		this.add(new JScrollPane(new JList<OrderData>(ORDER_DATA_LIST.getVector())), BorderLayout.CENTER);
+		this.add(new JScrollPane(new JList<Menu>(ORDER_DATA_LIST.getVector())), BorderLayout.CENTER);
 		this.add(createTotalListPanel(), BorderLayout.SOUTH);
 	}
 

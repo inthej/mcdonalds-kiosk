@@ -1,10 +1,12 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu.order;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.menu.Menu;
+import dev.mcdonaldkiosk.page.menu.OrderDataList;
 
 /**
  * Created by kimjaehyeon 
@@ -40,7 +42,7 @@ public class MyOrderPanel extends JPanel {
 	}
 
 	// 주문 넣기
-	static void addOrder(OrderData orderData) {
+	public static void addOrder(Menu orderData) {
 		// 데이터추가
 		ORDER_DATA_LIST.add(orderData);
 
@@ -48,7 +50,7 @@ public class MyOrderPanel extends JPanel {
 	}
 
 	// 주문 비우기
-	static void emptyOrder() {
+	public static void emptyOrder() {
 		ORDER_DATA_LIST.clear();
 
 		cartStatus();

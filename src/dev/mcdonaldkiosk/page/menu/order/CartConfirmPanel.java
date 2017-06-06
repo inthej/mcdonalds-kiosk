@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu.order;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
+import dev.mcdonaldkiosk.page.menu.OrderDataList;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**

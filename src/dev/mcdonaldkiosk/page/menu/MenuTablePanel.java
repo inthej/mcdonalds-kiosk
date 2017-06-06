@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu;
 
 import java.awt.Color;
 import java.awt.GridLayout;

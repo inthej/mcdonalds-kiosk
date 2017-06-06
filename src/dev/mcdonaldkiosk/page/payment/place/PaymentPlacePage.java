@@ -11,8 +11,8 @@ import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
-import dev.mcdonaldkiosk.page.order.OrderPage;
-import dev.mcdonaldkiosk.page.order.OrderPlace;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.page.menu.OrderPlace;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 20 
@@ -77,7 +77,7 @@ public class PaymentPlacePage extends KioskPage {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				OrderPlace.getInstance().setPayPlace(PayPlace.COUNTER);
-				MainFrame.attachPanel(new OrderPage());
+				MainFrame.attachPanel(new MenuPage());
 			}
 		});
 
@@ -85,7 +85,7 @@ public class PaymentPlacePage extends KioskPage {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				OrderPlace.getInstance().setPayPlace(PayPlace.KIOSK);
-				MainFrame.attachPanel(new OrderPage());
+				MainFrame.attachPanel(new MenuPage());
 			}
 		});
 	}

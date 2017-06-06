@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu.order;
 
 import javax.swing.BorderFactory;
 import javax.swing.JList;
@@ -6,13 +6,15 @@ import javax.swing.JScrollPane;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.menu.Menu;
+import dev.mcdonaldkiosk.page.menu.OrderDataList;
 
 /**
  * 장바구니 패널의 선택메뉴 리스트 스크롤
  */
 class CartScrollPanel extends JScrollPane {
 
-	public static final JList<OrderData> J_LIST = new JList<>();
+	public static final JList<Menu> J_LIST = new JList<>();
 	private final OrderDataList ORDER_DATA_LIST;
 
 	CartScrollPanel(OrderDataList orderDataList) {

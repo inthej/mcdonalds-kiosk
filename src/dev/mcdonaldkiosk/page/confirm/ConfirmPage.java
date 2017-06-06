@@ -8,9 +8,9 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
-import dev.mcdonaldkiosk.page.order.OrderDataList;
-import dev.mcdonaldkiosk.page.order.OrderPage;
-import dev.mcdonaldkiosk.page.order.OrderPlace;
+import dev.mcdonaldkiosk.page.menu.OrderDataList;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.page.menu.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;
 import dev.mcdonaldkiosk.page.thank.ThankPage;
@@ -83,7 +83,7 @@ public class ConfirmPage extends KioskPage {
 
 	// set 설정하는 느낌
 	private void setListener() {
-		this.NO_BUTTON.addActionListener((args) -> MainFrame.attachPanel(new OrderPage())); // 한줄짜리는 { } 지울수 있음.
+		this.NO_BUTTON.addActionListener((args) -> MainFrame.attachPanel(new MenuPage())); // 한줄짜리는 { } 지울수 있음.
 
 		this.YES_BUTTON.addActionListener((args) -> {
 			if (OrderPlace.getInstance().getPayPlace() == PayPlace.COUNTER.toString()) {

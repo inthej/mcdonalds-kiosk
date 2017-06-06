@@ -11,7 +11,7 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.order.OrderPlace;
+import dev.mcdonaldkiosk.page.menu.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
 import dev.mcdonaldkiosk.page.welcome.WelcomePage;
 

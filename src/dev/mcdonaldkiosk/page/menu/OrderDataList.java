@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu;
 
 import java.util.Vector;
 
@@ -8,10 +8,10 @@ import java.util.Vector;
  */
 public class OrderDataList {
 
-	private static final Vector<OrderData> SELECTED_MENU_LIST = new Vector<>();
+	private static final Vector<Menu> SELECTED_MENU_LIST = new Vector<>();
 
 	// 선택 메뉴 추가
-	public void add(OrderData order) {
+	public void add(Menu order) {
 		SELECTED_MENU_LIST.add(order);
 	}
 
@@ -28,7 +28,7 @@ public class OrderDataList {
 	// 총 금액
 	public int getOrderAmount() {
 		int totalAmount = 0;
-		for (OrderData order : SELECTED_MENU_LIST) {
+		for (Menu order : SELECTED_MENU_LIST) {
 			totalAmount += order.getPrice();
 		}
 
@@ -38,14 +38,14 @@ public class OrderDataList {
 	// 총 칼로리
 	public int getOrderKCal() {
 		int totalKCal = 0;
-		for (OrderData order : SELECTED_MENU_LIST) {
+		for (Menu order : SELECTED_MENU_LIST) {
 			totalKCal += order.getKCal();
 		}
 
 		return totalKCal;
 	}
 
-	public Vector<OrderData> getVector() {
+	public Vector<Menu> getVector() {
 		return SELECTED_MENU_LIST;
 	}
 }

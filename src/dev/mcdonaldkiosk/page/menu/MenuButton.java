@@ -1,7 +1,8 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu;
 
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
+import dev.mcdonaldkiosk.page.menu.order.MyOrderPanel;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
@@ -18,14 +19,14 @@ public class MenuButton extends JButton {
 
 	private final String PRICE_FONT_COLOR = "red";
 	private final String IMG_PATH;
-	private final OrderData ORDER_DATA;
+	private final Menu MENU;
 
 	private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKioskAudioPlayer("sound/beep.wav");
 	private ImageEdit imageEdit = new ImageEdit();
 
-	MenuButton(String imgPath, OrderData ORDER_DATA) {
+	MenuButton(String imgPath, Menu menu) {
 		this.IMG_PATH = imgPath;
-		this.ORDER_DATA = ORDER_DATA;
+		this.MENU = menu;
 
 		initMenuButton();
 		setListener();
@@ -33,7 +34,7 @@ public class MenuButton extends JButton {
 
 	private void initMenuButton() {
 		this.setIcon(imageEdit.getResizeIcon(IMG_PATH, MainFrame.FRAME_WIDTH / 5, MainFrame.FRAME_HEIGHT / 10));
-		this.setText(ORDER_DATA.toMenuButtonText(PRICE_FONT_COLOR));
+		this.setText(MENU.toMenuButtonText(PRICE_FONT_COLOR));
 		this.setHorizontalTextPosition(SwingConstants.CENTER);
 		this.setVerticalTextPosition(SwingConstants.BOTTOM);
 
@@ -47,7 +48,7 @@ public class MenuButton extends JButton {
 			clickBGMPlayer.play();
 
 			// 주문데이터를 넣는다.
-			MyOrderPanel.addOrder(ORDER_DATA);
+			MyOrderPanel.addOrder(MENU);
 		});
 	}
 }

@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu;
 
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;

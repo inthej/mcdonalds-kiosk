@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu.order;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -43,11 +43,11 @@ class TextToolbarPanel {
 
 		return this;
 	}
-	
+
 	private JLabel createDesignedLabel(String text) {
 		JLabel label = new JLabel(text, JLabel.CENTER);
 		label.setForeground(TEXT_COLOR);
-		
+
 		return label;
 	}
 

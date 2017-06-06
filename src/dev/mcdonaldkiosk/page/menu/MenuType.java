@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.order;
+package dev.mcdonaldkiosk.page.menu;
 
 enum MenuType {
 	BURGER, SNACK, SET_MENU, MC_CAFE, MC_LUNCH, DRINK, MC_MONING, DESSERT;
