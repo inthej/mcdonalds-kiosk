@@ -39,14 +39,16 @@ class TextToolbarPanel {
 
 	TextToolbarPanel addText(String text) {
 		TEXT_TOOLBAR_PANEL.setLayout(new GridLayout(0, ++textCnt));
-		TEXT_TOOLBAR_PANEL.add(getDesignLabel(new JLabel(text, JLabel.CENTER)));
+		TEXT_TOOLBAR_PANEL.add(createDesignedLabel(text));
 
 		return this;
 	}
-
-	private JLabel getDesignLabel(JLabel jLabel) {
-		jLabel.setForeground(TEXT_COLOR);
-		return jLabel;
+	
+	private JLabel createDesignedLabel(String text) {
+		JLabel label = new JLabel(text, JLabel.CENTER);
+		label.setForeground(TEXT_COLOR);
+		
+		return label;
 	}
 
 	Component getPanel() {
