@@ -1,7 +1,7 @@
 package dev.mcdonaldkiosk.page;
 
 import java.awt.Color;
-import java.awt.Image;
+
 import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.util.ImageEdit;
 
 /**
  * Class Role : 이미지와 텍스트로 구성된 버튼이다. 
@@ -25,6 +26,8 @@ public class ImageTextButton extends JButton {
 	private final float FONT_SIZE = 15.0f; // float자료형 글자크기, int자료형 글자디자인
 	private final Color FONT_COLOR = Color.RED;
 	private final Color BACKGROUND_COLOR = Color.WHITE;
+	
+	private ImageEdit imageEdit = new ImageEdit();
 
 	public ImageTextButton() {
 		initeImageTextButton();
@@ -59,14 +62,11 @@ public class ImageTextButton extends JButton {
 		this.setVerticalTextPosition(SwingConstants.BOTTOM);
 	}
 
-	private void setResizedImg(ImageIcon icon) {
-		setResizedImg(icon, IMAGE_SIZE_WIDTH, IMAGE_SIZE_HEIGHT);
+	private void setResizedImg(ImageIcon imgIcon) {
+		this.setIcon(imageEdit.getResizeIcon(imgIcon, IMAGE_SIZE_WIDTH, IMAGE_SIZE_HEIGHT));
 	}
 
-	public void setResizedImg(ImageIcon icon, int width, int height) {
-		Image resizedImg = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
-		ImageIcon resizedImgIcon = new ImageIcon(resizedImg);
-
-		this.setIcon(resizedImgIcon);
+	public void setResizedImg(ImageIcon imgIcon, int width, int height) {
+		this.setIcon(imageEdit.getResizeIcon(imgIcon, width, height));
 	}	
 }

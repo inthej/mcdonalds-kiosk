@@ -17,11 +17,11 @@ import javax.swing.SwingConstants;
 public class MenuButton extends JButton {
 	
 	private final String PRICE_FONT_COLOR = "red";
-
 	private final String IMG_PATH;
 	private final OrderData ORDER_DATA;
 
 	private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKioskAudioPlayer("sound/beep.wav");
+	private ImageEdit imageEdit = new ImageEdit();
 
 	MenuButton(String imgPath, OrderData ORDER_DATA) {
 		this.IMG_PATH = imgPath;
@@ -32,7 +32,7 @@ public class MenuButton extends JButton {
 	}
 
 	private void initMenuButton() {
-		this.setIcon(ImageEdit.getResizeIcon(IMG_PATH, MainFrame.FRAME_WIDTH / 5, MainFrame.FRAME_HEIGHT / 10));
+		this.setIcon(imageEdit.getResizeIcon(IMG_PATH, MainFrame.FRAME_WIDTH / 5, MainFrame.FRAME_HEIGHT / 10));
 		this.setText(ORDER_DATA.toMenuButtonText(PRICE_FONT_COLOR));
 		this.setHorizontalTextPosition(SwingConstants.CENTER);
 		this.setVerticalTextPosition(SwingConstants.BOTTOM);

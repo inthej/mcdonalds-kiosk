@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
@@ -28,12 +29,12 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
  * 4. 사운드 실행을 제공한다.
  */
 public abstract class KioskPage extends JPanel {
-
-	protected final BackButton BACK_BUTTON = new BackButton();
 	
-	private KioskAudioPlayer kioskAudioPlayer;
-
 	private String backgroundImg;
+	private KioskAudioPlayer kioskAudioPlayer;
+	
+	protected final BackButton BACK_BUTTON = new BackButton();
+	protected ImageEdit imageEdit = new ImageEdit();
 
 	public KioskPage() {
 		initKioskPage();

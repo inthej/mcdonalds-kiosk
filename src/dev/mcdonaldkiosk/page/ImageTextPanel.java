@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.util.ImageEdit;
 
 /**
  * Class Role : 이미지와 텍스트로 구성된 패널이다. 
@@ -32,6 +33,8 @@ public class ImageTextPanel extends JPanel {
 	private final float TEXT_SIZE = 20.0f;
 	private final Color TEXT_COLOR = Color.WHITE;
 	private Color TEXT_BACKGROUND_COLOR = new Color(00, 94, 00);
+	
+	private ImageEdit imageEdit = new ImageEdit();
 
 	public ImageTextPanel(ImageIcon imgIcon, String text) {
 		this.setLayout(null);
@@ -43,16 +46,10 @@ public class ImageTextPanel extends JPanel {
 	private void initImageLabel(ImageIcon imgIcon) {
 		IMAGE_LABEL.setSize(IMAGE_WIDTH, IMAGE_HEIGHT);
 		IMAGE_LABEL.setLocation(0, 0);
-		IMAGE_LABEL.setIcon(getResizedImg(imgIcon));
+		IMAGE_LABEL.setIcon(imageEdit.getResizeIcon(imgIcon, IMAGE_WIDTH, IMAGE_HEIGHT));
 
 		this.add(IMAGE_LABEL);
 	}
-
-	private ImageIcon getResizedImg(ImageIcon imgIcon){
- 		Image resizedImg = imgIcon.getImage().getScaledInstance(IMAGE_WIDTH, IMAGE_HEIGHT, Image.SCALE_SMOOTH);
- 		ImageIcon resizedImgIcon = new ImageIcon(resizedImg);
- 		return resizedImgIcon;
- 	}
 
 	private void initTextLabel(String text) {
 		TEXT_LABEL.setText(text);

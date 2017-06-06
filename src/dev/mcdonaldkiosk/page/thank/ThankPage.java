@@ -25,7 +25,7 @@ import dev.mcdonaldkiosk.page.welcome.WelcomePage;
  * 3. 주문 데이터가 초기화된다.
  */
 public class ThankPage extends KioskPage {
-	
+
 	private final ImageTextPanel IMG_TEXT_PANEL = new ImageTextPanel(new ImageIcon("image/bg_info3.jpg"),
 			LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 

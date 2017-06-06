@@ -19,7 +19,7 @@ import dev.mcdonaldkiosk.page.order.OrderPlace;
  * Class Role : 결제장소 선택 페이지
  */
 public class PaymentPlacePage extends KioskPage {
-	
+
 	private final int MID_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
 	private final int MID_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 5;
 

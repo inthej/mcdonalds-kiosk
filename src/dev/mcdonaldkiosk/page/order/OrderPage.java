@@ -20,8 +20,7 @@ public class OrderPage extends KioskPage {
 	private int CENTER_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 5;
 	private int BOTTOM_HEIGHT = MainFrame.FRAME_HEIGHT / 5;
 
-	private final JLabel ImageLabel = new JLabel(
-			ImageEdit.getResizeIcon("image/banner_top.jpg", MainFrame.FRAME_WIDTH, TOP_HEIGHT));
+	private final JLabel ImageLabel = new JLabel();
 	private final MenuTab MENU_TAB = new MenuTab();
 	private final JScrollPane SCROLL = new JScrollPane();
 	private final MyOrderPanel CART_PANEL = new MyOrderPanel();
@@ -44,6 +43,7 @@ public class OrderPage extends KioskPage {
 
 	private void initImageLabel() {
 		ImageLabel.setSize(MainFrame.FRAME_WIDTH, TOP_HEIGHT);
+		ImageLabel.setIcon(this.imageEdit.getResizeIcon("image/banner_top.jpg", MainFrame.FRAME_WIDTH, TOP_HEIGHT));
 		ImageLabel.setLocation(0, 0);
 		this.add(ImageLabel);
 	}

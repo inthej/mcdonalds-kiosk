@@ -61,8 +61,8 @@ public class PaymentCardPage extends KioskPage {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				PAYMENT_CARD_PANEL.getImageLabel().setIcon(ImageEdit.getResizeIcon("image/loding.jpg",
-						MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT * 2 / 5));
+				PAYMENT_CARD_PANEL.getImageLabel().setIcon(PaymentCardPage.this.imageEdit.getResizeIcon(
+						"image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT * 2 / 5));
 			}
 
 			@Override

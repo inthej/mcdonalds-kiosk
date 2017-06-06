@@ -20,7 +20,7 @@ import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
  * 2. ImageTextPanel의 특징을 가지고 있다.
  */
 public class WelcomePage extends KioskPage {
-	
+
 	private final ImageTextPanel IMG_TEXT_PANEL = new ImageTextPanel(new ImageIcon("image/bg_info2.jpg"),
 			LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
 
@@ -34,7 +34,7 @@ public class WelcomePage extends KioskPage {
 	private void initPage() {
 		// 백버튼 표시여부.
 		this.showBackButton();
-		
+
 		// 소리재생.
 		this.playSound(LangCheck.isKorean() ? "sound/welcome.wav" : "sound/welcome_eng.wav");
 	}
