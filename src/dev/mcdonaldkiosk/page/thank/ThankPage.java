@@ -10,7 +10,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.order.CartPanel;
+import dev.mcdonaldkiosk.page.order.MyOrderPanel;
 import dev.mcdonaldkiosk.page.order.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;
 import dev.mcdonaldkiosk.page.welcome.WelcomePage;
@@ -47,7 +47,7 @@ public class ThankPage extends KioskPage {
 			KioskVoice.playSound(LangCheck.isKorean() ? "sound/thank.wav" : "sound/thank_eng.wav");
 		}
 
-		CartPanel.clearOrderData();
+		MyOrderPanel.clearOrderData();
 	}
 
 	private void initImgTextPanel() {

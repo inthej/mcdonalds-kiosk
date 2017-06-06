@@ -25,7 +25,7 @@ public class OrderPage extends KioskPage {
 			ImageEdit.getResizeIcon("image/banner_top.jpg", MainFrame.FRAME_WIDTH, TOP_HEIGHT));
 	private final MenuTab MENU_TAB = new MenuTab();
 	private final JScrollPane SCROLL = new JScrollPane();
-	private final CartPanel CART_PANEL = new CartPanel();
+	private final MyOrderPanel CART_PANEL = new MyOrderPanel();
 
 	public OrderPage() {
 		initPage();
@@ -73,7 +73,7 @@ public class OrderPage extends KioskPage {
 	private void setLayout() {
 		BACK_BUTTON.addActionListener((e) -> {
 			MainFrame.attachPanel(new PaymentPlacePage());
-			CartPanel.emptyOrder();
+			MyOrderPanel.emptyOrder();
 		});
 	}
 	

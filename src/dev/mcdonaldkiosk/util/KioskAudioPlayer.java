@@ -13,18 +13,18 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import com.sun.istack.internal.NotNull;
 
 /**
- * @author mommoo
- *         <p>
- *         Kiosk 컴포넌트의 오디오 요소를 담당하는 클래스이다. 이미 재생한 오디오 목록은 자체적으로 저장 해놓는다.
- *         <p>
- *         사용자가 이미 재상한 오디오를 호출할 시, 캐시 데이터를 이용하여 자원의 효율성을 높인다.
- *         <p>
- *         사용자는 단순히 플레이어 재생, 플레이어 정지를 이용하면 된다.
+ * 
+ * Kiosk 컴포넌트의 오디오 요소를 담당하는 클래스이다. 이미 재생한 오디오 목록은 자체적으로 저장 해놓는다.
+ * 
+ * 사용자가 이미 재상한 오디오를 호출할 시, 캐시 데이터를 이용하여 자원의 효율성을 높인다.
+ * 
+ * 사용자는 단순히 플레이어 재생, 플레이어 정지를 이용하면 된다.
+ * 
  * @version 1.0v
  * @since 2017. 05. 31.
  * 
  * @author kimjaehyeon
- * <p>
+ * 
  * 소리가 이미 재생중일 경우 기존 소리는 중지되록 업데이트 되었다.
  * @since 2017. 6. 6
  */
@@ -82,6 +82,7 @@ public class KioskAudioPlayer {
 	 * 다른곳에서 사용할 수 있도록 한다.
 	 */
 	public void play() {
+		// AudioStream 생성
 		createAudioStream();
 		
 		// 재생중인지 확인.
@@ -96,7 +97,6 @@ public class KioskAudioPlayer {
 			e.printStackTrace();
 		}
 	
-		// 초기화.
 		initClip();
 	}
 	
@@ -105,14 +105,10 @@ public class KioskAudioPlayer {
 		return clip != null;
 	}
 	
-	// Clip 초기화.
 	private void initClip() {
 		clip = null;
 	}
 
-	/**
-	 * 분석 오디오를 중지한다.
-	 */
 	public void stop() {
 		clip.stop();
 	}

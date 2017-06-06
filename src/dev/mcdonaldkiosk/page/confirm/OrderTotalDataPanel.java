@@ -1,15 +1,16 @@
 package dev.mcdonaldkiosk.page.confirm;
 
-import dev.mcdonaldkiosk.page.eatplace.EatPlace;
-import dev.mcdonaldkiosk.page.order.OrderData;
-import dev.mcdonaldkiosk.page.order.OrderDataList;
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import dev.mcdonaldkiosk.page.eatplace.EatPlace;
+import dev.mcdonaldkiosk.page.order.OrderData;
+import dev.mcdonaldkiosk.page.order.OrderDataList;
 
 class OrderTotalDataPanel extends JPanel {
 

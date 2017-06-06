@@ -76,7 +76,7 @@ class CartConfirmPanel extends JPanel {
 
 	private void setListener() {
 		CANCLE_BUTTON.addActionListener((e) -> {
-			CartPanel.clearOrderData();
+			MyOrderPanel.clearOrderData();
 		});
 
 		PAYMENT_BUTTON.addActionListener((e) -> {
