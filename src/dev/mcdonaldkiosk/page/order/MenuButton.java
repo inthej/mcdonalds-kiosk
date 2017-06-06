@@ -15,7 +15,7 @@ import javax.swing.SwingConstants;
  * 해당 메뉴버튼을 담당하는 클래스이다.
  */
 public class MenuButton extends JButton {
-	
+
 	private final String PRICE_FONT_COLOR = "red";
 	private final String IMG_PATH;
 	private final OrderData ORDER_DATA;

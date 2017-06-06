@@ -95,5 +95,5 @@ class CartConfirmPanel extends JPanel {
 	void refleshData() {
 		ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_LIST.getOrderQuantity() + "<br>"
 				+ ORDER_DATA_LIST.getOrderAmount() + "<br>" + ORDER_DATA_LIST.getOrderKCal() + "</html>");
-	}	
+	}
 }

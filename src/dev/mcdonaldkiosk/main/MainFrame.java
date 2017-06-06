@@ -17,10 +17,10 @@ public final class MainFrame extends JFrame {
 
 	/* 프레임 사이즈 */
 	public static final int FRAME_WIDTH = Display.WINDOWS_WIDTH / 2;
-	
+
 	/* 프레임의 세로 크기는 Windows상태바의 높이를 제외하여 규정하였다. */
 	public static final int FRAME_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
-	
+
 	/* 싱글톤 */
 	private static final MainFrame MAIN_FRAME = new MainFrame();
 	private final String TITLE = "ORDER HERE!";
@@ -57,5 +57,5 @@ public final class MainFrame extends JFrame {
 	// 화면을 보여준다.
 	static void showScreen() {
 		MAIN_FRAME.setVisible(true);
-	}	
+	}
 }

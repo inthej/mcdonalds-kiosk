@@ -33,7 +33,7 @@ public class ImageTextPanel extends JPanel {
 	private final float TEXT_SIZE = 20.0f;
 	private final Color TEXT_COLOR = Color.WHITE;
 	private Color TEXT_BACKGROUND_COLOR = new Color(00, 94, 00);
-	
+
 	private ImageEdit imageEdit = new ImageEdit();
 
 	public ImageTextPanel(ImageIcon imgIcon, String text) {

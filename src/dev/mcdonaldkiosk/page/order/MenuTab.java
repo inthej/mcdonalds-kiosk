@@ -11,7 +11,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
  * Class Role : 메뉴탭을 제공한다.
  */
 public class MenuTab extends JTabbedPane {
-	
+
 	// 메뉴 탭
 	private final JPanel BURGER_TAB = new JPanel();
 	private final JPanel SNACK_TAB = new JPanel();
@@ -66,7 +66,7 @@ public class MenuTab extends JTabbedPane {
 		DESSERT_TAB.setBackground(Color.WHITE);
 		DESSERT_TAB.add(dessertTable);
 		this.add(DESSERT_TAB);
-		
+
 		this.setTitleAt(0, LangCheck.isKorean() ? "버거" : "Burgers & Sandwiches");
 		this.setTitleAt(1, LangCheck.isKorean() ? "스낵과 사이드" : "Snacks & Sides");
 		this.setTitleAt(2, LangCheck.isKorean() ? "세트메뉴" : "Extra Value Meals");
@@ -87,7 +87,7 @@ public class MenuTab extends JTabbedPane {
 	}
 
 	private void initMenuTab() {
-		this.setTabPlacement(JTabbedPane.TOP); // 상단위치	
+		this.setTabPlacement(JTabbedPane.TOP); // 상단위치
 	}
 
 	private void resisterBurger() {

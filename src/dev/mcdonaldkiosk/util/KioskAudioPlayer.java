@@ -35,7 +35,6 @@ public class KioskAudioPlayer {
 	private static Clip clip;
 	private final File audioFile;
 	private AudioInputStream audioInputStream;
-	
 
 	// 오디오파일 필수
 	private KioskAudioPlayer(File audioFile) {
@@ -43,9 +42,8 @@ public class KioskAudioPlayer {
 	}
 
 	/**
-	 * 분석 
-	 * audioPath를 key로 사용을 하며 filePoll에 입력된 키의 값이 null이면 createNewAudioFile을 호출한다. 
-	 * return 으로는 해당경로의 파일을 가지고 있는 KioskAudioPlayer를 리턴한다
+	 * 분석 audioPath를 key로 사용을 하며 filePoll에 입력된 키의 값이 null이면 createNewAudioFile을
+	 * 호출한다. return 으로는 해당경로의 파일을 가지고 있는 KioskAudioPlayer를 리턴한다
 	 * <p>
 	 * 해당메서드를 다른쪽에서 사용할 수 있도록 공개하여서 필요하면 실행가능한 KioskAudioPlayer를 얻을수 있다.
 	 */
@@ -57,8 +55,7 @@ public class KioskAudioPlayer {
 	}
 
 	/**
-	 * 분석 
-	 * 입력된 오디오경로를 통해서 파일을 생성하고 FilePool에 Key:경로명, Value:파일을 등록한다.
+	 * 분석 입력된 오디오경로를 통해서 파일을 생성하고 FilePool에 Key:경로명, Value:파일을 등록한다.
 	 */
 	private static void createNewAudioFile(String audioPath) {
 		File audioFile = new File(audioPath);
@@ -66,8 +63,7 @@ public class KioskAudioPlayer {
 	}
 
 	/**
-	 * 분석 
-	 * KioskAudioPlay 자신이 가지고있는 파일객체를 통해서 AudioInputStream을 생성한다.
+	 * 분석 KioskAudioPlay 자신이 가지고있는 파일객체를 통해서 AudioInputStream을 생성한다.
 	 */
 	private void createAudioStream() {
 		try {
@@ -84,10 +80,11 @@ public class KioskAudioPlayer {
 	public void play() {
 		// AudioStream 생성
 		createAudioStream();
-		
+
 		// 재생중이면 초기화.
-		if (clip != null) initClip();
-		
+		if (clip != null)
+			initClip();
+
 		// 재생
 		try {
 			clip = AudioSystem.getClip();
@@ -96,10 +93,10 @@ public class KioskAudioPlayer {
 		} catch (LineUnavailableException | IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		initClip();
 	}
-	
+
 	private void initClip() {
 		clip = null;
 	}

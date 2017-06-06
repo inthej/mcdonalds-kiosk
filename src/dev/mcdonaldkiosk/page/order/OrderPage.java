@@ -15,7 +15,7 @@ import dev.mcdonaldkiosk.util.ImageEdit;
  * 상단 이미지 라벨, 중간 스크롤이 사용된 메뉴탭, 하단 카트패널로 구성되어 있다.
  */
 public class OrderPage extends KioskPage {
-	
+
 	private int TOP_HEIGHT = MainFrame.FRAME_HEIGHT / 5;
 	private int CENTER_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 5;
 	private int BOTTOM_HEIGHT = MainFrame.FRAME_HEIGHT / 5;

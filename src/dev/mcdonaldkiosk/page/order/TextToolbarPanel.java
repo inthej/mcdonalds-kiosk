@@ -21,34 +21,34 @@ import javax.swing.JPanel;
  * @author kimjaehyeon
  */
 class TextToolbarPanel {
-	
+
 	private final JPanel TEXT_TOOLBAR_PANEL = new JPanel();
-	
+
 	private final Color BACKGROUND_COLOR = Color.BLACK;
 	private final Color TEXT_COLOR = Color.WHITE;
 
 	private int textCnt;
-	
+
 	TextToolbarPanel() {
 		initTextToolbarPanel();
 	}
-	
+
 	private void initTextToolbarPanel() {
 		TEXT_TOOLBAR_PANEL.setBackground(BACKGROUND_COLOR);
 	}
-	
+
 	TextToolbarPanel addText(String text) {
 		TEXT_TOOLBAR_PANEL.setLayout(new GridLayout(0, ++textCnt));
 		TEXT_TOOLBAR_PANEL.add(getDesignLabel(new JLabel(text, JLabel.CENTER)));
-		
+
 		return this;
 	}
-	
+
 	private JLabel getDesignLabel(JLabel jLabel) {
 		jLabel.setForeground(TEXT_COLOR);
 		return jLabel;
 	}
-	
+
 	Component getPanel() {
 		return TEXT_TOOLBAR_PANEL;
 	}

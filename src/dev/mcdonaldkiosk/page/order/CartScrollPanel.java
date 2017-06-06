@@ -11,7 +11,7 @@ import dev.mcdonaldkiosk.main.MainFrame;
  * 장바구니 패널의 선택메뉴 리스트 스크롤
  */
 class CartScrollPanel extends JScrollPane {
-	
+
 	public static final JList<OrderData> J_LIST = new JList<>();
 	private final OrderDataList ORDER_DATA_LIST;
 

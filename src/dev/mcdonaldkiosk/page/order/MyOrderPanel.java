@@ -11,7 +11,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
  * Class Role : 선택한 주문확인을 담당한다.
  */
 public class MyOrderPanel extends JPanel {
-	
+
 	/* 주문 장바구니 리스트 */
 	private static final OrderDataList ORDER_DATA_LIST = new OrderDataList();
 
@@ -24,19 +24,19 @@ public class MyOrderPanel extends JPanel {
 		initMyOrderPanel();
 		addTextToTextToolbar();
 	}
-	
+
 	private void initMyOrderPanel() {
 		this.setLayout(new BorderLayout());
 		this.add(TEXT_TOOLBAR_PANEL.getPanel(), BorderLayout.NORTH);
 		this.add(CART_SCROLL_PANEL, BorderLayout.CENTER);
 		this.add(CART_ORDER_CONFIRM_PANEL, BorderLayout.SOUTH);
 	}
-	
-	// 텍스트툴바에 데이터 추가
+
+	// 텍스트툴바에 텍스트 추가
 	private void addTextToTextToolbar() {
 		TEXT_TOOLBAR_PANEL.addText(LangCheck.isKorean() ? "메뉴" : "MENU")
-		.addText(LangCheck.isKorean() ? "수량" : "QUANTITY")
-		.addText(LangCheck.isKorean() ? "가격" : "PRICE");
+				.addText(LangCheck.isKorean() ? "수량" : "QUANTITY")
+				.addText(LangCheck.isKorean() ? "가격" : "PRICE");
 	}
 
 	// 주문 넣기

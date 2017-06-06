@@ -26,7 +26,7 @@ public class ImageTextButton extends JButton {
 	private final float FONT_SIZE = 15.0f; // float자료형 글자크기, int자료형 글자디자인
 	private final Color FONT_COLOR = Color.RED;
 	private final Color BACKGROUND_COLOR = Color.WHITE;
-	
+
 	private ImageEdit imageEdit = new ImageEdit();
 
 	public ImageTextButton() {
@@ -68,5 +68,5 @@ public class ImageTextButton extends JButton {
 
 	public void setResizedImg(ImageIcon imgIcon, int width, int height) {
 		this.setIcon(imageEdit.getResizeIcon(imgIcon, width, height));
-	}	
+	}
 }

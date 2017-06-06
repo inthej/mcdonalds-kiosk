@@ -70,7 +70,8 @@ public class EatPlacePage extends KioskPage {
 
 		Component languageSelectComp = LANGUAGE_SELECT_GUIDE_PANEL.getPanel();
 		languageSelectComp.setSize(MIDDLE_PANEL_WIDTH, MIDDLE_PANEL_HEIGHT / 3);
-		languageSelectComp.setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT * 3 / 4);
+		languageSelectComp.setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2,
+				MainFrame.FRAME_HEIGHT * 3 / 4);
 
 		this.add(languageSelectComp);
 	}

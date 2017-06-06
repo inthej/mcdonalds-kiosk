@@ -13,7 +13,7 @@ import dev.mcdonaldkiosk.page.KioskPage;
  * Class Role : 한 면에 보이는 메뉴들을 붙일수있는 테이블이다.
  */
 class MenuTablePanel extends JPanel {
-	
+
 	private final ArrayList<MenuButton> MENU_BUTTON_LIST = new ArrayList<>();
 
 	public final int TABLE_WIDTH = MainFrame.FRAME_WIDTH;

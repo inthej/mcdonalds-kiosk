@@ -14,14 +14,14 @@ import dev.mcdonaldkiosk.page.TitleLabel;
 import dev.mcdonaldkiosk.util.ImageEdit;
 
 class PaymentCardPanel extends JPanel {
-	
+
 	private final TitleLabel TITLE_LABEL = new TitleLabel();
 	private final JLabel IMAGE_LABEL = new JLabel();
 	private final ImageTextButton IMAGE_TEXT_BUTTON = new ImageTextButton();
 
 	private static final int BUTTON_IMG_SIZE_WIDTH = MainFrame.FRAME_WIDTH * 4 / 25;
 	private static final int BUTTON_IMG_SIZE_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 25;
-	
+
 	private ImageEdit imageEdit = new ImageEdit();
 
 	PaymentCardPanel() {
