@@ -21,7 +21,7 @@ import dev.mcdonaldkiosk.page.thank.ThankPage;
  */
 public class ConfirmPage extends KioskPage {
 
-    /* 중간패널 사이즈 */
+	/* 중간패널 사이즈 */
     private final int MIDDLE_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
     private final int MIDDLE_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 5;
 
@@ -57,7 +57,6 @@ public class ConfirmPage extends KioskPage {
 
     private void initPage() {
         this.setBackgroundImg("image/bg_green.png");
-        this.showBackButton();
 
         this.playSound(LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav");
     }
@@ -100,6 +99,4 @@ public class ConfirmPage extends KioskPage {
             }
         });
     }
-
-    private static final long serialVersionUID = 1704495104265099591L;
 }

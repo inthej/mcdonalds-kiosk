@@ -11,7 +11,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
  * Class Role : 선택한 주문확인을 담당한다.
  */
 public class MyOrderPanel extends JPanel {
-
+	
 	/* 주문 장바구니 리스트 */
 	private static final OrderDataList ORDER_DATA_LIST = new OrderDataList();
 
@@ -65,6 +65,4 @@ public class MyOrderPanel extends JPanel {
 		CART_SCROLL_PANEL.scrollDown();
 		CART_ORDER_CONFIRM_PANEL.refleshData();
 	}
-	
-	private static final long serialVersionUID = 3529877822808691105L;
 }

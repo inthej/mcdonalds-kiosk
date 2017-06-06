@@ -67,6 +67,4 @@ class PaymentCardPanel extends JPanel {
 	ImageTextButton getImageTextButton() {
 		return IMAGE_TEXT_BUTTON;
 	}
-	
-	private static final long serialVersionUID = -7292434998869068674L;
 }

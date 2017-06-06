@@ -68,7 +68,5 @@ public class ImageTextButton extends JButton {
 		ImageIcon resizedImgIcon = new ImageIcon(resizedImg);
 
 		this.setIcon(resizedImgIcon);
-	}
-	
-	private static final long serialVersionUID = 5693028348740582531L;
+	}	
 }

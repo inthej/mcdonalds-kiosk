@@ -11,7 +11,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
  * Class Role : 메뉴탭을 제공한다.
  */
 public class MenuTab extends JTabbedPane {
-
+	
 	// 메뉴 탭
 	private final JPanel BURGER_TAB = new JPanel();
 	private final JPanel SNACK_TAB = new JPanel();
@@ -432,6 +432,4 @@ public class MenuTab extends JTabbedPane {
 		dessertTable.addMenu(new MenuButton("image/dessert/prol_201311280228539530.png",
 				new OrderData(LangCheck.isKorean() ? "아이스크림콘" : "Ice Cream Cone", 600, 153)));
 	}
-
-	private static final long serialVersionUID = -3009884571057632259L;
 }

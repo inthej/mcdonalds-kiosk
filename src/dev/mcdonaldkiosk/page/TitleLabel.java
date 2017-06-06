@@ -51,7 +51,5 @@ public class TitleLabel extends JLabel {
 		this.setFont(this.getFont().deriveFont(FONT_SIZE));
 		this.setBorder(BorderFactory.createEmptyBorder(PADDING_TOP, PADDING_LEFT, PADDING_BOTTOM, PADDING_RIGHT));
 		this.setForeground(TEXT_COLOR);
-	}
-	
-	private static final long serialVersionUID = -140993541076124589L;
+	}	
 }

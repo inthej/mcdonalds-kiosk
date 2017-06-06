@@ -16,7 +16,7 @@ import dev.mcdonaldkiosk.util.ImageEdit;
  * Class Role : 카드 결제지불 페이지
  */
 public class PaymentCardPage extends KioskPage {
-
+	
 	private final int MID_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
 	private final int MID_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 5;
 
@@ -76,6 +76,4 @@ public class PaymentCardPage extends KioskPage {
 			}
 		});
 	}
-
-	private static final long serialVersionUID = -823009228065966049L;
 }

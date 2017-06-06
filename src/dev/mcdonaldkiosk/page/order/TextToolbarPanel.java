@@ -33,7 +33,7 @@ class TextToolbarPanel {
 		initTextToolbarPanel();
 	}
 	
-	void initTextToolbarPanel() {
+	private void initTextToolbarPanel() {
 		TEXT_TOOLBAR_PANEL.setBackground(BACKGROUND_COLOR);
 	}
 	
@@ -49,7 +49,7 @@ class TextToolbarPanel {
 		return jLabel;
 	}
 	
-	public Component getPanel() {
+	Component getPanel() {
 		return TEXT_TOOLBAR_PANEL;
 	}
 }

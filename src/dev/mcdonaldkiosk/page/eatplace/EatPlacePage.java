@@ -98,6 +98,4 @@ public class EatPlacePage extends KioskPage {
 			MainFrame.attachPanel(new EatPlacePage());
 		});
 	}
-	
-	private static final long serialVersionUID = 7948677078303975711L;
 }

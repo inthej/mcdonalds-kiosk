@@ -27,6 +27,4 @@ class ConfirmButton extends JButton {
 			}
 		});
 	}
-
-	private static final long serialVersionUID = -6286699426610259517L;
 }

@@ -42,6 +42,4 @@ class OrderTotalDataPanel extends JPanel {
 
 		return totalListPanel;
 	}
-
-	private static final long serialVersionUID = -8252111445137027819L;
 }

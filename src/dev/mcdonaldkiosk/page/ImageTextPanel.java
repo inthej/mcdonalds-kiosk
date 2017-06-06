@@ -72,6 +72,4 @@ public class ImageTextPanel extends JPanel {
 	public void setTextBackground(Color color) {
 		TEXT_LABEL.setBackground(color);
 	}
-
-	private static final long serialVersionUID = -3601756928958536753L;
 }
