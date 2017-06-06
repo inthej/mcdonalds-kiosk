@@ -14,7 +14,6 @@ import dev.mcdonaldkiosk.page.order.MyOrderPanel;
 import dev.mcdonaldkiosk.page.order.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;
 import dev.mcdonaldkiosk.page.welcome.WelcomePage;
-import dev.mcdonaldkiosk.util.KioskVoice;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 19 
@@ -42,9 +41,9 @@ public class ThankPage extends KioskPage {
 
 		String orderPlace = OrderPlace.getInstance().getPayPlace();
 		if (orderPlace == PayPlace.COUNTER.toString()) {
-			KioskVoice.playSound(LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
+			this.playSound(LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
 		} else if (orderPlace == PayPlace.KIOSK.toString()) {
-			KioskVoice.playSound(LangCheck.isKorean() ? "sound/thank.wav" : "sound/thank_eng.wav");
+			this.playSound(LangCheck.isKorean() ? "sound/thank.wav" : "sound/thank_eng.wav");
 		}
 
 		MyOrderPanel.clearOrderData();

@@ -85,8 +85,8 @@ public class KioskAudioPlayer {
 		// AudioStream 생성
 		createAudioStream();
 		
-		// 재생중인지 확인.
-		if (isPlaying()) clip = null;
+		// 재생중이면 초기화.
+		if (clip != null) initClip();
 		
 		// 재생
 		try {
@@ -96,13 +96,8 @@ public class KioskAudioPlayer {
 		} catch (LineUnavailableException | IOException e) {
 			e.printStackTrace();
 		}
-	
+		
 		initClip();
-	}
-	
-	// 소리재 재생중인지 확인한다.
-	private boolean isPlaying() {
-		return clip != null;
 	}
 	
 	private void initClip() {

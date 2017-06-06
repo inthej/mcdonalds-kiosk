@@ -10,7 +10,6 @@ import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
 import dev.mcdonaldkiosk.page.thank.ThankPage;
 import dev.mcdonaldkiosk.util.ImageEdit;
-import dev.mcdonaldkiosk.util.KioskVoice;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 25 
@@ -33,7 +32,7 @@ public class PaymentCardPage extends KioskPage {
 		this.setBackgroundImg("image/bg_green.png");
 		this.showBackButton();
 
-		KioskVoice.playSound(LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav");
+		this.playSound(LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav");
 	}
 
 	private void initPaymentCardPanel() {
@@ -49,7 +48,7 @@ public class PaymentCardPage extends KioskPage {
 		PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				KioskVoice.playSound(LangCheck.isKorean() ? "sound/ing.wav" : "sound/ing_eng.wav");
+				PaymentCardPage.this.playSound(LangCheck.isKorean() ? "sound/ing.wav" : "sound/ing_eng.wav");
 
 				try {
 					Thread.sleep(5000);

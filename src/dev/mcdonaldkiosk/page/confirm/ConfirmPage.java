@@ -5,7 +5,6 @@ import java.awt.Component;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.KioskVoice;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
@@ -60,7 +59,7 @@ public class ConfirmPage extends KioskPage {
         this.setBackgroundImg("image/bg_green.png");
         this.showBackButton();
 
-        KioskVoice.playSound(LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav");
+        this.playSound(LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav");
     }
 
     private void initOrderTotalListPanel() {

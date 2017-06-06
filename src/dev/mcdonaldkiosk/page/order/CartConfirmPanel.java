@@ -1,15 +1,16 @@
 package dev.mcdonaldkiosk.page.order;
 
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.KioskVoice;
-import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
-
 import java.awt.Color;
 import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * 장바구니 패널의 선택메뉴정보 확인 패널
@@ -81,7 +82,9 @@ class CartConfirmPanel extends JPanel {
 
 		PAYMENT_BUTTON.addActionListener((e) -> {
 			if (ORDER_DATA_LIST.getOrderQuantity() == 0) {
-				KioskVoice.playSound(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
+				KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
+						.createKioskAudioPlayer(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
+				kioskAudioPlayer.play();
 			} else {
 				MainFrame.attachPanel(new ConfirmPage(ORDER_DATA_LIST));
 			}

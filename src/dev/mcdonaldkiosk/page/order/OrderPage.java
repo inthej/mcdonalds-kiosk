@@ -1,14 +1,13 @@
 package dev.mcdonaldkiosk.page.order;
 
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.ImageEdit;
-import dev.mcdonaldkiosk.util.KioskVoice;
-import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
-
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.KioskPage;
+import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
+import dev.mcdonaldkiosk.util.ImageEdit;
 
 /**
  * Created by kimjaehyeon 
@@ -40,7 +39,7 @@ public class OrderPage extends KioskPage {
 	private void initPage() {
 		this.setLayout(null);
 		this.setComponentZOrder(BACK_BUTTON, 0);
-		KioskVoice.playSound(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
+		this.playSound(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
 	}
 
 	private void initImageLabel() {

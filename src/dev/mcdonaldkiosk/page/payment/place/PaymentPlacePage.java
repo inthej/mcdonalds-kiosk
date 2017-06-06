@@ -1,18 +1,18 @@
 package dev.mcdonaldkiosk.page.payment.place;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.KioskVoice;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
 import dev.mcdonaldkiosk.page.order.OrderPage;
 import dev.mcdonaldkiosk.page.order.OrderPlace;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 20 
@@ -39,7 +39,7 @@ public class PaymentPlacePage extends KioskPage {
 		this.setBackgroundImg("image/bg_green.png");
 		this.showBackButton();
 
-		KioskVoice.playSound(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav");
+		this.playSound(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav");
 	}
 
 	private void initPaymentSelectPanel() {

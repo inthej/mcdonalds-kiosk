@@ -1,15 +1,15 @@
 package dev.mcdonaldkiosk.page;
 
-import dev.mcdonaldkiosk.main.Display;
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.BackButton;
-
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * Create by kimjaehyeon on 2017. 5. 16 
@@ -25,10 +25,13 @@ import javax.swing.JPanel;
  * 1. 배경화면 이미지파일 경로 설정을 제공한다. 
  * 2. 배경화면 표시 기능을 제공한다. 
  * 3. 백버튼 표시 기능을 제공한다.
+ * 4. 사운드 실행을 제공한다.
  */
 public abstract class KioskPage extends JPanel {
 
 	protected final BackButton BACK_BUTTON = new BackButton();
+	
+	private KioskAudioPlayer kioskAudioPlayer;
 
 	private String backgroundImg;
 
@@ -60,7 +63,7 @@ public abstract class KioskPage extends JPanel {
 	private boolean isBackgroundImg() {
 		return backgroundImg != null;
 	}
-
+	
 	/* 배경이미지 설정 */
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -74,6 +77,10 @@ public abstract class KioskPage extends JPanel {
 			}
 		}
 	}
-
-	private static final long serialVersionUID = -7872723353787164076L;
+	
+	// 사운드를 재생한다.
+	protected void playSound(String audioPath) {
+		this.kioskAudioPlayer = KioskAudioPlayer.createKioskAudioPlayer(audioPath);
+		this.kioskAudioPlayer.play();
+	}
 }

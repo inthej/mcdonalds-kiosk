@@ -10,7 +10,6 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
-import dev.mcdonaldkiosk.util.KioskVoice;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 19 
@@ -35,8 +34,9 @@ public class WelcomePage extends KioskPage {
 	private void initPage() {
 		// 백버튼 표시여부.
 		this.showBackButton();
+		
 		// 소리재생.
-		KioskVoice.playSound(LangCheck.isKorean() ? "sound/welcome.wav" : "sound/welcome_eng.wav");
+		this.playSound(LangCheck.isKorean() ? "sound/welcome.wav" : "sound/welcome_eng.wav");
 	}
 
 	private void initImgTextPanel() {

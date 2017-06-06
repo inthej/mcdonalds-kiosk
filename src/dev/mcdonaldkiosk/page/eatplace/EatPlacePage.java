@@ -1,19 +1,19 @@
 package dev.mcdonaldkiosk.page.eatplace;
 
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.ImageIcon;
+
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.lang.Language;
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.KioskVoice;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.order.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
 import dev.mcdonaldkiosk.page.welcome.WelcomePage;
-
-import java.awt.Color;
-import java.awt.Component;
-import javax.swing.ImageIcon;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 22 
@@ -50,7 +50,7 @@ public class EatPlacePage extends KioskPage {
 		this.setBackgroundImg("image/bg_green.png");
 		this.showBackButton();
 
-		KioskVoice.playSound(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav");
+		this.playSound(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav");
 	}
 
 	private void initPlaceGuidePanel() {
