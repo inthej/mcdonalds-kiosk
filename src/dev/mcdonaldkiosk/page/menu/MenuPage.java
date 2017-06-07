@@ -10,7 +10,6 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.menu.order.MyOrderPanel;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
-import dev.mcdonaldkiosk.util.ImageEdit;
 
 /**
  * Created by kimjaehyeon 
@@ -54,6 +53,7 @@ public class MenuPage extends KioskPage {
 	private void setLayout() {
 		this.BACK_BUTTON.addActionListener((e) -> {
 			MainFrame.attachPanel(new PaymentPlacePage());
+			// TODO : 주문데이터 비우기
 //			MyOrderPanel.emptyOrder();
 		});
 	}

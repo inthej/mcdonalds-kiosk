@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
@@ -82,8 +84,8 @@ class OrderConfirmPanel extends JPanel {
 						.createKioskAudioPlayer(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
 				kioskAudioPlayer.play();
 			} else {
-				// TODO : 다음페이지 데이터 넘기기.
-				// MainFrame.attachPanel(new ConfirmPage(ORDER_DATA_LIST));
+				// TODO : 데이터 넘기기.
+				MainFrame.attachPanel(new ConfirmPage());
 			}
 		});
 	}
