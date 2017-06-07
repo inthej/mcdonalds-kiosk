@@ -46,7 +46,7 @@ public class ThankPage extends KioskPage {
 			this.playSound(LangCheck.isKorean() ? "sound/thank.wav" : "sound/thank_eng.wav");
 		}
 
-		MyOrderPanel.clearOrderData();
+//		MyOrderPanel.clearOrderData();
 	}
 
 	private void initImgTextPanel() {

@@ -10,14 +10,14 @@ import javax.swing.JScrollPane;
 
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
 import dev.mcdonaldkiosk.page.menu.Menu;
-import dev.mcdonaldkiosk.page.menu.OrderDataList;
+import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
 
 class OrderTotalDataPanel extends JPanel {
 
 	private final EatPlace eatPlace;
-	private final OrderDataList ORDER_DATA_LIST;
+	private final OrderDataModel ORDER_DATA_LIST;
 
-	OrderTotalDataPanel(EatPlace eatPlace, OrderDataList orderDataList) {
+	OrderTotalDataPanel(EatPlace eatPlace, OrderDataModel orderDataList) {
 		this.eatPlace = eatPlace;
 		this.ORDER_DATA_LIST = orderDataList;
 

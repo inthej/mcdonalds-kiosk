@@ -5,8 +5,6 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.menu.Menu;
-import dev.mcdonaldkiosk.page.menu.OrderDataList;
 
 /**
  * Created by kimjaehyeon 
@@ -15,13 +13,15 @@ import dev.mcdonaldkiosk.page.menu.OrderDataList;
 public class MyOrderPanel extends JPanel {
 
 	/* 주문 장바구니 리스트 */
-	private static final OrderDataList ORDER_DATA_LIST = new OrderDataList();
+	private final OrderDataModel ORDER_DATA_MODEL = new OrderDataModel();
 
 	private final TextToolbarPanel TEXT_TOOLBAR_PANEL = new TextToolbarPanel();
-	private static final CartScrollPanel CART_SCROLL_PANEL = new CartScrollPanel(ORDER_DATA_LIST);
-	private static final CartConfirmPanel CART_ORDER_CONFIRM_PANEL = new CartConfirmPanel(ORDER_DATA_LIST);
+	private final SelectMenuBoxScrollPane SELECT_MENU_BOX_SCROLL_PANE = new SelectMenuBoxScrollPane(ORDER_DATA_MODEL.getOrderMenuArray());
+	private final OrderConfirmPanel ORDER_CONFIRM_PANEL;
 
 	public MyOrderPanel() {
+		ORDER_CONFIRM_PANEL = new OrderConfirmPanel(ORDER_DATA_MODEL.getTotalQuantity(),
+				ORDER_DATA_MODEL.getTotalAmount(), ORDER_DATA_MODEL.getTotalKCal());
 		// 초기화
 		initMyOrderPanel();
 		addTextToTextToolbar();
@@ -30,8 +30,8 @@ public class MyOrderPanel extends JPanel {
 	private void initMyOrderPanel() {
 		this.setLayout(new BorderLayout());
 		this.add(TEXT_TOOLBAR_PANEL.getPanel(), BorderLayout.NORTH);
-		this.add(CART_SCROLL_PANEL, BorderLayout.CENTER);
-		this.add(CART_ORDER_CONFIRM_PANEL, BorderLayout.SOUTH);
+		this.add(SELECT_MENU_BOX_SCROLL_PANE, BorderLayout.CENTER);
+		this.add(ORDER_CONFIRM_PANEL, BorderLayout.SOUTH);
 	}
 
 	// 텍스트툴바에 텍스트 추가
@@ -39,32 +39,5 @@ public class MyOrderPanel extends JPanel {
 		TEXT_TOOLBAR_PANEL.addText(LangCheck.isKorean() ? "메뉴" : "MENU")
 				.addText(LangCheck.isKorean() ? "수량" : "QUANTITY")
 				.addText(LangCheck.isKorean() ? "가격" : "PRICE");
-	}
-
-	// 주문 넣기
-	public static void addOrder(Menu orderData) {
-		// 데이터추가
-		ORDER_DATA_LIST.add(orderData);
-
-		cartStatus();
-	}
-
-	// 주문 비우기
-	public static void emptyOrder() {
-		ORDER_DATA_LIST.clear();
-
-		cartStatus();
-	}
-
-	public static void clearOrderData() {
-		ORDER_DATA_LIST.clear();
-		CART_SCROLL_PANEL.setJListOrderList();
-		CART_ORDER_CONFIRM_PANEL.refleshData();
-	}
-
-	private static void cartStatus() {
-		CART_SCROLL_PANEL.setJListOrderList();
-		CART_SCROLL_PANEL.scrollDown();
-		CART_ORDER_CONFIRM_PANEL.refleshData();
 	}
 }

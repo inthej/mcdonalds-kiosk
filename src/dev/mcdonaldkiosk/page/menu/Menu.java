@@ -21,11 +21,11 @@ public class Menu {
 		this.K_CAL = kCal;
 	}
 
-	int getPrice() {
+	public int getPrice() {
 		return PRICE;
 	}
 
-	int getKCal() {
+	public int getKCal() {
 		return K_CAL;
 	}
 

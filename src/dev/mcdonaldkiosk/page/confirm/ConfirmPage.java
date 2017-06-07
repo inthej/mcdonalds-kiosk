@@ -8,9 +8,9 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
-import dev.mcdonaldkiosk.page.menu.OrderDataList;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.page.menu.OrderPlace;
+import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
 import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;
 import dev.mcdonaldkiosk.page.thank.ThankPage;
@@ -29,7 +29,7 @@ public class ConfirmPage extends KioskPage {
 	private final KioskGuidePanel ORDER_CONFIRM_GUIDE_PANEL = new KioskGuidePanel(
 			LangCheck.isKorean() ? "주문을 확인해주세요" : "IS THIS ORDER CORRECT?", 0, 1);
 
-	private OrderDataList orderDataList = new OrderDataList();
+	private OrderDataModel orderDataList = new OrderDataModel();
 	private final OrderTotalDataPanel ORDER_TOTAL_LIST_PANEL = new OrderTotalDataPanel(EatPlace.EAT_IN, orderDataList);
 
 	// 하단 패널
@@ -37,7 +37,7 @@ public class ConfirmPage extends KioskPage {
 	private final ConfirmButton NO_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "취소" : "NO");
 	private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
-	public ConfirmPage(OrderDataList orderDataList) {
+	public ConfirmPage(OrderDataModel orderDataList) {
 		this.orderDataList = orderDataList;
 
 		initPage();

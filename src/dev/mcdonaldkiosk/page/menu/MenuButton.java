@@ -48,7 +48,7 @@ public class MenuButton extends JButton {
 			clickBGMPlayer.play();
 
 			// 주문데이터를 넣는다.
-			MyOrderPanel.addOrder(MENU);
+//			MyOrderPanel.addOrder(MENU);
 		});
 	}
 }

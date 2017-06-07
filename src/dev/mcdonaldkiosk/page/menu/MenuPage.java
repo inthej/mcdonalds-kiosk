@@ -54,7 +54,7 @@ public class MenuPage extends KioskPage {
 	private void setLayout() {
 		this.BACK_BUTTON.addActionListener((e) -> {
 			MainFrame.attachPanel(new PaymentPlacePage());
-			MyOrderPanel.emptyOrder();
+//			MyOrderPanel.emptyOrder();
 		});
 	}
 }
