@@ -15,7 +15,7 @@ public class OrderDataModel {
 	private final ArrayList<Menu> ORDER_MENU_LIST = new ArrayList<>();
 	private final OrderDataCalculator ORDER_DATA_CALCULATOR = new OrderDataCalculator(ORDER_MENU_LIST);
 	
-	OrderDataModel() {
+	public OrderDataModel() {
 	
 	}
 	

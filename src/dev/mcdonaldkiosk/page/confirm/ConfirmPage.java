@@ -29,8 +29,8 @@ public class ConfirmPage extends KioskPage {
 	private final KioskGuidePanel ORDER_CONFIRM_GUIDE_PANEL = new KioskGuidePanel(
 			LangCheck.isKorean() ? "주문을 확인해주세요" : "IS THIS ORDER CORRECT?", 0, 1);
 
-	private OrderDataModel orderDataList = new OrderDataModel();
-	private final OrderTotalDataPanel ORDER_TOTAL_LIST_PANEL = new OrderTotalDataPanel(EatPlace.EAT_IN, orderDataList);
+	private OrderDataModel orderDataModel = new OrderDataModel();
+	private final OrderTotalDataPanel ORDER_TOTAL_LIST_PANEL = new OrderTotalDataPanel(EatPlace.EAT_IN, orderDataModel);
 
 	// 하단 패널
 	private final KioskGuidePanel YES_NO_SELECT_PANEL = new KioskGuidePanel(0, 2);
@@ -38,7 +38,7 @@ public class ConfirmPage extends KioskPage {
 	private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
 	public ConfirmPage(OrderDataModel orderDataList) {
-		this.orderDataList = orderDataList;
+		this.orderDataModel = orderDataList;
 
 		initPage();
 		initOrderTotalListPanel();
