@@ -16,16 +16,11 @@ import dev.mcdonaldkiosk.page.menu.Menu;
  */
 class SelectMenuBoxScrollPane extends JScrollPane {
 
-	private final Menu[] SELECTED_MENU_ARRAY;
-	
 	public final JList<Menu> J_LIST = new JList<>();
 
-	public SelectMenuBoxScrollPane(Menu[] selectMenu) {
-		SELECTED_MENU_ARRAY = selectMenu;
-
+	public SelectMenuBoxScrollPane() {
 		initScrollPane();
 		initJList();
-		refresh();
 	}
 
 	private void initScrollPane() {
@@ -38,14 +33,10 @@ class SelectMenuBoxScrollPane extends JScrollPane {
 		J_LIST.setSize(this.getWidth(), this.getHeight());
 		J_LIST.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT / 10 + MainFrame.FRAME_HEIGHT / 40);
 	}
-	
-	void refresh() {
-		setJListMenu();
-		scrollDown();
-	}
 
-	private void setJListMenu() {
-		J_LIST.setListData(SELECTED_MENU_ARRAY);
+	void setJListMenu(Menu[] menuArray) {
+		J_LIST.setListData(menuArray);
+		scrollDown();
 	}
 
 	// 스크롤을 최하단으로 내린다.

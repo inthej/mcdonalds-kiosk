@@ -21,8 +21,8 @@ public class MyOrderPanel extends JPanel {
 
 	public MyOrderPanel(OrderDataModel orderDataModel) {
 		this.orderDataModel = orderDataModel;
-		SELECT_MENU_BOX_SCROLL_PANE = new SelectMenuBoxScrollPane(orderDataModel.getOrderMenuArray());
-		ORDER_CONFIRM_PANEL = new OrderConfirmPanel(orderDataModel.getTotalQuantity(), orderDataModel.getTotalAmount(), orderDataModel.getTotalKCal());
+		SELECT_MENU_BOX_SCROLL_PANE = new SelectMenuBoxScrollPane();
+		ORDER_CONFIRM_PANEL = new OrderConfirmPanel(orderDataModel);
 		
 		// 초기화
 		initMyOrderPanel();
@@ -44,7 +44,8 @@ public class MyOrderPanel extends JPanel {
 	}
 	
 	public void reflesh() {
-		SELECT_MENU_BOX_SCROLL_PANE.refresh();
-		ORDER_CONFIRM_PANEL.refresh();
+		SELECT_MENU_BOX_SCROLL_PANE.setJListMenu(orderDataModel.getOrderMenuArray());
+		ORDER_CONFIRM_PANEL.setOrderData(orderDataModel.getTotalQuantity(), orderDataModel.getTotalAmount(),
+				orderDataModel.getTotalKCal());
 	}
 }

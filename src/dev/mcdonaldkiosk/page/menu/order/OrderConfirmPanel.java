@@ -30,10 +30,10 @@ class OrderConfirmPanel extends JPanel {
 	private int totalAmount;
 	private int totalKCal;
 
-	OrderConfirmPanel(int totalQuantity, int totalAmount, int totalKCal) {
-		this.totalQuantity = totalQuantity;
-		this.totalAmount = totalAmount;
-		this.totalKCal = totalKCal;
+	private OrderDataModel orderDataModel;
+	
+	OrderConfirmPanel(OrderDataModel orderDataModel) {
+		this.orderDataModel = orderDataModel;
 		
 		initOrderConfirmPanel();
 
@@ -74,8 +74,7 @@ class OrderConfirmPanel extends JPanel {
 
 	private void setListener() {
 		CANCLE_BUTTON.addActionListener((e) -> {
-			// TODO : 주문비우기
-			// MyOrderPanel.clearOrderData();
+			orderDataModel.clear();
 		});
 
 		PAYMENT_BUTTON.addActionListener((e) -> {
@@ -85,7 +84,7 @@ class OrderConfirmPanel extends JPanel {
 				kioskAudioPlayer.play();
 			} else {
 				// TODO : 데이터 넘기기.
-				MainFrame.attachPanel(new ConfirmPage());
+				MainFrame.attachPanel(new ConfirmPage(orderDataModel));
 			}
 		});
 	}
@@ -94,6 +93,8 @@ class OrderConfirmPanel extends JPanel {
 		this.totalQuantity = totalQuantity;
 		this.totalAmount = totalAmount;
 		this.totalKCal = totalKCal;
+		
+		refresh();
 	}
 
 	void refresh() {

@@ -26,8 +26,10 @@ public class OrderDataModel {
 		this.menuPage = menuPage;
 	}
 	
-	void clear() {
+	public void clear() {
 		ORDER_MENU_LIST.clear();
+		
+		menuPage.reflesh();
 	}
 
 	public void addMenu(Menu menu) {

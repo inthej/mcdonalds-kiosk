@@ -59,9 +59,8 @@ public class MenuPage extends KioskPage {
 
 	private void setLayout() {
 		this.BACK_BUTTON.addActionListener((e) -> {
+			orderDataModel.clear();
 			MainFrame.attachPanel(new PaymentPlacePage());
-			// TODO : 주문데이터 비우기
-//			MyOrderPanel.emptyOrder();
 		});
 	}
 	
