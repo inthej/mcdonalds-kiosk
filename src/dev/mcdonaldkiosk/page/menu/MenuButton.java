@@ -24,12 +24,12 @@ public class MenuButton extends JButton {
 	private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKioskAudioPlayer("sound/beep.wav");
 	private ImageEdit imageEdit = new ImageEdit();
 	
-	private OrderDataModel orderDataModel;
+	private final OrderDataModel ORDER_DATA_MODEL;
 
 	MenuButton(String imgPath, Menu menu, OrderDataModel orderDataModel) {
 		this.IMG_PATH = imgPath;
 		this.MENU = menu;
-		this.orderDataModel = orderDataModel;
+		this.ORDER_DATA_MODEL = orderDataModel;
 
 		initMenuButton();
 		setListener();
@@ -50,7 +50,7 @@ public class MenuButton extends JButton {
 			/* 음원에 관련된건 음원관련 객체에게 맡긴다. */
 			clickBGMPlayer.play();
 
-			orderDataModel.addMenu(MENU);
+			ORDER_DATA_MODEL.addMenu(MENU);
 		});
 	}
 }
