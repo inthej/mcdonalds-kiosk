@@ -18,18 +18,18 @@ import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
  * 상단 이미지 라벨, 중간 스크롤이 사용된 메뉴탭, 하단 MyOrder 패널로 구성되어 있다.
  */
 public class MenuPage extends KioskPage {
-	
-	private OrderDataModel orderDataModel;
 
 	private final JLabel IMAGE_LABEL = new JLabel();
 	private final JScrollPane SCROLL = new JScrollPane();
 	private final MenuTabbedPane MENU_TABBED_PANE;
 	private final MyOrderPanel MY_ORDER_PANEL;
+	
+	private final OrderDataModel ORDER_DATA_MODEL;
 
 	public MenuPage() {
-		orderDataModel = new OrderDataModel(this);
-		MENU_TABBED_PANE = new MenuTabbedPane(orderDataModel);
-		MY_ORDER_PANEL = new MyOrderPanel(orderDataModel);
+		ORDER_DATA_MODEL = new OrderDataModel(this);
+		MENU_TABBED_PANE = new MenuTabbedPane(ORDER_DATA_MODEL);
+		MY_ORDER_PANEL = new MyOrderPanel(ORDER_DATA_MODEL);
 		
 		initPage();
 		initImageLabel();
@@ -59,7 +59,7 @@ public class MenuPage extends KioskPage {
 
 	private void setLayout() {
 		this.BACK_BUTTON.addActionListener((e) -> {
-			orderDataModel.clear();
+			ORDER_DATA_MODEL.clear();
 			MainFrame.attachPanel(new PaymentPlacePage());
 		});
 	}

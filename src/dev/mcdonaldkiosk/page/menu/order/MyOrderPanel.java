@@ -17,12 +17,12 @@ public class MyOrderPanel extends JPanel {
 	private final SelectMenuBoxScrollPane SELECT_MENU_BOX_SCROLL_PANE;
 	private final OrderConfirmPanel ORDER_CONFIRM_PANEL;
 	
-	private OrderDataModel orderDataModel;
+	private final OrderDataModel ORDER_DATA_MODEL;
 
 	public MyOrderPanel(OrderDataModel orderDataModel) {
-		this.orderDataModel = orderDataModel;
+		this.ORDER_DATA_MODEL = orderDataModel;
 		SELECT_MENU_BOX_SCROLL_PANE = new SelectMenuBoxScrollPane();
-		ORDER_CONFIRM_PANEL = new OrderConfirmPanel(orderDataModel);
+		ORDER_CONFIRM_PANEL = new OrderConfirmPanel(ORDER_DATA_MODEL);
 		
 		// 초기화
 		initMyOrderPanel();
@@ -43,9 +43,9 @@ public class MyOrderPanel extends JPanel {
 				.addText(LangCheck.isKorean() ? "가격" : "PRICE");
 	}
 	
+	// 새로고침
 	public void reflesh() {
-		SELECT_MENU_BOX_SCROLL_PANE.setJListMenu(orderDataModel.getOrderMenuArray());
-		ORDER_CONFIRM_PANEL.setOrderData(orderDataModel.getTotalQuantity(), orderDataModel.getTotalAmount(),
-				orderDataModel.getTotalKCal());
+		SELECT_MENU_BOX_SCROLL_PANE.setJListMenu(ORDER_DATA_MODEL.getOrderMenuArray());
+		ORDER_CONFIRM_PANEL.refresh();
 	}
 }

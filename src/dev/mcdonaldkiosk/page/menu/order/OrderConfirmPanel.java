@@ -26,14 +26,10 @@ class OrderConfirmPanel extends JPanel {
 	private final Color CANCLE_BTN_COLOR = Color.GRAY;
 	private final Color PAYMENT_BTN_COLR = Color.ORANGE;
 	
-	private int totalQuantity;
-	private int totalAmount;
-	private int totalKCal;
-
-	private OrderDataModel orderDataModel;
+	private final OrderDataModel ORDER_DATA_MODEL;
 	
 	OrderConfirmPanel(OrderDataModel orderDataModel) {
-		this.orderDataModel = orderDataModel;
+		this.ORDER_DATA_MODEL = orderDataModel;
 		
 		initOrderConfirmPanel();
 
@@ -54,13 +50,16 @@ class OrderConfirmPanel extends JPanel {
 	}
 
 	private void initTextLabel() {
-		ORDER_TEXT_LABEL.setText(LangCheck.isKorean() ? "<html>주문수량<br>주문금액<br>총 칼로리</html>"
+		ORDER_TEXT_LABEL.setText(LangCheck.isKorean() 
+				? "<html>주문수량<br>주문금액<br>총 칼로리</html>" 
 				: "<html>Order quantity<br>Order amount<br>Total calories</html>");
 		ORDER_TEXT_LABEL.setHorizontalAlignment(JLabel.CENTER);
 	}
 	
 	private void initDataLabel() {
-		ORDER_DATA_LABEL.setText("<html>" + totalQuantity + "<br>" + totalAmount + "<br>" + totalKCal + "</html>");
+		ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_MODEL.getTotalQuantity() + 
+				"<br>" + ORDER_DATA_MODEL.getTotalAmount() + 
+				"<br>" + ORDER_DATA_MODEL.getTotalKCal() + "</html>");
 		ORDER_DATA_LABEL.setHorizontalAlignment(JLabel.CENTER);
 	}
 	
@@ -74,30 +73,24 @@ class OrderConfirmPanel extends JPanel {
 
 	private void setListener() {
 		CANCLE_BUTTON.addActionListener((e) -> {
-			orderDataModel.clear();
+			ORDER_DATA_MODEL.clear();
 		});
 
 		PAYMENT_BUTTON.addActionListener((e) -> {
-			if (totalQuantity == 0) {
-				KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
-						.createKioskAudioPlayer(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
+			if (ORDER_DATA_MODEL.getTotalQuantity() == 0) {
+				KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer.createKioskAudioPlayer(
+						LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
 				kioskAudioPlayer.play();
 			} else {
 				// TODO : 데이터 넘기기.
-				MainFrame.attachPanel(new ConfirmPage(orderDataModel));
+				MainFrame.attachPanel(new ConfirmPage(ORDER_DATA_MODEL));
 			}
 		});
 	}
-	
-	void setOrderData(int totalQuantity, int totalAmount, int totalKCal) {
-		this.totalQuantity = totalQuantity;
-		this.totalAmount = totalAmount;
-		this.totalKCal = totalKCal;
-		
-		refresh();
-	}
 
 	void refresh() {
-		ORDER_DATA_LABEL.setText("<html>" + totalQuantity + "<br>" + totalAmount + "<br>" + totalKCal + "</html>");
+		ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_MODEL.getTotalQuantity() + 
+				"<br>" + ORDER_DATA_MODEL.getTotalAmount() + 
+				"<br>" + ORDER_DATA_MODEL.getTotalKCal() + "</html>");
 	}
 }
