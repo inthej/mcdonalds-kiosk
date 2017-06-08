@@ -19,14 +19,18 @@ import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
  */
 public class MenuPage extends KioskPage {
 	
-	private OrderDataModel orderDataModel = new OrderDataModel();
+	private OrderDataModel orderDataModel;
 
 	private final JLabel IMAGE_LABEL = new JLabel();
 	private final JScrollPane SCROLL = new JScrollPane();
-	private final MenuTabbedPane MENU_TABBED_PANE = new MenuTabbedPane(orderDataModel);
-	private final MyOrderPanel CART_PANEL = new MyOrderPanel(orderDataModel);
+	private final MenuTabbedPane MENU_TABBED_PANE;
+	private final MyOrderPanel MY_ORDER_PANEL;
 
 	public MenuPage() {
+		orderDataModel = new OrderDataModel(this);
+		MENU_TABBED_PANE = new MenuTabbedPane(orderDataModel);
+		MY_ORDER_PANEL = new MyOrderPanel(orderDataModel);
+		
 		initPage();
 		initImageLabel();
 		initScroll();
@@ -37,7 +41,7 @@ public class MenuPage extends KioskPage {
 		this.setLayout(new BorderLayout());
 		this.add(IMAGE_LABEL, BorderLayout.NORTH);
 		this.add(SCROLL, BorderLayout.CENTER);
-		this.add(CART_PANEL, BorderLayout.SOUTH);
+		this.add(MY_ORDER_PANEL, BorderLayout.SOUTH);
 		
 		this.playSound(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
 	}
@@ -59,5 +63,9 @@ public class MenuPage extends KioskPage {
 			// TODO : 주문데이터 비우기
 //			MyOrderPanel.emptyOrder();
 		});
+	}
+	
+	public void reflesh() {
+		MY_ORDER_PANEL.reflesh();
 	}
 }

@@ -3,6 +3,7 @@ package dev.mcdonaldkiosk.page.menu.order;
 import java.util.ArrayList;
 
 import dev.mcdonaldkiosk.page.menu.Menu;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
 
 /**
  * Class Role : 주문관련 데이터 제공한다.
@@ -15,18 +16,24 @@ public class OrderDataModel {
 	private final ArrayList<Menu> ORDER_MENU_LIST = new ArrayList<>();
 	private final OrderDataCalculator ORDER_DATA_CALCULATOR = new OrderDataCalculator(ORDER_MENU_LIST);
 	
-	
+	private MenuPage menuPage;
 	
 	public OrderDataModel() {
+		
+	}
 	
+	public OrderDataModel(MenuPage menuPage) {
+		this.menuPage = menuPage;
 	}
 	
 	void clear() {
 		ORDER_MENU_LIST.clear();
 	}
 
-	public void add(Menu menu) {
+	public void addMenu(Menu menu) {
 		ORDER_MENU_LIST.add(menu);
+		
+		menuPage.reflesh();
 	}
 
 	public Menu[] getOrderMenuArray() {

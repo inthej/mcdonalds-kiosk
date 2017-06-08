@@ -50,8 +50,7 @@ public class MenuButton extends JButton {
 			/* 음원에 관련된건 음원관련 객체에게 맡긴다. */
 			clickBGMPlayer.play();
 
-			// TODO : 주문데이터 넣기
-			orderDataModel.add(MENU);
+			orderDataModel.addMenu(MENU);
 		});
 	}
 }
