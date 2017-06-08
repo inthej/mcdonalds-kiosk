@@ -1,14 +1,14 @@
 package dev.mcdonaldkiosk.page.menu;
 
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.menu.order.MyOrderPanel;
-import dev.mcdonaldkiosk.util.ImageEdit;
-import dev.mcdonaldkiosk.util.KioskAudioPlayer;
-
 import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
+import dev.mcdonaldkiosk.util.ImageEdit;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * Create by kimjaehyeon 
@@ -23,10 +23,13 @@ public class MenuButton extends JButton {
 
 	private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.createKioskAudioPlayer("sound/beep.wav");
 	private ImageEdit imageEdit = new ImageEdit();
+	
+	private OrderDataModel orderDataModel;
 
-	MenuButton(String imgPath, Menu menu) {
+	MenuButton(String imgPath, Menu menu, OrderDataModel orderDataModel) {
 		this.IMG_PATH = imgPath;
 		this.MENU = menu;
+		this.orderDataModel = orderDataModel;
 
 		initMenuButton();
 		setListener();
@@ -48,7 +51,7 @@ public class MenuButton extends JButton {
 			clickBGMPlayer.play();
 
 			// TODO : 주문데이터 넣기
-//			MyOrderPanel.addOrder(MENU);
+			orderDataModel.add(MENU);
 		});
 	}
 }

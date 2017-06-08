@@ -5,7 +5,6 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.menu.Menu;
 
 /**
@@ -20,7 +19,7 @@ class SelectMenuBoxScrollPane extends JScrollPane {
 	
 	public final JList<Menu> J_LIST = new JList<>();
 
-	SelectMenuBoxScrollPane(Menu[] selectMenu) {
+	public SelectMenuBoxScrollPane(Menu[] selectMenu) {
 		SELECTED_MENU_ARRAY = selectMenu;
 
 		initScrollPane();

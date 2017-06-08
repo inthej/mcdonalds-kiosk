@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import dev.mcdonaldkiosk.page.menu.Menu;
 
-public class OrderDataCalculator {
+class OrderDataCalculator {
 	
 	private final ArrayList<Menu> ORDER_MENU_LIST;
 	
@@ -13,12 +13,12 @@ public class OrderDataCalculator {
 	}
 	
 	// 주문 수량
-	public int getOrderQuantity() {
+	int getOrderQuantity() {
 		return ORDER_MENU_LIST.size();
 	}
 	
 	// 주문 금액
-	public int getOrderAmount() {
+	int getOrderAmount() {
 		int totalAmount = 0;
 		for (Menu menu : ORDER_MENU_LIST) {
 			totalAmount += menu.getPrice();
@@ -28,7 +28,7 @@ public class OrderDataCalculator {
 	}
 	
 	// 총 칼로리
-	public int getTotalKCal() {
+	int getTotalKCal() {
 		int totalKCal = 0;
 		for (Menu menu : ORDER_MENU_LIST) {
 			totalKCal += menu.getKCal();

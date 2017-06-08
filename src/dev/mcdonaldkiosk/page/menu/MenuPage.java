@@ -9,6 +9,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.menu.order.MyOrderPanel;
+import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
 
 /**
@@ -17,11 +18,13 @@ import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
  * 상단 이미지 라벨, 중간 스크롤이 사용된 메뉴탭, 하단 MyOrder 패널로 구성되어 있다.
  */
 public class MenuPage extends KioskPage {
+	
+	private OrderDataModel orderDataModel = new OrderDataModel();
 
 	private final JLabel IMAGE_LABEL = new JLabel();
 	private final JScrollPane SCROLL = new JScrollPane();
-	private final MenuTabbedPane MENU_TABBED_PANE = new MenuTabbedPane();
-	private final MyOrderPanel CART_PANEL = new MyOrderPanel();
+	private final MenuTabbedPane MENU_TABBED_PANE = new MenuTabbedPane(orderDataModel);
+	private final MyOrderPanel CART_PANEL = new MyOrderPanel(orderDataModel);
 
 	public MenuPage() {
 		initPage();

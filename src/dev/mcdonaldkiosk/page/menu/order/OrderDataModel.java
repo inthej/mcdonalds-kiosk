@@ -15,6 +15,8 @@ public class OrderDataModel {
 	private final ArrayList<Menu> ORDER_MENU_LIST = new ArrayList<>();
 	private final OrderDataCalculator ORDER_DATA_CALCULATOR = new OrderDataCalculator(ORDER_MENU_LIST);
 	
+	
+	
 	public OrderDataModel() {
 	
 	}
@@ -23,8 +25,8 @@ public class OrderDataModel {
 		ORDER_MENU_LIST.clear();
 	}
 
-	public void add(Menu order) {
-		ORDER_MENU_LIST.add(order);
+	public void add(Menu menu) {
+		ORDER_MENU_LIST.add(menu);
 	}
 
 	public Menu[] getOrderMenuArray() {

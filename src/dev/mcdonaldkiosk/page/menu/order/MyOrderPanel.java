@@ -5,7 +5,6 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.menu.Menu;
 
 /**
  * Created by kimjaehyeon 
@@ -16,11 +15,17 @@ public class MyOrderPanel extends JPanel {
 	/* 주문 장바구니 리스트 */
 	private final TextToolbarPanel TEXT_TOOLBAR_PANEL = new TextToolbarPanel();
 	// TODO : 데이터 넘기기.
-	private final SelectMenuBoxScrollPane SELECT_MENU_BOX_SCROLL_PANE = new SelectMenuBoxScrollPane(new Menu[]{ });
+	private final SelectMenuBoxScrollPane SELECT_MENU_BOX_SCROLL_PANE;
 	// TODO : 데이터 넘기기.
-	private final OrderConfirmPanel ORDER_CONFIRM_PANEL = new OrderConfirmPanel(1, 2, 3);
+	private final OrderConfirmPanel ORDER_CONFIRM_PANEL;
+	
+	private OrderDataModel orderDataModel;
 
-	public MyOrderPanel() {
+	public MyOrderPanel(OrderDataModel orderDataModel) {
+		this.orderDataModel = orderDataModel;
+		SELECT_MENU_BOX_SCROLL_PANE = new SelectMenuBoxScrollPane(orderDataModel.getOrderMenuArray());
+		ORDER_CONFIRM_PANEL = new OrderConfirmPanel(orderDataModel.getTotalQuantity(), orderDataModel.getTotalAmount(), orderDataModel.getTotalKCal());
+		
 		// 초기화
 		initMyOrderPanel();
 		addTextToTextToolbar();
