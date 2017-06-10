@@ -9,6 +9,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
+import dev.mcdonaldkiosk.page.KioskPageLoader;
 import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
 
 /**
@@ -23,7 +24,7 @@ public class WelcomePage extends KioskPage {
 
 	private final ImageTextPanel IMG_TEXT_PANEL = new ImageTextPanel(new ImageIcon("image/bg_info2.jpg"),
 			LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
-
+	
 	public WelcomePage() {
 		initPage();
 		initImgTextPanel();
@@ -34,9 +35,9 @@ public class WelcomePage extends KioskPage {
 	private void initPage() {
 		// 백버튼 표시여부.
 		this.showBackButton();
-
-		// 소리재생.
-		this.playSound(LangCheck.isKorean() ? "sound/welcome.wav" : "sound/welcome_eng.wav");
+		
+		this.currentPage = new WelcomePageKioskPageLoader();
+		this.currentPage.playLoadPageSound();
 	}
 
 	private void initImgTextPanel() {
@@ -50,7 +51,7 @@ public class WelcomePage extends KioskPage {
 		this.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				MainFrame.attachPanel(new EatPlacePage());
+				currentPage.loadNextPage();
 			}
 		});
 	}

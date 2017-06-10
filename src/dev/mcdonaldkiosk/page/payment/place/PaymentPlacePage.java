@@ -1,6 +1,5 @@
 package dev.mcdonaldkiosk.page.payment.place;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
@@ -10,8 +9,6 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
-import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.page.menu.OrderPlace;
 
 /**
@@ -28,18 +25,22 @@ public class PaymentPlacePage extends KioskPage {
 
 	private final ImageTextButton COUNTER_BUTTON = new ImageTextButton();
 	private final ImageTextButton CARD_BUTTON = new ImageTextButton();
+	
+	private ActionListener placeListener = null;
 
 	public PaymentPlacePage() {
 		initPage();
 		initPaymentSelectPanel();
+		initListeners();
 		setListeners();
 	}
 
 	private void initPage() {
 		this.setBackgroundImg("image/bg_green.png");
 		this.showBackButton();
-
-		this.playSound(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav");
+		
+		this.currentPage = new PaymentPlacePageKioskPageLoader();
+		this.currentPage.playLoadPageSound();
 	}
 
 	private void initPaymentSelectPanel() {
@@ -64,29 +65,26 @@ public class PaymentPlacePage extends KioskPage {
 						+ "</center></html>");
 		CARD_BUTTON.setResizedImg(new ImageIcon("image/kiosk.jpg"), BUTTON_WIDTH, BUTTON_HEIGHT);
 	}
+	
+	private void initListeners() {
+		this.placeListener = (eventSource) -> {
+			Object source = eventSource.getSource();
+			
+			if (source.equals(COUNTER_BUTTON)) {
+				OrderPlace.getInstance().setPayPlace(PayPlace.COUNTER);
+			} else if (source.equals(CARD_BUTTON)) {
+				OrderPlace.getInstance().setPayPlace(PayPlace.KIOSK);
+			}
+			
+			currentPage.loadNextPage();
+		};
+	}
 
 	private void setListeners() {
-		this.BACK_BUTTON.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.attachPanel(new EatPlacePage());
-			}
-		});
+		this.BACK_BUTTON.addActionListener((eventSource) -> currentPage.loadPreviousPage());
+		
+		COUNTER_BUTTON.addActionListener(placeListener);
 
-		COUNTER_BUTTON.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				OrderPlace.getInstance().setPayPlace(PayPlace.COUNTER);
-				MainFrame.attachPanel(new MenuPage());
-			}
-		});
-
-		CARD_BUTTON.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				OrderPlace.getInstance().setPayPlace(PayPlace.KIOSK);
-				MainFrame.attachPanel(new MenuPage());
-			}
-		});
+		CARD_BUTTON.addActionListener(placeListener);
 	}
 }

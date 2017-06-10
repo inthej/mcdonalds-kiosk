@@ -2,6 +2,7 @@ package dev.mcdonaldkiosk.page.eatplace;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 
@@ -12,8 +13,6 @@ import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.menu.OrderPlace;
-import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
-import dev.mcdonaldkiosk.page.welcome.WelcomePage;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 22 
@@ -35,6 +34,10 @@ public class EatPlacePage extends KioskPage {
 
 	private final ImageTextButton KOR_BUTTON = new ImageTextButton(LangCheck.isKorean() ? "한국어" : "KOREAN");
 	private final ImageTextButton ENG_BUTTON = new ImageTextButton("ENGLISH");
+	
+	private ActionListener placeListener = null;
+	
+	private ActionListener langListener = null;
 
 	public EatPlacePage() {
 		initPage();
@@ -43,14 +46,17 @@ public class EatPlacePage extends KioskPage {
 
 		initLanguageSelectPanel();
 
+		initListeners();
+		
 		setListeners();
 	}
 
 	private void initPage() {
 		this.setBackgroundImg("image/bg_green.png");
 		this.showBackButton();
-
-		this.playSound(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav");
+		
+		this.currentPage = new EatPlaceKioskPageLoader();
+		this.currentPage.playLoadPageSound();
 	}
 
 	private void initPlaceGuidePanel() {
@@ -75,28 +81,42 @@ public class EatPlacePage extends KioskPage {
 
 		this.add(languageSelectComp);
 	}
+	
+	private void initListeners() {
+		this.placeListener = (eventSource) -> {
+			Object source = eventSource.getSource();
+			
+			if (source.equals(EAT_BUTTON)) {
+				OrderPlace.getInstance().setEatPlace(EatPlace.EAT_IN);
+			} else if (source.equals(TAKE_BUTTON)) {
+				OrderPlace.getInstance().setEatPlace(EatPlace.TAKE_OUT);
+			} 
+			
+			currentPage.loadNextPage();
+		};
+		
+		this.langListener = (eventSource) -> {
+			Object source = eventSource.getSource();
+			
+			if (source.equals(KOR_BUTTON)) {
+				LangCheck.setLang(Language.KOREAN);
+			} else if (source.equals(ENG_BUTTON)) {
+				LangCheck.setLang(Language.ENGLISH);
+			}
+			
+			currentPage.refreshPage();
+		};
+	}
 
 	private void setListeners() {
-		BACK_BUTTON.addActionListener((args) -> MainFrame.attachPanel(new WelcomePage()));
+		BACK_BUTTON.addActionListener((args) -> currentPage.loadPreviousPage());
+		
+		EAT_BUTTON.addActionListener(placeListener);
 
-		EAT_BUTTON.addActionListener((args) -> {
-			OrderPlace.getInstance().setEatPlace(EatPlace.EAT_IN);
-			MainFrame.attachPanel(new PaymentPlacePage());
-		});
+		TAKE_BUTTON.addActionListener(placeListener);
 
-		TAKE_BUTTON.addActionListener((args) -> {
-			OrderPlace.getInstance().setEatPlace(EatPlace.TAKE_OUT);
-			MainFrame.attachPanel(new PaymentPlacePage());
-		});
+		KOR_BUTTON.addActionListener(langListener);
 
-		KOR_BUTTON.addActionListener((args) -> {
-			LangCheck.setLang(Language.KOREAN);
-			MainFrame.attachPanel(new EatPlacePage());
-		});
-
-		ENG_BUTTON.addActionListener((args) -> {
-			LangCheck.setLang(Language.ENGLISH);
-			MainFrame.attachPanel(new EatPlacePage());
-		});
+		ENG_BUTTON.addActionListener(langListener);
 	}
 }

@@ -31,10 +31,11 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 public abstract class KioskPage extends JPanel {
 
 	private String backgroundImg;
-	private KioskAudioPlayer kioskAudioPlayer;
 
 	protected final BackButton BACK_BUTTON = new BackButton();
 	protected ImageEdit imageEdit = new ImageEdit();
+	
+	protected KioskPageLoader currentPage = null;
 
 	public KioskPage() {
 		initKioskPage();
@@ -77,11 +78,5 @@ public abstract class KioskPage extends JPanel {
 				e.printStackTrace();
 			}
 		}
-	}
-
-	// 사운드를 재생한다.
-	protected void playSound(String audioPath) {
-		this.kioskAudioPlayer = KioskAudioPlayer.createKioskAudioPlayer(audioPath);
-		this.kioskAudioPlayer.play();
 	}
 }

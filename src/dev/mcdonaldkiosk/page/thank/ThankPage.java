@@ -38,13 +38,9 @@ public class ThankPage extends KioskPage {
 
 	private void initPage() {
 		this.showBackButton();
-
-		String orderPlace = OrderPlace.getInstance().getPayPlace();
-		if (orderPlace == PayPlace.COUNTER.toString()) {
-			this.playSound(LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
-		} else if (orderPlace == PayPlace.KIOSK.toString()) {
-			this.playSound(LangCheck.isKorean() ? "sound/thank.wav" : "sound/thank_eng.wav");
-		}
+		
+		this.currentPage = new ThankPageKioskPageLorder();
+		this.currentPage.playLoadPageSound();
 
 //		MyOrderPanel.clearOrderData();
 	}
@@ -61,7 +57,7 @@ public class ThankPage extends KioskPage {
 		this.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				MainFrame.attachPanel(new WelcomePage());
+				currentPage.loadNextPage();
 			}
 		});
 	}

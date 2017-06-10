@@ -9,7 +9,7 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
 import dev.mcdonaldkiosk.page.thank.ThankPage;
-import dev.mcdonaldkiosk.util.ImageEdit;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 25 
@@ -31,8 +31,9 @@ public class PaymentCardPage extends KioskPage {
 	private void initPage() {
 		this.setBackgroundImg("image/bg_green.png");
 		this.showBackButton();
-
-		this.playSound(LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav");
+		
+		this.currentPage = new PaymentCardPageKioskPageLoader();
+		this.currentPage.playLoadPageSound();
 	}
 
 	private void initPaymentCardPanel() {
@@ -43,19 +44,21 @@ public class PaymentCardPage extends KioskPage {
 	}
 
 	private void setListener() {
-		BACK_BUTTON.addActionListener((args) -> MainFrame.attachPanel(new ConfirmPage()));
+		BACK_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage());
 
 		PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				PaymentCardPage.this.playSound(LangCheck.isKorean() ? "sound/ing.wav" : "sound/ing_eng.wav");
+				KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
+						.createKioskAudioPlayer(LangCheck.isKorean() ? "sound/ing.wav" : "sound/ing_eng.wav");
+				kioskAudioPlayer.play();
 
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e1) {
 					e1.printStackTrace();
 				} finally {
-					MainFrame.attachPanel(new ThankPage());
+					currentPage.loadNextPage();
 				}
 			}
 

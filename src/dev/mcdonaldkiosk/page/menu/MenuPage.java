@@ -36,6 +36,19 @@ public class MenuPage extends KioskPage {
 		initScroll();
 		setLayout();
 	}
+	
+	public MenuPage(OrderDataModel orderDataModel) {
+		ORDER_DATA_MODEL = orderDataModel;
+		MENU_TABBED_PANE = new MenuTabbedPane(orderDataModel);
+		MY_ORDER_PANEL = new MyOrderPanel(orderDataModel);
+		
+		initPage();
+		initImageLabel();
+		initScroll();
+		setLayout();
+		
+		reflesh();
+	}
 
 	private void initPage() {
 		this.setLayout(new BorderLayout());
@@ -43,7 +56,8 @@ public class MenuPage extends KioskPage {
 		this.add(SCROLL, BorderLayout.CENTER);
 		this.add(MY_ORDER_PANEL, BorderLayout.SOUTH);
 		
-		this.playSound(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
+		this.currentPage = new MenuPageKioskPageLoader();
+		this.currentPage.playLoadPageSound();
 	}
 
 	private void initImageLabel() {
@@ -53,14 +67,15 @@ public class MenuPage extends KioskPage {
 	}
 
 	private void initScroll() {
-		SCROLL.getVerticalScrollBar().setUnitIncrement(20); // 스크롤 속도
+		SCROLL.getVerticalScrollBar().setUnitIncrement(10); // 스크롤 속도 (세로)
+		SCROLL.getHorizontalScrollBar().setUnitIncrement(10); // 가로 스크롤 (가로)
 		SCROLL.setViewportView(MENU_TABBED_PANE);
 	}
 
 	private void setLayout() {
 		this.BACK_BUTTON.addActionListener((e) -> {
 			ORDER_DATA_MODEL.clear();
-			MainFrame.attachPanel(new PaymentPlacePage());
+			currentPage.loadPreviousPage();
 		});
 	}
 	
