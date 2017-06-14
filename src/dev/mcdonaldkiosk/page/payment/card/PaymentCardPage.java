@@ -12,71 +12,72 @@ import dev.mcdonaldkiosk.page.thank.ThankPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
- * Created by kimjaehyeon on 2017. 5. 25 
+ * Created by kimjaehyeon on 2017. 5. 25
  * Class Role : 카드 결제지불 페이지
  */
 public class PaymentCardPage extends KioskPage {
 
-	private final int MID_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-	private final int MID_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 5;
+  private final int MID_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
+  private final int MID_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 5;
 
-	private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
+  private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
-	public PaymentCardPage() {
-		initPage();
-		initPaymentCardPanel();
-		setListener();
-	}
+  public PaymentCardPage() {
+    initPage();
+    initPaymentCardPanel();
+    setListener();
+  }
 
-	private void initPage() {
-		this.setBackgroundImg("image/bg_green.png");
-		this.showBackButton();
-		
-		this.currentPage = new PaymentCardPageKioskPageLoader();
-		this.currentPage.playLoadPageSound();
-	}
+  private void initPage() {
+    this.setBackgroundImg("image/bg_green.png");
+    this.showBackButton();
 
-	private void initPaymentCardPanel() {
-		PAYMENT_CARD_PANEL.setSize(MID_PANEL_WIDTH, MID_PANEL_HEIGHT);
-		PAYMENT_CARD_PANEL.setLocation((MainFrame.FRAME_WIDTH - MID_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT / 4);
+    this.currentPage = new PaymentCardPageKioskPageLoader();
+    this.currentPage.playSoundOfLoadPage();
+  }
 
-		this.add(PAYMENT_CARD_PANEL);
-	}
+  private void initPaymentCardPanel() {
+    PAYMENT_CARD_PANEL.setSize(MID_PANEL_WIDTH, MID_PANEL_HEIGHT);
+    PAYMENT_CARD_PANEL
+        .setLocation((MainFrame.FRAME_WIDTH - MID_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT / 4);
 
-	private void setListener() {
-		BACK_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage());
+    this.add(PAYMENT_CARD_PANEL);
+  }
 
-		PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
-						.createKioskAudioPlayer(LangCheck.isKorean() ? "sound/ing.wav" : "sound/ing_eng.wav");
-				kioskAudioPlayer.play();
+  private void setListener() {
+    BACK_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage());
 
-				try {
-					Thread.sleep(5000);
-				} catch (InterruptedException e1) {
-					e1.printStackTrace();
-				} finally {
-					currentPage.loadNextPage();
-				}
-			}
+    PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
+            .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/ing.wav" : "sound/ing_eng.wav");
+        kioskAudioPlayer.play();
 
-			@Override
-			public void mousePressed(MouseEvent e) {
-				PAYMENT_CARD_PANEL.getImageLabel().setIcon(PaymentCardPage.this.imageEdit.getResizeIcon(
-						"image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT * 2 / 5));
-			}
+        try {
+          Thread.sleep(5000);
+        } catch (InterruptedException e1) {
+          e1.printStackTrace();
+        } finally {
+          currentPage.loadNextPage();
+        }
+      }
 
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				PAYMENT_CARD_PANEL.getImageTextButton().setBackground(Color.ORANGE);
-			}
+      @Override
+      public void mousePressed(MouseEvent e) {
+        PAYMENT_CARD_PANEL.getImageLabel().setIcon(PaymentCardPage.this.imageEdit.getResizeIcon(
+            "image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT * 2 / 5));
+      }
 
-			@Override
-			public void mouseExited(MouseEvent e) {
-				PAYMENT_CARD_PANEL.getImageTextButton().setBackground(Color.WHITE);
-			}
-		});
-	}
+      @Override
+      public void mouseEntered(MouseEvent e) {
+        PAYMENT_CARD_PANEL.getImageTextButton().setBackground(Color.ORANGE);
+      }
+
+      @Override
+      public void mouseExited(MouseEvent e) {
+        PAYMENT_CARD_PANEL.getImageTextButton().setBackground(Color.WHITE);
+      }
+    });
+  }
 }

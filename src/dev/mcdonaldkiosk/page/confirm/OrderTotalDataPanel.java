@@ -14,32 +14,33 @@ import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
 
 class OrderTotalDataPanel extends JPanel {
 
-	private final EatPlace eatPlace;
-	private final OrderDataModel ORDER_DATA_MODEL;
+  private final EatPlace eatPlace;
+  private final OrderDataModel ORDER_DATA_MODEL;
 
-	OrderTotalDataPanel(EatPlace eatPlace, OrderDataModel orderDataModel) {
-		this.eatPlace = eatPlace;
-		this.ORDER_DATA_MODEL = orderDataModel;
+  OrderTotalDataPanel(EatPlace eatPlace, OrderDataModel orderDataModel) {
+    this.eatPlace = eatPlace;
+    this.ORDER_DATA_MODEL = orderDataModel;
 
-		initPanel();
-	}
+    initPanel();
+  }
 
-	// 패널 초기화
-	private void initPanel() {
-		this.setLayout(new BorderLayout());
-		this.add(new JScrollPane(new JList<Menu>(ORDER_DATA_MODEL.getOrderMenuArray())), BorderLayout.CENTER);
-		this.add(createTotalListPanel(), BorderLayout.SOUTH);
-	}
+  // 패널 초기화
+  private void initPanel() {
+    this.setLayout(new BorderLayout());
+    this.add(new JScrollPane(new JList<Menu>(ORDER_DATA_MODEL.getOrderMenuArray())),
+        BorderLayout.CENTER);
+    this.add(createTotalListPanel(), BorderLayout.SOUTH);
+  }
 
-	// factory 공장, 만들어 낸다.
-	private JPanel createTotalListPanel() {
-		JPanel totalListPanel = new JPanel();
-		totalListPanel.setLayout(new GridLayout(0, 4));
-		totalListPanel.add(new JLabel("나의주문 : " + eatPlace.toString(), JLabel.CENTER));
-		totalListPanel.add(new JLabel("주문수량 : " + ORDER_DATA_MODEL.getTotalQuantity(), JLabel.CENTER));
-		totalListPanel.add(new JLabel("주문금액 : " + ORDER_DATA_MODEL.getTotalAmount(), JLabel.CENTER));
-		totalListPanel.add(new JLabel("총 칼로리 : " + ORDER_DATA_MODEL.getTotalKCal(), JLabel.CENTER));
+  // factory 공장, 만들어 낸다.
+  private JPanel createTotalListPanel() {
+    JPanel totalListPanel = new JPanel();
+    totalListPanel.setLayout(new GridLayout(0, 4));
+    totalListPanel.add(new JLabel("나의주문 : " + eatPlace.toString(), JLabel.CENTER));
+    totalListPanel.add(new JLabel("주문수량 : " + ORDER_DATA_MODEL.getTotalQuantity(), JLabel.CENTER));
+    totalListPanel.add(new JLabel("주문금액 : " + ORDER_DATA_MODEL.getTotalAmount(), JLabel.CENTER));
+    totalListPanel.add(new JLabel("총 칼로리 : " + ORDER_DATA_MODEL.getTotalKCal(), JLabel.CENTER));
 
-		return totalListPanel;
-	}
+    return totalListPanel;
+  }
 }
