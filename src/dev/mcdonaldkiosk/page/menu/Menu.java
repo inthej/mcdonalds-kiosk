@@ -15,7 +15,7 @@ public class Menu {
   final int PRICE;
   final int K_CAL;
 
-  Menu(String name, int price, int kCal) {
+  public Menu(String name, int price, int kCal) {
     this.NAME = name;
     this.PRICE = price;
     this.K_CAL = kCal;
@@ -29,7 +29,7 @@ public class Menu {
     return K_CAL;
   }
 
-  String toMenuButtonText(String priceTextColor) {
+  String toMenuButtonText(final String priceTextColor) {
     return new StringBuilder().append("<html><center>").append(NAME).append("<br>")
         .append(LangCheck.isKorean() ? "가격 ₩ " : "Price ₩ ").append("<font color='")
         .append(priceTextColor)

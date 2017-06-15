@@ -30,13 +30,13 @@ public class OrderDataModel {
   public void clear() {
     ORDER_MENU_LIST.clear();
 
-    menuPage.reflesh();
+//    menuPage.reflesh();
   }
 
   public void addMenu(Menu menu) {
     ORDER_MENU_LIST.add(menu);
 
-    menuPage.reflesh();
+//    menuPage.reflesh();
   }
 
   public Menu[] getOrderMenuArray() {

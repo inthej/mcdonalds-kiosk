@@ -10,10 +10,6 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.menu.OrderPlace;
-import dev.mcdonaldkiosk.page.menu.order.MyOrderPanel;
-import dev.mcdonaldkiosk.page.payment.place.PayPlace;
-import dev.mcdonaldkiosk.page.welcome.WelcomePage;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 19
@@ -43,7 +39,7 @@ public class ThankPage extends KioskPage {
     this.currentPage = new ThankPageKioskPageLorder();
     this.currentPage.playSoundOfLoadPage();
 
-//		MyOrderPanel.clearOrderData();
+//		CartPanel.clearOrderData();
   }
 
   private void initImgTextPanel() {

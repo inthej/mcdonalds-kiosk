@@ -14,11 +14,11 @@ import dev.mcdonaldkiosk.page.menu.Menu;
  * 기능 :
  * Menu Array를 입력할 경우 리스트에 표기되고 스크롤이 최하단으로 보여준다.
  */
-class SelectMenuBoxScrollPane extends JScrollPane {
+class OrderListPanel extends JScrollPane {
 
   public final JList<Menu> J_LIST = new JList<>();
 
-  public SelectMenuBoxScrollPane() {
+  public OrderListPanel() {
     initScrollPane();
   }
 

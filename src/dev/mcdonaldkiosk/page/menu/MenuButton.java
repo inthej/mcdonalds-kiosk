@@ -27,7 +27,7 @@ public class MenuButton extends JButton {
 
   private final OrderDataModel ORDER_DATA_MODEL;
 
-  MenuButton(String imgPath, Menu menu, OrderDataModel orderDataModel) {
+  public MenuButton(String imgPath, Menu menu, OrderDataModel orderDataModel) {
     this.IMG_PATH = imgPath;
     this.MENU = menu;
     this.ORDER_DATA_MODEL = orderDataModel;
