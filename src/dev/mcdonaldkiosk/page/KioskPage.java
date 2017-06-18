@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.util.ImageEdit;
-import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * Create by kimjaehyeon on 2017. 5. 16
@@ -37,7 +36,9 @@ public abstract class KioskPage extends JPanel {
 
   protected KioskPageLoader currentPage = null;
 
-  public KioskPage() {
+  public KioskPage(KioskPageType kioskPageType) {
+    currentPage = kioskPageType.createKioskPageLoader();
+    currentPage.playSoundOfLoadPage();
     initKioskPage();
   }
 

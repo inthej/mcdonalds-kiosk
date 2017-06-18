@@ -1,18 +1,17 @@
 package dev.mcdonaldkiosk.page.eatplace;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
-
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.lang.Language;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
+import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.menu.OrderPlace;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 22
@@ -43,7 +42,8 @@ public class EatPlacePage extends KioskPage {
 
   private ActionListener langListener = null;
 
-  public EatPlacePage() {
+  public EatPlacePage(KioskPageType kioskPageType) {
+    super(kioskPageType);
     initPage();
 
     initPlaceGuidePanel();
@@ -58,9 +58,6 @@ public class EatPlacePage extends KioskPage {
   private void initPage() {
     this.setBackgroundImg("image/bg_green.png");
     this.showBackButton();
-
-    this.currentPage = new EatPlaceKioskPageLoader();
-    this.currentPage.playSoundOfLoadPage();
   }
 
   private void initPlaceGuidePanel() {

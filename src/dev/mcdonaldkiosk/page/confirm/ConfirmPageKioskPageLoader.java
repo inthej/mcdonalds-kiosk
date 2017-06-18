@@ -3,6 +3,7 @@ package dev.mcdonaldkiosk.page.confirm;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
+import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.page.menu.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
@@ -15,20 +16,20 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
  *
  * @author kimjaehyeon
  */
-class ConfirmPageKioskPageLoader implements KioskPageLoader {
+public class ConfirmPageKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
     if (OrderPlace.getInstance().getPayPlace() == PayPlace.COUNTER.toString()) {
-      MainFrame.attachPanel(new ThankPage());
+      MainFrame.attachPanel(new ThankPage(KioskPageType.THANK_PAGE));
     } else if (OrderPlace.getInstance().getPayPlace() == PayPlace.KIOSK.toString()) {
-      MainFrame.attachPanel(new PaymentCardPage());
+      MainFrame.attachPanel(new PaymentCardPage(KioskPageType.PAYMENT_CARD_PAGE));
     }
   }
 
   @Override
   public void loadPreviousPage() {
-    MainFrame.attachPanel(new MenuPage());
+    MainFrame.attachPanel(new MenuPage(KioskPageType.MENU_PAGE));
   }
 
   @Override

@@ -1,6 +1,7 @@
 package dev.mcdonaldkiosk.main;
 
 import dev.mcdonaldkiosk.page.KioskPage;
+import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.welcome.WelcomePage;
 
 import javax.swing.JFrame;
@@ -38,7 +39,7 @@ public final class MainFrame extends JFrame {
     this.setLocation((Display.WINDOWS_WIDTH - FRAME_WIDTH) / 2, 0);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    this.add(new WelcomePage());
+    this.add(new WelcomePage(KioskPageType.WELCOME_PAGE));
   }
 
   // 입력된 KioskPage를 프레임에 붙인다.

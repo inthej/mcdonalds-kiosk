@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page.payment.place;
 
+import dev.mcdonaldkiosk.page.KioskPageType;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
@@ -28,7 +29,8 @@ public class PaymentPlacePage extends KioskPage {
 
   private ActionListener placeListener = null;
 
-  public PaymentPlacePage() {
+  public PaymentPlacePage(KioskPageType kioskPageType) {
+    super(kioskPageType);
     initPage();
     initPaymentSelectPanel();
     initListeners();
@@ -38,9 +40,6 @@ public class PaymentPlacePage extends KioskPage {
   private void initPage() {
     this.setBackgroundImg("image/bg_green.png");
     this.showBackButton();
-
-    this.currentPage = new PaymentPlacePageKioskPageLoader();
-    this.currentPage.playSoundOfLoadPage();
   }
 
   private void initPaymentSelectPanel() {

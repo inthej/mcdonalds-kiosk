@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page.menu;
 
+import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.menu.order.CartPanel;
 import java.awt.BorderLayout;
 
@@ -25,7 +26,8 @@ public class MenuPage extends KioskPage {
   private final MenuTabbedPane menuTabbedPane = new MenuTabbedPane(orderDataModel);
   private final CartPanel cartPanel = new CartPanel(orderDataModel);
 
-  public MenuPage() {
+  public MenuPage(KioskPageType kioskPageType) {
+    super(kioskPageType);
     initPage();
     setLayout();
   }
@@ -35,9 +37,6 @@ public class MenuPage extends KioskPage {
     this.add(createImageLabel(bannerImageIcon), BorderLayout.NORTH);
     this.add(menuTabbedPane, BorderLayout.CENTER);
     this.add(cartPanel, BorderLayout.SOUTH);
-
-    this.currentPage = new MenuPageKioskPageLoader();
-    this.currentPage.playSoundOfLoadPage();
   }
 
   private JLabel createImageLabel(final ImageIcon imageIcon) {

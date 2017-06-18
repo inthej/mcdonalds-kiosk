@@ -1,15 +1,13 @@
 package dev.mcdonaldkiosk.page.payment.card;
 
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
-import dev.mcdonaldkiosk.page.thank.ThankPage;
+import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 25
@@ -22,7 +20,8 @@ public class PaymentCardPage extends KioskPage {
 
   private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
-  public PaymentCardPage() {
+  public PaymentCardPage(KioskPageType kioskPageType) {
+    super(kioskPageType);
     initPage();
     initPaymentCardPanel();
     setListener();
@@ -31,9 +30,6 @@ public class PaymentCardPage extends KioskPage {
   private void initPage() {
     this.setBackgroundImg("image/bg_green.png");
     this.showBackButton();
-
-    this.currentPage = new PaymentCardPageKioskPageLoader();
-    this.currentPage.playSoundOfLoadPage();
   }
 
   private void initPaymentCardPanel() {

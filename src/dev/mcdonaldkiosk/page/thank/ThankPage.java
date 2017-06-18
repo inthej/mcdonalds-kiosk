@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page.thank;
 
+import dev.mcdonaldkiosk.page.KioskPageType;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -26,7 +27,8 @@ public class ThankPage extends KioskPage {
       new ImageIcon("image/bg_info3.jpg"),
       LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
-  public ThankPage() {
+  public ThankPage(KioskPageType kioskPageType) {
+    super(kioskPageType);
     initPage();
     initImgTextPanel();
 
@@ -35,9 +37,6 @@ public class ThankPage extends KioskPage {
 
   private void initPage() {
     this.showBackButton();
-
-    this.currentPage = new ThankPageKioskPageLorder();
-    this.currentPage.playSoundOfLoadPage();
 
 //		CartPanel.clearOrderData();
   }

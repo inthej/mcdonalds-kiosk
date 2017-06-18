@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page.confirm;
 
+import dev.mcdonaldkiosk.page.KioskPageType;
 import java.awt.Color;
 import java.awt.Component;
 
@@ -35,14 +36,16 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton NO_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "취소" : "NO");
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
-  public ConfirmPage() {
+  public ConfirmPage(KioskPageType kioskPageType) {
+    super(kioskPageType);
     initPage();
     initOrderTotalListPanel();
     initYesNoSelectPanel();
     setListener();
   }
 
-  public ConfirmPage(OrderDataModel orderDataModel) {
+  public ConfirmPage(KioskPageType kioskPageType, OrderDataModel orderDataModel) {
+    super(kioskPageType);
     orderTotalDataPanel = new OrderTotalDataPanel(EatPlace.EAT_IN, orderDataModel);
 
     initPage();
@@ -53,9 +56,6 @@ public class ConfirmPage extends KioskPage {
 
   private void initPage() {
     this.setBackgroundImg("image/bg_green.png");
-
-    this.currentPage = new ConfirmPageKioskPageLoader();
-    this.currentPage.playSoundOfLoadPage();
 
     this.add(ORDER_CONFIRM_GUIDE_PANEL.getPanel());
     this.add(YES_NO_SELECT_PANEL.getPanel());

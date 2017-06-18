@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
+import dev.mcdonaldkiosk.page.KioskPageType;
 import java.awt.Color;
 import java.awt.GridLayout;
 
@@ -83,7 +84,7 @@ class OrderConfirmPanel extends JPanel {
         kioskAudioPlayer.play();
       } else {
         // TODO : 데이터 넘기기.
-        MainFrame.attachPanel(new ConfirmPage(ORDER_DATA_MODEL));
+        MainFrame.attachPanel(new ConfirmPage(KioskPageType.CONFIRM_PAGE, ORDER_DATA_MODEL));
       }
     });
   }

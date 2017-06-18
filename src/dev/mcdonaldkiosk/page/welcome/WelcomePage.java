@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page.welcome;
 
+import dev.mcdonaldkiosk.page.KioskPageType;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -26,7 +27,8 @@ public class WelcomePage extends KioskPage {
       new ImageIcon("image/bg_info2.jpg"),
       LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
 
-  public WelcomePage() {
+  public WelcomePage(KioskPageType kioskPageType) {
+    super(kioskPageType);
     initPage();
     initImgTextPanel();
 
@@ -36,9 +38,6 @@ public class WelcomePage extends KioskPage {
   private void initPage() {
     // 백버튼 표시여부.
     this.showBackButton();
-
-    this.currentPage = new WelcomePageKioskPageLoader();
-    this.currentPage.playSoundOfLoadPage();
   }
 
   private void initImgTextPanel() {

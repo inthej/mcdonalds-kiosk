@@ -3,6 +3,7 @@ package dev.mcdonaldkiosk.page.welcome;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
+import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
@@ -11,11 +12,11 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
  *
  * @author kimjaehyeon
  */
-class WelcomePageKioskPageLoader implements KioskPageLoader {
+public class WelcomePageKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
-    MainFrame.attachPanel(new EatPlacePage());
+    MainFrame.attachPanel(new EatPlacePage(KioskPageType.EAT_PLACE_PAGE));
   }
 
   @Override
