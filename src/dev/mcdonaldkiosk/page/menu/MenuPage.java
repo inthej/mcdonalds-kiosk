@@ -2,6 +2,7 @@ package dev.mcdonaldkiosk.page.menu;
 
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.menu.order.CartPanel;
+import dev.mcdonaldkiosk.util.ImageEdit;
 import java.awt.BorderLayout;
 
 import javax.swing.ImageIcon;
@@ -41,7 +42,7 @@ public class MenuPage extends KioskPage {
 
   private JLabel createImageLabel(final ImageIcon imageIcon) {
     final JLabel imageLabel = new JLabel(
-        this.imageEdit.getResizeIcon(imageIcon, MainFrame.FRAME_WIDTH, MainFrame.AVALIABLE_FRAME_HEIGHT
+        ImageEdit.getResizeIcon(imageIcon, MainFrame.FRAME_WIDTH, MainFrame.AVALIABLE_FRAME_HEIGHT
             / 5));
 
     imageLabel.add(BACK_BUTTON);

@@ -1,38 +1,32 @@
 package dev.mcdonaldkiosk.page;
 
+import dev.mcdonaldkiosk.main.MainFrame;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.ImageEdit;
-
 /**
- * Create by kimjaehyeon on 2017. 5. 16
- * Class Role : MainFrame 에서 사용되는 Page 패널이다.
- *
- * 특징 :
- * 1. 인스턴스를 생성할 수 없는 abstract class 이다.
- * 2. Layout 을 가지고 있지 않다.(null)
- * 3. 백 버튼을 가지고 있다.
- * 4. 배경화면을 가지고 있으며 Background 이미지를 지정할 경우에만 표시가 가능하다.
+ * Class Role : MainFrame 에서 필요로 하는 JPanel을 Customizing 한 타입이다.
+ * KioskPage 를 상속하고 View를 구현할 경우 MainFrame에 화면에 표시할 수 있는 객체가 된다.
+ * Customizing의 특징으로는 프로그램이 로딩시 사운드가 실행이되며 프로그램 배경이미지 설정과 이전버튼(BackButton)을 제공한다.
  *
  * 기능 :
- * 1. 배경화면 이미지파일 경로 설정을 제공한다.
+ * 1. 배경 이미지 파일 경로 설정을 제공한다.
  * 2. 배경화면 표시 기능을 제공한다.
- * 3. 백버튼 표시 기능을 제공한다.
- * 4. 사운드 실행을 제공한다.
+ * 3. 이전버튼 표시 기능을 제공한다.
+ *
+ * @author Jaehyeon Kim
+ * @see MainFrame#attachPanel(KioskPage),BackButton
+ * @since 2017. 05. 16.
  */
 public abstract class KioskPage extends JPanel {
 
   private String backgroundImg;
 
   protected final BackButton BACK_BUTTON = new BackButton();
-  protected ImageEdit imageEdit = new ImageEdit();
 
   protected KioskPageLoader currentPage = null;
 
@@ -55,7 +49,6 @@ public abstract class KioskPage extends JPanel {
     }
   }
 
-  /* 백버튼 표시 여부 */
   protected void showBackButton() {
     if (isBackgroundImg()) {
       this.add(BACK_BUTTON);

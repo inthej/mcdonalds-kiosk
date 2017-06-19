@@ -4,6 +4,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
@@ -62,7 +63,7 @@ public class PaymentCardPage extends KioskPage {
 
       @Override
       public void mousePressed(MouseEvent e) {
-        PAYMENT_CARD_PANEL.getImageLabel().setIcon(PaymentCardPage.this.imageEdit.getResizeIcon(
+        PAYMENT_CARD_PANEL.getImageLabel().setIcon(ImageEdit.getResizeIcon(
             "image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.AVALIABLE_FRAME_HEIGHT
                 * 2 / 5));
       }
