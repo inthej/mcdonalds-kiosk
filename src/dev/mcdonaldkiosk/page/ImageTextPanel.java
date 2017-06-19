@@ -24,7 +24,7 @@ import dev.mcdonaldkiosk.util.ImageEdit;
 public class ImageTextPanel extends JPanel {
 
   private final int IMAGE_WIDTH = MainFrame.FRAME_WIDTH;
-  private final int IMAGE_HEIGHT = MainFrame.AVALIABLE_FRAME_HEIGHT * 9 / 10;
+  private final int IMAGE_HEIGHT = MainFrame.FRAME_HEIGHT * 9 / 10;
 
   private final JLabel IMAGE_LABEL = new JLabel();
   private final JLabel TEXT_LABEL = new JLabel();
@@ -55,7 +55,7 @@ public class ImageTextPanel extends JPanel {
     TEXT_LABEL.setHorizontalAlignment(JLabel.CENTER);
     TEXT_LABEL.setFont(TEXT_LABEL.getFont().deriveFont(TEXT_SIZE));
 
-    TEXT_LABEL.setSize(MainFrame.FRAME_WIDTH, MainFrame.AVALIABLE_FRAME_HEIGHT
+    TEXT_LABEL.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT
         - IMAGE_HEIGHT);
     TEXT_LABEL.setLocation(0, IMAGE_HEIGHT);
 

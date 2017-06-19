@@ -42,7 +42,7 @@ public class MenuPage extends KioskPage {
 
   private JLabel createImageLabel(final ImageIcon imageIcon) {
     final JLabel imageLabel = new JLabel(
-        ImageEdit.getResizeIcon(imageIcon, MainFrame.FRAME_WIDTH, MainFrame.AVALIABLE_FRAME_HEIGHT
+        ImageEdit.getResizeIcon(imageIcon, MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT
             / 5));
 
     imageLabel.add(BACK_BUTTON);

@@ -40,7 +40,7 @@ public class StartPage extends KioskPage {
   }
 
   private void initImgTextPanel() {
-    imageTextPanel.setSize(MainFrame.FRAME_WIDTH, MainFrame.AVALIABLE_FRAME_HEIGHT);
+    imageTextPanel.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
     imageTextPanel.setLocation(0, 0);
   }
 
