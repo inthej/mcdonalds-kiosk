@@ -7,7 +7,7 @@ import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.page.menu.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;
-import dev.mcdonaldkiosk.page.thank.EndPage;
+import dev.mcdonaldkiosk.page.end.EndPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**

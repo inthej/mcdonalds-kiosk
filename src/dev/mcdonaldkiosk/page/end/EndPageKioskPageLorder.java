@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.thank;
+package dev.mcdonaldkiosk.page.end;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
@@ -36,7 +36,7 @@ public class EndPageKioskPageLorder implements KioskPageLoader {
               LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
     } else if (orderPlace == PayPlace.KIOSK.toString()) {
       kioskAudioPlayer = KioskAudioPlayer
-          .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/thank.wav" : "sound/thank_eng.wav");
+          .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav");
     }
 
     kioskAudioPlayer.play();

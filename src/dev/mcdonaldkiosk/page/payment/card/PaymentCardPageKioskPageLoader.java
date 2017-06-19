@@ -4,7 +4,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
 import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
-import dev.mcdonaldkiosk.page.thank.EndPage;
+import dev.mcdonaldkiosk.page.end.EndPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**

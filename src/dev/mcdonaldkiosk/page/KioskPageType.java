@@ -5,7 +5,7 @@ import dev.mcdonaldkiosk.page.eatplace.EatingLocationKioskPageLoader;
 import dev.mcdonaldkiosk.page.menu.MenuPageKioskPageLoader;
 import dev.mcdonaldkiosk.page.payment.card.PaymentCardPageKioskPageLoader;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePageKioskPageLoader;
-import dev.mcdonaldkiosk.page.thank.EndPageKioskPageLorder;
+import dev.mcdonaldkiosk.page.end.EndPageKioskPageLorder;
 import dev.mcdonaldkiosk.page.start.StartPageKioskPageLoader;
 
 /**
