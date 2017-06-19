@@ -3,8 +3,7 @@ package dev.mcdonaldkiosk.page.payment.place;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
+import dev.mcdonaldkiosk.page.eatplace.EatingLocationPage;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
@@ -22,7 +21,7 @@ public class PaymentPlacePageKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void loadPreviousPage() {
-    MainFrame.attachPanel(new EatPlacePage());
+    MainFrame.attachPanel(new EatingLocationPage());
   }
 
   @Override

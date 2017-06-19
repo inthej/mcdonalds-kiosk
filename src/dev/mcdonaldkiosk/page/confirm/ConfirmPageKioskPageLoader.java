@@ -3,12 +3,11 @@ package dev.mcdonaldkiosk.page.confirm;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.page.menu.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;
-import dev.mcdonaldkiosk.page.thank.ThankPage;
+import dev.mcdonaldkiosk.page.thank.EndPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
@@ -21,7 +20,7 @@ public class ConfirmPageKioskPageLoader implements KioskPageLoader {
   @Override
   public void loadNextPage() {
     if (OrderPlace.getInstance().getPayPlace() == PayPlace.COUNTER.toString()) {
-      MainFrame.attachPanel(new ThankPage());
+      MainFrame.attachPanel(new EndPage());
     } else if (OrderPlace.getInstance().getPayPlace() == PayPlace.KIOSK.toString()) {
       MainFrame.attachPanel(new PaymentCardPage());
     }

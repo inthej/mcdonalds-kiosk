@@ -3,9 +3,8 @@ package dev.mcdonaldkiosk.page.payment.card;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
-import dev.mcdonaldkiosk.page.thank.ThankPage;
+import dev.mcdonaldkiosk.page.thank.EndPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
@@ -17,7 +16,7 @@ public class PaymentCardPageKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
-    MainFrame.attachPanel(new ThankPage());
+    MainFrame.attachPanel(new EndPage());
   }
 
   @Override

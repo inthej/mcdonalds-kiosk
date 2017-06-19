@@ -21,14 +21,14 @@ import dev.mcdonaldkiosk.page.KioskPage;
  * 2. ImageTextPanel의 특징을 가지고 있다.
  * 3. 주문 데이터가 초기화된다.
  */
-public class ThankPage extends KioskPage {
+public class EndPage extends KioskPage {
 
   private final ImageTextPanel IMG_TEXT_PANEL = new ImageTextPanel(
       new ImageIcon("image/bg_info3.jpg"),
       LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
-  public ThankPage() {
-    super(KioskPageType.THANK_PAGE);
+  public EndPage() {
+    super(KioskPageType.END_PAGE);
     initPage();
     initImgTextPanel();
 

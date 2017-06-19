@@ -18,15 +18,15 @@ import dev.mcdonaldkiosk.page.KioskPage;
  * @see ImageTextPanel
  * @since 2017. 05. 19.
  */
-public class WelcomePage extends KioskPage {
+public class StartPage extends KioskPage {
 
   private final ImageIcon BannerImgIcon = new ImageIcon("image/bg_info2.jpg");
   private final String TITLE = LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START";
 
   private ImageTextPanel imageTextPanel = new ImageTextPanel(BannerImgIcon, TITLE);
 
-  public WelcomePage() {
-    super(KioskPageType.WELCOME_PAGE);
+  public StartPage() {
+    super(KioskPageType.START_PAGE);
     initWelcomePage();
     initImgTextPanel();
 

@@ -1,27 +1,27 @@
 package dev.mcdonaldkiosk.page;
 
 import dev.mcdonaldkiosk.page.confirm.ConfirmPageKioskPageLoader;
-import dev.mcdonaldkiosk.page.eatplace.EatPlaceKioskPageLoader;
+import dev.mcdonaldkiosk.page.eatplace.EatingLocationKioskPageLoader;
 import dev.mcdonaldkiosk.page.menu.MenuPageKioskPageLoader;
 import dev.mcdonaldkiosk.page.payment.card.PaymentCardPageKioskPageLoader;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePageKioskPageLoader;
-import dev.mcdonaldkiosk.page.thank.ThankPageKioskPageLorder;
-import dev.mcdonaldkiosk.page.welcome.WelcomePageKioskPageLoader;
+import dev.mcdonaldkiosk.page.thank.EndPageKioskPageLorder;
+import dev.mcdonaldkiosk.page.welcome.StartPageKioskPageLoader;
 
 /**
  * @author Jaehyeon Kim
  * @since 2017. 6. 18.
  */
 public enum KioskPageType {
-  WELCOME_PAGE, EAT_PLACE_PAGE, PAYMENT_PLACE_PAGE, MENU_PAGE, CONFIRM_PAGE, PAYMENT_CARD_PAGE, THANK_PAGE;
+  START_PAGE, EATING_LOCATION_PAGE, PAYMENT_PLACE_PAGE, MENU_PAGE, CONFIRM_PAGE, PAYMENT_CARD_PAGE, END_PAGE;
 
   public KioskPageLoader createKioskPageLoader() {
     KioskPageLoader kioskPageLoader = null;
 
-    if (this == WELCOME_PAGE) {
-      kioskPageLoader = new WelcomePageKioskPageLoader();
-    } else if (this == EAT_PLACE_PAGE) {
-      kioskPageLoader = new EatPlaceKioskPageLoader();
+    if (this == START_PAGE) {
+      kioskPageLoader = new StartPageKioskPageLoader();
+    } else if (this == EATING_LOCATION_PAGE) {
+      kioskPageLoader = new EatingLocationKioskPageLoader();
     } else if (this == PAYMENT_PLACE_PAGE) {
       kioskPageLoader = new PaymentPlacePageKioskPageLoader();
     } else if (this == MENU_PAGE) {
@@ -30,8 +30,8 @@ public enum KioskPageType {
       kioskPageLoader = new ConfirmPageKioskPageLoader();
     } else if (this == PAYMENT_CARD_PAGE) {
       kioskPageLoader = new PaymentCardPageKioskPageLoader();
-    } else if (this == THANK_PAGE) {
-      kioskPageLoader = new ThankPageKioskPageLorder();
+    } else if (this == END_PAGE) {
+      kioskPageLoader = new EndPageKioskPageLorder();
     }
 
     return kioskPageLoader;

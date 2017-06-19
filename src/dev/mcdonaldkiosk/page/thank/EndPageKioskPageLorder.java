@@ -3,10 +3,9 @@ package dev.mcdonaldkiosk.page.thank;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.menu.OrderPlace;
 import dev.mcdonaldkiosk.page.payment.place.PayPlace;
-import dev.mcdonaldkiosk.page.welcome.WelcomePage;
+import dev.mcdonaldkiosk.page.welcome.StartPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
@@ -14,11 +13,11 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
  *
  * @author kimjaehyeon
  */
-public class ThankPageKioskPageLorder implements KioskPageLoader {
+public class EndPageKioskPageLorder implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
-    MainFrame.attachPanel(new WelcomePage());
+    MainFrame.attachPanel(new StartPage());
   }
 
   @Override
