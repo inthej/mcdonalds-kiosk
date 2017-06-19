@@ -19,7 +19,7 @@ public final class MainFrame extends JFrame {
 
   public static final int FRAME_WIDTH = Display.WINDOWS_WIDTH / 2;
   public static final int FRAME_HEIGHT = Display.WINDOWS_HEIGHT;
-  public static final int FRAME_CONTENS_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
+  public static final int AVALIABLE_FRAME_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
 
   private static final MainFrame MAIN_FRAME = new MainFrame();
   private final String TITLE = "ORDER HERE!";

@@ -16,7 +16,7 @@ import java.awt.event.MouseEvent;
 public class PaymentCardPage extends KioskPage {
 
   private final int MID_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-  private final int MID_PANEL_HEIGHT = MainFrame.FRAME_CONTENS_HEIGHT * 3 / 5;
+  private final int MID_PANEL_HEIGHT = MainFrame.AVALIABLE_FRAME_HEIGHT * 3 / 5;
 
   private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
@@ -35,7 +35,7 @@ public class PaymentCardPage extends KioskPage {
   private void initPaymentCardPanel() {
     PAYMENT_CARD_PANEL.setSize(MID_PANEL_WIDTH, MID_PANEL_HEIGHT);
     PAYMENT_CARD_PANEL
-        .setLocation((MainFrame.FRAME_WIDTH - MID_PANEL_WIDTH) / 2, MainFrame.FRAME_CONTENS_HEIGHT
+        .setLocation((MainFrame.FRAME_WIDTH - MID_PANEL_WIDTH) / 2, MainFrame.AVALIABLE_FRAME_HEIGHT
             / 4);
 
     this.add(PAYMENT_CARD_PANEL);
@@ -63,7 +63,7 @@ public class PaymentCardPage extends KioskPage {
       @Override
       public void mousePressed(MouseEvent e) {
         PAYMENT_CARD_PANEL.getImageLabel().setIcon(PaymentCardPage.this.imageEdit.getResizeIcon(
-            "image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_CONTENS_HEIGHT
+            "image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.AVALIABLE_FRAME_HEIGHT
                 * 2 / 5));
       }
 

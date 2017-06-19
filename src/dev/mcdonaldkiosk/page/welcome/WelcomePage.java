@@ -39,7 +39,7 @@ public class WelcomePage extends KioskPage {
   }
 
   private void initImgTextPanel() {
-    IMG_TEXT_PANEL.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENS_HEIGHT);
+    IMG_TEXT_PANEL.setSize(MainFrame.FRAME_WIDTH, MainFrame.AVALIABLE_FRAME_HEIGHT);
     IMG_TEXT_PANEL.setLocation(0, 0);
 
     this.add(IMG_TEXT_PANEL);

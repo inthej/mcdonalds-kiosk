@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b696ca53-edb6-4d57-948b-4543e7a952eb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Client.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Display.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Display.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/MainFrame.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/MainFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/BackButton.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/BackButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/ImageTextButton.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/ImageTextButton.java" />
@@ -56,12 +53,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Display.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
               <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="603">
+              <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+              <folding>
+                <element signature="e#858#859#0" expanded="true" />
+                <element signature="e#883#884#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +120,8 @@
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/OrderConfirmPanel.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Client.java" />
-        <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Display.java" />
+        <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/MainFrame.java" />
       </list>
     </option>
   </component>
@@ -953,12 +963,12 @@
       <workItem from="1497772713428" duration="5553000" />
       <workItem from="1497784296811" duration="1893000" />
       <workItem from="1497835095602" duration="21000" />
-      <workItem from="1497835255675" duration="4599000" />
+      <workItem from="1497835255675" duration="5940000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14388000" />
+    <option name="totallyTimeSpent" value="15729000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1019,17 +1029,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#221#222#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Display.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1077,8 +1076,8 @@
         <state relative-caret-position="288">
           <caret line="24" column="68" lean-forward="false" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
           <folding>
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="false" />
+            <element signature="e#669#670#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1115,8 +1114,8 @@
         <state relative-caret-position="324">
           <caret line="24" column="68" lean-forward="false" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
           <folding>
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="false" />
+            <element signature="e#669#670#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1262,8 +1261,8 @@
         <state relative-caret-position="234">
           <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding>
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1379,8 +1378,8 @@
         <state relative-caret-position="288">
           <caret line="24" column="68" lean-forward="false" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
           <folding>
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="false" />
+            <element signature="e#669#670#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1451,19 +1450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="46" />
-          <folding>
-            <element signature="e#856#857#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="e#1501#1502#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1480,6 +1466,28 @@
         <state relative-caret-position="288">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/awt/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="2982" column="16" lean-forward="false" selection-start-line="2982" selection-start-column="16" selection-end-line="2982" selection-end-column="16" />
+          <folding>
+            <element signature="e#102469#102470#0" expanded="true" />
+            <element signature="e#102510#102511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/main/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+          <folding>
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
