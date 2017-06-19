@@ -1,12 +1,14 @@
 package dev.mcdonaldkiosk.main;
 
 /**
- * Created by kimjaehyeon on 2017. 5. 15...
- * Class Role : 프로그램 실행 담당
+ * Class Role : 프로그램을 실행한다.
+ *
+ * @author Jaehyeon Kim
+ * @since 2017. 05. 15.
  */
 public class Client {
 
-  public static void main(String[] args) {
-    MainFrame.showScreen();
+  public static void main(final String[] args) {
+    MainFrame.showFrame();
   }
 }

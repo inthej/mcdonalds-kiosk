@@ -10,8 +10,6 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 19
@@ -41,7 +39,7 @@ public class WelcomePage extends KioskPage {
   }
 
   private void initImgTextPanel() {
-    IMG_TEXT_PANEL.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
+    IMG_TEXT_PANEL.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_CONTENS_HEIGHT);
     IMG_TEXT_PANEL.setLocation(0, 0);
 
     this.add(IMG_TEXT_PANEL);

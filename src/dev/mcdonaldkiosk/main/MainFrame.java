@@ -7,22 +7,20 @@ import dev.mcdonaldkiosk.page.welcome.WelcomePage;
 import javax.swing.JFrame;
 
 /**
- * Created by kimjaehyeon on 2017. 5. 15..
- * Class Role : 프로그램에서 유일하게 사용되는 프레임이다.
- * <p>
- * 기능-
- * 1. 입력된 Page를 프레임에 붙인다.(갱신하다.)
- * 2. 화면을 보여준다.
+ * Class Role : 프로그램에서 유일하게 사용되는 JFrome 컨테이너이다.
+ * 프로그램의 구동 형태는 Main으로 사용되는 한 개의 JFrame에 KioskPage의 컴포넌트가 갱신되는 구조이다.
+ * 맴버변수의 정의된 프레임의 사이즈는 다른 컴포넌트들의 사이즈 할당에 대상이 된다.
+ *
+ * @author Jaehyeon Kim
+ * @see KioskPage
+ * @since 2017. 05. 15.
  */
 public final class MainFrame extends JFrame {
 
-  /* 프레임 사이즈 */
   public static final int FRAME_WIDTH = Display.WINDOWS_WIDTH / 2;
+  public static final int FRAME_HEIGHT = Display.WINDOWS_HEIGHT;
+  public static final int FRAME_CONTENS_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
 
-  /* 프레임의 세로 크기는 Windows상태바의 높이를 제외하여 규정하였다. */
-  public static final int FRAME_HEIGHT = Display.WINDOWS_HEIGHT - Display.WINDOWS_BAR_HEIGHT;
-
-  /* 싱글톤 */
   private static final MainFrame MAIN_FRAME = new MainFrame();
   private final String TITLE = "ORDER HERE!";
 
@@ -30,33 +28,27 @@ public final class MainFrame extends JFrame {
     initMainFrame();
   }
 
-  // 프레임 환경설정
   private void initMainFrame() {
     this.setLayout(null);
     this.setTitle(TITLE);
-    this.setSize(FRAME_WIDTH, FRAME_HEIGHT + Display.WINDOWS_BAR_HEIGHT);
-    this.setResizable(false);
+    this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+    this.setResizable(false); // 창 크기 조절
     this.setLocation((Display.WINDOWS_WIDTH - FRAME_WIDTH) / 2, 0);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     this.add(new WelcomePage(KioskPageType.WELCOME_PAGE));
   }
 
-  // 입력된 KioskPage를 프레임에 붙인다.
   public static void attachPanel(KioskPage page) {
-    // 컨테이너 삭제
     MAIN_FRAME.getContentPane().removeAll();
-
-    // 패널 추가
-    MAIN_FRAME.getContentPane().add(page);
+    MAIN_FRAME.add(page);
 
     // 갱신
     MAIN_FRAME.revalidate();
     MAIN_FRAME.repaint();
   }
 
-  // 화면을 보여준다.
-  static void showScreen() {
+  static void showFrame() {
     MAIN_FRAME.setVisible(true);
   }
 }

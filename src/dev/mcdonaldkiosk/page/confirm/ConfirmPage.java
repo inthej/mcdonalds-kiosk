@@ -9,11 +9,7 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
-import dev.mcdonaldkiosk.page.menu.OrderPlace;
 import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
-import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
-import dev.mcdonaldkiosk.page.payment.place.PayPlace;
-import dev.mcdonaldkiosk.page.thank.ThankPage;
 
 /**
  * Create by kimjaehyeon on 2017. 5. 25
@@ -23,7 +19,7 @@ public class ConfirmPage extends KioskPage {
 
   /* 중간패널 사이즈 */
   private final int MIDDLE_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-  private final int MIDDLE_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 5;
+  private final int MIDDLE_PANEL_HEIGHT = MainFrame.FRAME_CONTENS_HEIGHT * 2 / 5;
 
   // 가운데 패널
   private final KioskGuidePanel ORDER_CONFIRM_GUIDE_PANEL = new KioskGuidePanel(
@@ -68,7 +64,8 @@ public class ConfirmPage extends KioskPage {
     Component orderConfirmGuideComp = ORDER_CONFIRM_GUIDE_PANEL.getPanel();
     orderConfirmGuideComp.setSize(MIDDLE_PANEL_WIDTH, MIDDLE_PANEL_HEIGHT);
     orderConfirmGuideComp
-        .setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT / 4);
+        .setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_CONTENS_HEIGHT
+            / 4);
   }
 
   private void initYesNoSelectPanel() {
@@ -79,7 +76,8 @@ public class ConfirmPage extends KioskPage {
     Component yesNoSelectComp = YES_NO_SELECT_PANEL.getPanel();
     yesNoSelectComp.setSize(width, height);
     yesNoSelectComp
-        .setLocation((MainFrame.FRAME_WIDTH - width) / 2, MainFrame.FRAME_HEIGHT * 3 / 4);
+        .setLocation((MainFrame.FRAME_WIDTH - width) / 2, MainFrame.FRAME_CONTENS_HEIGHT
+            * 3 / 4);
   }
 
   // set 설정하는 느낌
