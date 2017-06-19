@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.welcome;
+package dev.mcdonaldkiosk.page.start;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
@@ -27,7 +27,7 @@ public class StartPageKioskPageLoader implements KioskPageLoader {
   public void playSoundOfLoadPage() {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(
-            LangCheck.isKorean() ? "sound/welcome.wav" : "sound/welcome_eng.wav");
+            LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav");
     kioskAudioPlayer.play();
   }
 

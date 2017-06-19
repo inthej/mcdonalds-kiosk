@@ -50,9 +50,7 @@ public abstract class KioskPage extends JPanel {
   }
 
   protected void showBackButton() {
-    if (isBackgroundImg()) {
       this.add(BACK_BUTTON);
-    }
   }
 
   /* 배경이미지 등록 여부 */

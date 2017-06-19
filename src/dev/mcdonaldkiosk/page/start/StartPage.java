@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page.welcome;
+package dev.mcdonaldkiosk.page.start;
 
 import dev.mcdonaldkiosk.page.KioskPageType;
 import java.awt.event.MouseAdapter;
@@ -12,36 +12,31 @@ import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 
 /**
- * Class Role : ImageTextPanel을 이용하여 회사로고 이미지와 주문시작 안내를 표시한다.
+ * Class Role : MainFrame이 실행되면 가장먼저 보여지는 KioskPage이다.
+ * ImageTextPanel를 이용하여 이미지 베너와 텍스트를 보여준다.
  *
  * @author Jaehyeon Kim
- * @see ImageTextPanel
+ * @see MainFrame#initMainFrame(),ImageTextPanel
  * @since 2017. 05. 19.
  */
 public class StartPage extends KioskPage {
 
-  private final ImageIcon BannerImgIcon = new ImageIcon("image/bg_info2.jpg");
-  private final String TITLE = LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START";
-
-  private ImageTextPanel imageTextPanel = new ImageTextPanel(BannerImgIcon, TITLE);
+  private final ImageTextPanel imageTextPanel = new ImageTextPanel(
+      new ImageIcon("image/bg_info2.jpg"),
+      LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
 
   public StartPage() {
     super(KioskPageType.START_PAGE);
-    initWelcomePage();
+
     initImgTextPanel();
-
     setListener();
-  }
-
-  private void initWelcomePage() {
-    // 백버튼 표시여부.
-    this.showBackButton();
-    this.add(imageTextPanel);
   }
 
   private void initImgTextPanel() {
     imageTextPanel.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
     imageTextPanel.setLocation(0, 0);
+
+    this.add(imageTextPanel);
   }
 
   private void setListener() {

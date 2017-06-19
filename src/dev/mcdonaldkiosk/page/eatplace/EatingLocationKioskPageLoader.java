@@ -4,7 +4,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
-import dev.mcdonaldkiosk.page.welcome.StartPage;
+import dev.mcdonaldkiosk.page.start.StartPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
