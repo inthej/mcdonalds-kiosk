@@ -18,7 +18,7 @@ public class ThankPageKioskPageLorder implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
-    MainFrame.attachPanel(new WelcomePage(KioskPageType.WELCOME_PAGE));
+    MainFrame.attachPanel(new WelcomePage());
   }
 
   @Override

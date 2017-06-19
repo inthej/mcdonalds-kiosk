@@ -27,8 +27,8 @@ public class ThankPage extends KioskPage {
       new ImageIcon("image/bg_info3.jpg"),
       LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
-  public ThankPage(KioskPageType kioskPageType) {
-    super(kioskPageType);
+  public ThankPage() {
+    super(KioskPageType.THANK_PAGE);
     initPage();
     initImgTextPanel();
 

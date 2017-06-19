@@ -36,7 +36,7 @@ public final class MainFrame extends JFrame {
     this.setLocation((Display.WINDOWS_WIDTH - FRAME_WIDTH) / 2, 0);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    this.add(new WelcomePage(KioskPageType.WELCOME_PAGE));
+    this.add(new WelcomePage());
   }
 
   public static void attachPanel(KioskPage page) {

@@ -42,8 +42,8 @@ public class EatPlacePage extends KioskPage {
 
   private ActionListener langListener = null;
 
-  public EatPlacePage(KioskPageType kioskPageType) {
-    super(kioskPageType);
+  public EatPlacePage() {
+    super(KioskPageType.EAT_PLACE_PAGE);
     initPage();
 
     initPlaceGuidePanel();

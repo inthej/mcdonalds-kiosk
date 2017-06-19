@@ -30,7 +30,7 @@ public abstract class KioskPage extends JPanel {
 
   protected KioskPageLoader currentPage = null;
 
-  public KioskPage(KioskPageType kioskPageType) {
+  public KioskPage(final KioskPageType kioskPageType) {
     currentPage = kioskPageType.createKioskPageLoader();
     currentPage.playSoundOfLoadPage();
     initKioskPage();
@@ -43,7 +43,7 @@ public abstract class KioskPage extends JPanel {
   }
 
   // 배경이미지 설정
-  protected void setBackgroundImg(String filePath) {
+  protected void setBackgroundImg(final String filePath) {
     if (filePath != null) {
       backgroundImg = filePath;
     }
@@ -62,7 +62,7 @@ public abstract class KioskPage extends JPanel {
 
   /* 배경이미지 설정 */
   @Override
-  protected void paintComponent(Graphics g) {
+  protected void paintComponent(final Graphics g) {
     if (isBackgroundImg()) {
       try {
         BufferedImage bufferImg = ImageIO.read(new File(backgroundImg));

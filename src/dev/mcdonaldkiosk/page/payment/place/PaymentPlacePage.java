@@ -29,8 +29,8 @@ public class PaymentPlacePage extends KioskPage {
 
   private ActionListener placeListener = null;
 
-  public PaymentPlacePage(KioskPageType kioskPageType) {
-    super(kioskPageType);
+  public PaymentPlacePage() {
+    super(KioskPageType.PAYMENT_PLACE_PAGE);
     initPage();
     initPaymentSelectPanel();
     initListeners();

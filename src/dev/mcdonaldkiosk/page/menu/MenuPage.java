@@ -27,8 +27,8 @@ public class MenuPage extends KioskPage {
   private final MenuTabbedPane menuTabbedPane = new MenuTabbedPane(orderDataModel);
   private final CartPanel cartPanel = new CartPanel(orderDataModel);
 
-  public MenuPage(KioskPageType kioskPageType) {
-    super(kioskPageType);
+  public MenuPage() {
+    super(KioskPageType.MENU_PAGE);
     initPage();
     setLayout();
   }

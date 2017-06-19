@@ -21,15 +21,15 @@ public class ConfirmPageKioskPageLoader implements KioskPageLoader {
   @Override
   public void loadNextPage() {
     if (OrderPlace.getInstance().getPayPlace() == PayPlace.COUNTER.toString()) {
-      MainFrame.attachPanel(new ThankPage(KioskPageType.THANK_PAGE));
+      MainFrame.attachPanel(new ThankPage());
     } else if (OrderPlace.getInstance().getPayPlace() == PayPlace.KIOSK.toString()) {
-      MainFrame.attachPanel(new PaymentCardPage(KioskPageType.PAYMENT_CARD_PAGE));
+      MainFrame.attachPanel(new PaymentCardPage());
     }
   }
 
   @Override
   public void loadPreviousPage() {
-    MainFrame.attachPanel(new MenuPage(KioskPageType.MENU_PAGE));
+    MainFrame.attachPanel(new MenuPage());
   }
 
   @Override

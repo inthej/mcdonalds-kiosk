@@ -21,8 +21,8 @@ public class PaymentCardPage extends KioskPage {
 
   private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
-  public PaymentCardPage(KioskPageType kioskPageType) {
-    super(kioskPageType);
+  public PaymentCardPage() {
+    super(KioskPageType.PAYMENT_CARD_PAGE);
     initPage();
     initPaymentCardPanel();
     setListener();

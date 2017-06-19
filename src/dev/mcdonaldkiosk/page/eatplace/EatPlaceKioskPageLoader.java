@@ -17,12 +17,12 @@ public class EatPlaceKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
-    MainFrame.attachPanel(new PaymentPlacePage(KioskPageType.PAYMENT_PLACE_PAGE));
+    MainFrame.attachPanel(new PaymentPlacePage());
   }
 
   @Override
   public void loadPreviousPage() {
-    MainFrame.attachPanel(new WelcomePage(KioskPageType.WELCOME_PAGE));
+    MainFrame.attachPanel(new WelcomePage());
   }
 
   @Override
@@ -34,6 +34,6 @@ public class EatPlaceKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void refreshPage() {
-    MainFrame.attachPanel(new EatPlacePage(KioskPageType.EAT_PLACE_PAGE));
+    MainFrame.attachPanel(new EatPlacePage());
   }
 }

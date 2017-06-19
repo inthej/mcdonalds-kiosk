@@ -17,12 +17,12 @@ public class PaymentCardPageKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
-    MainFrame.attachPanel(new ThankPage(KioskPageType.THANK_PAGE));
+    MainFrame.attachPanel(new ThankPage());
   }
 
   @Override
   public void loadPreviousPage() {
-    MainFrame.attachPanel(new ConfirmPage(KioskPageType.CONFIRM_PAGE));
+    MainFrame.attachPanel(new ConfirmPage());
   }
 
   @Override

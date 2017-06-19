@@ -32,8 +32,8 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton NO_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "취소" : "NO");
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
-  public ConfirmPage(KioskPageType kioskPageType) {
-    super(kioskPageType);
+  public ConfirmPage() {
+    super(KioskPageType.CONFIRM_PAGE);
     initPage();
     initOrderTotalListPanel();
     initYesNoSelectPanel();

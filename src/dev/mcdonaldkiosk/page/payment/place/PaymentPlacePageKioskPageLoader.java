@@ -17,12 +17,12 @@ public class PaymentPlacePageKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
-    MainFrame.attachPanel(new MenuPage(KioskPageType.MENU_PAGE));
+    MainFrame.attachPanel(new MenuPage());
   }
 
   @Override
   public void loadPreviousPage() {
-    MainFrame.attachPanel(new EatPlacePage(KioskPageType.EAT_PLACE_PAGE));
+    MainFrame.attachPanel(new EatPlacePage());
   }
 
   @Override

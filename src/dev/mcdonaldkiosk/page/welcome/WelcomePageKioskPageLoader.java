@@ -16,7 +16,7 @@ public class WelcomePageKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void loadNextPage() {
-    MainFrame.attachPanel(new EatPlacePage(KioskPageType.EAT_PLACE_PAGE));
+    MainFrame.attachPanel(new EatPlacePage());
   }
 
   @Override
