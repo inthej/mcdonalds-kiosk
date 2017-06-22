@@ -10,16 +10,14 @@ import java.awt.Color;
 import java.awt.Component;
 
 /**
- * Class Role : 주문확인 페이지
+ * Class Role : 주문데이터(OrderData)의 확인 체크를 제공하는 페이지 이다.
+ * 디자인이 반영된 ConfirmButton을 사용한다.
  *
- * @authro Jaehyeon Kim
+ * @author Jaehyeon Kim
+ * @see OrderData,ConfirmButton
  * @since 2017. 05. 25.
  */
 public class ConfirmPage extends KioskPage {
-
-  /* 중간패널 사이즈 */
-  private final int MIDDLE_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-  private final int MIDDLE_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 5;
 
   // 가운데 패널
   private final KioskGuidePanel ORDER_CONFIRM_GUIDE_PANEL = new KioskGuidePanel(
@@ -52,24 +50,16 @@ public class ConfirmPage extends KioskPage {
   private void initOrderTotalListPanel() {
     ORDER_CONFIRM_GUIDE_PANEL.setTitleColor(Color.GREEN);
     ORDER_CONFIRM_GUIDE_PANEL.addItem(orderTotalDataPanel);
-
-    Component orderConfirmGuideComp = ORDER_CONFIRM_GUIDE_PANEL.getPanel();
-    orderConfirmGuideComp.setSize(MIDDLE_PANEL_WIDTH, MIDDLE_PANEL_HEIGHT);
-    orderConfirmGuideComp
-        .setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT
-            / 4);
   }
 
   private void initYesNoSelectPanel() {
     YES_NO_SELECT_PANEL.addItem(NO_BUTTON, YES_BUTTON);
 
-    int width = MIDDLE_PANEL_WIDTH / 2;
-    int height = MIDDLE_PANEL_HEIGHT / 5;
+    final int PANEL_WIDTH = MainFrame.FRAME_WIDTH * 2 / 5;
+    final int PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 25;
     Component yesNoSelectComp = YES_NO_SELECT_PANEL.getPanel();
-    yesNoSelectComp.setSize(width, height);
-    yesNoSelectComp
-        .setLocation((MainFrame.FRAME_WIDTH - width) / 2, MainFrame.FRAME_HEIGHT
-            * 3 / 4);
+    yesNoSelectComp.setSize(PANEL_WIDTH, PANEL_HEIGHT);
+    yesNoSelectComp.setLocation((MainFrame.FRAME_WIDTH - PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT * 3 / 4);
   }
 
   // set 설정하는 느낌

@@ -16,9 +16,6 @@ import javax.swing.ImageIcon;
  */
 public class PaymentPlacePage extends KioskPage {
 
-  private final int MID_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-  private final int MID_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 5;
-
   private final KioskGuidePanel PAYMENT_SELECT_PANEL = new KioskGuidePanel(
       LangCheck.isKorean() ? "어디에서 지불하시겠습니까?" : "WHERE DO YOU WANT TO PAY?", 0, 2);
 
@@ -44,16 +41,13 @@ public class PaymentPlacePage extends KioskPage {
   private void initPaymentSelectPanel() {
     initKioskButton();
     PAYMENT_SELECT_PANEL.addItem(COUNTER_BUTTON, KIOSK_BUTTON);
-    PAYMENT_SELECT_PANEL.getPanel().setSize(MID_PANEL_WIDTH, MID_PANEL_HEIGHT);
-    PAYMENT_SELECT_PANEL.getPanel().setLocation((MainFrame.FRAME_WIDTH - MID_PANEL_WIDTH) / 2,
-        MainFrame.FRAME_HEIGHT / 4);
 
     this.add(PAYMENT_SELECT_PANEL.getPanel());
   }
 
   private void initKioskButton() {
-    final int BUTTON_WIDTH = MID_PANEL_WIDTH / 3;
-    final int BUTTON_HEIGHT = MID_PANEL_HEIGHT / 2;
+    final int BUTTON_WIDTH = MainFrame.FRAME_WIDTH * 4 / 15;
+    final int BUTTON_HEIGHT = MainFrame.FRAME_HEIGHT * 1 / 5;
 
     COUNTER_BUTTON.setText(LangCheck.isKorean() ? "카운터에서 결제" : "PAYMENT AT THE COUNTER");
     COUNTER_BUTTON.setResizedImg(new ImageIcon("image/counter.jpg"), BUTTON_WIDTH, BUTTON_HEIGHT);

@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page;
 
+import dev.mcdonaldkiosk.main.MainFrame;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -25,6 +26,9 @@ public class KioskGuidePanel {
   private final Color BACKGROUND_COLOR = Color.BLACK;
 
   private final JPanel GUIDE_PANEL = new JPanel();
+  private int guidePanelWidth = MainFrame.FRAME_WIDTH * 4 / 5;
+  private int guidePanelHeight = MainFrame.FRAME_HEIGHT * 2 / 5;
+
   private final JPanel ITEM_PANEL = new JPanel();
 
   public KioskGuidePanel(final int itemRow, final int itemCol) {
@@ -43,6 +47,9 @@ public class KioskGuidePanel {
       GUIDE_PANEL.add(new TitleLabel(title, JLabel.CENTER), BorderLayout.NORTH);
     }
 
+    GUIDE_PANEL.setSize(guidePanelWidth, guidePanelHeight);
+    GUIDE_PANEL.setLocation((MainFrame.FRAME_WIDTH - guidePanelWidth) / 2, MainFrame.FRAME_HEIGHT / 4);
+
     GUIDE_PANEL.add(ITEM_PANEL, BorderLayout.CENTER);
   }
 
@@ -60,6 +67,18 @@ public class KioskGuidePanel {
     if (GUIDE_PANEL.getComponentCount() == 2) {
       GUIDE_PANEL.getComponent(0).setForeground(color);
     }
+  }
+
+  public void setGuidePanelSize(int width, int height) {
+    width = (width > 0) ? width : width;
+    height = (height > 0) ? height : height;
+    GUIDE_PANEL.setSize(width, height);
+  }
+
+  public void setGuidePanelLocation(int x, int y) {
+    x = (x > 0) ? x : 0;
+    y = (y > 0) ? y : 0;
+    GUIDE_PANEL.setLocation(x, y);
   }
 
   public Component getPanel() {

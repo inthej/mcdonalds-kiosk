@@ -34,6 +34,6 @@ public class EatingPlaceKioskPageLoader implements KioskPageLoader {
 
   @Override
   public void refreshPage(OrderData orderData) {
-    MainFrame.attachPanel(new EatPlacePage(orderData));
+    MainFrame.attachPanel(new EatingPlacePage(orderData));
   }
 }
