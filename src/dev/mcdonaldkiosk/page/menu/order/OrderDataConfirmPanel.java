@@ -3,6 +3,7 @@ package dev.mcdonaldkiosk.page.menu.order;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
 import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -24,10 +25,12 @@ class OrderDataConfirmPanel extends JPanel {
   private final Color CANCLE_BTN_COLOR = Color.GRAY;
   private final Color PAYMENT_BTN_COLR = Color.ORANGE;
 
+  private MenuPage menuPage;
   private final KioskPageLoader kioskPageLoader;
   private final OrderData orderData;
 
-  OrderDataConfirmPanel(KioskPageLoader kioskPageLoader, OrderData orderData) {
+  OrderDataConfirmPanel(MenuPage menuPage, KioskPageLoader kioskPageLoader, OrderData orderData) {
+    this.menuPage = menuPage;
     this.kioskPageLoader = kioskPageLoader;
     this.orderData = orderData;
 
@@ -74,7 +77,7 @@ class OrderDataConfirmPanel extends JPanel {
   private void setListener() {
     CANCLE_BUTTON.addActionListener((e) -> {
       orderData.clearMenu();
-      kioskPageLoader.refreshPage(orderData);
+      menuPage.reflesh();
     });
 
     PAYMENT_BUTTON.addActionListener((e) -> {

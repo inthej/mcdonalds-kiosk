@@ -46,6 +46,10 @@ public class OrderData {
   private EatingPlace eatingPlace;
   private PaymentPlace paymentPlace;
 
+  public OrderData() {
+
+  }
+
   private final Calculator calculator = new Calculator();
 
   public EatingPlace getEatingPlace() {

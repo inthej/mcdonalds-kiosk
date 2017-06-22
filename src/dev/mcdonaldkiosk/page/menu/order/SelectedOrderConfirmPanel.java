@@ -3,6 +3,7 @@ package dev.mcdonaldkiosk.page.menu.order;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
 import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -25,12 +26,12 @@ public class SelectedOrderConfirmPanel extends JPanel {
 
   private final OrderData orderData;
 
-  public SelectedOrderConfirmPanel(KioskPageLoader kioskPageLoader, OrderData orderData) {
+  public SelectedOrderConfirmPanel(MenuPage menuPage, KioskPageLoader kioskPageLoader, OrderData orderData) {
     this.orderData = orderData;
 
     textToolbarPanel = new TextToolbarPanel();
     orderListPanel = new OrderListPanel();
-    orderDataConfirmPanel = new OrderDataConfirmPanel(kioskPageLoader, orderData);
+    orderDataConfirmPanel = new OrderDataConfirmPanel(menuPage, kioskPageLoader, orderData);
 
     // 초기화
     initMyOrderPanel();
@@ -51,8 +52,8 @@ public class SelectedOrderConfirmPanel extends JPanel {
   }
 
   // 새로고침
-//  public void reflesh() {
-//    orderListPanel.setJListMenu(orderData.getOrderMenuArray());
-//    orderDataConfirmPanel.refresh();
-//  }
+  public void reflesh() {
+    orderListPanel.setJListMenu(orderData.getOrderMenuArray());
+    orderDataConfirmPanel.refresh();
+  }
 }

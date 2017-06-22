@@ -26,11 +26,12 @@ public class MenuPage extends KioskPage {
   public MenuPage(OrderData orderData) {
     super(KioskPageType.MENU_PAGE, orderData);
 
-    menuTabbedPane = new MenuTabbedPane(orderData);
-    selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this.currentPage, orderData);
+    menuTabbedPane = new MenuTabbedPane(this, orderData);
+    selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this, this.currentPage, orderData);
 
     initPage();
     setLayout();
+    reflesh();
   }
 
   private void initPage() {
@@ -57,7 +58,7 @@ public class MenuPage extends KioskPage {
     });
   }
 
-//  public void reflesh() {
-//    this.currentPage.refreshPage(orderData);
-//  }
+  public void reflesh() {
+    selectedOrderConfirmPanel.reflesh();
+  }
 }

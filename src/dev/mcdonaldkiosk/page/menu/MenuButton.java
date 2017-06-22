@@ -23,11 +23,13 @@ public class MenuButton extends JButton {
       .createKioskAudioPlayer("sound/beep.wav");
   private ImageEdit imageEdit = new ImageEdit();
 
+  private MenuPage menuPage;
   private final OrderData orderData;
 
-  public MenuButton(String imgPath, Menu menu, OrderData orderData) {
+  public MenuButton(String imgPath, Menu menu, MenuPage menuPage, OrderData orderData) {
     this.IMG_PATH = imgPath;
     this.MENU = menu;
+    this.menuPage = menuPage;
     this.orderData = orderData;
 
     initMenuButton();
@@ -52,6 +54,7 @@ public class MenuButton extends JButton {
       clickBGMPlayer.play();
 
       orderData.addMenu(MENU);
+      menuPage.reflesh();
     });
   }
 }
