@@ -1,11 +1,9 @@
 package dev.mcdonaldkiosk.page;
 
-import java.awt.Color;
-
-import javax.swing.JButton;
-
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
+import java.awt.Color;
+import javax.swing.JButton;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 16..

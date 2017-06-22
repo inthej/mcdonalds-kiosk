@@ -1,7 +1,7 @@
 package dev.mcdonaldkiosk.page.menu;
 
-import dev.mcdonaldkiosk.page.eatplace.EatPlace;
-import dev.mcdonaldkiosk.page.payment.place.PayPlace;
+import dev.mcdonaldkiosk.page.eatplace.EatingPlace;
+import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 
 /**
  * Created by kimjaehyeon
@@ -26,7 +26,7 @@ public class OrderPlace {
     return eatPlace;
   }
 
-  public void setEatPlace(EatPlace place) {
+  public void setEatPlace(EatingPlace place) {
 
     this.eatPlace = place.toString();
   }
@@ -35,7 +35,7 @@ public class OrderPlace {
     return payPlace;
   }
 
-  public void setPayPlace(PayPlace place) {
+  public void setPayPlace(PaymentPlace place) {
     this.payPlace = place.toString();
   }
 

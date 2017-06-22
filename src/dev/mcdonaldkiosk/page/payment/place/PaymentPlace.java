@@ -1,6 +1,6 @@
 package dev.mcdonaldkiosk.page.payment.place;
 
-public enum PayPlace {
+public enum PaymentPlace {
   COUNTER, KIOSK;
 
   @Override

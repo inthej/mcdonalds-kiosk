@@ -5,6 +5,7 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.OrderData;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
@@ -23,8 +24,10 @@ public class StartPage extends KioskPage {
       new ImageIcon("image/bg_info2.jpg"),
       LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
 
+
   public StartPage() {
     super(KioskPageType.START_PAGE);
+    this.orderData = new OrderData();
 
     initImgTextPanel();
     setListener();
@@ -41,7 +44,7 @@ public class StartPage extends KioskPage {
     this.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(final MouseEvent e) {
-        currentPage.loadNextPage();
+        currentPage.loadNextPage(StartPage.this.orderData);
       }
     });
   }

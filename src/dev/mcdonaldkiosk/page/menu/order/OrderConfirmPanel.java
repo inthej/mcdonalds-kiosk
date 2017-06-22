@@ -1,17 +1,14 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
-import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.KioskPageLoader;
+import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
 import java.awt.GridLayout;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
-import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * 장바구니 패널의 선택메뉴정보 확인 패널
@@ -27,10 +24,12 @@ class OrderConfirmPanel extends JPanel {
   private final Color CANCLE_BTN_COLOR = Color.GRAY;
   private final Color PAYMENT_BTN_COLR = Color.ORANGE;
 
-  private final OrderDataModel ORDER_DATA_MODEL;
+  private final KioskPageLoader kioskPageLoader;
+  private final OrderData orderData;
 
-  OrderConfirmPanel(OrderDataModel orderDataModel) {
-    this.ORDER_DATA_MODEL = orderDataModel;
+  OrderConfirmPanel(KioskPageLoader kioskPageLoader, OrderData orderData) {
+    this.kioskPageLoader = kioskPageLoader;
+    this.orderData = orderData;
 
     initOrderConfirmPanel();
 
@@ -58,9 +57,9 @@ class OrderConfirmPanel extends JPanel {
   }
 
   private void initDataLabel() {
-    ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_MODEL.getTotalQuantity() +
-        "<br>" + ORDER_DATA_MODEL.getTotalAmount() +
-        "<br>" + ORDER_DATA_MODEL.getTotalKCal() + "</html>");
+    ORDER_DATA_LABEL.setText("<html>" + orderData.getCalculator().getOrderQuantity() +
+        "<br>" + orderData.getCalculator().getOrderAmount() +
+        "<br>" + orderData.getCalculator().getOrderKCal() + "</html>");
     ORDER_DATA_LABEL.setHorizontalAlignment(JLabel.CENTER);
   }
 
@@ -74,24 +73,24 @@ class OrderConfirmPanel extends JPanel {
 
   private void setListener() {
     CANCLE_BUTTON.addActionListener((e) -> {
-      ORDER_DATA_MODEL.clear();
+      orderData.clearMenu();
+      kioskPageLoader.refreshPage(orderData);
     });
 
     PAYMENT_BUTTON.addActionListener((e) -> {
-      if (ORDER_DATA_MODEL.getTotalQuantity() == 0) {
+      if (orderData.getCalculator().getOrderQuantity() == 0) {
         KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer.createKioskAudioPlayer(
             LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
         kioskAudioPlayer.play();
       } else {
-        // TODO : 데이터 넘기기.
-        MainFrame.attachPanel(new ConfirmPage(KioskPageType.CONFIRM_PAGE, ORDER_DATA_MODEL));
+        kioskPageLoader.loadNextPage(orderData);
       }
     });
   }
 
   void refresh() {
-    ORDER_DATA_LABEL.setText("<html>" + ORDER_DATA_MODEL.getTotalQuantity() +
-        "<br>" + ORDER_DATA_MODEL.getTotalAmount() +
-        "<br>" + ORDER_DATA_MODEL.getTotalKCal() + "</html>");
+    ORDER_DATA_LABEL.setText("<html>" + orderData.getCalculator().getOrderQuantity() +
+        "<br>" + orderData.getCalculator().getOrderAmount() +
+        "<br>" + orderData.getCalculator().getOrderKCal() + "</html>");
   }
 }

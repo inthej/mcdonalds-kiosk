@@ -1,12 +1,10 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.menu.Menu;
 import javax.swing.BorderFactory;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
-
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.menu.Menu;
 
 /**
  * Class Role : 이용자가 선택한 메뉴를 스크롤화면으로 보여주는 컴포넌트이다.

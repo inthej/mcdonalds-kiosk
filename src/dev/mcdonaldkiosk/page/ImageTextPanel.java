@@ -1,13 +1,11 @@
 package dev.mcdonaldkiosk.page;
 
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.util.ImageEdit;
 import java.awt.Color;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.ImageEdit;
 
 /**
  * Class Role : 이미지와 텍스트로 구성된 패널이다.

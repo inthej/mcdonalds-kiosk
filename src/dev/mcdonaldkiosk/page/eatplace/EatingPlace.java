@@ -1,6 +1,6 @@
 package dev.mcdonaldkiosk.page.eatplace;
 
-public enum EatPlace {
+public enum EatingPlace {
   EAT_IN, TAKE_OUT;
 
   @Override

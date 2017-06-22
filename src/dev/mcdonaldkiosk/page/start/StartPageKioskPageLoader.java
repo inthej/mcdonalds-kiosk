@@ -3,7 +3,8 @@ package dev.mcdonaldkiosk.page.start;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.eatplace.EatingLocationPage;
+import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
@@ -14,12 +15,12 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 public class StartPageKioskPageLoader implements KioskPageLoader {
 
   @Override
-  public void loadNextPage() {
-    MainFrame.attachPanel(new EatingLocationPage());
+  public void loadNextPage(OrderData orderData) {
+    MainFrame.attachPanel(new EatPlacePage(orderData));
   }
 
   @Override
-  public void loadPreviousPage() {
+  public void loadPreviousPage(OrderData orderData) {
     // TODO Auto-generated method stub
   }
 
@@ -32,7 +33,7 @@ public class StartPageKioskPageLoader implements KioskPageLoader {
   }
 
   @Override
-  public void refreshPage() {
+  public void refreshPage(OrderData orderData) {
     // TODO Auto-generated method stub
   }
 }

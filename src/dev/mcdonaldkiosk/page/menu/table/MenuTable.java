@@ -1,13 +1,12 @@
 package dev.mcdonaldkiosk.page.menu.table;
 
+import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.page.menu.Menu;
 import dev.mcdonaldkiosk.page.menu.MenuButton;
-import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
-
 import javax.swing.JScrollPane;
 
 /**
@@ -51,8 +50,8 @@ public abstract class MenuTable {
     return new Menu(name, price, kCal);
   }
 
-  MenuButton createMenuButton(final String imgPath, final Menu menu, final OrderDataModel orderDataModel) {
-    return new MenuButton(imgPath, menu, orderDataModel);
+  MenuButton createMenuButton(final String imgPath, final Menu menu, final OrderData orderData) {
+    return new MenuButton(imgPath, menu, orderData);
   }
 
   // 메뉴 추가

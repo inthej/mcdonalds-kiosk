@@ -1,16 +1,14 @@
 package dev.mcdonaldkiosk.util;
 
+import com.sun.istack.internal.NotNull;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-
-import com.sun.istack.internal.NotNull;
 
 /**
  * Kiosk 컴포넌트의 오디오 요소를 담당하는 클래스이다. 이미 재생한 오디오 목록은 자체적으로 저장 해놓는다.
@@ -75,13 +73,12 @@ public class KioskAudioPlayer {
    * 다른곳에서 사용할 수 있도록 한다.
    */
   public void play() {
+    if (clip != null) {
+      clip.stop();
+    }
+
     // AudioStream 생성
     createAudioStream();
-
-    // 재생중이면 초기화.
-    if (clip != null) {
-      initClip();
-    }
 
     // 재생
     try {
@@ -91,12 +88,6 @@ public class KioskAudioPlayer {
     } catch (LineUnavailableException | IOException e) {
       e.printStackTrace();
     }
-
-    initClip();
-  }
-
-  private void initClip() {
-    clip = null;
   }
 
   public void stop() {

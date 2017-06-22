@@ -3,11 +3,11 @@ package dev.mcdonaldkiosk.page.confirm;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.menu.MenuPage;
-import dev.mcdonaldkiosk.page.menu.OrderPlace;
-import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
-import dev.mcdonaldkiosk.page.payment.place.PayPlace;
+import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.page.end.EndPage;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
+import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
@@ -18,17 +18,17 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 public class ConfirmPageKioskPageLoader implements KioskPageLoader {
 
   @Override
-  public void loadNextPage() {
-    if (OrderPlace.getInstance().getPayPlace() == PayPlace.COUNTER.toString()) {
-      MainFrame.attachPanel(new EndPage());
-    } else if (OrderPlace.getInstance().getPayPlace() == PayPlace.KIOSK.toString()) {
-      MainFrame.attachPanel(new PaymentCardPage());
+  public void loadNextPage(OrderData orderData) {
+    if (orderData.getPaymentPlace() == PaymentPlace.COUNTER) {
+      MainFrame.attachPanel(new EndPage(orderData));
+    } else if (orderData.getPaymentPlace() == PaymentPlace.KIOSK) {
+      MainFrame.attachPanel(new PaymentCardPage(orderData));
     }
   }
 
   @Override
-  public void loadPreviousPage() {
-    MainFrame.attachPanel(new MenuPage());
+  public void loadPreviousPage(OrderData orderData) {
+    MainFrame.attachPanel(new MenuPage(orderData));
   }
 
   @Override
@@ -39,7 +39,7 @@ public class ConfirmPageKioskPageLoader implements KioskPageLoader {
   }
 
   @Override
-  public void refreshPage() {
+  public void refreshPage(OrderData orderData) {
     // TODO Auto-generated method stub
   }
 }

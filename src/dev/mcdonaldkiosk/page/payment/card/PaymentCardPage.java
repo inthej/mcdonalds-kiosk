@@ -4,6 +4,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
@@ -21,8 +22,10 @@ public class PaymentCardPage extends KioskPage {
 
   private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
-  public PaymentCardPage() {
+  public PaymentCardPage(OrderData orderData) {
     super(KioskPageType.PAYMENT_CARD_PAGE);
+    this.orderData = orderData;
+
     initPage();
     initPaymentCardPanel();
     setListener();
@@ -43,7 +46,7 @@ public class PaymentCardPage extends KioskPage {
   }
 
   private void setListener() {
-    BACK_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage());
+    BACK_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage(orderData));
 
     PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
       @Override
@@ -57,7 +60,7 @@ public class PaymentCardPage extends KioskPage {
         } catch (InterruptedException e1) {
           e1.printStackTrace();
         } finally {
-          currentPage.loadNextPage();
+          currentPage.loadNextPage(orderData);
         }
       }
 

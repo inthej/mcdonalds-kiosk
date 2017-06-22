@@ -1,10 +1,10 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JPanel;
-
 import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.KioskPageLoader;
+import dev.mcdonaldkiosk.page.OrderData;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 
 /**
  * Class Role : 장바구니 패널로서 선택한 메뉴정보를 확인할 수 있다.
@@ -21,12 +21,12 @@ public class CartPanel extends JPanel {
   private final OrderListPanel ORDER_LIST_PANEL;
   private final OrderConfirmPanel ORDER_CONFIRM_PANEL;
 
-  private final OrderDataModel ORDER_DATA_MODEL;
+  private final OrderData orderData;
 
-  public CartPanel(OrderDataModel orderDataModel) {
-    this.ORDER_DATA_MODEL = orderDataModel;
+  public CartPanel(KioskPageLoader kioskPageLoader, OrderData orderData) {
+    this.orderData = orderData;
     ORDER_LIST_PANEL = new OrderListPanel();
-    ORDER_CONFIRM_PANEL = new OrderConfirmPanel(ORDER_DATA_MODEL);
+    ORDER_CONFIRM_PANEL = new OrderConfirmPanel(kioskPageLoader, orderData);
 
     // 초기화
     initMyOrderPanel();
@@ -49,7 +49,7 @@ public class CartPanel extends JPanel {
 
   // 새로고침
   public void reflesh() {
-    ORDER_LIST_PANEL.setJListMenu(ORDER_DATA_MODEL.getOrderMenuArray());
+    ORDER_LIST_PANEL.setJListMenu(orderData.getOrderMenuArray());
     ORDER_CONFIRM_PANEL.refresh();
   }
 }

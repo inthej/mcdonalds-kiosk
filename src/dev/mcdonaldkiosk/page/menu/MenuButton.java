@@ -1,14 +1,12 @@
 package dev.mcdonaldkiosk.page.menu;
 
-import java.awt.Color;
-
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
-
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
+import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
 
 /**
  * Create by kimjaehyeon
@@ -25,12 +23,12 @@ public class MenuButton extends JButton {
       .createKioskAudioPlayer("sound/beep.wav");
   private ImageEdit imageEdit = new ImageEdit();
 
-  private final OrderDataModel ORDER_DATA_MODEL;
+  private final OrderData orderData;
 
-  public MenuButton(String imgPath, Menu menu, OrderDataModel orderDataModel) {
+  public MenuButton(String imgPath, Menu menu, OrderData orderData) {
     this.IMG_PATH = imgPath;
     this.MENU = menu;
-    this.ORDER_DATA_MODEL = orderDataModel;
+    this.orderData = orderData;
 
     initMenuButton();
     setListener();
@@ -53,7 +51,7 @@ public class MenuButton extends JButton {
       /* 음원에 관련된건 음원관련 객체에게 맡긴다. */
       clickBGMPlayer.play();
 
-      ORDER_DATA_MODEL.addMenu(MENU);
+      orderData.addMenu(MENU);
     });
   }
 }

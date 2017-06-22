@@ -1,6 +1,7 @@
 package dev.mcdonaldkiosk.page.menu;
 
-import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
+import dev.mcdonaldkiosk.page.KioskPageLoader;
+import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.page.menu.table.BurgerTable;
 import dev.mcdonaldkiosk.page.menu.table.DessertTable;
 import dev.mcdonaldkiosk.page.menu.table.DrinkTable;
@@ -22,25 +23,25 @@ class MenuTabbedPane extends JTabbedPane {
 
   private final ArrayList<MenuTable> menuTableList = new ArrayList<>();
 
-  private final OrderDataModel orderDataModel;
+  private final OrderData orderData;
 
-  MenuTabbedPane(final OrderDataModel orderDataModel) {
-    this.orderDataModel = orderDataModel;
+  MenuTabbedPane(final OrderData orderData) {
+    this.orderData = orderData;
 
-    createMenuTableOfList(orderDataModel);
+    createMenuTableOfList(orderData);
     initTabbedPane();
     setTabTitle();
   }
 
-  private void createMenuTableOfList(OrderDataModel orderDataModel) {
-    menuTableList.add(new BurgerTable(orderDataModel, 0, 4));
-    menuTableList.add(new SnackTable(orderDataModel, 0, 4));
-    menuTableList.add(new SetMenuTable(orderDataModel, 0, 4));
-    menuTableList.add(new McCafeTable(orderDataModel, 0, 4));
-    menuTableList.add(new McLunchTable(orderDataModel, 0, 4));
-    menuTableList.add(new DrinkTable(orderDataModel, 0, 4));
-    menuTableList.add(new McMoningTable(orderDataModel, 0, 4));
-    menuTableList.add(new DessertTable(orderDataModel, 0, 4));
+  private void createMenuTableOfList(OrderData orderData) {
+    menuTableList.add(new BurgerTable(orderData, 0, 4));
+    menuTableList.add(new SnackTable(orderData, 0, 4));
+    menuTableList.add(new SetMenuTable(orderData, 0, 4));
+    menuTableList.add(new McCafeTable(orderData, 0, 4));
+    menuTableList.add(new McLunchTable(orderData, 0, 4));
+    menuTableList.add(new DrinkTable(orderData, 0, 4));
+    menuTableList.add(new McMoningTable(orderData, 0, 4));
+    menuTableList.add(new DessertTable(orderData, 0, 4));
   }
 
   private void initTabbedPane() {

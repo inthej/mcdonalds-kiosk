@@ -7,51 +7,52 @@ import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.menu.OrderPlace;
+import dev.mcdonaldkiosk.page.OrderData;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 /**
- * Created by kimjaehyeon on 2017. 5. 22
  * Class Role : 식사장소 데이터 및 식사장소/언어 선택 화면을 담당한다.
+ *
+ * @author Jaeheyon Kim
+ * @since 2017. 05. 22
  */
-public class EatingLocationPage extends KioskPage {
+public class EatPlacePage extends KioskPage {
 
   private final int MIDDLE_PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
   private final int MIDDLE_PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 5;
 
-  private final KioskGuidePanel SELECT_EATING_LOCATION_PANEL = new KioskGuidePanel(
+  private final KioskGuidePanel eatingLocationPanel = new KioskGuidePanel(
       LangCheck.isKorean() ? "식사하실 장소를 선택해 주세요" : "PLEASE SELECT A PLACE TO EAT", 0, 2);
-  private final KioskGuidePanel SELECT_LANGUAGE_PANEL = new KioskGuidePanel(
-      "PLASE SELECT YOUR LANGUAGE", 0, 2);
 
-  private final ImageTextButton EAT_BUTTON = new ImageTextButton(
+  private final ImageTextButton eatInButton = new ImageTextButton(
       LangCheck.isKorean() ? "매장 식사" : "EAT IN",
       new ImageIcon("image/icon_eat.jpg"));
-  private final ImageTextButton TAKE_BUTTON = new ImageTextButton(
+  private final ImageTextButton takeOutButton = new ImageTextButton(
       LangCheck.isKorean() ? "테이크 아웃(포장)" : "TAKE OUT",
       new ImageIcon("image/icon_take.jpg"));
 
-  private final ImageTextButton KOR_BUTTON = new ImageTextButton(
+  private final KioskGuidePanel languagePanel = new KioskGuidePanel(
+      "PLASE SELECT YOUR LANGUAGE", 0, 2);
+
+  private final ImageTextButton koreanButton = new ImageTextButton(
       LangCheck.isKorean() ? "한국어" : "KOREAN");
-  private final ImageTextButton ENG_BUTTON = new ImageTextButton("ENGLISH");
+  private final ImageTextButton englishButton = new ImageTextButton("ENGLISH");
 
   private ActionListener placeListener = null;
 
   private ActionListener langListener = null;
 
-  public EatingLocationPage() {
-    super(KioskPageType.EATING_LOCATION_PAGE);
+  public EatPlacePage(OrderData orderData) {
+    super(KioskPageType.EATING_PLACE_PAGE);
+    this.orderData = orderData;
+
     initPage();
-
-    initPlaceGuidePanel();
-
-    initLanguageSelectPanel();
-
+    initEatingLocationPanel();
+    initLanguagePanel();
     initListeners();
-
     setListeners();
   }
 
@@ -60,11 +61,11 @@ public class EatingLocationPage extends KioskPage {
     this.showBackButton();
   }
 
-  private void initPlaceGuidePanel() {
-    SELECT_EATING_LOCATION_PANEL.addItem(EAT_BUTTON, TAKE_BUTTON);
+  private void initEatingLocationPanel() {
+    eatingLocationPanel.addItem(eatInButton, takeOutButton);
 
-    Component placeSelectGuideComp = SELECT_EATING_LOCATION_PANEL.getPanel();
-    placeSelectGuideComp.setSize(MIDDLE_PANEL_WIDTH, MIDDLE_PANEL_HEIGHT);
+    Component placeSelectGuideComp = eatingLocationPanel.getPanel();
+    placeSelectGuideComp.setSize(MainFrame.FRAME_WIDTH * 4 / 5, MIDDLE_PANEL_HEIGHT);
     placeSelectGuideComp
         .setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT
             / 4);
@@ -72,12 +73,12 @@ public class EatingLocationPage extends KioskPage {
     this.add(placeSelectGuideComp);
   }
 
-  private void initLanguageSelectPanel() {
-    KOR_BUTTON.setForeground(Color.BLACK);
-    ENG_BUTTON.setForeground(Color.BLACK);
-    SELECT_LANGUAGE_PANEL.addItem(KOR_BUTTON, ENG_BUTTON);
+  private void initLanguagePanel() {
+    koreanButton.setForeground(Color.BLACK);
+    englishButton.setForeground(Color.BLACK);
+    languagePanel.addItem(koreanButton, englishButton);
 
-    Component languageSelectComp = SELECT_LANGUAGE_PANEL.getPanel();
+    Component languageSelectComp = languagePanel.getPanel();
     languageSelectComp.setSize(MIDDLE_PANEL_WIDTH, MIDDLE_PANEL_HEIGHT / 3);
     languageSelectComp.setLocation((MainFrame.FRAME_WIDTH - MIDDLE_PANEL_WIDTH) / 2,
         MainFrame.FRAME_HEIGHT * 3 / 4);
@@ -89,37 +90,37 @@ public class EatingLocationPage extends KioskPage {
     this.placeListener = (eventSource) -> {
       Object source = eventSource.getSource();
 
-      if (source.equals(EAT_BUTTON)) {
-        OrderPlace.getInstance().setEatPlace(EatPlace.EAT_IN);
-      } else if (source.equals(TAKE_BUTTON)) {
-        OrderPlace.getInstance().setEatPlace(EatPlace.TAKE_OUT);
+      if (source.equals(eatInButton)) {
+        orderData.setEatingPlace(EatingPlace.EAT_IN);
+      } else if (source.equals(takeOutButton)) {
+        orderData.setEatingPlace(EatingPlace.TAKE_OUT);
       }
 
-      currentPage.loadNextPage();
+      currentPage.loadNextPage(orderData);
     };
 
     this.langListener = (eventSource) -> {
       Object source = eventSource.getSource();
 
-      if (source.equals(KOR_BUTTON)) {
+      if (source.equals(koreanButton)) {
         LangCheck.setLang(Language.KOREAN);
-      } else if (source.equals(ENG_BUTTON)) {
+      } else if (source.equals(englishButton)) {
         LangCheck.setLang(Language.ENGLISH);
       }
 
-      currentPage.refreshPage();
+      currentPage.refreshPage(orderData);
     };
   }
 
   private void setListeners() {
-    BACK_BUTTON.addActionListener((args) -> currentPage.loadPreviousPage());
+    BACK_BUTTON.addActionListener((args) -> currentPage.loadPreviousPage(orderData));
 
-    EAT_BUTTON.addActionListener(placeListener);
+    eatInButton.addActionListener(placeListener);
 
-    TAKE_BUTTON.addActionListener(placeListener);
+    takeOutButton.addActionListener(placeListener);
 
-    KOR_BUTTON.addActionListener(langListener);
+    koreanButton.addActionListener(langListener);
 
-    ENG_BUTTON.addActionListener(langListener);
+    englishButton.addActionListener(langListener);
   }
 }

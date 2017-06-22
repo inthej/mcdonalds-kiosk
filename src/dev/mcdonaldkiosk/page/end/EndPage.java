@@ -5,6 +5,9 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -25,12 +28,28 @@ public class EndPage extends KioskPage {
       new ImageIcon("image/bg_info3.jpg"),
       LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
-  public EndPage() {
+  public EndPage(OrderData orderData) {
     super(KioskPageType.END_PAGE);
 
-    //TODO : OrderDataModel 데이터 비우기
+    this.orderData = orderData;
+    playSound();
+    orderData.emptyOrder();
+
     initImgTextPanel();
     setListener();
+  }
+
+  private void playSound() {
+    KioskAudioPlayer kioskAudioPlayer = null;
+    if (orderData.getPaymentPlace() == PaymentPlace.COUNTER) {
+      kioskAudioPlayer = KioskAudioPlayer
+          .createKioskAudioPlayer(
+              LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
+    } else if (orderData.getPaymentPlace() == PaymentPlace.KIOSK) {
+      kioskAudioPlayer = KioskAudioPlayer
+          .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav");
+    }
+    kioskAudioPlayer.play();
   }
 
   private void initImgTextPanel() {
@@ -45,7 +64,7 @@ public class EndPage extends KioskPage {
     this.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent e) {
-        currentPage.loadNextPage();
+        currentPage.loadNextPage(orderData);
       }
     });
   }

@@ -1,17 +1,15 @@
 package dev.mcdonaldkiosk.page.payment.card;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.TitleLabel;
 import dev.mcdonaldkiosk.util.ImageEdit;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 class PaymentCardPanel extends JPanel {
 

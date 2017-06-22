@@ -1,16 +1,14 @@
 package dev.mcdonaldkiosk.page.menu;
 
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.page.menu.order.CartPanel;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import java.awt.BorderLayout;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
 
 /**
  * Class Role : 메뉴를 선택할 수 있는 메뉴페이지의 구성을 가지고 있다.
@@ -21,14 +19,17 @@ import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
  */
 public class MenuPage extends KioskPage {
 
-  private final OrderDataModel orderDataModel = new OrderDataModel(this);
-
   private final ImageIcon bannerImageIcon = new ImageIcon("image/banner_top.jpg");
-  private final MenuTabbedPane menuTabbedPane = new MenuTabbedPane(orderDataModel);
-  private final CartPanel cartPanel = new CartPanel(orderDataModel);
+  private final MenuTabbedPane menuTabbedPane;
+  private final CartPanel cartPanel;
 
-  public MenuPage() {
+  public MenuPage(OrderData orderData) {
     super(KioskPageType.MENU_PAGE);
+
+    this.orderData = orderData;
+    menuTabbedPane = new MenuTabbedPane(orderData);
+    cartPanel = new CartPanel(this.currentPage, orderData);
+
     initPage();
     setLayout();
   }
@@ -52,8 +53,8 @@ public class MenuPage extends KioskPage {
 
   private void setLayout() {
     this.BACK_BUTTON.addActionListener((e) -> {
-      orderDataModel.clear();
-      currentPage.loadPreviousPage();
+      orderData.clearMenu();
+      currentPage.loadPreviousPage(orderData);
     });
   }
 }

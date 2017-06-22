@@ -1,15 +1,13 @@
 package dev.mcdonaldkiosk.page.confirm;
 
-import dev.mcdonaldkiosk.page.KioskPageType;
-import java.awt.Color;
-import java.awt.Component;
-
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
-import dev.mcdonaldkiosk.page.eatplace.EatPlace;
-import dev.mcdonaldkiosk.page.menu.order.OrderDataModel;
+import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.OrderData;
+import java.awt.Color;
+import java.awt.Component;
 
 /**
  * Create by kimjaehyeon on 2017. 5. 25
@@ -32,17 +30,11 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton NO_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "취소" : "NO");
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
-  public ConfirmPage() {
+  public ConfirmPage(OrderData orderData) {
     super(KioskPageType.CONFIRM_PAGE);
-    initPage();
-    initOrderTotalListPanel();
-    initYesNoSelectPanel();
-    setListener();
-  }
 
-  public ConfirmPage(KioskPageType kioskPageType, OrderDataModel orderDataModel) {
-    super(kioskPageType);
-    orderTotalDataPanel = new OrderTotalDataPanel(EatPlace.EAT_IN, orderDataModel);
+    this.orderData = orderData;
+    orderTotalDataPanel = new OrderTotalDataPanel(orderData);
 
     initPage();
     initOrderTotalListPanel();
@@ -82,8 +74,8 @@ public class ConfirmPage extends KioskPage {
 
   // set 설정하는 느낌
   private void setListener() {
-    this.NO_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage()); // 한줄짜리는 { } 지울수 있음.
+    this.NO_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage(orderData)); // 한줄짜리는 { } 지울수 있음.
 
-    this.YES_BUTTON.addActionListener((e) -> currentPage.loadNextPage());
+    this.YES_BUTTON.addActionListener((e) -> currentPage.loadNextPage(orderData));
   }
 }
