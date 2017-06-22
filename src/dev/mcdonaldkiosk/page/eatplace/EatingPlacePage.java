@@ -5,9 +5,9 @@ import dev.mcdonaldkiosk.lang.Language;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.OrderData;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -35,8 +35,8 @@ public class EatingPlacePage extends KioskPage {
   private ActionListener eatingPlaceListener;
   private ActionListener languageListener;
 
-  public EatingPlacePage(OrderData orderData) {
-    super(KioskPageType.EATING_PLACE_PAGE, orderData);
+  public EatingPlacePage(KioskOrderData kioskOrderData) {
+    super(KioskPageType.EATING_PLACE_PAGE, kioskOrderData);
 
     initPage();
     initEatingPlaceSelectPanel();
@@ -75,12 +75,12 @@ public class EatingPlacePage extends KioskPage {
       Object source = eventSource.getSource();
 
       if (source.equals(eatInButton)) {
-        orderData.setEatingPlace(EatingPlace.EAT_IN);
+        kioskOrderData.setEatingPlace(EatingPlace.EAT_IN);
       } else if (source.equals(takeOutButton)) {
-        orderData.setEatingPlace(EatingPlace.TAKE_OUT);
+        kioskOrderData.setEatingPlace(EatingPlace.TAKE_OUT);
       }
 
-      currentPage.loadNextPage(orderData);
+      currentPage.loadNextPage(kioskOrderData);
     };
 
     this.languageListener = (eventSource) -> {
@@ -92,12 +92,12 @@ public class EatingPlacePage extends KioskPage {
         LangCheck.setLang(Language.ENGLISH);
       }
 
-      currentPage.refreshPage(orderData);
+      currentPage.refreshPage(kioskOrderData);
     };
   }
 
   private void setListeners() {
-    BACK_BUTTON.addActionListener((args) -> currentPage.loadPreviousPage(orderData));
+    BACK_BUTTON.addActionListener((args) -> currentPage.loadPreviousPage(kioskOrderData));
 
     eatInButton.addActionListener(eatingPlaceListener);
     takeOutButton.addActionListener(eatingPlaceListener);

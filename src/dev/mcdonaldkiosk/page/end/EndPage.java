@@ -3,11 +3,9 @@ package dev.mcdonaldkiosk.page.end;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.OrderData;
-import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
-import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -28,10 +26,10 @@ public class EndPage extends KioskPage {
       new ImageIcon("image/bg_info3.jpg"),
       LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
-  public EndPage(OrderData orderData) {
-    super(KioskPageType.END_PAGE, orderData);
+  public EndPage(KioskOrderData kioskOrderData) {
+    super(KioskPageType.END_PAGE, kioskOrderData);
 
-    orderData.emptyOrder();
+    kioskOrderData.emptyOrder();
 
     initImgTextPanel();
     setListener();
@@ -49,7 +47,7 @@ public class EndPage extends KioskPage {
     this.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent e) {
-        currentPage.loadNextPage(orderData);
+        currentPage.loadNextPage(kioskOrderData);
       }
     });
   }

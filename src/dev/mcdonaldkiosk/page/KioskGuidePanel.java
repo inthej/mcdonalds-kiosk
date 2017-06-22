@@ -79,7 +79,7 @@ public class KioskGuidePanel {
   public void setGuidePanelLocation(int x, int y) {
     x = (x > 0) ? x : 0;
     y = (y > 0) ? y : 0;
-    
+
     GUIDE_PANEL.setLocation(x, y);
   }
 

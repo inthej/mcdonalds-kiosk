@@ -1,8 +1,8 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -24,14 +24,14 @@ public class SelectedOrderConfirmPanel extends JPanel {
   private final OrderListPanel orderListPanel;
   private final OrderDataConfirmPanel orderDataConfirmPanel;
 
-  private final OrderData orderData;
+  private final KioskOrderData kioskOrderData;
 
-  public SelectedOrderConfirmPanel(MenuPage menuPage, KioskPageLoader kioskPageLoader, OrderData orderData) {
-    this.orderData = orderData;
+  public SelectedOrderConfirmPanel(MenuPage menuPage, KioskPageLoader kioskPageLoader, KioskOrderData kioskOrderData) {
+    this.kioskOrderData = kioskOrderData;
 
     textToolbarPanel = new TextToolbarPanel();
     orderListPanel = new OrderListPanel();
-    orderDataConfirmPanel = new OrderDataConfirmPanel(menuPage, kioskPageLoader, orderData);
+    orderDataConfirmPanel = new OrderDataConfirmPanel(menuPage, kioskPageLoader, kioskOrderData);
 
     // 초기화
     initMyOrderPanel();
@@ -47,13 +47,14 @@ public class SelectedOrderConfirmPanel extends JPanel {
 
   // 텍스트툴바에 텍스트 추가
   private void addTextToTextToolbar() {
-    textToolbarPanel.addText((LangCheck.isKorean() ? "식사 장소 : " : "Eating place : ") + orderData.getEatingPlace())
-        .addText((LangCheck.isKorean() ? "결제 장소 : " : "Payment Place : ") + orderData.getPaymentPlace());
+    textToolbarPanel.addText((LangCheck.isKorean() ? "식사 장소 : " : "Eating place : ") + kioskOrderData
+        .getEatingPlace())
+        .addText((LangCheck.isKorean() ? "결제 장소 : " : "Payment Place : ") + kioskOrderData.getPaymentPlace());
   }
 
   // 새로고침
   public void reflesh() {
-    orderListPanel.setJListMenu(orderData.getOrderMenuArray());
+    orderListPanel.setJListMenu(kioskOrderData.getOrderMenuArray());
     orderDataConfirmPanel.refresh();
   }
 }

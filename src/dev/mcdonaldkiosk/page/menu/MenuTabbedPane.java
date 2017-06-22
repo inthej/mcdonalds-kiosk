@@ -1,6 +1,6 @@
 package dev.mcdonaldkiosk.page.menu;
 
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.table.BurgerTable;
 import dev.mcdonaldkiosk.page.menu.table.DessertTable;
 import dev.mcdonaldkiosk.page.menu.table.DrinkTable;
@@ -22,21 +22,21 @@ class MenuTabbedPane extends JTabbedPane {
 
   private final ArrayList<MenuTable> menuTableList = new ArrayList<>();
 
-  MenuTabbedPane(MenuPage menuPage, final OrderData orderData) {
-    createMenuTableOfList(menuPage, orderData);
+  MenuTabbedPane(MenuPage menuPage, final KioskOrderData kioskOrderData) {
+    createMenuTableOfList(menuPage, kioskOrderData);
     initTabbedPane();
     setTabTitle();
   }
 
-  private void createMenuTableOfList(MenuPage menuPage, OrderData orderData) {
-    menuTableList.add(new BurgerTable(menuPage, orderData, 0, 4));
-    menuTableList.add(new SnackTable(menuPage, orderData, 0, 4));
-    menuTableList.add(new SetMenuTable(menuPage, orderData, 0, 4));
-    menuTableList.add(new McCafeTable(menuPage, orderData, 0, 4));
-    menuTableList.add(new McLunchTable(menuPage, orderData, 0, 4));
-    menuTableList.add(new DrinkTable(menuPage, orderData, 0, 4));
-    menuTableList.add(new McMoningTable(menuPage, orderData, 0, 4));
-    menuTableList.add(new DessertTable(menuPage, orderData, 0, 4));
+  private void createMenuTableOfList(MenuPage menuPage, KioskOrderData kioskOrderData) {
+    menuTableList.add(new BurgerTable(menuPage, kioskOrderData, 0, 4));
+    menuTableList.add(new SnackTable(menuPage, kioskOrderData, 0, 4));
+    menuTableList.add(new SetMenuTable(menuPage, kioskOrderData, 0, 4));
+    menuTableList.add(new McCafeTable(menuPage, kioskOrderData, 0, 4));
+    menuTableList.add(new McLunchTable(menuPage, kioskOrderData, 0, 4));
+    menuTableList.add(new DrinkTable(menuPage, kioskOrderData, 0, 4));
+    menuTableList.add(new McMoningTable(menuPage, kioskOrderData, 0, 4));
+    menuTableList.add(new DessertTable(menuPage, kioskOrderData, 0, 4));
   }
 
   private void initTabbedPane() {

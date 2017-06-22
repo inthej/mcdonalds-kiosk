@@ -6,7 +6,7 @@ import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
@@ -24,8 +24,8 @@ public class PaymentPlacePage extends KioskPage {
 
   private ActionListener placeListener = null;
 
-  public PaymentPlacePage(OrderData orderData) {
-    super(KioskPageType.PAYMENT_PLACE_PAGE, orderData);
+  public PaymentPlacePage(KioskOrderData kioskOrderData) {
+    super(KioskPageType.PAYMENT_PLACE_PAGE, kioskOrderData);
 
     initPage();
     initPaymentSelectPanel();
@@ -64,17 +64,17 @@ public class PaymentPlacePage extends KioskPage {
       Object source = eventSource.getSource();
 
       if (source.equals(COUNTER_BUTTON)) {
-        orderData.setPaymentPlace(PaymentPlace.COUNTER);
+        kioskOrderData.setPaymentPlace(PaymentPlace.COUNTER);
       } else if (source.equals(KIOSK_BUTTON)) {
-        orderData.setPaymentPlace(PaymentPlace.KIOSK);
+        kioskOrderData.setPaymentPlace(PaymentPlace.KIOSK);
       }
 
-      currentPage.loadNextPage(orderData);
+      currentPage.loadNextPage(kioskOrderData);
     };
   }
 
   private void setListeners() {
-    this.BACK_BUTTON.addActionListener((eventSource) -> currentPage.loadPreviousPage(orderData));
+    this.BACK_BUTTON.addActionListener((eventSource) -> currentPage.loadPreviousPage(kioskOrderData));
 
     COUNTER_BUTTON.addActionListener(placeListener);
 

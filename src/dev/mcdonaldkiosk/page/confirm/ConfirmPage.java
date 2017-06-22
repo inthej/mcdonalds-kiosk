@@ -5,16 +5,16 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import java.awt.Color;
 import java.awt.Component;
 
 /**
- * Class Role : 주문데이터(OrderData)의 확인 체크를 제공하는 페이지 이다.
+ * Class Role : 주문데이터(KioskOrderData)의 확인 체크를 제공하는 페이지 이다.
  * 디자인이 반영된 ConfirmButton을 사용한다.
  *
  * @author Jaehyeon Kim
- * @see OrderData,ConfirmButton
+ * @see KioskOrderData ,ConfirmButton
  * @since 2017. 05. 25.
  */
 public class ConfirmPage extends KioskPage {
@@ -30,9 +30,9 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton NO_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "취소" : "NO");
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
-  public ConfirmPage(OrderData orderData) {
-    super(KioskPageType.CONFIRM_PAGE, orderData);
-    orderTotalDataPanel = new OrderTotalDataPanel(orderData);
+  public ConfirmPage(KioskOrderData kioskOrderData) {
+    super(KioskPageType.CONFIRM_PAGE, kioskOrderData);
+    orderTotalDataPanel = new OrderTotalDataPanel(kioskOrderData);
 
     initPage();
     initOrderTotalListPanel();
@@ -64,8 +64,8 @@ public class ConfirmPage extends KioskPage {
 
   // set 설정하는 느낌
   private void setListener() {
-    this.NO_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage(orderData)); // 한줄짜리는 { } 지울수 있음.
+    this.NO_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage(kioskOrderData)); // 한줄짜리는 { } 지울수 있음.
 
-    this.YES_BUTTON.addActionListener((e) -> currentPage.loadNextPage(orderData));
+    this.YES_BUTTON.addActionListener((e) -> currentPage.loadNextPage(kioskOrderData));
   }
 }

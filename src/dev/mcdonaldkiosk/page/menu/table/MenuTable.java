@@ -1,6 +1,6 @@
 package dev.mcdonaldkiosk.page.menu.table;
 
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.Menu;
 import dev.mcdonaldkiosk.page.menu.MenuButton;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
@@ -54,8 +54,8 @@ public abstract class MenuTable {
     return new Menu(name, price, kCal);
   }
 
-  MenuButton createMenuButton(final String imgPath, final Menu menu, final OrderData orderData) {
-    return new MenuButton(imgPath, menu, menuPage, orderData);
+  MenuButton createMenuButton(final String imgPath, final Menu menu, final KioskOrderData kioskOrderData) {
+    return new MenuButton(imgPath, menu, menuPage, kioskOrderData);
   }
 
   // 메뉴 추가

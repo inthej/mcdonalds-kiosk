@@ -1,7 +1,7 @@
 package dev.mcdonaldkiosk.page.menu;
 
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
@@ -24,13 +24,13 @@ public class MenuButton extends JButton {
   private ImageEdit imageEdit = new ImageEdit();
 
   private MenuPage menuPage;
-  private final OrderData orderData;
+  private final KioskOrderData kioskOrderData;
 
-  public MenuButton(String imgPath, Menu menu, MenuPage menuPage, OrderData orderData) {
+  public MenuButton(String imgPath, Menu menu, MenuPage menuPage, KioskOrderData kioskOrderData) {
     this.IMG_PATH = imgPath;
     this.MENU = menu;
     this.menuPage = menuPage;
-    this.orderData = orderData;
+    this.kioskOrderData = kioskOrderData;
 
     initMenuButton();
     setListener();
@@ -53,7 +53,7 @@ public class MenuButton extends JButton {
       /* 음원에 관련된건 음원관련 객체에게 맡긴다. */
       clickBGMPlayer.play();
 
-      orderData.addMenu(MENU);
+      kioskOrderData.addMenu(MENU);
       menuPage.reflesh();
     });
   }

@@ -1,9 +1,9 @@
 package dev.mcdonaldkiosk.page.menu;
 
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.page.menu.order.SelectedOrderConfirmPanel;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import java.awt.BorderLayout;
@@ -23,11 +23,12 @@ public class MenuPage extends KioskPage {
   private final MenuTabbedPane menuTabbedPane;
   private final SelectedOrderConfirmPanel selectedOrderConfirmPanel;
 
-  public MenuPage(OrderData orderData) {
-    super(KioskPageType.MENU_PAGE, orderData);
+  public MenuPage(KioskOrderData kioskOrderData) {
+    super(KioskPageType.MENU_PAGE, kioskOrderData);
 
-    menuTabbedPane = new MenuTabbedPane(this, orderData);
-    selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this, this.currentPage, orderData);
+    menuTabbedPane = new MenuTabbedPane(this, kioskOrderData);
+    selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this, this.currentPage,
+        kioskOrderData);
 
     initPage();
     setLayout();
@@ -53,8 +54,8 @@ public class MenuPage extends KioskPage {
 
   private void setLayout() {
     this.BACK_BUTTON.addActionListener((e) -> {
-      orderData.clearMenu();
-      currentPage.loadPreviousPage(orderData);
+      kioskOrderData.clearMenu();
+      currentPage.loadPreviousPage(kioskOrderData);
     });
   }
 

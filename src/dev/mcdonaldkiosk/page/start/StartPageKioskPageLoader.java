@@ -3,7 +3,7 @@ package dev.mcdonaldkiosk.page.start;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.eatplace.EatingPlacePage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
@@ -15,17 +15,17 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 public class StartPageKioskPageLoader implements KioskPageLoader {
 
   @Override
-  public void loadNextPage(OrderData orderData) {
-    MainFrame.attachPanel(new EatingPlacePage(orderData));
+  public void loadNextPage(KioskOrderData kioskOrderData) {
+    MainFrame.attachPanel(new EatingPlacePage(kioskOrderData));
   }
 
   @Override
-  public void loadPreviousPage(OrderData orderData) {
+  public void loadPreviousPage(KioskOrderData kioskOrderData) {
     // TODO Auto-generated method stub
   }
 
   @Override
-  public void playSoundOfLoadPage(OrderData orderData) {
+  public void playSoundOfLoadPage(KioskOrderData kioskOrderData) {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(
             LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav");
@@ -33,7 +33,7 @@ public class StartPageKioskPageLoader implements KioskPageLoader {
   }
 
   @Override
-  public void refreshPage(OrderData orderData) {
+  public void refreshPage(KioskOrderData kioskOrderData) {
     // TODO Auto-generated method stub
   }
 }

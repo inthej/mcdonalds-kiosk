@@ -3,7 +3,7 @@ package dev.mcdonaldkiosk.page.menu;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
@@ -16,24 +16,24 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 public class MenuPageKioskPageLoader implements KioskPageLoader {
 
   @Override
-  public void loadNextPage(OrderData orderData) {
-    MainFrame.attachPanel(new ConfirmPage(orderData));
+  public void loadNextPage(KioskOrderData kioskOrderData) {
+    MainFrame.attachPanel(new ConfirmPage(kioskOrderData));
   }
 
   @Override
-  public void loadPreviousPage(OrderData orderData) {
-    MainFrame.attachPanel(new PaymentPlacePage(orderData));
+  public void loadPreviousPage(KioskOrderData kioskOrderData) {
+    MainFrame.attachPanel(new PaymentPlacePage(kioskOrderData));
   }
 
   @Override
-  public void playSoundOfLoadPage(OrderData orderData) {
+  public void playSoundOfLoadPage(KioskOrderData kioskOrderData) {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
     kioskAudioPlayer.play();
   }
 
   @Override
-  public void refreshPage(OrderData orderData) {
+  public void refreshPage(KioskOrderData kioskOrderData) {
     // TODO : OrderConfirmPanel 연동
   }
 }

@@ -8,14 +8,14 @@ package dev.mcdonaldkiosk.page;
 public interface KioskPageLoader {
 
   // 다음 페이지 불러온다.
-  public abstract void loadNextPage(OrderData orderData);
+  public abstract void loadNextPage(KioskOrderData kioskOrderData);
 
   // 이전 페이지 불러온다.
-  public abstract void loadPreviousPage(OrderData orderData);
+  public abstract void loadPreviousPage(KioskOrderData kioskOrderData);
 
   // 로드페이지 소리재생
-  public abstract void playSoundOfLoadPage(OrderData orderData);
+  public abstract void playSoundOfLoadPage(KioskOrderData kioskOrderData);
 
   // 페이지 새로고침
-  public abstract void refreshPage(OrderData orderData);
+  public abstract void refreshPage(KioskOrderData kioskOrderData);
 }

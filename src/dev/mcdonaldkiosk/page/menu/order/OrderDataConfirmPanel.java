@@ -2,7 +2,7 @@ package dev.mcdonaldkiosk.page.menu.order;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
@@ -27,12 +27,12 @@ class OrderDataConfirmPanel extends JPanel {
 
   private MenuPage menuPage;
   private final KioskPageLoader kioskPageLoader;
-  private final OrderData orderData;
+  private final KioskOrderData kioskOrderData;
 
-  OrderDataConfirmPanel(MenuPage menuPage, KioskPageLoader kioskPageLoader, OrderData orderData) {
+  OrderDataConfirmPanel(MenuPage menuPage, KioskPageLoader kioskPageLoader, KioskOrderData kioskOrderData) {
     this.menuPage = menuPage;
     this.kioskPageLoader = kioskPageLoader;
-    this.orderData = orderData;
+    this.kioskOrderData = kioskOrderData;
 
     initOrderConfirmPanel();
 
@@ -60,9 +60,9 @@ class OrderDataConfirmPanel extends JPanel {
   }
 
   private void initDataLabel() {
-    ORDER_DATA_LABEL.setText("<html>" + orderData.getCalculator().getOrderQuantity() +
-        "<br>" + orderData.getCalculator().getOrderAmount() +
-        "<br>" + orderData.getCalculator().getOrderKCal() + "</html>");
+    ORDER_DATA_LABEL.setText("<html>" + kioskOrderData.getCalculator().getOrderQuantity() +
+        "<br>" + kioskOrderData.getCalculator().getOrderAmount() +
+        "<br>" + kioskOrderData.getCalculator().getOrderKCal() + "</html>");
     ORDER_DATA_LABEL.setHorizontalAlignment(JLabel.CENTER);
   }
 
@@ -76,24 +76,24 @@ class OrderDataConfirmPanel extends JPanel {
 
   private void setListener() {
     CANCLE_BUTTON.addActionListener((e) -> {
-      orderData.clearMenu();
+      kioskOrderData.clearMenu();
       menuPage.reflesh();
     });
 
     PAYMENT_BUTTON.addActionListener((e) -> {
-      if (orderData.getCalculator().getOrderQuantity() == 0) {
+      if (kioskOrderData.getCalculator().getOrderQuantity() == 0) {
         KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer.createKioskAudioPlayer(
             LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
         kioskAudioPlayer.play();
       } else {
-        kioskPageLoader.loadNextPage(orderData);
+        kioskPageLoader.loadNextPage(kioskOrderData);
       }
     });
   }
 
   void refresh() {
-    ORDER_DATA_LABEL.setText("<html>" + orderData.getCalculator().getOrderQuantity() +
-        "<br>" + orderData.getCalculator().getOrderAmount() +
-        "<br>" + orderData.getCalculator().getOrderKCal() + "</html>");
+    ORDER_DATA_LABEL.setText("<html>" + kioskOrderData.getCalculator().getOrderQuantity() +
+        "<br>" + kioskOrderData.getCalculator().getOrderAmount() +
+        "<br>" + kioskOrderData.getCalculator().getOrderKCal() + "</html>");
   }
 }

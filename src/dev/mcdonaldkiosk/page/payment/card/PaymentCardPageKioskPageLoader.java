@@ -2,8 +2,8 @@ package dev.mcdonaldkiosk.page.payment.card;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
 import dev.mcdonaldkiosk.page.end.EndPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
@@ -16,24 +16,24 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 public class PaymentCardPageKioskPageLoader implements KioskPageLoader {
 
   @Override
-  public void loadNextPage(OrderData orderData) {
-    MainFrame.attachPanel(new EndPage(orderData));
+  public void loadNextPage(KioskOrderData kioskOrderData) {
+    MainFrame.attachPanel(new EndPage(kioskOrderData));
   }
 
   @Override
-  public void loadPreviousPage(OrderData orderData) {
-    MainFrame.attachPanel(new ConfirmPage(orderData));
+  public void loadPreviousPage(KioskOrderData kioskOrderData) {
+    MainFrame.attachPanel(new ConfirmPage(kioskOrderData));
   }
 
   @Override
-  public void playSoundOfLoadPage(OrderData orderData) {
+  public void playSoundOfLoadPage(KioskOrderData kioskOrderData) {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav");
     kioskAudioPlayer.play();
   }
 
   @Override
-  public void refreshPage(OrderData orderData) {
+  public void refreshPage(KioskOrderData kioskOrderData) {
     // TODO Auto-generated method stub
   }
 }

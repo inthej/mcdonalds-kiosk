@@ -1,7 +1,7 @@
 package dev.mcdonaldkiosk.page.menu.table;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 
 /**
@@ -12,52 +12,52 @@ import dev.mcdonaldkiosk.page.menu.MenuPage;
  */
 public class DrinkTable extends MenuTable {
 
-  public DrinkTable(MenuPage menuPage, final OrderData orderData, final int rows, final int cols) {
+  public DrinkTable(MenuPage menuPage, final KioskOrderData kioskOrderData, final int rows, final int cols) {
     super(menuPage, rows, cols);
-    resisterDrink(orderData);
+    resisterDrink(kioskOrderData);
   }
 
-  private void resisterDrink(final OrderData orderData) {
+  private void resisterDrink(final KioskOrderData kioskOrderData) {
     this.addMenu(
         createMenuButton("image/drink/prol_201312050151291100.png",
             createMenu(LangCheck.isKorean() ? "코카-콜라 제로" : "Coca-Cola Zero", 1500, 0)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201312050152466340.png",
             createMenu(LangCheck.isKorean() ? "코카-콜라" : "Coca-Cola", 1500, 143)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201312050152466340.png",
             createMenu(LangCheck.isKorean() ? "스프라이트" : "Sprite", 1500, 149)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201312050152466340.png",
             createMenu(LangCheck.isKorean() ? "환타" : "Fanta", 1500, 167)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201402220224483140.png",
             createMenu(LangCheck.isKorean() ? "바닐라 쉐이크" : "Vanilla Shake", 2700, 339)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201402220229522730.png",
             createMenu(LangCheck.isKorean() ? "딸기 쉐이크" : "Strawberry Shake", 3700, 345)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201402220234029140.png",
             createMenu(LangCheck.isKorean() ? "초코 쉐이크" : "Chocolate Shake", 2700, 339)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201312090535528510.png",
             createMenu(LangCheck.isKorean() ? "오렌지 주스" : "Orange Juice", 2300, 0)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201312011125364160.png",
             createMenu(LangCheck.isKorean() ? "우유" : "Milk", 2000, 0)
-            , orderData));
+            , kioskOrderData));
     this.addMenu(
         createMenuButton("image/drink/prol_201404220647354250.png",
             createMenu(LangCheck.isKorean() ? "생수" : "Mineral Water", 1500, 0)
-            , orderData));
+            , kioskOrderData));
   }
 
   @Override

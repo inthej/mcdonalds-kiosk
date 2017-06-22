@@ -3,7 +3,7 @@ package dev.mcdonaldkiosk.page.end;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.OrderData;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 import dev.mcdonaldkiosk.page.start.StartPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
@@ -16,23 +16,23 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 public class EndPageKioskPageLorder implements KioskPageLoader {
 
   @Override
-  public void loadNextPage(OrderData orderData) {
+  public void loadNextPage(KioskOrderData kioskOrderData) {
     MainFrame.attachPanel(new StartPage());
   }
 
   @Override
-  public void loadPreviousPage(OrderData orderData) {
+  public void loadPreviousPage(KioskOrderData kioskOrderData) {
     // TODO Auto-generated method stub
   }
 
   @Override
-  public void playSoundOfLoadPage(OrderData orderData) {
+  public void playSoundOfLoadPage(KioskOrderData kioskOrderData) {
     KioskAudioPlayer kioskAudioPlayer = null;
-    if (orderData.getPaymentPlace() == PaymentPlace.COUNTER) {
+    if (kioskOrderData.getPaymentPlace() == PaymentPlace.COUNTER) {
       kioskAudioPlayer = KioskAudioPlayer
           .createKioskAudioPlayer(
               LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
-    } else if (orderData.getPaymentPlace() == PaymentPlace.KIOSK) {
+    } else if (kioskOrderData.getPaymentPlace() == PaymentPlace.KIOSK) {
       kioskAudioPlayer = KioskAudioPlayer
           .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav");
     }
@@ -40,7 +40,7 @@ public class EndPageKioskPageLorder implements KioskPageLoader {
   }
 
   @Override
-  public void refreshPage(OrderData orderData) {
+  public void refreshPage(KioskOrderData kioskOrderData) {
     // TODO Auto-generated method stub
   }
 }

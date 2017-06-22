@@ -2,8 +2,8 @@ package dev.mcdonaldkiosk.page.eatplace;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPageLoader;
-import dev.mcdonaldkiosk.page.OrderData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
 import dev.mcdonaldkiosk.page.start.StartPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
@@ -16,24 +16,24 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 public class EatingPlaceKioskPageLoader implements KioskPageLoader {
 
   @Override
-  public void loadNextPage(OrderData orderData) {
-    MainFrame.attachPanel(new PaymentPlacePage(orderData));
+  public void loadNextPage(KioskOrderData kioskOrderData) {
+    MainFrame.attachPanel(new PaymentPlacePage(kioskOrderData));
   }
 
   @Override
-  public void loadPreviousPage(OrderData orderData) {
+  public void loadPreviousPage(KioskOrderData kioskOrderData) {
     MainFrame.attachPanel(new StartPage());
   }
 
   @Override
-  public void playSoundOfLoadPage(OrderData orderData) {
+  public void playSoundOfLoadPage(KioskOrderData kioskOrderData) {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav");
     kioskAudioPlayer.play();
   }
 
   @Override
-  public void refreshPage(OrderData orderData) {
-    MainFrame.attachPanel(new EatingPlacePage(orderData));
+  public void refreshPage(KioskOrderData kioskOrderData) {
+    MainFrame.attachPanel(new EatingPlacePage(kioskOrderData));
   }
 }
