@@ -32,9 +32,10 @@ public abstract class KioskPage extends JPanel {
 
   protected OrderData orderData;
 
-  public KioskPage(final KioskPageType kioskPageType) {
+  public KioskPage(final KioskPageType kioskPageType, OrderData orderData) {
+    this.orderData = orderData;
     currentPage = kioskPageType.createKioskPageLoader();
-    currentPage.playSoundOfLoadPage();
+    currentPage.playSoundOfLoadPage(orderData);
 
     initKioskPage();
   }

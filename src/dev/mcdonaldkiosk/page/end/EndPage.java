@@ -29,27 +29,12 @@ public class EndPage extends KioskPage {
       LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
   public EndPage(OrderData orderData) {
-    super(KioskPageType.END_PAGE);
+    super(KioskPageType.END_PAGE, orderData);
 
-    this.orderData = orderData;
-    playSound();
     orderData.emptyOrder();
 
     initImgTextPanel();
     setListener();
-  }
-
-  private void playSound() {
-    KioskAudioPlayer kioskAudioPlayer = null;
-    if (orderData.getPaymentPlace() == PaymentPlace.COUNTER) {
-      kioskAudioPlayer = KioskAudioPlayer
-          .createKioskAudioPlayer(
-              LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav");
-    } else if (orderData.getPaymentPlace() == PaymentPlace.KIOSK) {
-      kioskAudioPlayer = KioskAudioPlayer
-          .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav");
-    }
-    kioskAudioPlayer.play();
   }
 
   private void initImgTextPanel() {

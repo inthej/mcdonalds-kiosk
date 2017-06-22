@@ -26,7 +26,7 @@ public class EatingPlaceKioskPageLoader implements KioskPageLoader {
   }
 
   @Override
-  public void playSoundOfLoadPage() {
+  public void playSoundOfLoadPage(OrderData orderData) {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav");
     kioskAudioPlayer.play();

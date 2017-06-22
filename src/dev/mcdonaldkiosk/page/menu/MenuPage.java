@@ -24,9 +24,8 @@ public class MenuPage extends KioskPage {
   private final CartPanel cartPanel;
 
   public MenuPage(OrderData orderData) {
-    super(KioskPageType.MENU_PAGE);
+    super(KioskPageType.MENU_PAGE, orderData);
 
-    this.orderData = orderData;
     menuTabbedPane = new MenuTabbedPane(orderData);
     cartPanel = new CartPanel(this.currentPage, orderData);
 

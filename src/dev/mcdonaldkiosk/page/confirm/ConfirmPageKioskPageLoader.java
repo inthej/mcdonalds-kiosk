@@ -32,7 +32,7 @@ public class ConfirmPageKioskPageLoader implements KioskPageLoader {
   }
 
   @Override
-  public void playSoundOfLoadPage() {
+  public void playSoundOfLoadPage(OrderData orderData) {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav");
     kioskAudioPlayer.play();

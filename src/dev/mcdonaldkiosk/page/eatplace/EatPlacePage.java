@@ -46,8 +46,7 @@ public class EatPlacePage extends KioskPage {
   private ActionListener langListener = null;
 
   public EatPlacePage(OrderData orderData) {
-    super(KioskPageType.EATING_PLACE_PAGE);
-    this.orderData = orderData;
+    super(KioskPageType.EATING_PLACE_PAGE, orderData);
 
     initPage();
     initEatingLocationPanel();

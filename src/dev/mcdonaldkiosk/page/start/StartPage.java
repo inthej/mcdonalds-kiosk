@@ -26,8 +26,7 @@ public class StartPage extends KioskPage {
 
 
   public StartPage() {
-    super(KioskPageType.START_PAGE);
-    this.orderData = new OrderData();
+    super(KioskPageType.START_PAGE, new OrderData());
 
     initImgTextPanel();
     setListener();

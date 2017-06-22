@@ -10,8 +10,10 @@ import java.awt.Color;
 import java.awt.Component;
 
 /**
- * Create by kimjaehyeon on 2017. 5. 25
  * Class Role : 주문확인 페이지
+ *
+ * @authro Jaehyeon Kim
+ * @since 2017. 05. 25.
  */
 public class ConfirmPage extends KioskPage {
 
@@ -31,9 +33,7 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
   public ConfirmPage(OrderData orderData) {
-    super(KioskPageType.CONFIRM_PAGE);
-
-    this.orderData = orderData;
+    super(KioskPageType.CONFIRM_PAGE, orderData);
     orderTotalDataPanel = new OrderTotalDataPanel(orderData);
 
     initPage();

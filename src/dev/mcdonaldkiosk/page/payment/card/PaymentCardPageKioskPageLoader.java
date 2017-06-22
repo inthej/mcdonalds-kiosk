@@ -26,7 +26,7 @@ public class PaymentCardPageKioskPageLoader implements KioskPageLoader {
   }
 
   @Override
-  public void playSoundOfLoadPage() {
+  public void playSoundOfLoadPage(OrderData orderData) {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav");
     kioskAudioPlayer.play();

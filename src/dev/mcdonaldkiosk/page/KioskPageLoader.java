@@ -14,7 +14,7 @@ public interface KioskPageLoader {
   public abstract void loadPreviousPage(OrderData orderData);
 
   // 로드페이지 소리재생
-  public abstract void playSoundOfLoadPage();
+  public abstract void playSoundOfLoadPage(OrderData orderData);
 
   // 페이지 새로고침
   public abstract void refreshPage(OrderData orderData);

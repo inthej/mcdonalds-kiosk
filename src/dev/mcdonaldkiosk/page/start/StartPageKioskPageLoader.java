@@ -25,7 +25,7 @@ public class StartPageKioskPageLoader implements KioskPageLoader {
   }
 
   @Override
-  public void playSoundOfLoadPage() {
+  public void playSoundOfLoadPage(OrderData orderData) {
     KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
         .createKioskAudioPlayer(
             LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav");
