@@ -70,14 +70,16 @@ public class KioskGuidePanel {
   }
 
   public void setGuidePanelSize(int width, int height) {
-    width = (width > 0) ? width : width;
-    height = (height > 0) ? height : height;
-    GUIDE_PANEL.setSize(width, height);
+    guidePanelWidth = (width > 0) ? width : 0;
+    guidePanelHeight = (height > 0) ? height : 0;
+
+    GUIDE_PANEL.setSize(guidePanelWidth, guidePanelHeight);
   }
 
   public void setGuidePanelLocation(int x, int y) {
     x = (x > 0) ? x : 0;
     y = (y > 0) ? y : 0;
+    
     GUIDE_PANEL.setLocation(x, y);
   }
 
