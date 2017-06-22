@@ -28,8 +28,11 @@ public abstract class MenuTable {
 
   private final JScrollPane scroll = new JScrollPane();
   private final JPanel menuPanel = new JPanel();
+  private final MenuPage menuPage;
 
-  MenuTable(final int rows, final int cols) {
+  MenuTable(MenuPage menuPage, final int rows, final int cols) {
+    this.menuPage = menuPage;
+
     initScroll();
     initPanel(rows, cols);
   }
@@ -51,7 +54,7 @@ public abstract class MenuTable {
     return new Menu(name, price, kCal);
   }
 
-  MenuButton createMenuButton(final String imgPath, final Menu menu, final MenuPage menuPage, final OrderData orderData) {
+  MenuButton createMenuButton(final String imgPath, final Menu menu, final OrderData orderData) {
     return new MenuButton(imgPath, menu, menuPage, orderData);
   }
 
