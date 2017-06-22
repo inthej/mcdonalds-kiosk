@@ -11,9 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * 장바구니 패널의 선택메뉴정보 확인 패널
+ * @author Jaehyeon Kim
  */
-class OrderConfirmPanel extends JPanel {
+class OrderDataConfirmPanel extends JPanel {
 
   private final JLabel ORDER_TEXT_LABEL = new JLabel();
   private final JLabel ORDER_DATA_LABEL = new JLabel();
@@ -27,7 +27,7 @@ class OrderConfirmPanel extends JPanel {
   private final KioskPageLoader kioskPageLoader;
   private final OrderData orderData;
 
-  OrderConfirmPanel(KioskPageLoader kioskPageLoader, OrderData orderData) {
+  OrderDataConfirmPanel(KioskPageLoader kioskPageLoader, OrderData orderData) {
     this.kioskPageLoader = kioskPageLoader;
     this.orderData = orderData;
 

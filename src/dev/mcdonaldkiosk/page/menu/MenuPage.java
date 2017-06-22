@@ -4,7 +4,7 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.OrderData;
-import dev.mcdonaldkiosk.page.menu.order.CartPanel;
+import dev.mcdonaldkiosk.page.menu.order.SelectedOrderConfirmPanel;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 /**
  * Class Role : 메뉴를 선택할 수 있는 메뉴페이지의 구성을 가지고 있다.
  * 기본 레이아웃은 BorderLayout 이며
- * 상단 이미지베너 라벨, 중간 메뉴탭(MenuTabbedPane) 페인, 하단 장바구니(Cart) 패널로 구성되어 있다.
+ * 상단 이미지 베너 라벨, 중간 메뉴 탭(MenuTabbedPane) 페인, 하단 선택된 주문확인 패널(SelectedOrderConfirmPanel)로 구성되어 있다.
  *
  * @author Jaehyeon, Kim
  */
@@ -21,13 +21,13 @@ public class MenuPage extends KioskPage {
 
   private final ImageIcon bannerImageIcon = new ImageIcon("image/banner_top.jpg");
   private final MenuTabbedPane menuTabbedPane;
-  private final CartPanel cartPanel;
+  private final SelectedOrderConfirmPanel selectedOrderConfirmPanel;
 
   public MenuPage(OrderData orderData) {
     super(KioskPageType.MENU_PAGE, orderData);
 
     menuTabbedPane = new MenuTabbedPane(orderData);
-    cartPanel = new CartPanel(this.currentPage, orderData);
+    selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this.currentPage, orderData);
 
     initPage();
     setLayout();
@@ -37,7 +37,7 @@ public class MenuPage extends KioskPage {
     this.setLayout(new BorderLayout());
     this.add(createImageLabel(bannerImageIcon), BorderLayout.NORTH);
     this.add(menuTabbedPane, BorderLayout.CENTER);
-    this.add(cartPanel, BorderLayout.SOUTH);
+    this.add(selectedOrderConfirmPanel, BorderLayout.SOUTH);
   }
 
   private JLabel createImageLabel(final ImageIcon imageIcon) {
@@ -56,4 +56,8 @@ public class MenuPage extends KioskPage {
       currentPage.loadPreviousPage(orderData);
     });
   }
+
+//  public void reflesh() {
+//    this.currentPage.refreshPage(orderData);
+//  }
 }

@@ -24,7 +24,6 @@ public class StartPage extends KioskPage {
       new ImageIcon("image/bg_info2.jpg"),
       LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
 
-
   public StartPage() {
     super(KioskPageType.START_PAGE, new OrderData());
 

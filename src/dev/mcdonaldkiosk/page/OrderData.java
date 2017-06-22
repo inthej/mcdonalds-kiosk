@@ -51,7 +51,6 @@ public class OrderData {
   public EatingPlace getEatingPlace() {
     return eatingPlace;
   }
-
   public void setEatingPlace(EatingPlace place) {
     eatingPlace = place;
   }
@@ -59,7 +58,6 @@ public class OrderData {
   public PaymentPlace getPaymentPlace() {
     return paymentPlace;
   }
-
   public void setPaymentPlace(PaymentPlace place) {
     paymentPlace = place;
   }
