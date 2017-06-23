@@ -2,41 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b696ca53-edb6-4d57-948b-4543e7a952eb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/OrderPlace.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/OrderData.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskOrderData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageLoaderFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskGuidePanel.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskGuidePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskOrderData.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskOrderData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageLoader.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/confirm/ConfirmPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/confirm/ConfirmPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/confirm/ConfirmPageKioskPageLoader.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/confirm/ConfirmPageKioskPageLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/confirm/OrderTotalDataPanel.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/confirm/OrderTotalDataPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/eatplace/EatingPlaceKioskPageLoader.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/eatplace/EatingPlaceKioskPageLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/eatplace/EatingPlacePage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/eatplace/EatingPlacePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/end/EndPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/end/EndPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/end/EndPageKioskPageLorder.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/end/EndPageKioskPageLorder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuButton.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuPageKioskPageLoader.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuPageKioskPageLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuTabbedPane.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuTabbedPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/OrderDataConfirmPanel.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/OrderDataConfirmPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/SelectedOrderConfirmPanel.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/SelectedOrderConfirmPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/BurgerTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/BurgerTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/DessertTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/DessertTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/DrinkTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/DrinkTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/McCafeTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/McCafeTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/McLunchTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/McLunchTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/McMoningTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/McMoningTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/MenuTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/MenuTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/SetMenuTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/SetMenuTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/SnackTable.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/table/SnackTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/card/PaymentCardPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/card/PaymentCardPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/card/PaymentCardPageKioskPageLoader.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/card/PaymentCardPageKioskPageLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePageKioskPageLoader.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePageKioskPageLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPageKioskPageLoader.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPageKioskPageLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageType.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageType.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,101 +31,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ImageTextPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/ImageTextPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageTextButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/ImageTextButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BackButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/BackButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartPageKioskPageLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPageKioskPageLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="27" column="63" lean-forward="false" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentPlacePageKioskPageLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePageKioskPageLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="28" column="63" lean-forward="false" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentPlacePage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentPlace.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlace.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KioskOrderData.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KioskOrderData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskOrderData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459">
-              <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+            <state relative-caret-position="432">
+              <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KioskPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1603#1604#0" expanded="true" />
+                <element signature="e#1636#1637#0" expanded="true" />
+                <element signature="e#1695#1696#0" expanded="true" />
+                <element signature="e#1733#1734#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KioskPageType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KioskPageLoaderFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageLoaderFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,8 +89,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -194,12 +114,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/BackButton.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/ImageTextButton.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/ImageTextPanel.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/util/KioskAudioPlayer.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/OrderConfirmPanel.java" />
-        <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageType.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/OrderListPanel.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/Menu.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/confirm/ConfirmButton.java" />
@@ -223,7 +141,6 @@
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/CartPanel.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/order/SelectOrderConfirmPanel.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPage.java" />
-        <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/OrderReflesh.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/Reflesh.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuButton.java" />
@@ -245,6 +162,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/OrderData.java" />
         <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskOrderData.java" />
+        <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageLoaderFactory.java" />
+        <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java" />
+        <option value="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageType.java" />
       </list>
     </option>
   </component>
@@ -273,9 +193,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -628,6 +545,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1093,11 +1013,13 @@
       <workItem from="1497964913248" duration="148000" />
       <workItem from="1498021833133" duration="1047000" />
       <workItem from="1498102159303" duration="15381000" />
+      <workItem from="1498181888597" duration="15000" />
+      <workItem from="1498194989386" duration="1942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73106000" />
+    <option name="totallyTimeSpent" value="75341000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1129,7 +1051,6 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1141,6 +1062,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1158,17 +1080,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/util/KioskAudioPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-          <folding>
-            <element signature="e#940#941#0" expanded="false" />
-            <element signature="e#976#977#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -1239,10 +1150,10 @@
         <state relative-caret-position="-351">
           <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding>
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2122#2123#0" expanded="true" />
-            <element signature="e#2164#2165#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
+            <element signature="e#2094#2095#0" expanded="false" />
+            <element signature="e#2122#2123#0" expanded="false" />
+            <element signature="e#2164#2165#0" expanded="false" />
+            <element signature="e#2198#2199#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1270,14 +1181,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/Reflesh.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/Reflesh.java" />
     <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -1309,9 +1213,9 @@
         <state relative-caret-position="293">
           <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-            <element signature="e#1967#1968#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1922#1923#0" expanded="false" />
+            <element signature="e#1967#1968#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1403,8 +1307,8 @@
         <state relative-caret-position="1062">
           <caret line="67" column="33" lean-forward="false" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
           <folding>
-            <element signature="e#1934#1935#0" expanded="true" />
-            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#1934#1935#0" expanded="false" />
+            <element signature="e#1957#1958#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1486,34 +1390,8 @@
         <state relative-caret-position="126">
           <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding>
-            <element signature="e#128#129#0" expanded="true" />
-            <element signature="e#156#157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#128#129#0" expanded="false" />
+            <element signature="e#156#157#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1536,7 +1414,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/ImageTextButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
+        <state relative-caret-position="252">
           <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding />
         </state>
@@ -1546,14 +1424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPageKioskPageLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="63" lean-forward="false" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -1568,7 +1438,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePageKioskPageLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="396">
           <caret line="28" column="63" lean-forward="false" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
           <folding />
         </state>
@@ -1590,14 +1460,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/OrderPlace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/OrderPlace.java" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1606,10 +1469,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/start/StartPageKioskPageLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="27" column="63" lean-forward="false" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskOrderData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        <state relative-caret-position="432">
+          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#1636#1637#0" expanded="true" />
+            <element signature="e#1695#1696#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPageLoaderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

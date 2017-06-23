@@ -26,15 +26,16 @@ public abstract class KioskPage extends JPanel {
 
   private String backgroundImg;
 
-  protected final BackButton BACK_BUTTON = new BackButton();
-
+  private KioskPageLoaderFactory kioskPageLoaderFactory = new KioskPageLoaderFactory();
   protected KioskPageLoader currentPage = null;
 
+  protected final BackButton BACK_BUTTON = new BackButton();
   protected KioskOrderData kioskOrderData;
 
   public KioskPage(final KioskPageType kioskPageType, KioskOrderData kioskOrderData) {
     this.kioskOrderData = kioskOrderData;
-    currentPage = kioskPageType.createKioskPageLoader();
+
+    currentPage = kioskPageLoaderFactory.createKioskPageLoader(kioskPageType);
     currentPage.playSoundOfLoadPage(kioskOrderData);
 
     initKioskPage();

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Class Role : 키오스크 주문관련(식사장소, 결제장소, 선택메뉴) 데이터 수집을 담당한다.
  * 키오스크 주문 데이터 입력, 비움이 가능하다.
- * 
+ *
  * 내부적 제공하는 Calculator를 사용하여 입력된 주문의 수량, 금액, 칼로리 확인이 가능하다.
  *
  * @author Jaehyeon Kim
