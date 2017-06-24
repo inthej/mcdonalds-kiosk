@@ -22,7 +22,8 @@ public class PaymentCardPage extends KioskPage {
   private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
   public PaymentCardPage(KioskOrderData kioskOrderData) {
-    super(kioskOrderData, LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav");
+    super(kioskOrderData, LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav",
+        KioskPageType.END_PAGE, KioskPageType.CONFIRM_PAGE);
 
     initPage();
     initPaymentCardPanel();
@@ -45,7 +46,7 @@ public class PaymentCardPage extends KioskPage {
   }
 
   private void setListener() {
-    BACK_BUTTON.addActionListener((e) -> MainFrame.attachPanel(new ConfirmPage(this.kioskOrderData)));
+    BACK_BUTTON.addActionListener((e) -> this.loadPreviousPage());
 
     PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
       @Override
@@ -59,7 +60,7 @@ public class PaymentCardPage extends KioskPage {
         } catch (InterruptedException e1) {
           e1.printStackTrace();
         } finally {
-          MainFrame.attachPanel(new EndPage(kioskOrderData));
+          PaymentCardPage.this.loadNextPage();
         }
       }
 

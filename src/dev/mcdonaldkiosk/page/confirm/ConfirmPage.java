@@ -35,7 +35,10 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
   public ConfirmPage(KioskOrderData kioskOrderData) {
-    super(kioskOrderData, LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav");
+    super(kioskOrderData, LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav",
+        kioskOrderData.getPaymentPlace().equals(PaymentPlace.COUNTER)
+            ? KioskPageType.END_PAGE : KioskPageType.PAYMENT_CARD_PAGE,
+        KioskPageType.MENU_PAGE);
     orderTotalDataPanel = new OrderTotalDataPanel(kioskOrderData);
 
     initPage();
@@ -63,19 +66,14 @@ public class ConfirmPage extends KioskPage {
     final int PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 25;
     Component yesNoSelectComp = YES_NO_SELECT_PANEL.getPanel();
     yesNoSelectComp.setSize(PANEL_WIDTH, PANEL_HEIGHT);
-    yesNoSelectComp.setLocation((MainFrame.FRAME_WIDTH - PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT * 3 / 4);
+    yesNoSelectComp
+        .setLocation((MainFrame.FRAME_WIDTH - PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT * 3 / 4);
   }
 
   // set 설정하는 느낌
   private void setListener() {
-    this.NO_BUTTON.addActionListener((e) -> MainFrame.attachPanel(new MenuPage(this.kioskOrderData))); // 한줄짜리는 { } 지울수 있음.
+    this.NO_BUTTON.addActionListener((e) -> this.loadPreviousPage()); // 한줄짜리는 { } 지울수 있음.
 
-    this.YES_BUTTON.addActionListener((e) -> {
-      if (kioskOrderData.getPaymentPlace() == PaymentPlace.COUNTER) {
-        MainFrame.attachPanel(new EndPage(kioskOrderData));
-      } else if (kioskOrderData.getPaymentPlace() == PaymentPlace.KIOSK) {
-        MainFrame.attachPanel(new PaymentCardPage(kioskOrderData));
-      }
-    });
+    this.YES_BUTTON.addActionListener((e) -> this.loadNextPage());
   }
 }

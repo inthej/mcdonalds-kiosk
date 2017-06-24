@@ -32,7 +32,8 @@ public class EndPage extends KioskPage {
     super(kioskOrderData,
         kioskOrderData.getPaymentPlace().equals(PaymentPlace.COUNTER)
             ? LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav"
-            : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav");
+            : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav",
+        KioskPageType.START_PAGE, KioskPageType.EMPTY_PAGE);
 
     kioskOrderData.emptyOrder();
 
@@ -52,7 +53,7 @@ public class EndPage extends KioskPage {
     this.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent e) {
-        MainFrame.attachPanel(new StartPage());
+        EndPage.this.loadNextPage();
       }
     });
   }

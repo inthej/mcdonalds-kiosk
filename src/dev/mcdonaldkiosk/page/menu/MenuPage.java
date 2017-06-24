@@ -26,7 +26,8 @@ public class MenuPage extends KioskPage {
   private final SelectedOrderConfirmPanel selectedOrderConfirmPanel;
 
   public MenuPage(KioskOrderData kioskOrderData) {
-    super(kioskOrderData, LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
+    super(kioskOrderData, LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav",
+        KioskPageType.CONFIRM_PAGE, KioskPageType.PAYMENT_PLACE_PAGE);
 
     menuTabbedPane = new MenuTabbedPane(this, kioskOrderData);
     selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this, kioskOrderData);
@@ -56,11 +57,15 @@ public class MenuPage extends KioskPage {
   private void setLayout() {
     this.BACK_BUTTON.addActionListener((e) -> {
       kioskOrderData.clearMenu();
-      MainFrame.attachPanel(new PaymentPlacePage(this.kioskOrderData));
+      this.loadPreviousPage();
     });
   }
 
   public void reflesh() {
     selectedOrderConfirmPanel.reflesh();
+  }
+
+  public void nextPage() {
+    this.loadNextPage();
   }
 }

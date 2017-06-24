@@ -85,7 +85,7 @@ class OrderDataConfirmPanel extends JPanel {
             LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
         kioskAudioPlayer.play();
       } else {
-        MainFrame.attachPanel(new ConfirmPage(kioskOrderData));
+        menuPage.nextPage();
       }
     });
   }

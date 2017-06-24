@@ -30,11 +30,24 @@ public abstract class KioskPage extends JPanel {
   protected final BackButton BACK_BUTTON = new BackButton();
   protected KioskOrderData kioskOrderData = new KioskOrderData();
 
-  public KioskPage(KioskOrderData kioskOrderData, String audioPath) {
+  private KioskPageType nextPage = KioskPageType.EMPTY_PAGE;
+  private KioskPageType previousPage = KioskPageType.EMPTY_PAGE;
+  private KioskPageType currentPage = KioskPageType.EMPTY_PAGE;
+
+  KioskPage() { }
+
+  public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPage, KioskPageType previousPage) {
     this.kioskOrderData = kioskOrderData;
+    this.nextPage = nextPage;
+    this.previousPage = previousPage;
 
     KioskAudioPlayer.createKioskAudioPlayer(audioPath).play();
     initKioskPage();
+  }
+
+  public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPage, KioskPageType previousPage, KioskPageType currentPage) {
+    this(kioskOrderData, audioPath, nextPage, previousPage);
+    this.currentPage = currentPage;
   }
 
   private void initKioskPage() {
@@ -70,6 +83,24 @@ public abstract class KioskPage extends JPanel {
       } catch (IOException e) {
         e.printStackTrace();
       }
+    }
+  }
+
+  protected void loadNextPage() {
+    if (nextPage != KioskPageType.EMPTY_PAGE) {
+      MainFrame.attachPanel(nextPage.createKioskPage(kioskOrderData));
+    }
+  }
+
+  protected void loadPreviousPage() {
+    if (previousPage != KioskPageType.EMPTY_PAGE) {
+      MainFrame.attachPanel(previousPage.createKioskPage(kioskOrderData));
+    }
+  }
+
+  protected void reloadCurrentPage() {
+    if (currentPage != KioskPageType.EMPTY_PAGE) {
+      MainFrame.attachPanel(currentPage.createKioskPage(kioskOrderData));
     }
   }
 }

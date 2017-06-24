@@ -1,5 +1,6 @@
 package dev.mcdonaldkiosk.page.confirm;
 
+import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.Menu;
 import java.awt.BorderLayout;
@@ -31,10 +32,10 @@ class OrderTotalDataPanel extends JPanel {
   private JPanel createTotalListPanel() {
     JPanel totalListPanel = new JPanel();
     totalListPanel.setLayout(new GridLayout(0, 4));
-    totalListPanel.add(new JLabel("나의주문 : " + kioskOrderData.getEatingPlace(), JLabel.CENTER));
-    totalListPanel.add(new JLabel("주문수량 : " + kioskOrderData.getCalculator().getOrderQuantity(), JLabel.CENTER));
-    totalListPanel.add(new JLabel("주문금액 : " + kioskOrderData.getCalculator().getOrderAmount(), JLabel.CENTER));
-    totalListPanel.add(new JLabel("총 칼로리 : " + kioskOrderData.getCalculator().getOrderKCal(), JLabel.CENTER));
+    totalListPanel.add(new JLabel((LangCheck.isKorean() ? "나의주문 : " : "Eating place : ") + kioskOrderData.getEatingPlace(), JLabel.CENTER));
+    totalListPanel.add(new JLabel((LangCheck.isKorean() ? "주문수량 : " : "Order quantity : ") + kioskOrderData.getCalculator().getOrderQuantity(), JLabel.CENTER));
+    totalListPanel.add(new JLabel((LangCheck.isKorean() ? "주문금액 : " : "Order amount : ") + kioskOrderData.getCalculator().getOrderAmount(), JLabel.CENTER));
+    totalListPanel.add(new JLabel((LangCheck.isKorean() ? "총 칼로리 : " : "Total calories : ") + kioskOrderData.getCalculator().getOrderKCal(), JLabel.CENTER));
 
     return totalListPanel;
   }
