@@ -5,6 +5,8 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
+import dev.mcdonaldkiosk.page.end.EndPage;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
@@ -20,7 +22,7 @@ public class PaymentCardPage extends KioskPage {
   private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
   public PaymentCardPage(KioskOrderData kioskOrderData) {
-    super(KioskPageType.PAYMENT_CARD_PAGE, kioskOrderData);
+    super(kioskOrderData, LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav");
 
     initPage();
     initPaymentCardPanel();
@@ -43,7 +45,7 @@ public class PaymentCardPage extends KioskPage {
   }
 
   private void setListener() {
-    BACK_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage(kioskOrderData));
+    BACK_BUTTON.addActionListener((e) -> MainFrame.attachPanel(new ConfirmPage(this.kioskOrderData)));
 
     PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
       @Override
@@ -57,7 +59,7 @@ public class PaymentCardPage extends KioskPage {
         } catch (InterruptedException e1) {
           e1.printStackTrace();
         } finally {
-          currentPage.loadNextPage(kioskOrderData);
+          MainFrame.attachPanel(new EndPage(kioskOrderData));
         }
       }
 

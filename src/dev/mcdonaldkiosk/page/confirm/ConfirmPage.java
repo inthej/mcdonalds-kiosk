@@ -6,6 +6,10 @@ import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskOrderData;
+import dev.mcdonaldkiosk.page.end.EndPage;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
+import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 import java.awt.Color;
 import java.awt.Component;
 
@@ -31,7 +35,7 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
   public ConfirmPage(KioskOrderData kioskOrderData) {
-    super(KioskPageType.CONFIRM_PAGE, kioskOrderData);
+    super(kioskOrderData, LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav");
     orderTotalDataPanel = new OrderTotalDataPanel(kioskOrderData);
 
     initPage();
@@ -64,8 +68,14 @@ public class ConfirmPage extends KioskPage {
 
   // set 설정하는 느낌
   private void setListener() {
-    this.NO_BUTTON.addActionListener((e) -> currentPage.loadPreviousPage(kioskOrderData)); // 한줄짜리는 { } 지울수 있음.
+    this.NO_BUTTON.addActionListener((e) -> MainFrame.attachPanel(new MenuPage(this.kioskOrderData))); // 한줄짜리는 { } 지울수 있음.
 
-    this.YES_BUTTON.addActionListener((e) -> currentPage.loadNextPage(kioskOrderData));
+    this.YES_BUTTON.addActionListener((e) -> {
+      if (kioskOrderData.getPaymentPlace() == PaymentPlace.COUNTER) {
+        MainFrame.attachPanel(new EndPage(kioskOrderData));
+      } else if (kioskOrderData.getPaymentPlace() == PaymentPlace.KIOSK) {
+        MainFrame.attachPanel(new PaymentCardPage(kioskOrderData));
+      }
+    });
   }
 }

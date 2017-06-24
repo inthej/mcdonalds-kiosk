@@ -2,7 +2,6 @@ package dev.mcdonaldkiosk.page.menu.order;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.KioskOrderData;
-import dev.mcdonaldkiosk.page.KioskPageLoader;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -26,12 +25,12 @@ public class SelectedOrderConfirmPanel extends JPanel {
 
   private final KioskOrderData kioskOrderData;
 
-  public SelectedOrderConfirmPanel(MenuPage menuPage, KioskPageLoader kioskPageLoader, KioskOrderData kioskOrderData) {
+  public SelectedOrderConfirmPanel(MenuPage menuPage, KioskOrderData kioskOrderData) {
     this.kioskOrderData = kioskOrderData;
 
     textToolbarPanel = new TextToolbarPanel();
     orderListPanel = new OrderListPanel();
-    orderDataConfirmPanel = new OrderDataConfirmPanel(menuPage, kioskPageLoader, kioskOrderData);
+    orderDataConfirmPanel = new OrderDataConfirmPanel(menuPage, kioskOrderData);
 
     // 초기화
     initMyOrderPanel();

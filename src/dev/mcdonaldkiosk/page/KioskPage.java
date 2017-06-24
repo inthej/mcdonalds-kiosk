@@ -1,6 +1,7 @@
 package dev.mcdonaldkiosk.page;
 
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -26,18 +27,13 @@ public abstract class KioskPage extends JPanel {
 
   private String backgroundImg;
 
-  private KioskPageLoaderFactory kioskPageLoaderFactory = new KioskPageLoaderFactory();
-  protected KioskPageLoader currentPage = null;
-
   protected final BackButton BACK_BUTTON = new BackButton();
-  protected KioskOrderData kioskOrderData;
+  protected KioskOrderData kioskOrderData = new KioskOrderData();
 
-  public KioskPage(final KioskPageType kioskPageType, KioskOrderData kioskOrderData) {
+  public KioskPage(KioskOrderData kioskOrderData, String audioPath) {
     this.kioskOrderData = kioskOrderData;
 
-    currentPage = kioskPageLoaderFactory.createKioskPageLoader(kioskPageType);
-    currentPage.playSoundOfLoadPage(kioskOrderData);
-
+    KioskAudioPlayer.createKioskAudioPlayer(audioPath).play();
     initKioskPage();
   }
 

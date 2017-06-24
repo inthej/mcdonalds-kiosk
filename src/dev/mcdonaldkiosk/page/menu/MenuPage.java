@@ -1,10 +1,12 @@
 package dev.mcdonaldkiosk.page.menu;
 
+import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.menu.order.SelectedOrderConfirmPanel;
+import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
@@ -24,11 +26,10 @@ public class MenuPage extends KioskPage {
   private final SelectedOrderConfirmPanel selectedOrderConfirmPanel;
 
   public MenuPage(KioskOrderData kioskOrderData) {
-    super(KioskPageType.MENU_PAGE, kioskOrderData);
+    super(kioskOrderData, LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
 
     menuTabbedPane = new MenuTabbedPane(this, kioskOrderData);
-    selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this, this.currentPage,
-        kioskOrderData);
+    selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this, kioskOrderData);
 
     initPage();
     setLayout();
@@ -55,7 +56,7 @@ public class MenuPage extends KioskPage {
   private void setLayout() {
     this.BACK_BUTTON.addActionListener((e) -> {
       kioskOrderData.clearMenu();
-      currentPage.loadPreviousPage(kioskOrderData);
+      MainFrame.attachPanel(new PaymentPlacePage(this.kioskOrderData));
     });
   }
 

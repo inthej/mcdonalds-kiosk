@@ -1,8 +1,9 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.KioskPageLoader;
+import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskOrderData;
+import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
@@ -26,12 +27,10 @@ class OrderDataConfirmPanel extends JPanel {
   private final Color PAYMENT_BTN_COLR = Color.ORANGE;
 
   private MenuPage menuPage;
-  private final KioskPageLoader kioskPageLoader;
   private final KioskOrderData kioskOrderData;
 
-  OrderDataConfirmPanel(MenuPage menuPage, KioskPageLoader kioskPageLoader, KioskOrderData kioskOrderData) {
+  OrderDataConfirmPanel(MenuPage menuPage, KioskOrderData kioskOrderData) {
     this.menuPage = menuPage;
-    this.kioskPageLoader = kioskPageLoader;
     this.kioskOrderData = kioskOrderData;
 
     initOrderConfirmPanel();
@@ -86,7 +85,7 @@ class OrderDataConfirmPanel extends JPanel {
             LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
         kioskAudioPlayer.play();
       } else {
-        kioskPageLoader.loadNextPage(kioskOrderData);
+        MainFrame.attachPanel(new ConfirmPage(kioskOrderData));
       }
     });
   }

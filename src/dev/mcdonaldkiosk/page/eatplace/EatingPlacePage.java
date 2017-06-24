@@ -8,6 +8,8 @@ import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
+import dev.mcdonaldkiosk.page.start.StartPage;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -36,7 +38,7 @@ public class EatingPlacePage extends KioskPage {
   private ActionListener languageListener;
 
   public EatingPlacePage(KioskOrderData kioskOrderData) {
-    super(KioskPageType.EATING_PLACE_PAGE, kioskOrderData);
+    super(kioskOrderData, LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav");
 
     initPage();
     initEatingPlaceSelectPanel();
@@ -79,8 +81,7 @@ public class EatingPlacePage extends KioskPage {
       } else if (source.equals(takeOutButton)) {
         kioskOrderData.setEatingPlace(EatingPlace.TAKE_OUT);
       }
-
-      currentPage.loadNextPage(kioskOrderData);
+      MainFrame.attachPanel(new PaymentPlacePage(this.kioskOrderData));
     };
 
     this.languageListener = (eventSource) -> {
@@ -92,12 +93,12 @@ public class EatingPlacePage extends KioskPage {
         LangCheck.setLang(Language.ENGLISH);
       }
 
-      currentPage.refreshPage(kioskOrderData);
+      MainFrame.attachPanel(new EatingPlacePage(this.kioskOrderData));
     };
   }
 
   private void setListeners() {
-    BACK_BUTTON.addActionListener((args) -> currentPage.loadPreviousPage(kioskOrderData));
+    BACK_BUTTON.addActionListener((args) -> MainFrame.attachPanel(new StartPage()));
 
     eatInButton.addActionListener(eatingPlaceListener);
     takeOutButton.addActionListener(eatingPlaceListener);
