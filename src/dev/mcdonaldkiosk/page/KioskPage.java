@@ -26,34 +26,47 @@ import javax.swing.JPanel;
 public abstract class KioskPage extends JPanel {
 
   private String backgroundImg;
+  private BackButton backButton = new BackButton();
 
-  protected final BackButton BACK_BUTTON = new BackButton();
+  private KioskPageType nextPageType = KioskPageType.EMPTY_PAGE;
+  private KioskPageType backPageType = KioskPageType.EMPTY_PAGE;
+  private KioskPageType currentPageType = KioskPageType.EMPTY_PAGE;
+
   protected KioskOrderData kioskOrderData = new KioskOrderData();
-
-  private KioskPageType nextPage = KioskPageType.EMPTY_PAGE;
-  private KioskPageType previousPage = KioskPageType.EMPTY_PAGE;
-  private KioskPageType currentPage = KioskPageType.EMPTY_PAGE;
 
   KioskPage() { }
 
-  public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPage, KioskPageType previousPage) {
+  public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPageType,
+      KioskPageType backPageType) {
     this.kioskOrderData = kioskOrderData;
-    this.nextPage = nextPage;
-    this.previousPage = previousPage;
+    this.nextPageType = nextPageType;
+    this.backPageType = backPageType;
 
     KioskAudioPlayer.createKioskAudioPlayer(audioPath).play();
     initKioskPage();
+    setListener();
   }
 
-  public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPage, KioskPageType previousPage, KioskPageType currentPage) {
-    this(kioskOrderData, audioPath, nextPage, previousPage);
-    this.currentPage = currentPage;
+  public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPageType,
+      KioskPageType backPageType, KioskPageType currentPageType) {
+    this(kioskOrderData, audioPath, nextPageType, backPageType);
+    this.currentPageType = currentPageType;
   }
 
   private void initKioskPage() {
     this.setLayout(null);
     this.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
     this.setLocation(0, 0);
+  }
+
+  private void setListener() {
+    backButton.addActionListener((e) -> {
+      loadPreviousPage();
+    });
+  }
+
+  protected BackButton getBackButton() {
+    return backButton;
   }
 
   // 배경이미지 설정
@@ -64,7 +77,7 @@ public abstract class KioskPage extends JPanel {
   }
 
   protected void showBackButton() {
-      this.add(BACK_BUTTON);
+    this.add(backButton);
   }
 
   /* 배경이미지 등록 여부 */
@@ -87,20 +100,20 @@ public abstract class KioskPage extends JPanel {
   }
 
   protected void loadNextPage() {
-    if (nextPage != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(nextPage.createKioskPage(kioskOrderData));
+    if (nextPageType != KioskPageType.EMPTY_PAGE) {
+      MainFrame.attachPanel(nextPageType.createKioskPage(kioskOrderData));
     }
   }
 
   protected void loadPreviousPage() {
-    if (previousPage != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(previousPage.createKioskPage(kioskOrderData));
+    if (backPageType != KioskPageType.EMPTY_PAGE) {
+      MainFrame.attachPanel(backPageType.createKioskPage(kioskOrderData));
     }
   }
 
-  protected void reloadCurrentPage() {
-    if (currentPage != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(currentPage.createKioskPage(kioskOrderData));
+  protected void reloadPage() {
+    if (currentPageType != KioskPageType.EMPTY_PAGE) {
+      MainFrame.attachPanel(currentPageType.createKioskPage(kioskOrderData));
     }
   }
 }

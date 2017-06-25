@@ -77,8 +77,6 @@ public class PaymentPlacePage extends KioskPage {
   }
 
   private void setListeners() {
-    this.BACK_BUTTON.addActionListener((eventSource) -> this.loadPreviousPage());
-
     COUNTER_BUTTON.addActionListener(placeListener);
 
     KIOSK_BUTTON.addActionListener(placeListener);

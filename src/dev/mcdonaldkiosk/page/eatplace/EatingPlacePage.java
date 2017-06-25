@@ -92,13 +92,11 @@ public class EatingPlacePage extends KioskPage {
         LangCheck.setLang(Language.ENGLISH);
       }
 
-      this.reloadCurrentPage();
+      this.reloadPage();
     };
   }
 
   private void setListeners() {
-    BACK_BUTTON.addActionListener((args) -> this.loadPreviousPage());
-
     eatInButton.addActionListener(eatingPlaceListener);
     takeOutButton.addActionListener(eatingPlaceListener);
 

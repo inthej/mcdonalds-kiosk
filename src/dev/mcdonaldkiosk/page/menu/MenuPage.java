@@ -49,15 +49,14 @@ public class MenuPage extends KioskPage {
         ImageEdit.getResizeIcon(imageIcon, MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT
             / 5));
 
-    imageLabel.add(BACK_BUTTON);
+    imageLabel.add(super.getBackButton());
 
     return imageLabel;
   }
 
   private void setLayout() {
-    this.BACK_BUTTON.addActionListener((e) -> {
+    this.getBackButton().addActionListener((e) -> {
       kioskOrderData.clearMenu();
-      this.loadPreviousPage();
     });
   }
 

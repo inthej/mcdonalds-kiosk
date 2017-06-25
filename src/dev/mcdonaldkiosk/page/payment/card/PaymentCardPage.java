@@ -46,8 +46,6 @@ public class PaymentCardPage extends KioskPage {
   }
 
   private void setListener() {
-    BACK_BUTTON.addActionListener((e) -> this.loadPreviousPage());
-
     PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
