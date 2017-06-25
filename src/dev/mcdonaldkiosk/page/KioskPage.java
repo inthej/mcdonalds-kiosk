@@ -29,7 +29,7 @@ public abstract class KioskPage extends JPanel {
   private BackButton backButton = new BackButton();
 
   private KioskPageType nextPageType = KioskPageType.EMPTY_PAGE;
-  private KioskPageType backPageType = KioskPageType.EMPTY_PAGE;
+  private KioskPageType previousPageType = KioskPageType.EMPTY_PAGE;
   private KioskPageType currentPageType = KioskPageType.EMPTY_PAGE;
 
   protected KioskOrderData kioskOrderData = new KioskOrderData();
@@ -37,10 +37,10 @@ public abstract class KioskPage extends JPanel {
   KioskPage() { }
 
   public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPageType,
-      KioskPageType backPageType) {
+      KioskPageType previousPageType) {
     this.kioskOrderData = kioskOrderData;
     this.nextPageType = nextPageType;
-    this.backPageType = backPageType;
+    this.previousPageType = previousPageType;
 
     KioskAudioPlayer.createKioskAudioPlayer(audioPath).play();
     initKioskPage();
@@ -48,8 +48,8 @@ public abstract class KioskPage extends JPanel {
   }
 
   public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPageType,
-      KioskPageType backPageType, KioskPageType currentPageType) {
-    this(kioskOrderData, audioPath, nextPageType, backPageType);
+      KioskPageType previousPageType, KioskPageType currentPageType) {
+    this(kioskOrderData, audioPath, nextPageType, previousPageType);
     this.currentPageType = currentPageType;
   }
 
@@ -106,8 +106,8 @@ public abstract class KioskPage extends JPanel {
   }
 
   protected void loadPreviousPage() {
-    if (backPageType != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(backPageType.createKioskPage(kioskOrderData));
+    if (previousPageType != KioskPageType.EMPTY_PAGE) {
+      MainFrame.attachPanel(previousPageType.createKioskPage(kioskOrderData));
     }
   }
 

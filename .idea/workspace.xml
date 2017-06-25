@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b696ca53-edb6-4d57-948b-4543e7a952eb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/eatplace/EatingPlacePage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/eatplace/EatingPlacePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/menu/MenuPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/card/PaymentCardPage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/card/PaymentCardPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePage.java" afterPath="$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/payment/place/PaymentPlacePage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,16 +30,16 @@
       <file leaf-file-name="KioskPage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-783">
-              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+            <state relative-caret-position="-873">
+              <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
-                <element signature="e#2093#2094#0" expanded="true" />
-                <element signature="e#2274#2275#0" expanded="true" />
-                <element signature="e#2304#2305#0" expanded="true" />
-                <element signature="e#2363#2364#0" expanded="true" />
-                <element signature="e#2401#2402#0" expanded="true" />
+                <element signature="e#2090#2091#0" expanded="true" />
+                <element signature="e#2117#2118#0" expanded="true" />
+                <element signature="e#2298#2299#0" expanded="true" />
+                <element signature="e#2328#2329#0" expanded="true" />
+                <element signature="e#2387#2388#0" expanded="true" />
+                <element signature="e#2425#2426#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1076,7 +1071,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86915000" />
+    <option name="totallyTimeSpent" value="87119000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1482,16 +1477,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/mcdonaldkiosk/page/KioskPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-783">
-          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        <state relative-caret-position="-873">
+          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2066#2067#0" expanded="true" />
-            <element signature="e#2093#2094#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
-            <element signature="e#2304#2305#0" expanded="true" />
-            <element signature="e#2363#2364#0" expanded="true" />
-            <element signature="e#2401#2402#0" expanded="true" />
+            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#2117#2118#0" expanded="true" />
+            <element signature="e#2298#2299#0" expanded="true" />
+            <element signature="e#2328#2329#0" expanded="true" />
+            <element signature="e#2387#2388#0" expanded="true" />
+            <element signature="e#2425#2426#0" expanded="true" />
           </folding>
         </state>
       </provider>
