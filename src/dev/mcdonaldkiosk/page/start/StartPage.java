@@ -27,8 +27,7 @@ public class StartPage extends KioskPage {
 
   public StartPage() {
     super(
-        new KioskSettingData(new KioskOrderData(),
-            LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav",
+        new KioskSettingData(LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav",
             KioskPageType.EATING_PLACE_PAGE,
             KioskPageType.EMPTY_PAGE));
 

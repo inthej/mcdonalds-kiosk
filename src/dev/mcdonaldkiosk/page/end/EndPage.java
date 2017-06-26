@@ -28,15 +28,14 @@ public class EndPage extends KioskPage {
       new ImageIcon("image/bg_info3.jpg"),
       LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
-  public EndPage(KioskOrderData kioskOrderData) {
+  public EndPage() {
     super(
-        new KioskSettingData(kioskOrderData,
-            kioskOrderData.getPaymentPlace().equals(PaymentPlace.COUNTER)
+        new KioskSettingData(KioskPage.getKioskOrderData().getPaymentPlace().equals(PaymentPlace.COUNTER)
                 ? LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav"
                 : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav",
             KioskPageType.START_PAGE, KioskPageType.EMPTY_PAGE));
 
-    kioskOrderData.emptyOrder();
+    KioskPage.getKioskOrderData().emptyOrder();
 
     initImgTextPanel();
     setListener();

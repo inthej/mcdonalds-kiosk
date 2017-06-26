@@ -28,14 +28,13 @@ public abstract class KioskPage extends JPanel {
   private String backgroundImg;
   private BackButton backButton = new BackButton();
 
-  private KioskOrderData kioskOrderData;
+  private static final KioskOrderData kioskOrderData = new KioskOrderData();
   private KioskPageType nextPageType = KioskPageType.EMPTY_PAGE;
   private KioskPageType previousPageType = KioskPageType.EMPTY_PAGE;
 
   KioskPage() { }
 
   public KioskPage(KioskSettingData kioskSettingData) {
-    this.kioskOrderData = kioskSettingData.getKioskOrderData();
     this.nextPageType = kioskSettingData.getNextPageType();
     this.previousPageType = kioskSettingData.getPreviousPageType();
 
@@ -92,22 +91,27 @@ public abstract class KioskPage extends JPanel {
 
   protected void loadNextPage() {
     if (nextPageType != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(nextPageType.createKioskPage(kioskOrderData));
+      MainFrame.attachPanel(nextPageType.createKioskPage());
     }
   }
 
   protected void loadPreviousPage() {
     if (previousPageType != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(previousPageType.createKioskPage(kioskOrderData));
+      MainFrame.attachPanel(previousPageType.createKioskPage());
     }
   }
 
   protected void reloadPage() {
-    // TODO : think
-    // MainFrame.attachPanel(this);
+    try {
+      MainFrame.attachPanel(this.getClass().newInstance());
+    } catch (InstantiationException e) {
+      e.printStackTrace();
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    }
   }
 
-  protected KioskOrderData getKioskOrderData() {
+  protected static KioskOrderData getKioskOrderData() {
     return kioskOrderData;
   }
 }

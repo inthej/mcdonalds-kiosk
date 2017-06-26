@@ -29,7 +29,8 @@ public class EatingPlacePage extends KioskPage {
   private final ImageTextButton takeOutButton = new ImageTextButton(
       LangCheck.isKorean() ? "테이크 아웃(포장)" : "TAKE OUT", new ImageIcon("image/icon_take.jpg"));
 
-  private KioskGuidePanel languageSelectPanel = new KioskGuidePanel("PLASE SELECT YOUR LANGUAGE", 0, 2);
+  private KioskGuidePanel languageSelectPanel = new KioskGuidePanel("PLASE SELECT YOUR LANGUAGE", 0,
+      2);
   private ImageTextButton koreanButton = new ImageTextButton(
       LangCheck.isKorean() ? "한국어" : "KOREAN");
   private ImageTextButton englishButton = new ImageTextButton("ENGLISH");
@@ -37,10 +38,9 @@ public class EatingPlacePage extends KioskPage {
   private ActionListener eatingPlaceListener;
   private ActionListener languageListener;
 
-  public EatingPlacePage(KioskOrderData kioskOrderData) {
+  public EatingPlacePage() {
     super(
-        new KioskSettingData(kioskOrderData,
-            LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav",
+        new KioskSettingData(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav",
             KioskPageType.PAYMENT_PLACE_PAGE, KioskPageType.START_PAGE));
 
     initPage();
@@ -80,9 +80,9 @@ public class EatingPlacePage extends KioskPage {
       Object source = eventSource.getSource();
 
       if (source.equals(eatInButton)) {
-        this.getKioskOrderData().setEatingPlace(EatingPlace.EAT_IN);
+        KioskPage.getKioskOrderData().setEatingPlace(EatingPlace.EAT_IN);
       } else if (source.equals(takeOutButton)) {
-        this.getKioskOrderData().setEatingPlace(EatingPlace.TAKE_OUT);
+        KioskPage.getKioskOrderData().setEatingPlace(EatingPlace.TAKE_OUT);
       }
       this.loadNextPage();
     };

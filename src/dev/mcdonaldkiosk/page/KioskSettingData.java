@@ -2,21 +2,15 @@ package dev.mcdonaldkiosk.page;
 
 public class KioskSettingData {
 
-  private final KioskOrderData kioskOrderData;
   private final String audioPath;
   private final KioskPageType nextPageType;
   private final KioskPageType previousPageType;
 
-  public KioskSettingData(KioskOrderData kioskOrderData, String audioPath,
-      KioskPageType nextPageType, KioskPageType previousPageType) {
-    this.kioskOrderData = kioskOrderData;
+  public KioskSettingData(String audioPath, KioskPageType nextPageType,
+      KioskPageType previousPageType) {
     this.audioPath = audioPath;
     this.nextPageType = nextPageType;
     this.previousPageType = previousPageType;
-  }
-
-  public KioskOrderData getKioskOrderData() {
-    return kioskOrderData;
   }
 
   public String getAudioPath() {

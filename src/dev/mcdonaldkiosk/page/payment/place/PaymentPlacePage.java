@@ -25,10 +25,9 @@ public class PaymentPlacePage extends KioskPage {
 
   private ActionListener placeListener = null;
 
-  public PaymentPlacePage(KioskOrderData kioskOrderData) {
+  public PaymentPlacePage() {
     super(
-        new KioskSettingData(kioskOrderData,
-            LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav",
+        new KioskSettingData(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav",
             KioskPageType.MENU_PAGE,
             KioskPageType.EATING_PLACE_PAGE));
 
@@ -69,9 +68,9 @@ public class PaymentPlacePage extends KioskPage {
       Object source = eventSource.getSource();
 
       if (source.equals(COUNTER_BUTTON)) {
-        this.getKioskOrderData().setPaymentPlace(PaymentPlace.COUNTER);
+        KioskPage.getKioskOrderData().setPaymentPlace(PaymentPlace.COUNTER);
       } else if (source.equals(KIOSK_BUTTON)) {
-        this.getKioskOrderData().setPaymentPlace(PaymentPlace.KIOSK);
+        KioskPage.getKioskOrderData().setPaymentPlace(PaymentPlace.KIOSK);
       }
 
       this.loadNextPage();
