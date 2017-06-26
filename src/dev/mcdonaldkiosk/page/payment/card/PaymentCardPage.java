@@ -5,8 +5,7 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
-import dev.mcdonaldkiosk.page.end.EndPage;
+import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
@@ -22,8 +21,11 @@ public class PaymentCardPage extends KioskPage {
   private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
   public PaymentCardPage(KioskOrderData kioskOrderData) {
-    super(kioskOrderData, LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav",
-        KioskPageType.END_PAGE, KioskPageType.CONFIRM_PAGE);
+    super(
+        new KioskSettingData(kioskOrderData,
+            LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav",
+            KioskPageType.END_PAGE,
+            KioskPageType.CONFIRM_PAGE));
 
     initPage();
     initPaymentCardPanel();

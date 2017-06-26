@@ -7,8 +7,7 @@ import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskOrderData;
-import dev.mcdonaldkiosk.page.eatplace.EatingPlacePage;
-import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.page.KioskSettingData;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
@@ -27,8 +26,11 @@ public class PaymentPlacePage extends KioskPage {
   private ActionListener placeListener = null;
 
   public PaymentPlacePage(KioskOrderData kioskOrderData) {
-    super(kioskOrderData, LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav",
-        KioskPageType.MENU_PAGE, KioskPageType.EATING_PLACE_PAGE);
+    super(
+        new KioskSettingData(kioskOrderData,
+            LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav",
+            KioskPageType.MENU_PAGE,
+            KioskPageType.EATING_PLACE_PAGE));
 
     initPage();
     initPaymentSelectPanel();
@@ -67,9 +69,9 @@ public class PaymentPlacePage extends KioskPage {
       Object source = eventSource.getSource();
 
       if (source.equals(COUNTER_BUTTON)) {
-        kioskOrderData.setPaymentPlace(PaymentPlace.COUNTER);
+        this.getKioskOrderData().setPaymentPlace(PaymentPlace.COUNTER);
       } else if (source.equals(KIOSK_BUTTON)) {
-        kioskOrderData.setPaymentPlace(PaymentPlace.KIOSK);
+        this.getKioskOrderData().setPaymentPlace(PaymentPlace.KIOSK);
       }
 
       this.loadNextPage();

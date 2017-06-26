@@ -30,27 +30,17 @@ public abstract class KioskPage extends JPanel {
 
   private KioskPageType nextPageType = KioskPageType.EMPTY_PAGE;
   private KioskPageType previousPageType = KioskPageType.EMPTY_PAGE;
-  private KioskPageType currentPageType = KioskPageType.EMPTY_PAGE;
 
-  protected KioskOrderData kioskOrderData = new KioskOrderData();
+  private KioskSettingData kioskSettingData;
 
   KioskPage() { }
 
-  public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPageType,
-      KioskPageType previousPageType) {
-    this.kioskOrderData = kioskOrderData;
-    this.nextPageType = nextPageType;
-    this.previousPageType = previousPageType;
-
-    KioskAudioPlayer.createKioskAudioPlayer(audioPath).play();
+  public KioskPage(KioskSettingData kioskSettingData) {
+    this.kioskSettingData = kioskSettingData;
+    
+    KioskAudioPlayer.createKioskAudioPlayer(kioskSettingData.getAudioPath()).play();
     initKioskPage();
     setListener();
-  }
-
-  public KioskPage(KioskOrderData kioskOrderData, String audioPath, KioskPageType nextPageType,
-      KioskPageType previousPageType, KioskPageType currentPageType) {
-    this(kioskOrderData, audioPath, nextPageType, previousPageType);
-    this.currentPageType = currentPageType;
   }
 
   private void initKioskPage() {
@@ -101,19 +91,22 @@ public abstract class KioskPage extends JPanel {
 
   protected void loadNextPage() {
     if (nextPageType != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(nextPageType.createKioskPage(kioskOrderData));
+      MainFrame.attachPanel(nextPageType.createKioskPage(kioskSettingData.getKioskOrderData()));
     }
   }
 
   protected void loadPreviousPage() {
     if (previousPageType != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(previousPageType.createKioskPage(kioskOrderData));
+      MainFrame.attachPanel(previousPageType.createKioskPage(kioskSettingData.getKioskOrderData()));
     }
   }
 
   protected void reloadPage() {
-    if (currentPageType != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(currentPageType.createKioskPage(kioskOrderData));
-    }
+    // TODO : think
+    // MainFrame.attachPanel(this);
+  }
+
+  protected KioskOrderData getKioskOrderData() {
+    return kioskSettingData.getKioskOrderData();
   }
 }

@@ -8,6 +8,7 @@ import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.KioskSettingData;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -29,15 +30,18 @@ public class EatingPlacePage extends KioskPage {
       LangCheck.isKorean() ? "테이크 아웃(포장)" : "TAKE OUT", new ImageIcon("image/icon_take.jpg"));
 
   private KioskGuidePanel languageSelectPanel = new KioskGuidePanel("PLASE SELECT YOUR LANGUAGE", 0, 2);
-  private ImageTextButton koreanButton = new ImageTextButton(LangCheck.isKorean() ? "한국어" : "KOREAN");
+  private ImageTextButton koreanButton = new ImageTextButton(
+      LangCheck.isKorean() ? "한국어" : "KOREAN");
   private ImageTextButton englishButton = new ImageTextButton("ENGLISH");
 
   private ActionListener eatingPlaceListener;
   private ActionListener languageListener;
 
   public EatingPlacePage(KioskOrderData kioskOrderData) {
-    super(kioskOrderData, LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav",
-        KioskPageType.PAYMENT_PLACE_PAGE, KioskPageType.START_PAGE, KioskPageType.EATING_PLACE_PAGE);
+    super(
+        new KioskSettingData(kioskOrderData,
+            LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav",
+            KioskPageType.PAYMENT_PLACE_PAGE, KioskPageType.START_PAGE));
 
     initPage();
     initEatingPlaceSelectPanel();
@@ -76,9 +80,9 @@ public class EatingPlacePage extends KioskPage {
       Object source = eventSource.getSource();
 
       if (source.equals(eatInButton)) {
-        kioskOrderData.setEatingPlace(EatingPlace.EAT_IN);
+        this.getKioskOrderData().setEatingPlace(EatingPlace.EAT_IN);
       } else if (source.equals(takeOutButton)) {
-        kioskOrderData.setEatingPlace(EatingPlace.TAKE_OUT);
+        this.getKioskOrderData().setEatingPlace(EatingPlace.TAKE_OUT);
       }
       this.loadNextPage();
     };
@@ -91,7 +95,6 @@ public class EatingPlacePage extends KioskPage {
       } else if (source.equals(englishButton)) {
         LangCheck.setLang(Language.ENGLISH);
       }
-
       this.reloadPage();
     };
   }

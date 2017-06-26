@@ -6,9 +6,7 @@ import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskOrderData;
-import dev.mcdonaldkiosk.page.end.EndPage;
-import dev.mcdonaldkiosk.page.menu.MenuPage;
-import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
+import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 import java.awt.Color;
 import java.awt.Component;
@@ -35,10 +33,13 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
   public ConfirmPage(KioskOrderData kioskOrderData) {
-    super(kioskOrderData, LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav",
-        kioskOrderData.getPaymentPlace().equals(PaymentPlace.COUNTER)
-            ? KioskPageType.END_PAGE : KioskPageType.PAYMENT_CARD_PAGE,
-        KioskPageType.MENU_PAGE);
+    super(
+        new KioskSettingData(kioskOrderData,
+            LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav",
+            kioskOrderData.getPaymentPlace().equals(PaymentPlace.COUNTER)
+                ? KioskPageType.END_PAGE
+                : KioskPageType.PAYMENT_CARD_PAGE,
+            KioskPageType.MENU_PAGE));
     orderTotalDataPanel = new OrderTotalDataPanel(kioskOrderData);
 
     initPage();

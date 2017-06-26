@@ -6,7 +6,7 @@ import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.eatplace.EatingPlacePage;
+import dev.mcdonaldkiosk.page.KioskSettingData;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
@@ -26,8 +26,11 @@ public class StartPage extends KioskPage {
       LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
 
   public StartPage() {
-    super(new KioskOrderData(), LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav",
-        KioskPageType.EATING_PLACE_PAGE, KioskPageType.EMPTY_PAGE);
+    super(
+        new KioskSettingData(new KioskOrderData(),
+            LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav",
+            KioskPageType.EATING_PLACE_PAGE,
+            KioskPageType.EMPTY_PAGE));
 
     initImgTextPanel();
     setListener();

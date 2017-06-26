@@ -6,8 +6,8 @@ import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
+import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
-import dev.mcdonaldkiosk.page.start.StartPage;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -29,11 +29,12 @@ public class EndPage extends KioskPage {
       LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
   public EndPage(KioskOrderData kioskOrderData) {
-    super(kioskOrderData,
-        kioskOrderData.getPaymentPlace().equals(PaymentPlace.COUNTER)
-            ? LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav"
-            : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav",
-        KioskPageType.START_PAGE, KioskPageType.EMPTY_PAGE);
+    super(
+        new KioskSettingData(kioskOrderData,
+            kioskOrderData.getPaymentPlace().equals(PaymentPlace.COUNTER)
+                ? LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav"
+                : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav",
+            KioskPageType.START_PAGE, KioskPageType.EMPTY_PAGE));
 
     kioskOrderData.emptyOrder();
 
