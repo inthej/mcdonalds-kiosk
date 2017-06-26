@@ -32,7 +32,8 @@ public abstract class KioskPage extends JPanel {
   private KioskPageType nextPageType = KioskPageType.EMPTY_PAGE;
   private KioskPageType previousPageType = KioskPageType.EMPTY_PAGE;
 
-  KioskPage() { }
+  KioskPage() {
+  }
 
   public KioskPage(KioskSettingData kioskSettingData) {
     this.nextPageType = kioskSettingData.getNextPageType();

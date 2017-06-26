@@ -2,7 +2,6 @@ package dev.mcdonaldkiosk.page.payment.card;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
@@ -66,8 +65,7 @@ public class PaymentCardPage extends KioskPage {
       @Override
       public void mousePressed(MouseEvent e) {
         PAYMENT_CARD_PANEL.getImageLabel().setIcon(ImageEdit.getResizeIcon(
-            "image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT
-                * 2 / 5));
+            "image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT * 2 / 5));
       }
 
       @Override
