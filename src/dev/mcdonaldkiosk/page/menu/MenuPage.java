@@ -10,6 +10,7 @@ import dev.mcdonaldkiosk.util.ImageEdit;
 import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  * Class Role : 메뉴를 선택할 수 있는 메뉴페이지의 구성을 가지고 있다.
@@ -19,6 +20,8 @@ import javax.swing.JLabel;
  * @author Jaehyeon, Kim
  */
 public class MenuPage extends KioskPage {
+
+  private final JPanel menuPagePanel = new JPanel();
 
   private final ImageIcon bannerImageIcon = new ImageIcon("image/banner_top.jpg");
   private final MenuTabbedPane menuTabbedPane;
@@ -34,24 +37,30 @@ public class MenuPage extends KioskPage {
     selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this, KioskPage.getKioskOrderData());
 
     initPage();
+    initManuPagePanel();
     setLayout();
     reflesh();
   }
 
   private void initPage() {
-    this.setLayout(new BorderLayout());
-    this.add(createImageLabel(bannerImageIcon), BorderLayout.NORTH);
-    this.add(menuTabbedPane, BorderLayout.CENTER);
-    this.add(selectedOrderConfirmPanel, BorderLayout.SOUTH);
+    this.add(menuPagePanel);
+    this.showBackButton();
+  }
+
+  private void initManuPagePanel() {
+    menuPagePanel.setLayout(new BorderLayout());
+    menuPagePanel.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
+    menuPagePanel.setLocation(0, 0);
+
+    menuPagePanel.add(createImageLabel(bannerImageIcon), BorderLayout.NORTH);
+    menuPagePanel.add(menuTabbedPane, BorderLayout.CENTER);
+    menuPagePanel.add(selectedOrderConfirmPanel, BorderLayout.SOUTH);
+
   }
 
   private JLabel createImageLabel(final ImageIcon imageIcon) {
-    final JLabel imageLabel = new JLabel(
+    return new JLabel(
         ImageEdit.getResizeIcon(imageIcon, MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT / 5));
-
-    imageLabel.add(super.getBackButton());
-
-    return imageLabel;
   }
 
   private void setLayout() {

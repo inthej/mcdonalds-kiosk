@@ -29,6 +29,4 @@ public class BackButton extends JButton {
             - (MainFrame.FRAME_HEIGHT - BUTTON_HEIGHT));
     this.setBackground(BACKGROUND_COLOR);
   }
-
-  private static final long serialVersionUID = -4132633377653157405L;
 }

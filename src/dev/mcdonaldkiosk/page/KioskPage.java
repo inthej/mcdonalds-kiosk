@@ -48,6 +48,8 @@ public abstract class KioskPage extends JPanel {
     this.setLayout(null);
     this.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
     this.setLocation(0, 0);
+
+    this.setComponentZOrder(backButton, 0); // BackButton을 KioskPage Component 가장 상위로 올린다.
   }
 
   private void setListener() {
