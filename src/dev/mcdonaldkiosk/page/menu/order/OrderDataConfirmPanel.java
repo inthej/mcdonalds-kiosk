@@ -1,9 +1,7 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.page.KioskOrderData;
-import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;

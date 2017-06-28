@@ -51,9 +51,7 @@ public abstract class KioskPage extends JPanel {
   }
 
   private void setListener() {
-    backButton.addActionListener((e) -> {
-      loadPreviousPage();
-    });
+    backButton.addActionListener((e) -> loadPreviousPage());
   }
 
   protected BackButton getBackButton() {
