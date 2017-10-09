@@ -1,15 +1,15 @@
 package dev.mcdonaldkiosk.page.payment.card;
 
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 25
@@ -36,11 +36,11 @@ public class PaymentCardPage extends KioskPage {
   }
 
   private void initPaymentCardPanel() {
-    final int PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-    final int PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 3 / 5;
+    final int PANEL_WIDTH = Display.WINDOWS_WIDTH_HALF * 4 / 5;
+    final int PANEL_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 3 / 5;
     PAYMENT_CARD_PANEL.setSize(PANEL_WIDTH, PANEL_HEIGHT);
     PAYMENT_CARD_PANEL
-        .setLocation((MainFrame.FRAME_WIDTH - PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT / 4);
+        .setLocation((Display.WINDOWS_WIDTH_HALF - PANEL_WIDTH) / 2, Display.AVALIABLE_WINDOW_HEIGHT / 4);
 
     this.add(PAYMENT_CARD_PANEL);
   }
@@ -65,7 +65,7 @@ public class PaymentCardPage extends KioskPage {
       @Override
       public void mousePressed(MouseEvent e) {
         PAYMENT_CARD_PANEL.getImageLabel().setIcon(ImageEdit.getResizeIcon(
-            "image/loding.jpg", MainFrame.FRAME_WIDTH * 3 / 5, MainFrame.FRAME_HEIGHT * 2 / 5));
+            "image/loding.jpg", Display.WINDOWS_WIDTH_HALF * 3 / 5, Display.AVALIABLE_WINDOW_HEIGHT * 2 / 5));
       }
 
       @Override

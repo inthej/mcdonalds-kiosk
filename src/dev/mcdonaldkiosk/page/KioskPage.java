@@ -1,13 +1,14 @@
 package dev.mcdonaldkiosk.page;
 
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+import dev.mcdonaldkiosk.main.Display;
+import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * Class Role : MainFrame 에서 필요로 하는 JPanel을 Customizing 한 타입이다.
@@ -46,7 +47,7 @@ public abstract class KioskPage extends JPanel {
 
   private void initKioskPage() {
     this.setLayout(null);
-    this.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
+    this.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
     this.setLocation(0, 0);
   }
 
@@ -82,7 +83,7 @@ public abstract class KioskPage extends JPanel {
       try {
         BufferedImage bufferImg = ImageIO.read(new File(backgroundImg));
         super.paintComponent(g);
-        g.drawImage(bufferImg, 0, 0, MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT, null);
+        g.drawImage(bufferImg, 0, 0, Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT, null);
       } catch (IOException e) {
         e.printStackTrace();
       }

@@ -1,12 +1,12 @@
 package dev.mcdonaldkiosk.page.menu;
 
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.page.KioskOrderData;
-import dev.mcdonaldkiosk.util.ImageEdit;
-import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import dev.mcdonaldkiosk.main.Display;
+import dev.mcdonaldkiosk.page.KioskOrderData;
+import dev.mcdonaldkiosk.util.ImageEdit;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * Create by kimjaehyeon
@@ -38,8 +38,7 @@ public class MenuButton extends JButton {
 
   private void initMenuButton() {
     this.setIcon(
-        imageEdit.getResizeIcon(IMG_PATH, MainFrame.FRAME_WIDTH / 5, MainFrame.FRAME_HEIGHT
-            / 10));
+        imageEdit.getResizeIcon(IMG_PATH, Display.WINDOWS_WIDTH_HALF / 5, Display.AVALIABLE_WINDOW_HEIGHT / 10));
     this.setText(MENU.toMenuButtonText(PRICE_FONT_COLOR));
     this.setHorizontalTextPosition(SwingConstants.CENTER);
     this.setVerticalTextPosition(SwingConstants.BOTTOM);

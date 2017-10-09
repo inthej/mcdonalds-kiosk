@@ -1,16 +1,16 @@
 package dev.mcdonaldkiosk.page.end;
 
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.ImageIcon;
 
 /**
  * Class Role : 주문이 끝나면 보여지는 KioskPage 이다.
@@ -42,7 +42,7 @@ public class EndPage extends KioskPage {
   }
 
   private void initImgTextPanel() {
-    imageTextPanel.setSize(MainFrame.FRAME_WIDTH, MainFrame.FRAME_HEIGHT);
+    imageTextPanel.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
     imageTextPanel.setLocation(0, 0);
     imageTextPanel.setTextBackground(Color.BLUE);
 

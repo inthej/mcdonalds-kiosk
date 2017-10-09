@@ -1,11 +1,11 @@
 package dev.mcdonaldkiosk.page;
 
-import dev.mcdonaldkiosk.main.MainFrame;
-import dev.mcdonaldkiosk.util.ImageEdit;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import dev.mcdonaldkiosk.main.Display;
+import dev.mcdonaldkiosk.util.ImageEdit;
 
 /**
  * Class Role : 이미지와 텍스트로 구성된 버튼이다.
@@ -16,8 +16,8 @@ import javax.swing.SwingConstants;
  */
 public class ImageTextButton extends JButton {
 
-  private final int IMAGE_SIZE_WIDTH = MainFrame.FRAME_WIDTH * 4 / 15;
-  private final int IMAGE_SIZE_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 15;
+  private final int IMAGE_SIZE_WIDTH = Display.WINDOWS_WIDTH_HALF * 4 / 15;
+  private final int IMAGE_SIZE_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 15;
 
   private final float FONT_SIZE = 15.0f; // float자료형 글자크기, int자료형 글자디자인
   private final Color FONT_COLOR = Color.RED;

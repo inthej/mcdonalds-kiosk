@@ -1,15 +1,15 @@
 package dev.mcdonaldkiosk.page.confirm;
 
+import java.awt.Color;
+import java.awt.Component;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
-import java.awt.Color;
-import java.awt.Component;
 
 /**
  * Class Role : 주문데이터(KioskOrderData)의 확인 체크를 제공하는 페이지 이다.
@@ -62,12 +62,12 @@ public class ConfirmPage extends KioskPage {
   private void initYesNoSelectPanel() {
     YES_NO_SELECT_PANEL.addItem(NO_BUTTON, YES_BUTTON);
 
-    final int PANEL_WIDTH = MainFrame.FRAME_WIDTH * 2 / 5;
-    final int PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 25;
+    final int PANEL_WIDTH = Display.WINDOWS_WIDTH_HALF * 2 / 5;
+    final int PANEL_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 25;
     Component yesNoSelectComp = YES_NO_SELECT_PANEL.getPanel();
     yesNoSelectComp.setSize(PANEL_WIDTH, PANEL_HEIGHT);
     yesNoSelectComp
-        .setLocation((MainFrame.FRAME_WIDTH - PANEL_WIDTH) / 2, MainFrame.FRAME_HEIGHT * 3 / 4);
+        .setLocation((Display.WINDOWS_WIDTH_HALF - PANEL_WIDTH) / 2, Display.AVALIABLE_WINDOW_HEIGHT * 3 / 4);
   }
 
   // set 설정하는 느낌

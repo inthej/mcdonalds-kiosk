@@ -1,14 +1,14 @@
 package dev.mcdonaldkiosk.page.payment.place;
 
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
-import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 20
@@ -49,8 +49,8 @@ public class PaymentPlacePage extends KioskPage {
   }
 
   private void initKioskButton() {
-    final int BUTTON_WIDTH = MainFrame.FRAME_WIDTH * 4 / 15;
-    final int BUTTON_HEIGHT = MainFrame.FRAME_HEIGHT * 1 / 5;
+    final int BUTTON_WIDTH = Display.WINDOWS_WIDTH_HALF * 4 / 15;
+    final int BUTTON_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 1 / 5;
 
     COUNTER_BUTTON.setText(LangCheck.isKorean() ? "카운터에서 결제" : "PAYMENT AT THE COUNTER");
     COUNTER_BUTTON.setResizedImg(new ImageIcon("image/counter.jpg"), BUTTON_WIDTH, BUTTON_HEIGHT);

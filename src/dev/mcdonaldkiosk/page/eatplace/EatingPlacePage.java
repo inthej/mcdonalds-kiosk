@@ -1,16 +1,16 @@
 package dev.mcdonaldkiosk.page.eatplace;
 
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.lang.Language;
-import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
-import java.awt.Color;
-import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 
 /**
  * Class Role : 식사장소/언어 선택 화면을 담당한다.
@@ -62,11 +62,11 @@ public class EatingPlacePage extends KioskPage {
   }
 
   private void initLanguageSelectPanel() {
-    final int PANEL_WIDTH = MainFrame.FRAME_WIDTH * 4 / 5;
-    final int PANEL_HEIGHT = MainFrame.FRAME_HEIGHT * 2 / 15;
+    final int PANEL_WIDTH = Display.WINDOWS_WIDTH_HALF * 4 / 5;
+    final int PANEL_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 15;
     languageSelectPanel.setGuidePanelSize(PANEL_WIDTH, PANEL_HEIGHT);
-    languageSelectPanel.setGuidePanelLocation((MainFrame.FRAME_WIDTH - PANEL_WIDTH) / 2,
-        MainFrame.FRAME_HEIGHT * 3 / 4);
+    languageSelectPanel.setGuidePanelLocation((Display.WINDOWS_WIDTH_HALF - PANEL_WIDTH) / 2,
+        Display.AVALIABLE_WINDOW_HEIGHT * 3 / 4);
 
     koreanButton.setForeground(Color.BLACK);
     englishButton.setForeground(Color.BLACK);

@@ -1,12 +1,12 @@
 package dev.mcdonaldkiosk.page;
 
-import dev.mcdonaldkiosk.main.MainFrame;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import dev.mcdonaldkiosk.main.Display;
 
 /**
  * Class Role : KioskPage에서 공통적으로 사용되고 있는 가이드 패널이다.
@@ -26,8 +26,8 @@ public class KioskGuidePanel {
   private final Color BACKGROUND_COLOR = Color.BLACK;
 
   private final JPanel GUIDE_PANEL = new JPanel();
-  private int guidePanelWidth = MainFrame.FRAME_WIDTH * 4 / 5;
-  private int guidePanelHeight = MainFrame.FRAME_HEIGHT * 2 / 5;
+  private int guidePanelWidth = Display.WINDOWS_WIDTH_HALF * 4 / 5;
+  private int guidePanelHeight = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 5;
 
   private final JPanel ITEM_PANEL = new JPanel();
 
@@ -48,7 +48,7 @@ public class KioskGuidePanel {
     }
 
     GUIDE_PANEL.setSize(guidePanelWidth, guidePanelHeight);
-    GUIDE_PANEL.setLocation((MainFrame.FRAME_WIDTH - guidePanelWidth) / 2, MainFrame.FRAME_HEIGHT / 4);
+    GUIDE_PANEL.setLocation((Display.WINDOWS_WIDTH_HALF - guidePanelWidth) / 2, Display.AVALIABLE_WINDOW_HEIGHT / 4);
 
     GUIDE_PANEL.add(ITEM_PANEL, BorderLayout.CENTER);
   }

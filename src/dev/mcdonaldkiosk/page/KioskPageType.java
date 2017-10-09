@@ -18,7 +18,7 @@ public enum KioskPageType {
   public KioskPage createKioskPage() {
     KioskPage kioskPage = null;
     if (this == EMPTY_PAGE) {
-      kioskPage = new KioskPage(){ };
+      kioskPage = new KioskPage() {};
     } else if (this == START_PAGE) {
       kioskPage = new StartPage();
     } else if (this == EATING_PLACE_PAGE) {

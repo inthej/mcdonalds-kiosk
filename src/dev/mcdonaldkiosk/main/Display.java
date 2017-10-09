@@ -6,22 +6,20 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 
 /**
- * Class Role : 디스플레이 화면 크기의 정보를 제공한다.
- * 디스플레이 화면의 정보는 스크린 사이즈와, 윈도우 사이즈, 윈도우 타이틀바 사이즈가 존재한다.
- * 정보가 제공되는 목적은 MainFrame의 정적 사이즈 할당때문이다.
+ * class role : 디스플레이 화면 크기의 정보를 제공한다.
  *
  * @author Jaehyeon Kim
- * @see MainFrame
  * @since 2017. 05. 19.
  */
-final class Display {
+public class Display {
 
   static final int SCREEN_HEIGHT;
 
   static final int WINDOWS_WIDTH;
   static final int WINDOWS_HEIGHT;
   static final int TITLE_BAR_HEIGHT;
-  static final int AVALIABLE_WINDOWS_HEIGHT;
+  public static final int WINDOWS_WIDTH_HALF;
+  public static final int AVALIABLE_WINDOW_HEIGHT;
 
   static {
     Dimension dimen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -31,10 +29,11 @@ final class Display {
     Rectangle rec = ge.getMaximumWindowBounds();
     WINDOWS_WIDTH = (int) rec.getWidth();
     WINDOWS_HEIGHT = (int) rec.getHeight();
-    TITLE_BAR_HEIGHT = SCREEN_HEIGHT - WINDOWS_HEIGHT; // 잘못된 계산
-    AVALIABLE_WINDOWS_HEIGHT = WINDOWS_HEIGHT - TITLE_BAR_HEIGHT;
+    
+    WINDOWS_WIDTH_HALF = WINDOWS_WIDTH / 2;
+    TITLE_BAR_HEIGHT = SCREEN_HEIGHT - WINDOWS_HEIGHT;
+    AVALIABLE_WINDOW_HEIGHT = WINDOWS_HEIGHT - TITLE_BAR_HEIGHT;
   }
 
-  private Display() {
-  }
+  private Display() {}
 }
