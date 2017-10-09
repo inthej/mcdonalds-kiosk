@@ -1,8 +1,6 @@
 package dev.mcdonaldkiosk.page.end;
 
 import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.Display;
@@ -13,19 +11,15 @@ import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 
 /**
- * Class Role : 주문이 끝나면 보여지는 KioskPage 이다.
- * ImageTextPanel를 이용하여 이미지 베너와 텍스트를 보여준다.
- * 주문데이터는 초기화 된다.
+ * Class Role : 주문이 종료 되었을 때 보여지는 View 컴포넌트 이다.
+ * 
+ * 주문 데이터가 초기화 되며,
+ * 주문시작 페이지(StartPage)와 주문 종료 페이지(EndPage)의 공통 컴포넌트인 ImageTextPanel이 사용한다.
  *
  * @author Jaehyeon Kim
  * @see ImageTextPanel
- * @since 2017. 05. 19.
  */
 public class EndPage extends KioskPage {
-
-  private final ImageTextPanel imageTextPanel = new ImageTextPanel(
-      new ImageIcon("image/bg_info3.jpg"),
-      LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
 
   public EndPage() {
     super(
@@ -35,26 +29,30 @@ public class EndPage extends KioskPage {
                 : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav",
             KioskPageType.START_PAGE, KioskPageType.EMPTY_PAGE));
 
+    emptyOrder();
+    addImgTextPanel();
+    setNextPage();
+  }
+  
+  private void emptyOrder() {
     KioskPage.getKioskOrderData().emptyOrder();
-
-    initImgTextPanel();
-    setListener();
+  }
+  
+  private void addImgTextPanel() {
+    this.add(createImgTextPanel());
+  }
+  
+  private ImageTextPanel createImgTextPanel() {
+    final ImageTextPanel imgTextPanel = new ImageTextPanel(new ImageIcon("image/bg_info3.jpg"),
+        LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
+    imgTextPanel.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
+    imgTextPanel.setLocation(0, 0);
+    imgTextPanel.setTextBackground(Color.BLUE);
+    
+    return imgTextPanel;
   }
 
-  private void initImgTextPanel() {
-    imageTextPanel.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
-    imageTextPanel.setLocation(0, 0);
-    imageTextPanel.setTextBackground(Color.BLUE);
-
-    this.add(imageTextPanel);
-  }
-
-  private void setListener() {
-    this.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mousePressed(MouseEvent e) {
-        EndPage.this.loadNextPage();
-      }
-    });
+  private void setNextPage() {
+    this.setOnClickListener(() -> EndPage.this.loadNextPage());
   }
 }
