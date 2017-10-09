@@ -11,38 +11,35 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
- * Class Role : MainFrame 에서 필요로 하는 JPanel을 Customizing 한 타입이다.
- * KioskPage 를 상속하고 View를 구현할 경우 MainFrame에 화면에 표시할 수 있는 객체가 된다.
- * Customizing의 특징으로는 프로그램이 로딩시 사운드가 실행이되며 프로그램 배경이미지 설정과 이전버튼(BackButton)을 제공한다.
- *
- * 기능 :
- * 1. 배경 이미지 파일 경로 설정을 제공한다.
- * 2. 배경화면 표시 기능을 제공한다.
- * 3. 이전버튼 표시 기능을 제공한다.
+ * Class Role : MainFrame 컨테이너에 구성되는 View 컴포넌트 이다.
+ * 
+ * 특징
+ * 1. 로딩시 사운드가 실행
+ * 2. 배경이미지 설정
+ * 3. 이전버튼(BackButton) 제공
  *
  * @author Jaehyeon Kim
- * @see MainFrame#attachPanel(KioskPage),BackButton
+ * @see MainFrame#attachPanel(KioskPage)
  * @since 2017. 05. 16.
  */
 public abstract class KioskPage extends JPanel {
 
-  private String backgroundImg;
-  private BackButton backButton = new BackButton();
-
   private static final KioskOrderData kioskOrderData = new KioskOrderData();
   private KioskPageType nextPageType = KioskPageType.EMPTY_PAGE;
   private KioskPageType previousPageType = KioskPageType.EMPTY_PAGE;
-
-  KioskPage() {
-  }
-
+  
+  private final BackButton backButton = new BackButton();
+  private String bgPath;
+  
+  KioskPage() {}
+  
   public KioskPage(KioskSettingData kioskSettingData) {
     this.nextPageType = kioskSettingData.getNextPageType();
     this.previousPageType = kioskSettingData.getPreviousPageType();
 
-    KioskAudioPlayer.createKioskAudioPlayer(kioskSettingData.getAudioPath()).play();
     initKioskPage();
-    setListener();
+    playKioskVoice(kioskSettingData.getAudioPath());
+    setBackButtonListener();
   }
 
   private void initKioskPage() {
@@ -50,9 +47,13 @@ public abstract class KioskPage extends JPanel {
     this.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
     this.setLocation(0, 0);
   }
+  
+  private void playKioskVoice(final String audioPath) {
+    KioskAudioPlayer.createKioskAudioPlayer(audioPath).play();
+  }
 
-  private void setListener() {
-    backButton.addActionListener((e) -> loadPreviousPage());
+  private void setBackButtonListener() {
+    backButton.addActionListener(e -> loadPreviousPage());
   }
 
   protected BackButton getBackButton() {
@@ -60,28 +61,30 @@ public abstract class KioskPage extends JPanel {
   }
 
   // 배경이미지 설정
-  protected void setBackgroundImg(final String filePath) {
-    if (filePath != null) {
-      backgroundImg = filePath;
-    }
+  protected void setBackgroundImg(final String bgPath) {
+    if (bgPath != null) { this.bgPath = bgPath; }
   }
 
   protected void showBackButton() {
-    this.setComponentZOrder(backButton, 0); // BackButton을 KioskPage Component 가장 상위로 올린다.
+    setBackBtnZOrderByTop();
     this.add(backButton);
   }
+  
+  /* BackButton Z-Order를 상위로 올린다.  */
+  private void setBackBtnZOrderByTop() {
+    this.setComponentZOrder(backButton, 0);
+  }
 
-  /* 배경이미지 등록 여부 */
-  private boolean isBackgroundImg() {
-    return backgroundImg != null;
+  private boolean isBgImgEmpty() {
+    return bgPath != null;
   }
 
   /* 배경이미지 설정 */
   @Override
   protected void paintComponent(final Graphics g) {
-    if (isBackgroundImg()) {
+    if (isBgImgEmpty()) {
       try {
-        BufferedImage bufferImg = ImageIO.read(new File(backgroundImg));
+        BufferedImage bufferImg = ImageIO.read(new File(bgPath));
         super.paintComponent(g);
         g.drawImage(bufferImg, 0, 0, Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT, null);
       } catch (IOException e) {
