@@ -5,10 +5,10 @@ import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.start.StartPage;
 
 /**
- * Class Role : KioskPage 컴포넌트를 구성하는 컨테이너
+ * class role : 프로그램이 구동되면 보여지는 기본 프레임이다.
+ * KioskPage View 컴포넌트 구성할 수 있다.
  * 
  * @author Jaehyeon Kim
- * @since 2017. 05. 15.
  */
 public final class MainFrame extends JFrame {
   

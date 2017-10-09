@@ -1,7 +1,5 @@
 package dev.mcdonaldkiosk.page.start;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.Display;
@@ -11,42 +9,39 @@ import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
 
 /**
- * Class Role : MainFrame이 실행되면 가장먼저 보여지는 KioskPage이다.
- * ImageTextPanel를 이용하여 이미지 베너와 텍스트를 보여준다.
+ * Class Role : 주문이 처음 시작될 때 보여지는 View 컴포넌트 이다.
+ * 
+ * 주문시작 페이지(StartPage)와 주문 종료 페이지(EndPage)의 공통 컴포넌트인 ImageTextPanel이 사용한다.
  *
  * @author Jaehyeon Kim
  * @see MainFrame#initMainFrame(),ImageTextPanel
- * @since 2017. 05. 19.
  */
 public class StartPage extends KioskPage {
-
-  private final ImageTextPanel imageTextPanel = new ImageTextPanel(
-      new ImageIcon("image/bg_info2.jpg"),
-      LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
   
   public StartPage() {
     super(
         new KioskSettingData(LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav",
             KioskPageType.EATING_PLACE_PAGE,
             KioskPageType.EMPTY_PAGE));
-
-    initImgTextPanel();
-    setListener();
+    
+    addImageTextPanel();
+    setNextPage();
   }
-
-  private void initImgTextPanel() {
-    imageTextPanel.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
-    imageTextPanel.setLocation(0, 0);
-
-    this.add(imageTextPanel);
+  
+  private void addImageTextPanel() {
+    this.add(createImageTextPanel());
   }
-
-  private void setListener() {
-    this.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mousePressed(final MouseEvent e) {
-        StartPage.this.loadNextPage();
-      }
-    });
+  
+  private ImageTextPanel createImageTextPanel() {
+    final ImageTextPanel imgTextPanel = new ImageTextPanel(new ImageIcon("image/bg_info2.jpg"),
+                                                           LangCheck.isKorean() ? "주문하시려면 화면을 터치하세요" : "TOUCH TO START");
+    imgTextPanel.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
+    imgTextPanel.setLocation(0, 0);
+    
+    return imgTextPanel;
+  }
+  
+  private void setNextPage() {
+    this.setOnClickListener(() -> StartPage.this.loadNextPage());
   }
 }

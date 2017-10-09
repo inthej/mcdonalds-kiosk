@@ -1,6 +1,8 @@
 package dev.mcdonaldkiosk.page;
 
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -11,35 +13,42 @@ import dev.mcdonaldkiosk.main.MainFrame;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
- * Class Role : MainFrame 컨테이너에 구성되는 View 컴포넌트 이다.
+ * Class Role : MainFrame 구성에 사용되는 View 컴포넌트 이다.
  * 
- * 특징
+ * View 컴포넌트 특징
  * 1. 로딩시 사운드가 실행
  * 2. 배경이미지 설정
  * 3. 이전버튼(BackButton) 제공
+ * 4. NextPage 페이지 설정 제공
  *
  * @author Jaehyeon Kim
  * @see MainFrame#attachPanel(KioskPage)
- * @since 2017. 05. 16.
  */
 public abstract class KioskPage extends JPanel {
-
+  
+  protected interface OnClickListener {
+    public void onClick();
+  }
+  
+  private OnClickListener onClickListener = null;
+  
   private static final KioskOrderData kioskOrderData = new KioskOrderData();
   private KioskPageType nextPageType = KioskPageType.EMPTY_PAGE;
   private KioskPageType previousPageType = KioskPageType.EMPTY_PAGE;
   
-  private final BackButton backButton = new BackButton();
+  private final BackButton backBtn = new BackButton();
   private String bgPath;
   
   KioskPage() {}
   
   public KioskPage(KioskSettingData kioskSettingData) {
-    this.nextPageType = kioskSettingData.getNextPageType();
-    this.previousPageType = kioskSettingData.getPreviousPageType();
+    nextPageType = kioskSettingData.getNextPageType();
+    previousPageType = kioskSettingData.getPreviousPageType();
 
     initKioskPage();
     playKioskVoice(kioskSettingData.getAudioPath());
-    setBackButtonListener();
+    setBackBtnListener();
+    setMouseListener();
   }
 
   private void initKioskPage() {
@@ -52,12 +61,25 @@ public abstract class KioskPage extends JPanel {
     KioskAudioPlayer.createKioskAudioPlayer(audioPath).play();
   }
 
-  private void setBackButtonListener() {
-    backButton.addActionListener(e -> loadPreviousPage());
+  private void setBackBtnListener() {
+    backBtn.addActionListener(e -> loadPreviousPage());
+  }
+  
+  protected void setOnClickListener(final OnClickListener listener) {
+    onClickListener = listener;
+  }
+  
+  private void setMouseListener() {
+    this.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mousePressed(MouseEvent e) {
+        if (onClickListener != null) { onClickListener.onClick(); }
+      }
+    });
   }
 
   protected BackButton getBackButton() {
-    return backButton;
+    return backBtn;
   }
 
   // 배경이미지 설정
@@ -67,12 +89,12 @@ public abstract class KioskPage extends JPanel {
 
   protected void showBackButton() {
     setBackBtnZOrderByTop();
-    this.add(backButton);
+    this.add(backBtn);
   }
   
   /* BackButton Z-Order를 상위로 올린다.  */
   private void setBackBtnZOrderByTop() {
-    this.setComponentZOrder(backButton, 0);
+    this.setComponentZOrder(backBtn, 0);
   }
 
   private boolean isBgImgEmpty() {
