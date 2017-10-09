@@ -32,7 +32,7 @@ public class PaymentCardPage extends KioskPage {
 
   private void initPage() {
     this.setBackgroundImg("image/bg_green.png");
-    this.showBackButton();
+    this.showBackBtn();
   }
 
   private void initPaymentCardPanel() {

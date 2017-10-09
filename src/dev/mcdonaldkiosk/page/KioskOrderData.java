@@ -1,6 +1,6 @@
 package dev.mcdonaldkiosk.page;
 
-import dev.mcdonaldkiosk.page.eatplace.EatingPlace;
+import dev.mcdonaldkiosk.page.eatplace.EatPlace;
 import dev.mcdonaldkiosk.page.menu.Menu;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class KioskOrderData {
     }
   }
 
-  private EatingPlace eatingPlace;
+  private EatPlace eatingPlace;
   private PaymentPlace paymentPlace;
 
   public KioskOrderData() {
@@ -53,10 +53,10 @@ public class KioskOrderData {
 
   private final Calculator calculator = new Calculator();
 
-  public EatingPlace getEatingPlace() {
+  public EatPlace getEatingPlace() {
     return eatingPlace;
   }
-  public void setEatingPlace(EatingPlace place) {
+  public void setEatingPlace(EatPlace place) {
     eatingPlace = place;
   }
 

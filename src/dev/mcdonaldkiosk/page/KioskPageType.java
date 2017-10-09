@@ -1,7 +1,7 @@
 package dev.mcdonaldkiosk.page;
 
 import dev.mcdonaldkiosk.page.confirm.ConfirmPage;
-import dev.mcdonaldkiosk.page.eatplace.EatingPlacePage;
+import dev.mcdonaldkiosk.page.eatplace.EatPlacePage;
 import dev.mcdonaldkiosk.page.end.EndPage;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
@@ -22,7 +22,7 @@ public enum KioskPageType {
     } else if (this == START_PAGE) {
       kioskPage = new StartPage();
     } else if (this == EATING_PLACE_PAGE) {
-      kioskPage = new EatingPlacePage();
+      kioskPage = new EatPlacePage();
     } else if (this == PAYMENT_PLACE_PAGE) {
       kioskPage = new PaymentPlacePage();
     } else if (this == MENU_PAGE) {

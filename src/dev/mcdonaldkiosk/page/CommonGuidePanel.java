@@ -21,36 +21,35 @@ import dev.mcdonaldkiosk.main.Display;
  * 1. 아이탬 패널에 아이탬을 추가할수 있는 기능을 제공한다.
  * 2. 상단 타이틀 라벨의 텍스트 색상을 지정 할 수 있는 기능을 제공한다.
  */
-public class KioskGuidePanel {
+public class CommonGuidePanel extends JPanel {
 
   private final Color BACKGROUND_COLOR = Color.BLACK;
 
-  private final JPanel GUIDE_PANEL = new JPanel();
   private int guidePanelWidth = Display.WINDOWS_WIDTH_HALF * 4 / 5;
   private int guidePanelHeight = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 5;
 
   private final JPanel ITEM_PANEL = new JPanel();
 
-  public KioskGuidePanel(final int itemRow, final int itemCol) {
+  public CommonGuidePanel(final int itemRow, final int itemCol) {
     this(null, itemRow, itemCol);
   }
 
-  public KioskGuidePanel(String title, final int itemRow, final int itemCol) {
+  public CommonGuidePanel(String title, final int itemRow, final int itemCol) {
     initGuidePanel(title);
     initItemPanel(itemRow, itemCol);
   }
 
   private void initGuidePanel(String title) {
-    GUIDE_PANEL.setLayout(new BorderLayout());
-    GUIDE_PANEL.setBackground(BACKGROUND_COLOR);
+    this.setLayout(new BorderLayout());
+    this.setBackground(BACKGROUND_COLOR);
     if (title != null) {
-      GUIDE_PANEL.add(new TitleLabel(title, JLabel.CENTER), BorderLayout.NORTH);
+      this.add(new TitleLabel(title, JLabel.CENTER), BorderLayout.NORTH);
     }
 
-    GUIDE_PANEL.setSize(guidePanelWidth, guidePanelHeight);
-    GUIDE_PANEL.setLocation((Display.WINDOWS_WIDTH_HALF - guidePanelWidth) / 2, Display.AVALIABLE_WINDOW_HEIGHT / 4);
+    this.setSize(guidePanelWidth, guidePanelHeight);
+    this.setLocation((Display.WINDOWS_WIDTH_HALF - guidePanelWidth) / 2, Display.AVALIABLE_WINDOW_HEIGHT / 4);
 
-    GUIDE_PANEL.add(ITEM_PANEL, BorderLayout.CENTER);
+    this.add(ITEM_PANEL, BorderLayout.CENTER);
   }
 
   private void initItemPanel(final int row, final int col) {
@@ -64,8 +63,8 @@ public class KioskGuidePanel {
   }
 
   public void setTitleColor(Color color) {
-    if (GUIDE_PANEL.getComponentCount() == 2) {
-      GUIDE_PANEL.getComponent(0).setForeground(color);
+    if (this.getComponentCount() == 2) {
+      this.getComponent(0).setForeground(color);
     }
   }
 
@@ -73,17 +72,13 @@ public class KioskGuidePanel {
     guidePanelWidth = (width > 0) ? width : 0;
     guidePanelHeight = (height > 0) ? height : 0;
 
-    GUIDE_PANEL.setSize(guidePanelWidth, guidePanelHeight);
+    this.setSize(guidePanelWidth, guidePanelHeight);
   }
 
   public void setGuidePanelLocation(int x, int y) {
     x = (x > 0) ? x : 0;
     y = (y > 0) ? y : 0;
 
-    GUIDE_PANEL.setLocation(x, y);
-  }
-
-  public Component getPanel() {
-    return GUIDE_PANEL;
+    this.setLocation(x, y);
   }
 }

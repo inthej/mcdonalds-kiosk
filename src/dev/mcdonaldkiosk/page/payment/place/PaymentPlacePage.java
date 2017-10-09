@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.ImageTextButton;
-import dev.mcdonaldkiosk.page.KioskGuidePanel;
+import dev.mcdonaldkiosk.page.CommonGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
@@ -16,7 +16,7 @@ import dev.mcdonaldkiosk.page.KioskSettingData;
  */
 public class PaymentPlacePage extends KioskPage {
 
-  private final KioskGuidePanel PAYMENT_SELECT_PANEL = new KioskGuidePanel(
+  private final CommonGuidePanel PAYMENT_SELECT_PANEL = new CommonGuidePanel(
       LangCheck.isKorean() ? "어디에서 지불하시겠습니까?" : "WHERE DO YOU WANT TO PAY?", 0, 2);
 
   private final ImageTextButton COUNTER_BUTTON = new ImageTextButton();
@@ -38,14 +38,14 @@ public class PaymentPlacePage extends KioskPage {
 
   private void initPage() {
     this.setBackgroundImg("image/bg_green.png");
-    this.showBackButton();
+    this.showBackBtn();
   }
 
   private void initPaymentSelectPanel() {
     initKioskButton();
     PAYMENT_SELECT_PANEL.addItem(COUNTER_BUTTON, KIOSK_BUTTON);
 
-    this.add(PAYMENT_SELECT_PANEL.getPanel());
+    this.add(PAYMENT_SELECT_PANEL);
   }
 
   private void initKioskButton() {

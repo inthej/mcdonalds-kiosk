@@ -43,7 +43,7 @@ public class MenuPage extends KioskPage {
   }
 
   private void initPage() {
-    this.showBackButton();
+    this.showBackBtn();
     this.add(menuPagePanel);
   }
 

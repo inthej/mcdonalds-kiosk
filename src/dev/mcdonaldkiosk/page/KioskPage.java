@@ -87,7 +87,7 @@ public abstract class KioskPage extends JPanel {
     if (bgPath != null) { this.bgPath = bgPath; }
   }
 
-  protected void showBackButton() {
+  protected void showBackBtn() {
     setBackBtnZOrderByTop();
     this.add(backBtn);
   }
