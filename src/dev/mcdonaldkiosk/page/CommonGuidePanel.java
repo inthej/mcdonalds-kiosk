@@ -23,7 +23,7 @@ import dev.mcdonaldkiosk.main.Display;
  */
 public class CommonGuidePanel extends JPanel {
 
-  private final Color BACKGROUND_COLOR = Color.BLACK;
+  private final Color BG_COLOR = Color.BLACK;
 
   private int guidePanelWidth = Display.WINDOWS_WIDTH_HALF * 4 / 5;
   private int guidePanelHeight = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 5;
@@ -41,7 +41,7 @@ public class CommonGuidePanel extends JPanel {
 
   private void initGuidePanel(String title) {
     this.setLayout(new BorderLayout());
-    this.setBackground(BACKGROUND_COLOR);
+    this.setBackground(BG_COLOR);
     if (title != null) {
       this.add(new TitleLabel(title, JLabel.CENTER), BorderLayout.NORTH);
     }

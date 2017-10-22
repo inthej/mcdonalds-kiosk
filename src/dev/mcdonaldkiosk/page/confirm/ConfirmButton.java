@@ -14,10 +14,10 @@ import javax.swing.JButton;
  */
 class ConfirmButton extends JButton {
 
-  private final Color backgroundColor = Color.WHITE;
+  private final Color BG_COLOR = Color.WHITE;
 
-  private final Color baseColor = Color.WHITE;
-  private final Color hoverColor = Color.ORANGE;
+  private final Color BASE_COLOR = Color.WHITE;
+  private final Color HOVER_COLOR = Color.ORANGE;
 
   ConfirmButton(final String text) {
     super(text);
@@ -27,19 +27,19 @@ class ConfirmButton extends JButton {
   }
 
   private void initBackground() {
-    this.setBackground(backgroundColor);
+    this.setBackground(BG_COLOR);
   }
 
   private void setListener() {
     this.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseEntered(final MouseEvent e) {
-        ConfirmButton.this.setBackground(hoverColor);
+        ConfirmButton.this.setBackground(HOVER_COLOR);
       }
 
       @Override
       public void mouseExited(final MouseEvent e) {
-        ConfirmButton.this.setBackground(baseColor);
+        ConfirmButton.this.setBackground(BASE_COLOR);
       }
     });
   }

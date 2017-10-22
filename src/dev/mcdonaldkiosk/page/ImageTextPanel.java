@@ -29,7 +29,7 @@ public class ImageTextPanel extends JPanel {
 
   private final float TEXT_SIZE = 20.0f;
   private final Color TEXT_COLOR = Color.WHITE;
-  private Color TEXT_BACKGROUND_COLOR = new Color(00, 94, 00);
+  private Color TEXT_BG_COLOR = new Color(00, 94, 00);
 
   private ImageEdit imageEdit = new ImageEdit();
 
@@ -56,7 +56,7 @@ public class ImageTextPanel extends JPanel {
     TEXT_LABEL.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT - IMAGE_HEIGHT);
     TEXT_LABEL.setLocation(0, IMAGE_HEIGHT);
 
-    TEXT_LABEL.setBackground(TEXT_BACKGROUND_COLOR);
+    TEXT_LABEL.setBackground(TEXT_BG_COLOR);
     TEXT_LABEL.setForeground(TEXT_COLOR);
     TEXT_LABEL.setOpaque(true);
 

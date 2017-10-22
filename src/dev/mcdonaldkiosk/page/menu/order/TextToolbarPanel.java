@@ -23,7 +23,7 @@ class TextToolbarPanel {
 
   private final JPanel TEXT_TOOLBAR_PANEL = new JPanel();
 
-  private final Color BACKGROUND_COLOR = Color.BLACK;
+  private final Color BG_COLOR = Color.BLACK;
   private final Color TEXT_COLOR = Color.WHITE;
 
   private int textCnt;
@@ -33,7 +33,7 @@ class TextToolbarPanel {
   }
 
   private void initTextToolbarPanel() {
-    TEXT_TOOLBAR_PANEL.setBackground(BACKGROUND_COLOR);
+    TEXT_TOOLBAR_PANEL.setBackground(BG_COLOR);
   }
 
   TextToolbarPanel addText(String text) {

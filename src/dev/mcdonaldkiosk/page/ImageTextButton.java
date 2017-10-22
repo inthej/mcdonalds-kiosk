@@ -21,7 +21,7 @@ public class ImageTextButton extends JButton {
 
   private final float FONT_SIZE = 15.0f; // float자료형 글자크기, int자료형 글자디자인
   private final Color FONT_COLOR = Color.RED;
-  private final Color BACKGROUND_COLOR = Color.WHITE;
+  private final Color BG_COLOR = Color.WHITE;
 
   public ImageTextButton() {
     initeImageTextButton();
@@ -41,7 +41,7 @@ public class ImageTextButton extends JButton {
   private void initeImageTextButton() {
     this.setFont(this.getFont().deriveFont(FONT_SIZE));
     this.setForeground(FONT_COLOR);
-    this.setBackground(BACKGROUND_COLOR);
+    this.setBackground(BG_COLOR);
     this.setHorizontalTextPosition(SwingConstants.CENTER);
     this.setVerticalTextPosition(SwingConstants.BOTTOM);
   }
