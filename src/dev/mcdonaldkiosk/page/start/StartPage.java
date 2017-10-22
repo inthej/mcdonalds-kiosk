@@ -21,7 +21,7 @@ public class StartPage extends KioskPage {
   public StartPage() {
     super(new KioskSettingData.Builder()
                               .setAudioPath(LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav")
-                              .setNextPage(KioskPageType.EATING_PLACE_PAGE)
+                              .setNextPage(KioskPageType.EAT_PLACE_PAGE)
                               .build());
     
     addImageTextPanel();

@@ -12,7 +12,7 @@ import dev.mcdonaldkiosk.page.start.StartPage;
  */
 public final class MainFrame extends JFrame {
   
-  public static final MainFrame INSTANCE = new MainFrame();
+  private static final MainFrame INSTANCE = new MainFrame();
   
   public static final MainFrame getInstance() {
     return INSTANCE;

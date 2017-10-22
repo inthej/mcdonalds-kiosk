@@ -6,8 +6,7 @@ public class KioskSettingData {
   private final KioskPageType nextPage;
   private final KioskPageType previousPage;
 
-  private KioskSettingData(String audioPath, KioskPageType nextPageType,
-      KioskPageType previousPageType) {
+  private KioskSettingData(String audioPath, KioskPageType nextPageType, KioskPageType previousPageType) {
     this.audioPath = audioPath;
     this.nextPage = nextPageType;
     this.previousPage = previousPageType;

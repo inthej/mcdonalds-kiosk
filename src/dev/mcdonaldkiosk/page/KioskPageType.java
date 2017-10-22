@@ -13,7 +13,7 @@ import dev.mcdonaldkiosk.page.start.StartPage;
  * @since 2017. 6. 18.
  */
 public enum KioskPageType {
-  EMPTY_PAGE, START_PAGE, EATING_PLACE_PAGE, PAYMENT_PLACE_PAGE, MENU_PAGE, CONFIRM_PAGE, PAYMENT_CARD_PAGE, END_PAGE;
+  EMPTY_PAGE, START_PAGE, EAT_PLACE_PAGE, PAYMENT_PLACE_PAGE, MENU_PAGE, CONFIRM_PAGE, PAYMENT_CARD_PAGE, END_PAGE;
 
   public KioskPage createKioskPage() {
     KioskPage kioskPage = null;
@@ -21,7 +21,7 @@ public enum KioskPageType {
       kioskPage = new KioskPage() {};
     } else if (this == START_PAGE) {
       kioskPage = new StartPage();
-    } else if (this == EATING_PLACE_PAGE) {
+    } else if (this == EAT_PLACE_PAGE) {
       kioskPage = new EatPlacePage();
     } else if (this == PAYMENT_PLACE_PAGE) {
       kioskPage = new PaymentPlacePage();

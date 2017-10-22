@@ -28,7 +28,7 @@ public class PaymentPlacePage extends KioskPage {
     super(new KioskSettingData.Builder()
                               .setAudioPath(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav")
                               .setNextPage(KioskPageType.MENU_PAGE)
-                              .setPreviousPage(KioskPageType.EATING_PLACE_PAGE)
+                              .setPreviousPage(KioskPageType.EAT_PLACE_PAGE)
                               .build());
 
     initPage();
