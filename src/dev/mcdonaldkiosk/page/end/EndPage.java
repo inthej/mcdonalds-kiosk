@@ -22,12 +22,12 @@ import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 public class EndPage extends KioskPage {
 
   public EndPage() {
-    super(
-        new KioskSettingData(
-            KioskPage.getKioskOrderData().getPaymentPlace().equals(PaymentPlace.COUNTER)
-                ? LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav"
-                : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav",
-            KioskPageType.START_PAGE, KioskPageType.EMPTY_PAGE));
+    super(new KioskSettingData.Builder()
+                              .setAudioPath(KioskPage.getKioskOrderData().getPaymentPlace().equals(PaymentPlace.COUNTER)
+                                            ? LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav"
+                                            : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav")
+                              .setNextPage(KioskPageType.START_PAGE)
+                              .build());
 
     emptyOrder();
     addImgTextPanel();

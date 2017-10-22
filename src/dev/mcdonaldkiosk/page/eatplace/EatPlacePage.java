@@ -29,9 +29,11 @@ public class EatPlacePage extends KioskPage {
   }
 
   public EatPlacePage() {
-    super(
-        new KioskSettingData(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav",
-            KioskPageType.PAYMENT_PLACE_PAGE, KioskPageType.START_PAGE));
+    super(new KioskSettingData.Builder()
+                              .setAudioPath(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav")
+                              .setNextPage(KioskPageType.PAYMENT_PLACE_PAGE)
+                              .setPreviousPage(KioskPageType.START_PAGE)
+                              .build());
     
     this.setBackgroundImg("image/bg_green.png");
     this.showBackBtn();

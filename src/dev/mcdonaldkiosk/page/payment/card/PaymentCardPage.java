@@ -20,10 +20,11 @@ public class PaymentCardPage extends KioskPage {
   private final PaymentCardPanel PAYMENT_CARD_PANEL = new PaymentCardPanel();
 
   public PaymentCardPage() {
-    super(
-        new KioskSettingData(LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav",
-            KioskPageType.END_PAGE,
-            KioskPageType.CONFIRM_PAGE));
+    super(new KioskSettingData.Builder()
+                              .setAudioPath(LangCheck.isKorean() ? "sound/card.wav" : "sound/card_eng.wav")
+                              .setNextPage(KioskPageType.END_PAGE)
+                              .setPreviousPage(KioskPageType.CONFIRM_PAGE)
+                              .build());
 
     initPage();
     initPaymentCardPanel();

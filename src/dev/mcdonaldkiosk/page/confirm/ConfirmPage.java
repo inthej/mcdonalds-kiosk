@@ -33,12 +33,12 @@ public class ConfirmPage extends KioskPage {
   private final ConfirmButton YES_BUTTON = new ConfirmButton(LangCheck.isKorean() ? "확인" : "YES");
 
   public ConfirmPage() {
-    super(
-        new KioskSettingData(LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav",
-            KioskPage.getKioskOrderData().getPaymentPlace().equals(PaymentPlace.COUNTER)
-                ? KioskPageType.END_PAGE
-                : KioskPageType.PAYMENT_CARD_PAGE,
-            KioskPageType.MENU_PAGE));
+    super(new KioskSettingData.Builder()
+                              .setAudioPath(LangCheck.isKorean() ? "sound/check.wav" : "sound/check_eng.wav")
+                              .setNextPage(KioskPage.getKioskOrderData().getPaymentPlace().equals(PaymentPlace.COUNTER)
+                                               ? KioskPageType.END_PAGE : KioskPageType.PAYMENT_CARD_PAGE)
+                              .setPreviousPage(KioskPageType.MENU_PAGE)
+                              .build());
     orderTotalDataPanel = new OrderTotalDataPanel(KioskPage.getKioskOrderData());
 
     initPage();

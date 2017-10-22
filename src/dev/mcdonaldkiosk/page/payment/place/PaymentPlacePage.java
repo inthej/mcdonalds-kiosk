@@ -25,10 +25,11 @@ public class PaymentPlacePage extends KioskPage {
   private ActionListener placeListener = null;
 
   public PaymentPlacePage() {
-    super(
-        new KioskSettingData(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav",
-            KioskPageType.MENU_PAGE,
-            KioskPageType.EATING_PLACE_PAGE));
+    super(new KioskSettingData.Builder()
+                              .setAudioPath(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav")
+                              .setNextPage(KioskPageType.MENU_PAGE)
+                              .setPreviousPage(KioskPageType.EATING_PLACE_PAGE)
+                              .build());
 
     initPage();
     initPaymentSelectPanel();

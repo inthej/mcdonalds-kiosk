@@ -42,8 +42,8 @@ public abstract class KioskPage extends JPanel {
   KioskPage() {}
   
   public KioskPage(KioskSettingData kioskSettingData) {
-    nextPageType = kioskSettingData.getNextPageType();
-    previousPageType = kioskSettingData.getPreviousPageType();
+    nextPageType = kioskSettingData.getNextPage();
+    previousPageType = kioskSettingData.getPreviousPage();
 
     initKioskPage();
     playKioskVoice(kioskSettingData.getAudioPath());

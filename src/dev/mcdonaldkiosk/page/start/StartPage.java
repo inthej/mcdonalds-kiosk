@@ -19,10 +19,10 @@ import dev.mcdonaldkiosk.page.KioskSettingData;
 public class StartPage extends KioskPage {
   
   public StartPage() {
-    super(
-        new KioskSettingData(LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav",
-            KioskPageType.EATING_PLACE_PAGE,
-            KioskPageType.EMPTY_PAGE));
+    super(new KioskSettingData.Builder()
+                              .setAudioPath(LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav")
+                              .setNextPage(KioskPageType.EATING_PLACE_PAGE)
+                              .build());
     
     addImageTextPanel();
     setNextPage();
