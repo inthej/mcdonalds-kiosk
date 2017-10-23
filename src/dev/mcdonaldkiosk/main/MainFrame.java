@@ -41,18 +41,25 @@ public final class MainFrame extends JFrame {
   }
 
   public static void attachPanel(final KioskPage page) {
-    INSTANCE.getContentPane().removeAll();
-    INSTANCE.getContentPane().add(page);
-
+    removeComponents();
+    addComponents(page);
     refresh();
   }
   
+  private static void removeComponents() {
+    getInstance().getContentPane().removeAll();
+  }
+  
+  private static void addComponents(KioskPage page) {
+    getInstance().getContentPane().add(page);
+  }
+  
   private static void refresh() {
-    INSTANCE.revalidate();
-    INSTANCE.repaint();
+    getInstance().revalidate();
+    getInstance().repaint();
   }
   
   static void start() {
-    INSTANCE.setVisible(true);
+    getInstance().setVisible(true);
   }
 }
