@@ -2,25 +2,25 @@ package dev.mcdonaldkiosk.page;
 
 public class KioskSettingData {
 
-  private final String audioPath;
+  private final String AUDIO_PATH;
   private final KioskPageType nextPage;
   private final KioskPageType previousPage;
 
-  private KioskSettingData(String audioPath, KioskPageType nextPageType, KioskPageType previousPageType) {
-    this.audioPath = audioPath;
-    this.nextPage = nextPageType;
-    this.previousPage = previousPageType;
+  private KioskSettingData(Builder builder) {
+    AUDIO_PATH = builder.audioPath;
+    nextPage = builder.nextPageType;
+    previousPage = builder.previousPageType;
   }
 
-  public String getAudioPath() {
-    return audioPath;
+  String getAudioPath() {
+    return AUDIO_PATH;
   }
 
-  public KioskPageType getNextPage() {
+  KioskPageType getNextPage() {
     return nextPage;
   }
 
-  public KioskPageType getPreviousPage() {
+  KioskPageType getPreviousPage() {
     return previousPage;
   }
   
@@ -46,7 +46,7 @@ public class KioskSettingData {
     }
     
     public KioskSettingData build() {
-      return new KioskSettingData(audioPath, nextPageType, previousPageType);
+      return new KioskSettingData(this);
     }
   }
 }
