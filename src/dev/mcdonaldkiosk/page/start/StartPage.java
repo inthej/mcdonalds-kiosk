@@ -5,7 +5,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.KioskSettingData;
+import dev.mcdonaldkiosk.page.PageData;
 import dev.mcdonaldkiosk.util.Display;
 
 /**
@@ -19,10 +19,9 @@ import dev.mcdonaldkiosk.util.Display;
 public class StartPage extends KioskPage {
   
   public StartPage() {
-    super(new KioskSettingData.Builder()
-                              .setAudioPath(LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav")
-                              .setNextPage(KioskPageType.EAT_PLACE_PAGE)
-                              .build());
+    super(new PageData.Builder(LangCheck.isKorean() ? "sound/start.wav" : "sound/start_eng.wav")
+                      .nextPageType(KioskPageType.EAT_PLACE_PAGE)
+                      .build());
     
     addImageTextPanel();
     setNextPage();

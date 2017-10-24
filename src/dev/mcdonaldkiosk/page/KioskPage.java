@@ -33,7 +33,7 @@ public abstract class KioskPage extends JPanel {
   private OnClickListener onClickListener = null;
   
   private static final KioskOrderData kioskOrderData = new KioskOrderData();
-  private KioskSettingData kioskSettingData;
+  private PageData pageData;
   
   private MainFrame mainFrame;
   private final BackButton backBtn = new BackButton();
@@ -41,11 +41,11 @@ public abstract class KioskPage extends JPanel {
   
   KioskPage() {}
   
-  public KioskPage(KioskSettingData kioskSettingData) {
-    this.kioskSettingData = kioskSettingData;
+  public KioskPage(PageData pageData) {
+    this.pageData = pageData;
 
     initKioskPage();
-    playKioskVoice(kioskSettingData.getAudioPath());
+    playKioskVoice(pageData.getAudioPath());
     setBackBtnListener();
     setMouseListener();
   }
@@ -119,14 +119,14 @@ public abstract class KioskPage extends JPanel {
   }
 
   protected void loadNextPage() {
-    KioskPageType pageType = kioskSettingData.getNextPage();
+    KioskPageType pageType = pageData.getNextPageType();
     if (pageType != KioskPageType.EMPTY_PAGE) {
       mainFrame.attachPage(pageType.createKioskPage());
     }
   }
 
   protected void loadPreviousPage() {
-    KioskPageType pageType = kioskSettingData.getPreviousPage();
+    KioskPageType pageType = pageData.getPreviousPageType();
     if (pageType != KioskPageType.EMPTY_PAGE) {
       mainFrame.attachPage(pageType.createKioskPage());
     }

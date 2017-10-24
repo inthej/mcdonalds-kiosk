@@ -7,7 +7,7 @@ import dev.mcdonaldkiosk.page.CommonGuidePanel;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.KioskSettingData;
+import dev.mcdonaldkiosk.page.PageData;
 import dev.mcdonaldkiosk.util.Display;
 
 /**
@@ -25,11 +25,10 @@ public class PaymentPlacePage extends KioskPage {
   private ActionListener placeListener = null;
 
   public PaymentPlacePage() {
-    super(new KioskSettingData.Builder()
-                              .setAudioPath(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav")
-                              .setNextPage(KioskPageType.MENU_PAGE)
-                              .setPreviousPage(KioskPageType.EAT_PLACE_PAGE)
-                              .build());
+    super(new PageData.Builder(LangCheck.isKorean() ? "sound/pay.wav" : "sound/pay_eng.wav")
+                      .nextPageType(KioskPageType.MENU_PAGE)
+                      .previousPageType(KioskPageType.EAT_PLACE_PAGE)
+                      .build());
 
     initPage();
     initPaymentSelectPanel();

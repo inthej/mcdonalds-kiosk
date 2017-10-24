@@ -10,7 +10,7 @@ import dev.mcdonaldkiosk.page.CommonGuidePanel;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.KioskSettingData;
+import dev.mcdonaldkiosk.page.PageData;
 import dev.mcdonaldkiosk.util.Display;
 
 /**
@@ -29,11 +29,10 @@ public class EatPlacePage extends KioskPage {
   }
 
   public EatPlacePage() {
-    super(new KioskSettingData.Builder()
-                              .setAudioPath(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav")
-                              .setNextPage(KioskPageType.PAYMENT_PLACE_PAGE)
-                              .setPreviousPage(KioskPageType.START_PAGE)
-                              .build());
+    super(new PageData.Builder(LangCheck.isKorean() ? "sound/place.wav" : "sound/place_eng.wav")
+                      .nextPageType(KioskPageType.PAYMENT_PLACE_PAGE)
+                      .previousPageType(KioskPageType.START_PAGE)
+                      .build());
     
     this.setBackgroundImg("image/bg_green.png");
     this.showBackBtn();

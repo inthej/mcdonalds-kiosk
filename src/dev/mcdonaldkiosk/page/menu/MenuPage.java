@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.KioskSettingData;
+import dev.mcdonaldkiosk.page.PageData;
 import dev.mcdonaldkiosk.page.menu.order.SelectedOrderConfirmPanel;
 import dev.mcdonaldkiosk.util.Display;
 import dev.mcdonaldkiosk.util.ImageEdit;
@@ -28,11 +28,10 @@ public class MenuPage extends KioskPage {
   private final SelectedOrderConfirmPanel selectedOrderConfirmPanel;
 
   public MenuPage() {
-    super(new KioskSettingData.Builder()
-                              .setAudioPath(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav")
-                              .setNextPage(KioskPageType.CONFIRM_PAGE)
-                              .setPreviousPage(KioskPageType.PAYMENT_PLACE_PAGE)
-                              .build());
+    super(new PageData.Builder(LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav")
+                      .nextPageType(KioskPageType.CONFIRM_PAGE)
+                      .previousPageType(KioskPageType.PAYMENT_PLACE_PAGE)
+                      .build());
 
     menuTabbedPane = new MenuTabbedPane(this, KioskPage.getKioskOrderData());
     selectedOrderConfirmPanel = new SelectedOrderConfirmPanel(this, KioskPage.getKioskOrderData());

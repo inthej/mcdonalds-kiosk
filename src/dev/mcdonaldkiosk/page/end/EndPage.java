@@ -6,7 +6,7 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
-import dev.mcdonaldkiosk.page.KioskSettingData;
+import dev.mcdonaldkiosk.page.PageData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 import dev.mcdonaldkiosk.util.Display;
 
@@ -22,12 +22,11 @@ import dev.mcdonaldkiosk.util.Display;
 public class EndPage extends KioskPage {
 
   public EndPage() {
-    super(new KioskSettingData.Builder()
-                              .setAudioPath(KioskPage.getKioskOrderData().getPaymentPlace().equals(PaymentPlace.COUNTER)
-                                            ? LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav"
-                                            : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav")
-                              .setNextPage(KioskPageType.START_PAGE)
-                              .build());
+    super(new PageData.Builder(KioskPage.getKioskOrderData().getPaymentPlace().equals(PaymentPlace.COUNTER)
+                                ? LangCheck.isKorean() ? "sound/counter.wav" : "sound/counter_eng.wav"
+                                : LangCheck.isKorean() ? "sound/end.wav" : "sound/end_eng.wav")
+                      .nextPageType(KioskPageType.START_PAGE)
+                      .build());
 
     emptyOrder();
     addImgTextPanel();
