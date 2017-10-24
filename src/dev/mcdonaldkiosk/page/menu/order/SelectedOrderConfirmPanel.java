@@ -1,7 +1,6 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -47,7 +46,7 @@ public class SelectedOrderConfirmPanel extends JPanel {
   // 텍스트툴바에 텍스트 추가
   private void addTextToTextToolbar() {
     textToolbarPanel.addText((LangCheck.isKorean() ? "식사 장소 : " : "Eating place : ") + kioskOrderData
-        .getEatingPlace())
+        .getEatPlace())
         .addText((LangCheck.isKorean() ? "결제 장소 : " : "Payment Place : ") + kioskOrderData.getPaymentPlace());
   }
 

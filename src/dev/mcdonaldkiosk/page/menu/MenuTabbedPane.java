@@ -1,7 +1,7 @@
 package dev.mcdonaldkiosk.page.menu;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.KioskOrderData;
+import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.table.BurgerTable;
 import dev.mcdonaldkiosk.page.menu.table.DessertTable;
 import dev.mcdonaldkiosk.page.menu.table.DrinkTable;

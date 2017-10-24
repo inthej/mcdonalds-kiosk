@@ -74,7 +74,7 @@ public class EatPlacePage extends KioskPage {
     imgTextBtn.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(final MouseEvent e) {
-        KioskPage.getKioskOrderData().setEatingPlace(place);
+        KioskPage.getKioskOrderData().setEatPlace(place);
         EatPlacePage.this.loadNextPage();
       }
     });

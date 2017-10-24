@@ -1,14 +1,13 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.KioskOrderData;
-import dev.mcdonaldkiosk.page.menu.MenuPage;
-import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
  * @author Jaehyeon Kim
@@ -57,9 +56,9 @@ class OrderDataConfirmPanel extends JPanel {
   }
 
   private void initDataLabel() {
-    ORDER_DATA_LABEL.setText("<html>" + kioskOrderData.getCalculator().getOrderQuantity() +
-        "<br>" + kioskOrderData.getCalculator().getOrderAmount() +
-        "<br>" + kioskOrderData.getCalculator().getOrderKCal() + "</html>");
+    ORDER_DATA_LABEL.setText("<html>" + kioskOrderData.getOrderQuantity() +
+        "<br>" + kioskOrderData.getOrderAmount() +
+        "<br>" + kioskOrderData.getOrderKCal() + "</html>");
     ORDER_DATA_LABEL.setHorizontalAlignment(JLabel.CENTER);
   }
 
@@ -78,7 +77,7 @@ class OrderDataConfirmPanel extends JPanel {
     });
 
     PAYMENT_BTN.addActionListener((e) -> {
-      if (kioskOrderData.getCalculator().getOrderQuantity() == 0) {
+      if (kioskOrderData.getOrderQuantity() == 0) {
         KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer.createKioskAudioPlayer(
             LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
         kioskAudioPlayer.play();
@@ -89,8 +88,8 @@ class OrderDataConfirmPanel extends JPanel {
   }
 
   void refresh() {
-    ORDER_DATA_LABEL.setText("<html>" + kioskOrderData.getCalculator().getOrderQuantity() +
-        "<br>" + kioskOrderData.getCalculator().getOrderAmount() +
-        "<br>" + kioskOrderData.getCalculator().getOrderKCal() + "</html>");
+    ORDER_DATA_LABEL.setText("<html>" + kioskOrderData.getOrderQuantity() +
+        "<br>" + kioskOrderData.getOrderAmount() +
+        "<br>" + kioskOrderData.getOrderKCal() + "</html>");
   }
 }

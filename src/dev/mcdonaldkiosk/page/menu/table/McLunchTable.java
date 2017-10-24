@@ -1,8 +1,8 @@
 package dev.mcdonaldkiosk.page.menu.table;
 
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 
 /**
  * Class Role : 맥 런치 메뉴의 버튼 구성을 가진 MenuTable이다.

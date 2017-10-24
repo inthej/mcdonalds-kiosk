@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.page;
+package dev.mcdonaldkiosk.page.menu.order;
 
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
 import dev.mcdonaldkiosk.page.menu.Menu;
@@ -20,13 +20,13 @@ public class KioskOrderData {
 
   private final List<Menu> orderMenuList = new ArrayList<>();
 
-  public class Calculator {
+  private class Calculator {
 
-    public int getOrderQuantity() {
+    private int getOrderQuantity() {
       return orderMenuList.size();
     }
 
-    public int getOrderAmount() {
+    private int getTotalAmount() {
       int totalAmount = 0;
       for (Menu menu : orderMenuList) {
         totalAmount += menu.getPrice();
@@ -34,7 +34,7 @@ public class KioskOrderData {
       return totalAmount;
     }
 
-    public int getOrderKCal() {
+    private int getTotalKCal() {
       int totalKCal = 0;
       for (Menu menu : orderMenuList) {
         totalKCal += menu.getKCal();
@@ -43,32 +43,38 @@ public class KioskOrderData {
       return totalKCal;
     }
   }
-
-  private EatPlace eatingPlace;
-  private PaymentPlace paymentPlace;
-
-  public KioskOrderData() {
-
-  }
-
+  
   private final Calculator calculator = new Calculator();
 
-  public EatPlace getEatingPlace() {
-    return eatingPlace;
+  private EatPlace eatPlace;
+  private PaymentPlace paymentPlace;
+
+  public EatPlace getEatPlace() {
+    return eatPlace;
   }
-  public void setEatingPlace(EatPlace place) {
-    eatingPlace = place;
+  
+  public void setEatPlace(EatPlace place) {
+    eatPlace = place;
   }
 
   public PaymentPlace getPaymentPlace() {
     return paymentPlace;
   }
+  
   public void setPaymentPlace(PaymentPlace place) {
     paymentPlace = place;
   }
 
-  public Calculator getCalculator() {
-    return calculator;
+  public int getOrderQuantity() {
+    return calculator.getOrderQuantity();
+  }
+
+  public int getOrderAmount() {
+    return calculator.getTotalAmount();
+  }
+
+  public int getOrderKCal() {
+    return calculator.getTotalKCal();
   }
 
   public void addMenu(Menu menu) {
@@ -81,7 +87,7 @@ public class KioskOrderData {
 
   public void emptyOrder() {
     orderMenuList.clear();
-    eatingPlace = null;
+    eatPlace = null;
     paymentPlace = null;
   }
 

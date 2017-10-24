@@ -3,7 +3,7 @@ package dev.mcdonaldkiosk.page.menu;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-import dev.mcdonaldkiosk.page.KioskOrderData;
+import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 import dev.mcdonaldkiosk.util.Display;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;

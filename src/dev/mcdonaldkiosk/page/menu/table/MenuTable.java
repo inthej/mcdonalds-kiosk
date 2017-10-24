@@ -1,9 +1,9 @@
 package dev.mcdonaldkiosk.page.menu.table;
 
-import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.Menu;
 import dev.mcdonaldkiosk.page.menu.MenuButton;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;

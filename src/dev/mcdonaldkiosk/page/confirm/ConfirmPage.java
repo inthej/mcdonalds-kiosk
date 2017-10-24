@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.awt.Component;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.CommonGuidePanel;
-import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.PageData;
+import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 import dev.mcdonaldkiosk.util.Display;
 
