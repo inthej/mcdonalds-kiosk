@@ -5,11 +5,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.page.menu.order.SelectedOrderConfirmPanel;
+import dev.mcdonaldkiosk.util.Display;
 import dev.mcdonaldkiosk.util.ImageEdit;
 
 /**

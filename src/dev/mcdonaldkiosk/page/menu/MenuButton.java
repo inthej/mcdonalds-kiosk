@@ -3,8 +3,8 @@ package dev.mcdonaldkiosk.page.menu;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.KioskOrderData;
+import dev.mcdonaldkiosk.util.Display;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
@@ -21,7 +21,6 @@ public class MenuButton extends JButton {
 
   private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer
       .createKioskAudioPlayer("sound/beep.wav");
-  private ImageEdit imageEdit = new ImageEdit();
 
   private MenuPage menuPage;
   private final KioskOrderData kioskOrderData;
@@ -38,7 +37,7 @@ public class MenuButton extends JButton {
 
   private void initMenuButton() {
     this.setIcon(
-        imageEdit.getResizeIcon(IMG_PATH, Display.WINDOWS_WIDTH_HALF / 5, Display.AVALIABLE_WINDOW_HEIGHT / 10));
+        ImageEdit.getResizeIcon(IMG_PATH, Display.WINDOWS_WIDTH_HALF / 5, Display.AVALIABLE_WINDOW_HEIGHT / 10));
     this.setText(MENU.toMenuButtonText(PRICE_FONT_COLOR));
     this.setHorizontalTextPosition(SwingConstants.CENTER);
     this.setVerticalTextPosition(SwingConstants.BOTTOM);

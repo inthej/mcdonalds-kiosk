@@ -3,13 +3,13 @@ package dev.mcdonaldkiosk.page.confirm;
 import java.awt.Color;
 import java.awt.Component;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.CommonGuidePanel;
 import dev.mcdonaldkiosk.page.KioskOrderData;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
+import dev.mcdonaldkiosk.util.Display;
 
 /**
  * Class Role : 주문데이터(KioskOrderData)의 확인 체크를 제공하는 페이지 이다.

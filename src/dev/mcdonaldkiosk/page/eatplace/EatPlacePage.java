@@ -6,12 +6,12 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.lang.Language;
-import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.CommonGuidePanel;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
+import dev.mcdonaldkiosk.util.Display;
 
 /**
  * Class Role : 식사장소를 선택할 수 있는 View 컴포넌트.

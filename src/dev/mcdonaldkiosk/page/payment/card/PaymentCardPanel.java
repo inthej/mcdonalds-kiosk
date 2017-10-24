@@ -6,9 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.TitleLabel;
+import dev.mcdonaldkiosk.util.Display;
 import dev.mcdonaldkiosk.util.ImageEdit;
 
 class PaymentCardPanel extends JPanel {

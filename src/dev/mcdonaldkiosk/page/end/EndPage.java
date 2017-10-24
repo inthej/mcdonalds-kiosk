@@ -3,12 +3,12 @@ package dev.mcdonaldkiosk.page.end;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.ImageTextPanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
+import dev.mcdonaldkiosk.util.Display;
 
 /**
  * Class Role : 주문이 종료 되었을 때 보여지는 View 컴포넌트 이다.

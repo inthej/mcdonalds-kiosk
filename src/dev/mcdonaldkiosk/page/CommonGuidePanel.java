@@ -6,7 +6,7 @@ import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import dev.mcdonaldkiosk.main.Display;
+import dev.mcdonaldkiosk.util.Display;
 
 /**
  * Class Role : KioskPage에서 공통적으로 사용되고 있는 가이드 패널이다.

@@ -8,8 +8,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.main.MainFrame;
+import dev.mcdonaldkiosk.util.Display;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**

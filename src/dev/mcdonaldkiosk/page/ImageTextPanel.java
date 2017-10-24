@@ -4,7 +4,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import dev.mcdonaldkiosk.main.Display;
+import dev.mcdonaldkiosk.util.Display;
 import dev.mcdonaldkiosk.util.ImageEdit;
 
 /**
@@ -31,8 +31,6 @@ public class ImageTextPanel extends JPanel {
   private final Color TEXT_COLOR = Color.WHITE;
   private Color TEXT_BG_COLOR = new Color(00, 94, 00);
 
-  private ImageEdit imageEdit = new ImageEdit();
-
   public ImageTextPanel(ImageIcon imgIcon, String text) {
     this.setLayout(null);
 
@@ -43,7 +41,7 @@ public class ImageTextPanel extends JPanel {
   private void initImageLabel(ImageIcon imgIcon) {
     IMAGE_LABEL.setSize(IMAGE_WIDTH, IMAGE_HEIGHT);
     IMAGE_LABEL.setLocation(0, 0);
-    IMAGE_LABEL.setIcon(imageEdit.getResizeIcon(imgIcon, IMAGE_WIDTH, IMAGE_HEIGHT));
+    IMAGE_LABEL.setIcon(ImageEdit.getResizeIcon(imgIcon, IMAGE_WIDTH, IMAGE_HEIGHT));
 
     this.add(IMAGE_LABEL);
   }

@@ -3,12 +3,12 @@ package dev.mcdonaldkiosk.page.payment.place;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.main.Display;
 import dev.mcdonaldkiosk.page.CommonGuidePanel;
 import dev.mcdonaldkiosk.page.ImageTextButton;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.KioskSettingData;
+import dev.mcdonaldkiosk.util.Display;
 
 /**
  * Created by kimjaehyeon on 2017. 5. 20

@@ -3,6 +3,7 @@ package dev.mcdonaldkiosk.main;
 import javax.swing.JFrame;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.start.StartPage;
+import dev.mcdonaldkiosk.util.Display;
 
 /**
  * class role : 프로그램이 구동되면 보여지는 프레임이다.

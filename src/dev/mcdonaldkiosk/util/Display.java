@@ -1,4 +1,4 @@
-package dev.mcdonaldkiosk.main;
+package dev.mcdonaldkiosk.util;
 
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
@@ -13,11 +13,11 @@ import java.awt.Toolkit;
  */
 public class Display {
 
-  static final int SCREEN_HEIGHT;
+  public static final int SCREEN_HEIGHT;
 
-  static final int WINDOWS_WIDTH;
-  static final int WINDOWS_HEIGHT;
-  static final int TITLE_BAR_HEIGHT;
+  public static final int WINDOWS_WIDTH;
+  public static final int WINDOWS_HEIGHT;
+  public static final int TITLE_BAR_HEIGHT;
   public static final int WINDOWS_WIDTH_HALF;
   public static final int AVALIABLE_WINDOW_HEIGHT;
 
@@ -35,5 +35,7 @@ public class Display {
     AVALIABLE_WINDOW_HEIGHT = WINDOWS_HEIGHT - TITLE_BAR_HEIGHT;
   }
 
-  private Display() {}
+  private Display() {
+    throw new AssertionError();
+  }
 }
