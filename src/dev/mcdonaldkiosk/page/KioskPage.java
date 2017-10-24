@@ -22,7 +22,7 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
  * 4. NextPage 페이지 설정 제공
  *
  * @author Jaehyeon Kim
- * @see MainFrame#attachPanel(KioskPage)
+ * @see MainFrame#attachPage(KioskPage)
  */
 public abstract class KioskPage extends JPanel {
   
@@ -33,17 +33,16 @@ public abstract class KioskPage extends JPanel {
   private OnClickListener onClickListener = null;
   
   private static final KioskOrderData kioskOrderData = new KioskOrderData();
-  private KioskPageType nextPageType = KioskPageType.EMPTY_PAGE;
-  private KioskPageType previousPageType = KioskPageType.EMPTY_PAGE;
+  private KioskSettingData kioskSettingData;
   
+  private MainFrame mainFrame;
   private final BackButton backBtn = new BackButton();
   private String bgPath;
   
   KioskPage() {}
   
   public KioskPage(KioskSettingData kioskSettingData) {
-    nextPageType = kioskSettingData.getNextPage();
-    previousPageType = kioskSettingData.getPreviousPage();
+    this.kioskSettingData = kioskSettingData;
 
     initKioskPage();
     playKioskVoice(kioskSettingData.getAudioPath());
@@ -76,6 +75,10 @@ public abstract class KioskPage extends JPanel {
         if (onClickListener != null) { onClickListener.onClick(); }
       }
     });
+  }
+  
+  public void setMainFrame(MainFrame mainFrame) {
+    this.mainFrame = mainFrame;
   }
 
   protected BackButton getBackButton() {
@@ -116,20 +119,22 @@ public abstract class KioskPage extends JPanel {
   }
 
   protected void loadNextPage() {
-    if (nextPageType != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(nextPageType.createKioskPage());
+    KioskPageType pageType = kioskSettingData.getNextPage();
+    if (pageType != KioskPageType.EMPTY_PAGE) {
+      mainFrame.attachPage(pageType.createKioskPage());
     }
   }
 
   protected void loadPreviousPage() {
-    if (previousPageType != KioskPageType.EMPTY_PAGE) {
-      MainFrame.attachPanel(previousPageType.createKioskPage());
+    KioskPageType pageType = kioskSettingData.getPreviousPage();
+    if (pageType != KioskPageType.EMPTY_PAGE) {
+      mainFrame.attachPage(pageType.createKioskPage());
     }
   }
 
   protected void reloadPage() {
     try {
-      MainFrame.attachPanel(this.getClass().newInstance());
+      mainFrame.attachPage(this.getClass().newInstance());
     } catch (InstantiationException e) {
       e.printStackTrace();
     } catch (IllegalAccessException e) {

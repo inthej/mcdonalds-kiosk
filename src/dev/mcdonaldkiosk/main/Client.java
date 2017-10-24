@@ -9,6 +9,6 @@ package dev.mcdonaldkiosk.main;
 public class Client {
 
   public static void main(final String[] args) {
-    MainFrame.start();
+    new MainFrame().setVisible(true); 
   }
 }

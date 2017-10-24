@@ -5,26 +5,20 @@ import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.start.StartPage;
 
 /**
- * class role : 프로그램이 구동되면 보여지는 기본 프레임이다.
+ * class role : 프로그램이 구동되면 보여지는 프레임이다.
  * KioskPage View 컴포넌트 구성할 수 있다.
  * 
  * @author Jaehyeon Kim
  */
-public final class MainFrame extends JFrame {
+public class MainFrame extends JFrame {
   
-  private static final MainFrame INSTANCE = new MainFrame();
-  
-  public static final MainFrame getInstance() {
-    return INSTANCE;
-  }
-  
-  private MainFrame() {
-    initMainFrame();
+  MainFrame() {
+    init();
     setLocationByCenter();
-    addStartPage();
+    addPage(new StartPage());
   }
 
-  private void initMainFrame() {
+  private void init() {
     this.setLayout(null);
     this.setTitle("ORDER HERE!");
     this.setSize(Display.WINDOWS_WIDTH_HALF, Display.WINDOWS_HEIGHT);
@@ -36,30 +30,23 @@ public final class MainFrame extends JFrame {
     this.setLocation((Display.WINDOWS_WIDTH - Display.WINDOWS_WIDTH_HALF) / 2, 0);
   }
   
-  private void addStartPage() {
-    this.getContentPane().add(new StartPage());
-  }
-
-  public static void attachPanel(final KioskPage page) {
-    removeComponents();
-    addComponents(page);
+  public void attachPage(KioskPage page) {
+    removeAllComponents();
+    addPage(page);
     refresh();
   }
   
-  private static void removeComponents() {
-    getInstance().getContentPane().removeAll();
+  private void removeAllComponents() {
+    this.getContentPane().removeAll();
   }
   
-  private static void addComponents(KioskPage page) {
-    getInstance().getContentPane().add(page);
+  private void addPage(KioskPage page) {
+    page.setMainFrame(this);
+    this.getContentPane().add(page);
   }
   
-  private static void refresh() {
-    getInstance().revalidate();
-    getInstance().repaint();
-  }
-  
-  static void start() {
-    getInstance().setVisible(true);
+  private void refresh() {
+    this.revalidate();
+    this.repaint();
   }
 }
