@@ -16,8 +16,7 @@ import javax.swing.JPanel;
  * 기능 -
  * 텍스트입력을 제공한다.
  *
- * @author kimjaehyeon
- * @since 2017. 06. 06.
+ * @author Jaehyeon Kim
  */
 class TextToolbarPanel {
 

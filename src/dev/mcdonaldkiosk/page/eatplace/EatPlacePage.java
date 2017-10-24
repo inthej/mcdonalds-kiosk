@@ -20,7 +20,6 @@ import dev.mcdonaldkiosk.util.Display;
  * 페이지에 공통으로 가이드 패널(CommonGuidePanel)이 사용된다.
  *
  * @author Jaeheyon Kim
- * @see CommonGuidePanel
  */
 public class EatPlacePage extends KioskPage {
   

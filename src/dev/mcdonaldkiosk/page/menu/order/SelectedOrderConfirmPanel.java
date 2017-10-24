@@ -1,9 +1,9 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.menu.MenuPage;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
 
 /**
  * Class Role : 선택된 주문확인 패널로서 이용중 선택하였던 주문의 정보를 확인할 수 있다.
@@ -12,8 +12,7 @@ import javax.swing.JPanel;
  * 중간 주문리스트 패널(OrderListPanel) 에서는 선택하였던 메뉴의 리스트 확인이 가능하다.
  * 하단 주문데이터확인 패널(OrderDataConfirmPanel) 에서는 주문수량, 주문금액, 총 칼로리 확인이 가능하다.
  *
- * @author Jaehyeon, Kim
- * @see TextToolbarPanel,OrderListPanel,OrderDataConfirmPanel
+ * @author Jaehyeon Kim
  */
 public class SelectedOrderConfirmPanel extends JPanel {
 

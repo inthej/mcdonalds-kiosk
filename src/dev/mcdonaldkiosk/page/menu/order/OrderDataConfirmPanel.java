@@ -9,9 +9,6 @@ import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.menu.MenuPage;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
-/**
- * @author Jaehyeon Kim
- */
 class OrderDataConfirmPanel extends JPanel {
 
   private final JLabel ORDER_TEXT_LABEL = new JLabel();

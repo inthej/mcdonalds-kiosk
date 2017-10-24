@@ -4,7 +4,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
- * class role : 이미지 편집(리사이징)을 담당한다.
+ * Class Role : 이미지 편집(리사이징)을 담당한다.
  */
 public class ImageEdit {
 

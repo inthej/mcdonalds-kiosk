@@ -6,7 +6,7 @@ import dev.mcdonaldkiosk.page.start.StartPage;
 import dev.mcdonaldkiosk.util.Display;
 
 /**
- * class role : 프로그램이 구동되면 보여지는 프레임이다.
+ * Class Role : 프로그램이 구동되면 보여지는 프레임이다.
  * KioskPage View 컴포넌트 구성할 수 있다.
  * 
  * @author Jaehyeon Kim

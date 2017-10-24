@@ -11,8 +11,9 @@ import dev.mcdonaldkiosk.page.PageData;
 import dev.mcdonaldkiosk.util.Display;
 
 /**
- * Created by kimjaehyeon on 2017. 5. 20
  * Class Role : 결제장소 선택 페이지
+ * 
+ * @author Jaehyeon Kim
  */
 public class PaymentPlacePage extends KioskPage {
 

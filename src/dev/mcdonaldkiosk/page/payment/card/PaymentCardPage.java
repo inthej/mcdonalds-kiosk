@@ -12,8 +12,9 @@ import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 /**
- * Created by kimjaehyeon on 2017. 5. 25
  * Class Role : 카드 결제지불 페이지
+ * 
+ * @author Jaehyeon Kim
  */
 public class PaymentCardPage extends KioskPage {
 

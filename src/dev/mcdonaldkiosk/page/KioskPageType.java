@@ -8,10 +8,6 @@ import dev.mcdonaldkiosk.page.payment.card.PaymentCardPage;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlacePage;
 import dev.mcdonaldkiosk.page.start.StartPage;
 
-/**
- * @author Jaehyeon Kim
- * @since 2017. 6. 18.
- */
 public enum KioskPageType {
   EMPTY_PAGE, START_PAGE, EAT_PLACE_PAGE, PAYMENT_PLACE_PAGE, MENU_PAGE, CONFIRM_PAGE, PAYMENT_CARD_PAGE, END_PAGE;
 

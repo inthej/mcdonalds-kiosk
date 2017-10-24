@@ -17,7 +17,7 @@ import dev.mcdonaldkiosk.util.ImageEdit;
  * 기본 레이아웃은 BorderLayout 이며
  * 상단 이미지 베너 라벨, 중간 메뉴 탭(MenuTabbedPane) 페인, 하단 선택된 주문확인 패널(SelectedOrderConfirmPanel)로 구성되어 있다.
  *
- * @author Jaehyeon, Kim
+ * @author Jaehyeon Kim
  */
 public class MenuPage extends KioskPage {
 

@@ -20,6 +20,8 @@ import dev.mcdonaldkiosk.util.Display;
  * 기능 :
  * 1. 아이탬 패널에 아이탬을 추가할수 있는 기능을 제공한다.
  * 2. 상단 타이틀 라벨의 텍스트 색상을 지정 할 수 있는 기능을 제공한다.
+ * 
+ * @author Jaehyeon Kim
  */
 public class CommonGuidePanel extends JPanel {
 

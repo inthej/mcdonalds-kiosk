@@ -1,10 +1,10 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
+import java.util.ArrayList;
+import java.util.List;
 import dev.mcdonaldkiosk.page.eatplace.EatPlace;
 import dev.mcdonaldkiosk.page.menu.Menu;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Class Role : 키오스크 주문관련(식사장소, 결제장소, 선택메뉴) 데이터 수집을 담당한다.
@@ -13,8 +13,6 @@ import java.util.List;
  * 내부적 제공하는 Calculator를 사용하여 입력된 주문의 수량, 금액, 칼로리 확인이 가능하다.
  *
  * @author Jaehyeon Kim
- * @see Calculator
- * @since 2017. 6. 22.
  */
 public class KioskOrderData {
 

@@ -1,5 +1,7 @@
 package dev.mcdonaldkiosk.page.menu;
 
+import java.util.ArrayList;
+import javax.swing.JTabbedPane;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 import dev.mcdonaldkiosk.page.menu.table.BurgerTable;
@@ -11,8 +13,6 @@ import dev.mcdonaldkiosk.page.menu.table.McMoningTable;
 import dev.mcdonaldkiosk.page.menu.table.MenuTable;
 import dev.mcdonaldkiosk.page.menu.table.SetMenuTable;
 import dev.mcdonaldkiosk.page.menu.table.SnackTable;
-import java.util.ArrayList;
-import javax.swing.JTabbedPane;
 
 /**
  * Class Role : 메뉴테이블들을 Tab형식으로 제공하는 컴포넌트이다.

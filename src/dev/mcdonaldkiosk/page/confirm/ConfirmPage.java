@@ -7,7 +7,6 @@ import dev.mcdonaldkiosk.page.CommonGuidePanel;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
 import dev.mcdonaldkiosk.page.PageData;
-import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 import dev.mcdonaldkiosk.page.payment.place.PaymentPlace;
 import dev.mcdonaldkiosk.util.Display;
 
@@ -16,8 +15,6 @@ import dev.mcdonaldkiosk.util.Display;
  * 디자인이 반영된 ConfirmButton을 사용한다.
  *
  * @author Jaehyeon Kim
- * @see KioskOrderData ,ConfirmButton
- * @since 2017. 05. 25.
  */
 public class ConfirmPage extends KioskPage {
 

@@ -1,14 +1,14 @@
 package dev.mcdonaldkiosk.page.menu.table;
 
-import dev.mcdonaldkiosk.page.menu.Menu;
-import dev.mcdonaldkiosk.page.menu.MenuButton;
-import dev.mcdonaldkiosk.page.menu.MenuPage;
-import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import dev.mcdonaldkiosk.page.menu.Menu;
+import dev.mcdonaldkiosk.page.menu.MenuButton;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.page.menu.order.KioskOrderData;
 
 /**
  * Class Role : 메뉴 버튼의 구성을 가진 패널에 스크롤이 제공되는 JScrollPane 컴포넌트이다.
@@ -22,7 +22,7 @@ import javax.swing.JScrollPane;
  * 기능 :
  * 메뉴 입력(addMenu)을 통하여 패널에 메뉴 데이터(MenuButton) 입력을 제공한다.
  *
- * @author Jaehyeon, Kim
+ * @author Jaehyeon Kim
  */
 public abstract class MenuTable {
 

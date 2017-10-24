@@ -13,6 +13,8 @@ import dev.mcdonaldkiosk.util.ImageEdit;
  *
  * 특징 :
  * 1. 이미지는 지정한 크기에 맞게 화질이 보정되어 변환된 형태를 가지고 있다.
+ * 
+ * @author Jaehyeon Kim
  */
 public class ImageTextButton extends JButton {
 

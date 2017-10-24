@@ -23,7 +23,6 @@ import dev.mcdonaldkiosk.util.KioskAudioPlayer;
  * 4. NextPage 페이지 설정 제공
  *
  * @author Jaehyeon Kim
- * @see MainFrame#attachPage(KioskPage)
  */
 public abstract class KioskPage extends JPanel {
   

@@ -6,10 +6,9 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 
 /**
- * class role : 디스플레이 화면 크기의 정보를 제공한다.
+ * Class Role : 디스플레이 화면 크기의 정보를 제공한다.
  *
  * @author Jaehyeon Kim
- * @since 2017. 05. 19.
  */
 public class Display {
 

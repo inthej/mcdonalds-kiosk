@@ -18,6 +18,8 @@ import dev.mcdonaldkiosk.util.ImageEdit;
  * <p>
  * 기능 :
  * 1. 텍스트 라벨의 배경화면을 지정하는 기능을 제공한다.
+ * 
+ * @author Jaehyeon Kim
  */
 public class ImageTextPanel extends JPanel {
 

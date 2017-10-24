@@ -10,7 +10,6 @@ import javax.swing.JButton;
  * 버튼의 배경컬러와 Rollover 효과가 적용되어 있다.
  *
  * @authro Jaehyeon Kim
- * @see ConfirmPage
  */
 class ConfirmButton extends JButton {
 

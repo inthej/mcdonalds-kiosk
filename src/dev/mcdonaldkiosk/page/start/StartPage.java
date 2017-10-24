@@ -14,7 +14,6 @@ import dev.mcdonaldkiosk.util.Display;
  * 주문시작 페이지(StartPage)와 주문 종료 페이지(EndPage)의 공통 컴포넌트인 ImageTextPanel이 사용한다.
  *
  * @author Jaehyeon Kim
- * @see ImageTextPanel
  */
 public class StartPage extends KioskPage {
   
