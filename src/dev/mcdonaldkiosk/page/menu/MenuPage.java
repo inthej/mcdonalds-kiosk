@@ -49,7 +49,7 @@ public class MenuPage extends KioskPage {
 
   private void initManuPagePanel() {
     menuPagePanel.setLayout(new BorderLayout());
-    menuPagePanel.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
+    menuPagePanel.setSize(Display.WINDOWS_HALF_WIDTH, Display.WINDOWS_AVALIABLE_HEIGHT);
     menuPagePanel.setLocation(0, 0);
 
     menuPagePanel.add(createImageLabel(bannerImageIcon), BorderLayout.NORTH);
@@ -60,7 +60,8 @@ public class MenuPage extends KioskPage {
 
   private JLabel createImageLabel(final ImageIcon imageIcon) {
     return new JLabel(
-        ImageEdit.getResizeIcon(imageIcon, Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT / 5));
+        ImageEdit.getResizeIcon(imageIcon, Display.WINDOWS_HALF_WIDTH, Display.WINDOWS_AVALIABLE_HEIGHT
+            / 5));
   }
 
   private void setLayout() {

@@ -12,13 +12,13 @@ import java.awt.Toolkit;
  */
 public class Display {
 
-  public static final int SCREEN_HEIGHT;
+  private static final int SCREEN_HEIGHT;
 
-  public static final int WINDOWS_WIDTH;
-  public static final int WINDOWS_HEIGHT;
-  public static final int TITLE_BAR_HEIGHT;
-  public static final int WINDOWS_WIDTH_HALF;
-  public static final int AVALIABLE_WINDOW_HEIGHT;
+  private static final int WINDOWS_TITLEBAR_HEIGHT;
+
+  public static final int WINDOWS_WIDTH, WINDOWS_HEIGHT;
+  public static final int WINDOWS_HALF_WIDTH;
+  public static final int WINDOWS_AVALIABLE_HEIGHT;
 
   static {
     Dimension dimen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -29,9 +29,9 @@ public class Display {
     WINDOWS_WIDTH = (int) rec.getWidth();
     WINDOWS_HEIGHT = (int) rec.getHeight();
     
-    WINDOWS_WIDTH_HALF = WINDOWS_WIDTH / 2;
-    TITLE_BAR_HEIGHT = SCREEN_HEIGHT - WINDOWS_HEIGHT;
-    AVALIABLE_WINDOW_HEIGHT = WINDOWS_HEIGHT - TITLE_BAR_HEIGHT;
+    WINDOWS_HALF_WIDTH = WINDOWS_WIDTH / 2;
+    WINDOWS_TITLEBAR_HEIGHT = SCREEN_HEIGHT - WINDOWS_HEIGHT;
+    WINDOWS_AVALIABLE_HEIGHT = WINDOWS_HEIGHT - WINDOWS_TITLEBAR_HEIGHT;
   }
 
   private Display() {

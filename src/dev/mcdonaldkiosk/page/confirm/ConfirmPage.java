@@ -58,12 +58,13 @@ public class ConfirmPage extends KioskPage {
   private void initYesNoSelectPanel() {
     YES_NO_SELECT_PANEL.addItem(NO_BUTTON, YES_BUTTON);
 
-    final int PANEL_WIDTH = Display.WINDOWS_WIDTH_HALF * 2 / 5;
-    final int PANEL_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 25;
+    final int PANEL_WIDTH = Display.WINDOWS_HALF_WIDTH * 2 / 5;
+    final int PANEL_HEIGHT = Display.WINDOWS_AVALIABLE_HEIGHT * 2 / 25;
     Component yesNoSelectComp = YES_NO_SELECT_PANEL;
     yesNoSelectComp.setSize(PANEL_WIDTH, PANEL_HEIGHT);
     yesNoSelectComp
-        .setLocation((Display.WINDOWS_WIDTH_HALF - PANEL_WIDTH) / 2, Display.AVALIABLE_WINDOW_HEIGHT * 3 / 4);
+        .setLocation((Display.WINDOWS_HALF_WIDTH - PANEL_WIDTH) / 2, Display.WINDOWS_AVALIABLE_HEIGHT
+            * 3 / 4);
   }
 
   // set 설정하는 느낌

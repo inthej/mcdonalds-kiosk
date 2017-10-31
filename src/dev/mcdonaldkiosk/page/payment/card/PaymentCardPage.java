@@ -37,11 +37,12 @@ public class PaymentCardPage extends KioskPage {
   }
 
   private void initPaymentCardPanel() {
-    final int PANEL_WIDTH = Display.WINDOWS_WIDTH_HALF * 4 / 5;
-    final int PANEL_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 3 / 5;
+    final int PANEL_WIDTH = Display.WINDOWS_HALF_WIDTH * 4 / 5;
+    final int PANEL_HEIGHT = Display.WINDOWS_AVALIABLE_HEIGHT * 3 / 5;
     PAYMENT_CARD_PANEL.setSize(PANEL_WIDTH, PANEL_HEIGHT);
     PAYMENT_CARD_PANEL
-        .setLocation((Display.WINDOWS_WIDTH_HALF - PANEL_WIDTH) / 2, Display.AVALIABLE_WINDOW_HEIGHT / 4);
+        .setLocation((Display.WINDOWS_HALF_WIDTH - PANEL_WIDTH) / 2, Display.WINDOWS_AVALIABLE_HEIGHT
+            / 4);
 
     this.add(PAYMENT_CARD_PANEL);
   }
@@ -66,7 +67,8 @@ public class PaymentCardPage extends KioskPage {
       @Override
       public void mousePressed(MouseEvent e) {
         PAYMENT_CARD_PANEL.getImageLabel().setIcon(ImageEdit.getResizeIcon(
-            "image/loding.jpg", Display.WINDOWS_WIDTH_HALF * 3 / 5, Display.AVALIABLE_WINDOW_HEIGHT * 2 / 5));
+            "image/loding.jpg", Display.WINDOWS_HALF_WIDTH * 3 / 5, Display.WINDOWS_AVALIABLE_HEIGHT
+                * 2 / 5));
       }
 
       @Override

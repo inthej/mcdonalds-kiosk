@@ -52,7 +52,7 @@ public abstract class KioskPage extends JPanel {
 
   private void initKioskPage() {
     this.setLayout(null);
-    this.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
+    this.setSize(Display.WINDOWS_HALF_WIDTH, Display.WINDOWS_AVALIABLE_HEIGHT);
     this.setLocation(0, 0);
   }
   
@@ -111,7 +111,7 @@ public abstract class KioskPage extends JPanel {
       try {
         BufferedImage bufferImg = ImageIO.read(new File(bgPath));
         super.paintComponent(g);
-        g.drawImage(bufferImg, 0, 0, Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT, null);
+        g.drawImage(bufferImg, 0, 0, Display.WINDOWS_HALF_WIDTH, Display.WINDOWS_AVALIABLE_HEIGHT, null);
       } catch (IOException e) {
         e.printStackTrace();
       }

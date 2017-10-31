@@ -7,7 +7,6 @@ import dev.mcdonaldkiosk.util.Display;
 
 /**
  * Class Role : 프로그램이 구동되면 보여지는 프레임이다.
- * KioskPage View 컴포넌트 구성할 수 있다.
  * 
  * @author Jaehyeon Kim
  */
@@ -22,13 +21,13 @@ public class MainFrame extends JFrame {
   private void init() {
     this.setLayout(null);
     this.setTitle("ORDER HERE!");
-    this.setSize(Display.WINDOWS_WIDTH_HALF, Display.WINDOWS_HEIGHT);
+    this.setSize(Display.WINDOWS_HALF_WIDTH, Display.WINDOWS_HEIGHT);
     this.setResizable(false);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
   
   private void setLocationByCenter() {
-    this.setLocation((Display.WINDOWS_WIDTH - Display.WINDOWS_WIDTH_HALF) / 2, 0);
+    this.setLocation(Display.WINDOWS_HALF_WIDTH / 2, 0);
   }
   
   public void attachPage(KioskPage page) {

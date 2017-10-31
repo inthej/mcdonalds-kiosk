@@ -18,8 +18,8 @@ import dev.mcdonaldkiosk.util.ImageEdit;
  */
 public class ImageTextButton extends JButton {
 
-  private final int IMAGE_SIZE_WIDTH = Display.WINDOWS_WIDTH_HALF * 4 / 15;
-  private final int IMAGE_SIZE_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 15;
+  private final int IMAGE_SIZE_WIDTH = Display.WINDOWS_HALF_WIDTH * 4 / 15;
+  private final int IMAGE_SIZE_HEIGHT = Display.WINDOWS_AVALIABLE_HEIGHT * 2 / 15;
 
   private final float FONT_SIZE = 15.0f; // float자료형 글자크기, int자료형 글자디자인
   private final Color FONT_COLOR = Color.RED;

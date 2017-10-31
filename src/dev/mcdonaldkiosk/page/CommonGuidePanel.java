@@ -27,8 +27,8 @@ public class CommonGuidePanel extends JPanel {
 
   private final Color BG_COLOR = Color.BLACK;
 
-  private int guidePanelWidth = Display.WINDOWS_WIDTH_HALF * 4 / 5;
-  private int guidePanelHeight = Display.AVALIABLE_WINDOW_HEIGHT * 2 / 5;
+  private int guidePanelWidth = Display.WINDOWS_HALF_WIDTH * 4 / 5;
+  private int guidePanelHeight = Display.WINDOWS_AVALIABLE_HEIGHT * 2 / 5;
 
   private final JPanel ITEM_PANEL = new JPanel();
 
@@ -49,7 +49,7 @@ public class CommonGuidePanel extends JPanel {
     }
 
     this.setSize(guidePanelWidth, guidePanelHeight);
-    this.setLocation((Display.WINDOWS_WIDTH_HALF - guidePanelWidth) / 2, Display.AVALIABLE_WINDOW_HEIGHT / 4);
+    this.setLocation((Display.WINDOWS_HALF_WIDTH - guidePanelWidth) / 2, Display.WINDOWS_AVALIABLE_HEIGHT / 4);
 
     this.add(ITEM_PANEL, BorderLayout.CENTER);
   }

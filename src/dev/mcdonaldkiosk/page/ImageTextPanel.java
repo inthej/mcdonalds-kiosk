@@ -23,8 +23,8 @@ import dev.mcdonaldkiosk.util.ImageEdit;
  */
 public class ImageTextPanel extends JPanel {
 
-  private final int IMAGE_WIDTH = Display.WINDOWS_WIDTH_HALF;
-  private final int IMAGE_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 9 / 10;
+  private final int IMAGE_WIDTH = Display.WINDOWS_HALF_WIDTH;
+  private final int IMAGE_HEIGHT = Display.WINDOWS_AVALIABLE_HEIGHT * 9 / 10;
 
   private final JLabel IMAGE_LABEL = new JLabel();
   private final JLabel TEXT_LABEL = new JLabel();
@@ -53,7 +53,7 @@ public class ImageTextPanel extends JPanel {
     TEXT_LABEL.setHorizontalAlignment(JLabel.CENTER);
     TEXT_LABEL.setFont(TEXT_LABEL.getFont().deriveFont(TEXT_SIZE));
 
-    TEXT_LABEL.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT - IMAGE_HEIGHT);
+    TEXT_LABEL.setSize(Display.WINDOWS_HALF_WIDTH, Display.WINDOWS_AVALIABLE_HEIGHT - IMAGE_HEIGHT);
     TEXT_LABEL.setLocation(0, IMAGE_HEIGHT);
 
     TEXT_LABEL.setBackground(TEXT_BG_COLOR);

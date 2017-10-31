@@ -43,7 +43,7 @@ public class EndPage extends KioskPage {
   private ImageTextPanel createImgTextPanel() {
     final ImageTextPanel imgTextPanel = new ImageTextPanel(new ImageIcon("image/bg_info3.jpg"),
         LangCheck.isKorean() ? "주문이 완료되었습니다." : "YOUR ORDER IS COMPLETE");
-    imgTextPanel.setSize(Display.WINDOWS_WIDTH_HALF, Display.AVALIABLE_WINDOW_HEIGHT);
+    imgTextPanel.setSize(Display.WINDOWS_HALF_WIDTH, Display.WINDOWS_AVALIABLE_HEIGHT);
     imgTextPanel.setLocation(0, 0);
     imgTextPanel.setTextBackground(Color.BLUE);
     

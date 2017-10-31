@@ -50,8 +50,8 @@ public class PaymentPlacePage extends KioskPage {
   }
 
   private void initKioskButton() {
-    final int BUTTON_WIDTH = Display.WINDOWS_WIDTH_HALF * 4 / 15;
-    final int BUTTON_HEIGHT = Display.AVALIABLE_WINDOW_HEIGHT * 1 / 5;
+    final int BUTTON_WIDTH = Display.WINDOWS_HALF_WIDTH * 4 / 15;
+    final int BUTTON_HEIGHT = Display.WINDOWS_AVALIABLE_HEIGHT * 1 / 5;
 
     COUNTER_BTN.setText(LangCheck.isKorean() ? "카운터에서 결제" : "PAYMENT AT THE COUNTER");
     COUNTER_BTN.setResizedImg(new ImageIcon("image/counter.jpg"), BUTTON_WIDTH, BUTTON_HEIGHT);

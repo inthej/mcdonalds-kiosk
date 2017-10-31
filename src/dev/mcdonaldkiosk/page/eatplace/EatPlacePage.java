@@ -82,10 +82,10 @@ public class EatPlacePage extends KioskPage {
   }
   
   private void initLangPanel(final CommonGuidePanel guidePanel) {
-    final int width = Display.WINDOWS_WIDTH_HALF * 4 / 5;
-    guidePanel.setGuidePanelSize(width, Display.AVALIABLE_WINDOW_HEIGHT * 2 / 15);
-    guidePanel.setGuidePanelLocation((Display.WINDOWS_WIDTH_HALF - width) / 2,
-        Display.AVALIABLE_WINDOW_HEIGHT * 3 / 4);
+    final int width = Display.WINDOWS_HALF_WIDTH * 4 / 5;
+    guidePanel.setGuidePanelSize(width, Display.WINDOWS_AVALIABLE_HEIGHT * 2 / 15);
+    guidePanel.setGuidePanelLocation((Display.WINDOWS_HALF_WIDTH - width) / 2,
+        Display.WINDOWS_AVALIABLE_HEIGHT * 3 / 4);
   }
   
   private ImageTextButton createLangBtn(final Language lang, final String text) {
