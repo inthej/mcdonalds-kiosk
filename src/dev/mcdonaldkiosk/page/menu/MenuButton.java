@@ -20,8 +20,7 @@ public class MenuButton extends JButton {
   private final String IMG_PATH;
   private final Menu MENU;
 
-  private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer
-      .createKioskAudioPlayer("sound/beep.wav");
+  private final KioskAudioPlayer clickBGMPlayer = KioskAudioPlayer.newInstance("sound/beep.wav");
 
   private MenuPage menuPage;
   private final KioskOrderData kioskOrderData;

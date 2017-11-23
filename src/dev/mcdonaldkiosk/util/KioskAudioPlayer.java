@@ -1,62 +1,84 @@
 package dev.mcdonaldkiosk.util;
 
+import com.sun.istack.internal.NotNull;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import com.sun.istack.internal.NotNull;
 
 /**
- * Kiosk 컴포넌트의 오디오 요소를 담당하는 클래스이다. 이미 재생한 오디오 목록은 자체적으로 저장 해놓는다.
+ * Class Role : 프로그램의 오디오 실행을 담당한다.
  *
- * 사용자가 이미 재상한 오디오를 호출할 시, 캐시 데이터를 이용하여 자원의 효율성을 높인다.
- *
- * 사용자는 단순히 플레이어 재생, 플레이어 정지를 이용하면 된다.
+ * 생성된 사운드는 audioFilePool에 저장된다.
+ * 이미 생성된 사운드를 다시 재생할 시, audioFilePool에 저장된 사운드를 사용한다. (캐시 데이터 사용으로 리소스 사용의 효율성을 높인다.)
+ * 사용자는 단순히 플레이어 재생을 이용하면 된다.
  *
  * @author Jaehyeon Kim
  */
-
 public class KioskAudioPlayer {
 
-  private static final HashMap<String, File> audioFilePool = new HashMap<>();
+  private static final Map<String, File> audioFilePool = new HashMap<>();
   private static Clip clip;
   private final File audioFile;
+
   private AudioInputStream audioInputStream;
 
-  // 오디오파일 필수
   private KioskAudioPlayer(File audioFile) {
     this.audioFile = audioFile;
   }
 
   /**
-   * 분석 audioPath를 key로 사용을 하며 filePoll에 입력된 키의 값이 null이면 createNewAudioFile을
-   * 호출한다. return 으로는 해당경로의 파일을 가지고 있는 KioskAudioPlayer를 리턴한다
-   * <p>
-   * 해당메서드를 다른쪽에서 사용할 수 있도록 공개하여서 필요하면 실행가능한 KioskAudioPlayer를 얻을수 있다.
+   * 오디오 재생이 가능한 플레이어를 생성한다.
+   * @return 오디오 경로에 해당하는 KioskAudioPlayer
    */
-  public static KioskAudioPlayer createKioskAudioPlayer(@NotNull String audioPath) {
+  public static KioskAudioPlayer newInstance(@NotNull String audioPath) {
     if (audioFilePool.get(audioPath) == null) {
-      createNewAudioFile(audioPath);
+      putNewAudioFile(audioPath);
     }
     return new KioskAudioPlayer(audioFilePool.get(audioPath));
   }
 
   /**
-   * 분석 입력된 오디오경로를 통해서 파일을 생성하고 FilePool에 Key:경로명, Value:파일을 등록한다.
+   * audioFilePool에 새로운 오디오 파일을 넣는다.
    */
-  private static void createNewAudioFile(String audioPath) {
-    File audioFile = new File(audioPath);
-    audioFilePool.put(audioPath, audioFile);
+  private static void putNewAudioFile(String audioPath) {
+    audioFilePool.put(audioPath, createNewAudioFile(audioPath));
   }
 
   /**
-   * 분석 KioskAudioPlay 자신이 가지고있는 파일객체를 통해서 AudioInputStream을 생성한다.
+   * 오디오 경로에 해당하는 파일을 생성한다.
    */
-  private void createAudioStream() {
+  private static File createNewAudioFile(String audioPath) {
+    return new File(audioPath);
+  }
+
+  /**
+   * 오디오 플레이어를 실행한다.
+   */
+  public void play() {
+    stopSound();
+    createAudioInputStream();
+    playSound();
+  }
+
+  /**
+   * 소리 재생을 중지한다.
+   */
+  private void stopSound() {
+    if (clip != null) {
+      clip.stop();
+    }
+  }
+
+  /**
+   * 오디오 파일을 통해서 AudioInputStream 을 생성한다.
+   */
+  private void createAudioInputStream() {
     try {
       audioInputStream = AudioSystem.getAudioInputStream(audioFile);
     } catch (UnsupportedAudioFileException | IOException e) {
@@ -65,18 +87,9 @@ public class KioskAudioPlayer {
   }
 
   /**
-   * 분석 오디오를 실행한다.
-   * 다른곳에서 사용할 수 있도록 한다.
+   * 소리를 재생한다.
    */
-  public void play() {
-    if (clip != null) {
-      clip.stop();
-    }
-
-    // AudioStream 생성
-    createAudioStream();
-
-    // 재생
+  private void playSound() {
     try {
       clip = AudioSystem.getClip();
       clip.open(audioInputStream);
@@ -84,9 +97,5 @@ public class KioskAudioPlayer {
     } catch (LineUnavailableException | IOException e) {
       e.printStackTrace();
     }
-  }
-
-  public void stop() {
-    clip.stop();
   }
 }

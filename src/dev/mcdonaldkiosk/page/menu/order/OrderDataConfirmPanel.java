@@ -1,13 +1,13 @@
 package dev.mcdonaldkiosk.page.menu.order;
 
+import dev.mcdonaldkiosk.lang.LangCheck;
+import dev.mcdonaldkiosk.page.menu.MenuPage;
+import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import dev.mcdonaldkiosk.lang.LangCheck;
-import dev.mcdonaldkiosk.page.menu.MenuPage;
-import dev.mcdonaldkiosk.util.KioskAudioPlayer;
 
 class OrderDataConfirmPanel extends JPanel {
 
@@ -75,9 +75,8 @@ class OrderDataConfirmPanel extends JPanel {
 
     PAYMENT_BTN.addActionListener((e) -> {
       if (kioskOrderData.getOrderQuantity() == 0) {
-        KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer.createKioskAudioPlayer(
-            LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav");
-        kioskAudioPlayer.play();
+        KioskAudioPlayer.newInstance(
+            LangCheck.isKorean() ? "sound/order.wav" : "sound/order_eng.wav").play();
       } else {
         menuPage.nextPage();
       }

@@ -57,7 +57,7 @@ public abstract class KioskPage extends JPanel {
   }
   
   private void playKioskVoice(final String audioPath) {
-    KioskAudioPlayer.createKioskAudioPlayer(audioPath).play();
+    KioskAudioPlayer.newInstance(audioPath).play();
   }
 
   private void setBackBtnListener() {

@@ -1,8 +1,5 @@
 package dev.mcdonaldkiosk.page.payment.card;
 
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import dev.mcdonaldkiosk.lang.LangCheck;
 import dev.mcdonaldkiosk.page.KioskPage;
 import dev.mcdonaldkiosk.page.KioskPageType;
@@ -10,6 +7,9 @@ import dev.mcdonaldkiosk.page.PageData;
 import dev.mcdonaldkiosk.util.Display;
 import dev.mcdonaldkiosk.util.ImageEdit;
 import dev.mcdonaldkiosk.util.KioskAudioPlayer;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Class Role : 카드 결제지불 페이지
@@ -51,9 +51,7 @@ public class PaymentCardPage extends KioskPage {
     PAYMENT_CARD_PANEL.getImageTextButton().addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
-        KioskAudioPlayer kioskAudioPlayer = KioskAudioPlayer
-            .createKioskAudioPlayer(LangCheck.isKorean() ? "sound/ing.wav" : "sound/ing_eng.wav");
-        kioskAudioPlayer.play();
+        KioskAudioPlayer.newInstance(LangCheck.isKorean() ? "sound/ing.wav" : "sound/ing_eng.wav").play();
 
         try {
           Thread.sleep(5000);
