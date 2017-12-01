@@ -13,7 +13,6 @@ import java.awt.Toolkit;
 public class Display {
 
   private static final int SCREEN_HEIGHT;
-
   private static final int WINDOWS_TITLEBAR_HEIGHT;
 
   public static final int WINDOWS_WIDTH, WINDOWS_HEIGHT;
