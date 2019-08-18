@@ -1,2 +1,13 @@
 # McDonaldKiosk
-Java Swing으로 맥도날드의 무인 주문 시스템인 키오스크 프로그램 구현
+McDonald's Kiosk Client Program Implementation by Java Swing.  
+This project is not related to the actual service.
+
+# ScreenShot
+<div>
+  <img src='./McKiosk01.png' />
+  <br/>
+  <img src='./McKiosk02.png' />  
+</div>
+
+# Lincense
+Copyright(c)2017 IntheJ All rights reserved.  
